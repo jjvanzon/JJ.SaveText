@@ -9,15 +9,15 @@ using JJ.Business.SetText.Resources;
 
 namespace JJ.Business.SetText.Validation
 {
-    public class EntityValidator : FluentValidator<Entity>
+    public class TextValidator : FluentValidator<string>
     {
-        public EntityValidator(Entity entity)
-            : base(entity)
+        public TextValidator(string value)
+            : base(value)
         { }
 
         protected override void Execute()
         {
-            For(() => Object.Text, PropertyDisplayNames.Text)
+            For(() => Object, PropertyDisplayNames.Text)
                 .NotNullOrWhiteSpace();
         }
     }

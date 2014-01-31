@@ -11,6 +11,7 @@ using JJ.Apps.SetText.Presenters.Helpers;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.ViewModels.Helpers;
 using JJ.Business.SetText;
+using Canonical = JJ.Models.Canonical;
 
 namespace JJ.Apps.SetText.Presenters
 {
@@ -29,33 +30,33 @@ namespace JJ.Apps.SetText.Presenters
 
         public SetTextViewModel Show()
         {
-            Entity entity = _textSetter.GetEntity();
-            SetTextViewModel viewModel = entity.ToSetTextViewModel();
+            string text = _textSetter.GetText();
+            var viewModel = new SetTextViewModel
+            {
+                Text = text,
+                ValidationMessages = new List<Canonical.ValidationMessage>()
+            };
             return viewModel;
         }
 
         public SetTextViewModel Save(SetTextViewModel viewModel)
         {
-            // Get entity with viewmodel applied to it.
-            Entity entity = viewModel.ToEntity(_textSetter);
+            viewModel.NullCoallesce();
 
-            // Create new, complete viewmodel from entity
-            SetTextViewModel viewModel2 = entity.ToSetTextViewModel();
+            _textSetter.SetText(viewModel.Text);
 
-            // Validate
-            IValidator validator = new EntityValidator(entity);
+            IValidator validator = new TextValidator(viewModel.Text);
             if (!validator.IsValid)
             {
-                viewModel2.ValidationMessages = validator.ValidationMessages.ToCanonical();
-                return viewModel2;
+                viewModel.ValidationMessages = validator.ValidationMessages.ToCanonical();
+                return viewModel;
             }
-
-            viewModel2.TextWasSavedMessageVisible = true;
-
-            // Commit
-            _entityRepository.Commit();
-
-            return viewModel2;
+            else
+            {
+                viewModel.TextWasSavedMessageVisible = true;
+                _entityRepository.Commit();
+            }
+            return viewModel;
         }
     }
 }

@@ -20,17 +20,6 @@ namespace JJ.Business.SetText
             _entityRepository = entityRepository;
         }
 
-        public Entity GetEntity()
-        {
-            Entity entity = _entityRepository.TryGet(ENTITY_ID);
-            if (entity == null)
-            {
-                entity = _entityRepository.Create();
-                entity.ID = ENTITY_ID;
-            }
-            return entity;
-        }
-
         public string GetText()
         {
             Entity entity = GetEntity();
@@ -40,6 +29,19 @@ namespace JJ.Business.SetText
         public void SetText(string value)
         {
             Entity entity = GetEntity();
+            entity.Text = value;
+            _entityRepository.Update(entity);
+        }
+
+        private Entity GetEntity()
+        {
+            Entity entity = _entityRepository.TryGet(ENTITY_ID);
+            if (entity == null)
+            {
+                entity = _entityRepository.Create();
+                entity.ID = ENTITY_ID;
+            }
+            return entity;
         }
     }
 }

@@ -75,7 +75,7 @@ namespace JJ.Models.SetText.Persistence.Xml
         private XmlElement TryGetEntityXml(int id)
         {
             XmlElement root = GetRoot();
-            string xpath = String.Format("entity[id='{0}']", id);
+            string xpath = String.Format("entity[@id='{0}']", id);
             return (XmlElement)TryGetNode(root, xpath);
         }
 
@@ -97,7 +97,7 @@ namespace JJ.Models.SetText.Persistence.Xml
             root.AppendChild(element);
 
             XmlAttribute idAttribute = _document.CreateAttribute("id");
-            element.AppendChild(idAttribute);
+            element.Attributes.Append(idAttribute);
 
             XmlElement textElement = _document.CreateElement("text");
             element.AppendChild(textElement);
@@ -187,7 +187,7 @@ namespace JJ.Models.SetText.Persistence.Xml
                 return _maxID;
             }
 
-            string xpath = "entity[@id = max(entity/@id)]";
+            string xpath = "entity[not(@id > ../@id)]";
             XmlElement elementWithMaxID = (XmlElement)TryGetNode(_document, xpath);
             if (elementWithMaxID != null)
             {
@@ -212,7 +212,18 @@ namespace JJ.Models.SetText.Persistence.Xml
 
         private XmlNode TryGetNode(XmlNode parentNode, string xpath)
         {
-            return parentNode.SelectSingleNode(xpath);
+            XmlNodeList nodes = parentNode.SelectNodes(xpath);
+            switch (nodes.Count)
+            {
+                case 0:
+                    return null;
+
+                case 1:
+                    return nodes[0];
+
+                default:
+                    throw new Exception(String.Format("Node '{0}' is not unique.", xpath));
+            }
         }
     }
 }

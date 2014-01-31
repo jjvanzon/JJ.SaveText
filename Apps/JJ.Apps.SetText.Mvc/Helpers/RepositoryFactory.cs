@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using JJ.Models.SetText.Persistence.Repositories;
+using System.Web.Hosting;
 
 namespace JJ.Apps.SetText.Mvc.Helpers
 {
@@ -17,13 +18,14 @@ namespace JJ.Apps.SetText.Mvc.Helpers
         {
             PersistenceConfiguration configuration = ContextHelper.GetPersistenceConfiguration();
 
-            Assembly xmlPersistenceAssembly = typeof(JJ.Models.SetText.Entity).Assembly;
-            string xmlPersistenceAssemblyName = typeof(JJ.Models.SetText.Entity).Assembly.GetName().Name;
+            Assembly xmlPersistenceAssembly = typeof(JJ.Models.SetText.Persistence.Xml.EntityRepository).Assembly;
+            string xmlPersistenceAssemblyName = xmlPersistenceAssembly.GetName().Name;
 
             if (configuration.ContextType == xmlPersistenceAssemblyName)
             {
                 Type repositoryType = ReflectionHelper.GetImplementation<IEntityRepository>(xmlPersistenceAssembly);
-                return (IEntityRepository)Activator.CreateInstance(repositoryType);
+                string location = HostingEnvironment.MapPath("~/" + configuration.Location);
+                return (IEntityRepository)Activator.CreateInstance(repositoryType, location);
             }
             else
             {

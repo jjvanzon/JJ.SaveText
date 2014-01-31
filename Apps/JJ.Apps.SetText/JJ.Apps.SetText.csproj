@@ -58,8 +58,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="ViewModels\Helpers\EntityExtensions_ToViewModel.cs" />
-    <Compile Include="ViewModels\Helpers\SetTextViewModelExtensions_ToEntity.cs" />
+    <Compile Include="ViewModels\Helpers\ViewModelExtensions_NullCoallesce.cs" />
     <Compile Include="ViewModels\SetTextViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

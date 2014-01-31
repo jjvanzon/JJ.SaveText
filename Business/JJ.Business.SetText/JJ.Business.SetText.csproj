@@ -45,7 +45,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="TextSetter.cs" />
-    <Compile Include="Validation\EntityValidator.cs" />
+    <Compile Include="Validation\TextValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
