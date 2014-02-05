@@ -40,6 +40,7 @@ namespace JJ.Business.SetText
             {
                 entity = _entityRepository.Create();
                 entity.ID = ENTITY_ID;
+                _entityRepository.Update(entity);
             }
             return entity;
         }

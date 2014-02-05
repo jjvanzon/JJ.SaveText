@@ -2,6 +2,7 @@
 using JJ.Apps.SetText.Mvc.Helpers;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.ViewModels;
+using JJ.Framework.Persistence;
 using JJ.Models.Canonical;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using System;
@@ -23,8 +24,11 @@ namespace JJ.Apps.SetText.Mvc.Controllers
             }
             else
             {
-                SetTextPresenter presenter = CreatePresenter();
-                viewModel = presenter.Show();
+                using (IContext ormContext = OrmHelper.CreateContext())
+                {
+                    SetTextPresenter presenter = CreatePresenter(ormContext);
+                    viewModel = presenter.Show();
+                }
             }
 
             foreach (ValidationMessage validationMessage in viewModel.ValidationMessages)
@@ -38,16 +42,18 @@ namespace JJ.Apps.SetText.Mvc.Controllers
         [HttpPost]
         public ActionResult Index(SetTextViewModel viewModel)
         {
-            SetTextPresenter presenter = CreatePresenter();
-            SetTextViewModel viewModel2 = presenter.Save(viewModel);
-
-            TempData[TempDataKeys.ViewModel] = viewModel2;
-            return RedirectToAction(ActionNames.Index);
+            using (IContext ormContext = OrmHelper.CreateContext())
+            {
+                SetTextPresenter presenter = CreatePresenter(ormContext);
+                SetTextViewModel viewModel2 = presenter.Save(viewModel);
+                TempData[TempDataKeys.ViewModel] = viewModel2;
+                return RedirectToAction(ActionNames.Index);
+            }
         }
 
-        private SetTextPresenter CreatePresenter()
+        private SetTextPresenter CreatePresenter(IContext context)
         {
-            IEntityRepository entityRepository = RepositoryFactory.CreateEntityRepository();
+            IEntityRepository entityRepository = OrmHelper.CreateEntityRepository(context);
             SetTextPresenter presenter = new SetTextPresenter(entityRepository);
             return presenter;
         }

@@ -1,6 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <entity id="1">
-    <text>ytytg</text>
-  </entity>
+  <x ID="1" Text="twr" />
 </root>
