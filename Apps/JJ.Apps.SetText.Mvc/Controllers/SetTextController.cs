@@ -53,7 +53,7 @@ namespace JJ.Apps.SetText.Mvc.Controllers
 
         private SetTextPresenter CreatePresenter(IContext context)
         {
-            IEntityRepository entityRepository = OrmHelper.CreateEntityRepository(context);
+            IEntityRepository entityRepository = OrmHelper.CreateRepository<IEntityRepository>(context);
             SetTextPresenter presenter = new SetTextPresenter(entityRepository);
             return presenter;
         }

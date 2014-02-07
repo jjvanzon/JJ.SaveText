@@ -1,4 +1,5 @@
 ﻿using JJ.Framework.Persistence;
+using JJ.Framework.Persistence.Xml;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,17 @@ namespace JJ.Models.SetText.Persistence.Xml.Repositories
 {
     public class EntityRepository : IEntityRepository
     {
-        private IContext _context;
+        private XmlContext _context;
+        private XmlDocument _document;
+        private XmlToEntityConverter<Entity> _converter;
 
         public EntityRepository(IContext context)
         {
             if (context == null) throw new ArgumentNullException("context");
 
-            _context = context;
+            _context = (XmlContext)context;
+            _document = _context.GetDocument<Entity>();
+            _converter = _context.GetConverter<Entity>();
         }
 
         public Entity Get(int id)
@@ -43,6 +48,11 @@ namespace JJ.Models.SetText.Persistence.Xml.Repositories
         public void Update(Entity entity)
         {
             _context.Update(entity);
+        }
+
+        public IEnumerable<Entity> Search(string text)
+        {
+            throw new NotImplementedException();
         }
 
         public void Commit()

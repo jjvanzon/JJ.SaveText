@@ -14,15 +14,14 @@ namespace JJ.Apps.SetText.Mvc.Helpers
 {
     internal static class OrmHelper
     {
-        public static IEntityRepository CreateEntityRepository(IContext context)
+        public static TRepositoryInterface CreateRepository<TRepositoryInterface>(IContext context)
         {
-            // TODO: You will never get the derived repositories here.
-            return new EntityRepository(context);
+            return RepositoryFactory.CreateRepositoryFromConfiguration<TRepositoryInterface>(context);
         }
 
         public static IContext CreateContext()
         {
-            PersistenceConfiguration persistenceConfiguration = ContextHelper.GetPersistenceConfiguration();
+            PersistenceConfiguration persistenceConfiguration = PersistenceHelper.GetPersistenceConfiguration();
 
             string location = persistenceConfiguration.Location;
             bool isXmlContext = persistenceConfiguration.ContextType == "Xml";
@@ -34,7 +33,8 @@ namespace JJ.Apps.SetText.Mvc.Helpers
             IContext context = ContextFactory.CreateContext(
                 persistenceConfiguration.ContextType,
                 location,
-                persistenceConfiguration.ModelAssemblies);
+                persistenceConfiguration.ModelAssembly,
+                persistenceConfiguration.MappingAssembly);
 
             return context;
         }
