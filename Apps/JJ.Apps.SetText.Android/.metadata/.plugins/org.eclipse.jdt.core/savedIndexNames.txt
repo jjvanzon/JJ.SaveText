@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Apps\JJ.Apps.SetText.Android\.metadata\.plugins\org.eclipse.jdt.core
+450223868.index
+641496135.index
+3321979548.index

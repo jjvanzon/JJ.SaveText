@@ -17,7 +17,10 @@ namespace JJ.Business.SetText.Validation
 
         protected override void Execute()
         {
-            For(() => Object, PropertyDisplayNames.Text)
+            // Make sure you get the right property key.
+            string Text = Object;
+
+            For(() => Text, PropertyDisplayNames.Text)
                 .NotNullOrWhiteSpace();
         }
     }

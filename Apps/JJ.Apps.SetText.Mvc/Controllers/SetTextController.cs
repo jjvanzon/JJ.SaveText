@@ -24,7 +24,7 @@ namespace JJ.Apps.SetText.Mvc.Controllers
             }
             else
             {
-                using (IContext ormContext = OrmHelper.CreateContext())
+                using (IContext ormContext = PersistenceHelper.CreateContext())
                 {
                     SetTextPresenter presenter = CreatePresenter(ormContext);
                     viewModel = presenter.Show();
@@ -42,7 +42,7 @@ namespace JJ.Apps.SetText.Mvc.Controllers
         [HttpPost]
         public ActionResult Index(SetTextViewModel viewModel)
         {
-            using (IContext ormContext = OrmHelper.CreateContext())
+            using (IContext ormContext = PersistenceHelper.CreateContext())
             {
                 SetTextPresenter presenter = CreatePresenter(ormContext);
                 SetTextViewModel viewModel2 = presenter.Save(viewModel);
@@ -53,7 +53,7 @@ namespace JJ.Apps.SetText.Mvc.Controllers
 
         private SetTextPresenter CreatePresenter(IContext context)
         {
-            IEntityRepository entityRepository = OrmHelper.CreateRepository<IEntityRepository>(context);
+            IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
             SetTextPresenter presenter = new SetTextPresenter(entityRepository);
             return presenter;
         }

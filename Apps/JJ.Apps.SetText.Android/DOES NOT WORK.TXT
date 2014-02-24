@@ -1,0 +1,3 @@
+Jan-Joost van Zon, 2014-02-24:
+The Java-Android project does not work yet.
+I could not get the mono-compiled .NET code to work in the Java-Android programming environment.
