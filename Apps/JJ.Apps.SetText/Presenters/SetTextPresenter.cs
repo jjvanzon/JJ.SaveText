@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using JJ.Framework.Validation;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
