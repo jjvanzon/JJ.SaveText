@@ -42,6 +42,10 @@
       <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
       <Name>JJ.Framework.Persistence.Xml</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence.Memory\JJ.Models.SetText.Persistence.Memory.csproj">
+      <Project>{becfecbe-8ec2-485e-921e-2fb6fe048aac}</Project>
+      <Name>JJ.Models.SetText.Persistence.Memory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence.Xml\JJ.Models.SetText.Persistence.Xml.csproj">
       <Project>{292046bb-5667-4231-b8aa-bad57cd1b481}</Project>
       <Name>JJ.Models.SetText.Persistence.Xml</Name>

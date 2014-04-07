@@ -21,8 +21,8 @@ namespace JJ.Apps.SetText.AppService
             using (IContext context = PersistenceHelper.CreateContext())
             {
                 IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
-                SetTextPresenter presenter = new SetTextPresenter(entityRepository);
-                SetTextViewModel viewModel = presenter.Show();
+                var presenter = new SetTextPresenter(entityRepository);
+                var viewModel = presenter.Show();
                 return viewModel;
             }
         }
@@ -32,8 +32,8 @@ namespace JJ.Apps.SetText.AppService
             using (IContext context = PersistenceHelper.CreateContext())
             {
                 IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
-                SetTextPresenter presenter = new SetTextPresenter(entityRepository);
-                SetTextViewModel viewModel2 = presenter.Save(viewModel);
+                var presenter = new SetTextPresenter(entityRepository);
+                var viewModel2 = presenter.Save(viewModel);
                 return viewModel2;
             }
         }

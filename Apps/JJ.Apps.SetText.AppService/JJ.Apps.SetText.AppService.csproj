@@ -76,11 +76,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SetTextWithSyncAppService.svc" />
     <Content Include="ResourceService.svc" />
     <Content Include="SetTextAppService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISetTextWithSyncAppService.cs" />
+    <Compile Include="SetTextWithSyncAppService.svc.cs">
+      <DependentUpon>SetTextWithSyncAppService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\PersistenceHelper.cs" />
     <Compile Include="IResourceService.cs" />
     <Compile Include="Labels.cs" />

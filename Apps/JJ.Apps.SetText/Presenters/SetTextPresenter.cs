@@ -11,6 +11,7 @@ using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.ViewModels.Helpers;
 using JJ.Business.SetText;
 using Canonical = JJ.Models.Canonical;
+using JJ.Models.Canonical;
 
 namespace JJ.Apps.SetText.Presenters
 {
@@ -29,32 +30,33 @@ namespace JJ.Apps.SetText.Presenters
 
         public SetTextViewModel Show()
         {
-            string text = _textSetter.GetText();
-            var viewModel = new SetTextViewModel
-            {
-                Text = text,
-                ValidationMessages = new List<Canonical.ValidationMessage>()
-            };
-            return viewModel;
+            return CreateViewModel();
         }
 
         public SetTextViewModel Save(SetTextViewModel viewModel)
         {
             viewModel.NullCoallesce();
 
-            _textSetter.SetText(viewModel.Text);
-
-            IValidator validator = new TextValidator(viewModel.Text);
-            if (!validator.IsValid)
+            Result result = _textSetter.SetText(viewModel.Text);
+            if (result.Successful)
             {
-                viewModel.ValidationMessages = validator.ValidationMessages.ToCanonical();
-                return viewModel;
-            }
-            else
-            {
-                viewModel.TextWasSavedMessageVisible = true;
                 _entityRepository.Commit();
             }
+
+            SetTextViewModel viewModel2 = CreateViewModel();
+            viewModel2.ValidationMessages = result.ValidationMessages;
+            viewModel2.TextWasSavedMessageVisible = result.Successful;
+            return viewModel2;
+        }
+
+        private SetTextViewModel CreateViewModel()
+        {
+            string text = _textSetter.GetText();
+            var viewModel = new SetTextViewModel
+            {
+                Text = text,
+                ValidationMessages = new List<Canonical.ValidationMessage>()
+            };
             return viewModel;
         }
     }

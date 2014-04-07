@@ -1,9 +1,0 @@
-edit_messageedit_message<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">JJ.Apps.SetText.Android</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="edit_message">Edit Message</string>
-
-</resources>

@@ -13,5 +13,12 @@ namespace JJ.Apps.SetText.ViewModels.Helpers
             if (viewModel == null) throw new ArgumentNullException("viewModel");
             viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<Canonical.ValidationMessage>();
         }
+
+        public static void NullCoallesce(this SetTextWithSyncViewModel viewModel)
+        {
+            if (viewModel == null) throw new ArgumentNullException("viewModel");
+            viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<Canonical.ValidationMessage>();
+            viewModel.SyncValidationMessages = viewModel.SyncValidationMessages ?? new List<Canonical.ValidationMessage>();
+        }
     }
 }

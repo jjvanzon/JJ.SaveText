@@ -38,6 +38,7 @@
     <Compile Include="Presenters\Helpers\ValidationMessagesExtensions.cs" />
     <Compile Include="Presenters\Helpers\ValidationMessageExtensions.cs" />
     <Compile Include="Presenters\SetTextPresenter.cs" />
+    <Compile Include="Presenters\SetTextWithSyncPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Labels.Designer.cs">
       <DependentUpon>Labels.resx</DependentUpon>
@@ -56,6 +57,7 @@
     </Compile>
     <Compile Include="ViewModels\Helpers\ViewModelExtensions_NullCoallesce.cs" />
     <Compile Include="ViewModels\SetTextViewModel.cs" />
+    <Compile Include="ViewModels\SetTextWithSyncViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\JJ.Business.SetText\JJ.Business.SetText.csproj">

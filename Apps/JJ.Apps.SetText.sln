@@ -73,6 +73,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmlReaderDll", "..\Externa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Unity.DotNet", "JJ.Apps.SetText.Unity.DotNet\JJ.Apps.SetText.Unity.DotNet.csproj", "{9BC68E57-61E1-4084-9D12-749123B2B4CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Persistence.Memory", "..\Framework\JJ.Framework.Persistence.Memory\JJ.Framework.Persistence.Memory.csproj", "{86348B50-ECA9-4849-A221-73F0ED31713B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.Persistence.Memory", "..\Models\JJ.Models.SetText.Persistence.Memory\JJ.Models.SetText.Persistence.Memory.csproj", "{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService.DemoClient", "JJ.Apps.SetText.AppService.DemoClient\JJ.Apps.SetText.AppService.DemoClient.csproj", "{59A98F56-001A-4094-B783-E7024768F425}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0F59DBC8-E641-496D-9DA6-059E4EFE01EF} = {0F59DBC8-E641-496D-9DA6-059E4EFE01EF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -290,6 +299,24 @@ Global
 		{9BC68E57-61E1-4084-9D12-749123B2B4CB}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
 		{9BC68E57-61E1-4084-9D12-749123B2B4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BC68E57-61E1-4084-9D12-749123B2B4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86348B50-ECA9-4849-A221-73F0ED31713B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86348B50-ECA9-4849-A221-73F0ED31713B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86348B50-ECA9-4849-A221-73F0ED31713B}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86348B50-ECA9-4849-A221-73F0ED31713B}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{86348B50-ECA9-4849-A221-73F0ED31713B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86348B50-ECA9-4849-A221-73F0ED31713B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A98F56-001A-4094-B783-E7024768F425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A98F56-001A-4094-B783-E7024768F425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A98F56-001A-4094-B783-E7024768F425}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A98F56-001A-4094-B783-E7024768F425}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{59A98F56-001A-4094-B783-E7024768F425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A98F56-001A-4094-B783-E7024768F425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -319,5 +346,6 @@ Global
 		{BE8A8BAE-8EB6-4F54-89E6-CA44AACECEB6} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{E754BB24-447B-40EC-9EEB-F0C69E6EEA0E} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{499527FF-AE52-450F-B3E3-4AD53E1712AD} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
+		{86348B50-ECA9-4849-A221-73F0ED31713B} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 	EndGlobalSection
 EndGlobal
