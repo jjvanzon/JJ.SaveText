@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JJ.Apps.SetText.AppService.DemoClient.SetTextAppService {
+namespace JJ.Apps.SetText.WinForms.Online.SetTextAppService {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,7 +29,7 @@ namespace JJ.Apps.SetText.AppService.DemoClient.SetTextAppService {
         private bool TextWasSavedMessageVisibleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.ValidationMessage[] ValidationMessagesField;
+        private JJ.Apps.SetText.WinForms.Online.SetTextAppService.ValidationMessage[] ValidationMessagesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -68,7 +68,7 @@ namespace JJ.Apps.SetText.AppService.DemoClient.SetTextAppService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.ValidationMessage[] ValidationMessages {
+        public JJ.Apps.SetText.WinForms.Online.SetTextAppService.ValidationMessage[] ValidationMessages {
             get {
                 return this.ValidationMessagesField;
             }
@@ -156,25 +156,25 @@ namespace JJ.Apps.SetText.AppService.DemoClient.SetTextAppService {
     public interface ISetTextAppService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Show", ReplyAction="http://tempuri.org/ISetTextAppService/ShowResponse")]
-        JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel Show();
+        JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel Show();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Show", ReplyAction="http://tempuri.org/ISetTextAppService/ShowResponse")]
-        System.Threading.Tasks.Task<JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel> ShowAsync();
+        System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel> ShowAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Save", ReplyAction="http://tempuri.org/ISetTextAppService/SaveResponse")]
-        JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel viewModel);
+        JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel viewModel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Save", ReplyAction="http://tempuri.org/ISetTextAppService/SaveResponse")]
-        System.Threading.Tasks.Task<JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel viewModel);
+        System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel viewModel);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISetTextAppServiceChannel : JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.ISetTextAppService, System.ServiceModel.IClientChannel {
+    public interface ISetTextAppServiceChannel : JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextAppService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SetTextAppServiceClient : System.ServiceModel.ClientBase<JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.ISetTextAppService>, JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.ISetTextAppService {
+    public partial class SetTextAppServiceClient : System.ServiceModel.ClientBase<JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextAppService>, JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextAppService {
         
         public SetTextAppServiceClient() {
         }
@@ -195,19 +195,19 @@ namespace JJ.Apps.SetText.AppService.DemoClient.SetTextAppService {
                 base(binding, remoteAddress) {
         }
         
-        public JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel Show() {
+        public JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel Show() {
             return base.Channel.Show();
         }
         
-        public System.Threading.Tasks.Task<JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel> ShowAsync() {
+        public System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel> ShowAsync() {
             return base.Channel.ShowAsync();
         }
         
-        public JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel viewModel) {
+        public JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel viewModel) {
             return base.Channel.Save(viewModel);
         }
         
-        public System.Threading.Tasks.Task<JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel viewModel) {
+        public System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel viewModel) {
             return base.Channel.SaveAsync(viewModel);
         }
     }

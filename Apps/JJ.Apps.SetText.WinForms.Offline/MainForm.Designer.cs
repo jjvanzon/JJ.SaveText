@@ -1,6 +1,6 @@
-﻿namespace JJ.Apps.SetText.AppService.DemoClient
+﻿namespace JJ.Apps.SetText.WinForms.Offline
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.

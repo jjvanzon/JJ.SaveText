@@ -12,10 +12,11 @@ using JJ.Apps.SetText.ViewModels.Helpers;
 using JJ.Business.SetText;
 using Canonical = JJ.Models.Canonical;
 using JJ.Models.Canonical;
+using JJ.Apps.SetText.PresenterInterfaces;
 
 namespace JJ.Apps.SetText.Presenters
 {
-    public class SetTextPresenter
+    public class SetTextPresenter : ISetTextPresenter
     {
         private IEntityRepository _entityRepository;
         private TextSetter _textSetter;

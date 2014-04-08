@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.AppService.DemoClient.SetTextAppService;
+﻿using JJ.Apps.SetText.WinForms.Online.SetTextAppService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JJ.Apps.SetText.AppService.DemoClient
+namespace JJ.Apps.SetText.WinForms.Online
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private SetTextViewModel _viewModel;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace JJ.Apps.SetText.AppService.DemoClient
             _viewModel.Text = textBoxText.Text;
         }
 
-        private void Show()
+        private new void Show()
         {
             using (var service = new SetTextAppServiceClient())
             {

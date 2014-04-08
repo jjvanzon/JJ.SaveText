@@ -2,15 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 using System.Text;
 
-namespace JJ.Apps.SetText.AppService
+namespace JJ.Apps.SetText.PresenterInterfaces
 {
     [ServiceContract]
-    public interface ISetTextAppService
+    public interface ISetTextPresenter
     {
         [OperationContract]
         SetTextViewModel Show();

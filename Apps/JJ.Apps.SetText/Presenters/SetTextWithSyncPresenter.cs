@@ -8,10 +8,11 @@ using System.Text;
 using JJ.Apps.SetText.ViewModels.Helpers;
 using Canonical = JJ.Models.Canonical;
 using JJ.Models.Canonical;
+using JJ.Apps.SetText.PresenterInterfaces;
 
 namespace JJ.Apps.SetText.Presenters
 {
-    public class SetTextWithSyncPresenter
+    public class SetTextWithSyncPresenter : ISetTextWithSyncPresenter
     {
         private IEntityRepository _entityRepository;
         private TextSetter _textSetter;
@@ -39,6 +40,7 @@ namespace JJ.Apps.SetText.Presenters
                 _entityRepository.Commit();
             }
 
+            // TODO: In a stateful situation and when there are validation messages, this wil overwrite my original value!
             SetTextWithSyncViewModel viewModel2 = CreateViewModel();
             viewModel2.ValidationMessages = saveResult.ValidationMessages;
             viewModel2.TextWasSavedMessageVisible = saveResult.Successful;

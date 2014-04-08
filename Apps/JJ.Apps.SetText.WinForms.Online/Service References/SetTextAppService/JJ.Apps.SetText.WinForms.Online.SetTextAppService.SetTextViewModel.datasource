@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="SetTextViewModel" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>JJ.Apps.SetText.AppService.DemoClient.SetTextAppService.SetTextViewModel, Service References.SetTextAppService.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel, Service References.SetTextAppService.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

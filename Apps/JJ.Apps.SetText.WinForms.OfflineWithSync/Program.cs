@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JJ.Apps.SetText.AppService.DemoClient
+namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace JJ.Apps.SetText.AppService.DemoClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
