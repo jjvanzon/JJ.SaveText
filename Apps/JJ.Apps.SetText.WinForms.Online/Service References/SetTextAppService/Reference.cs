@@ -152,46 +152,46 @@ namespace JJ.Apps.SetText.WinForms.Online.SetTextAppService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SetTextAppService.ISetTextAppService")]
-    public interface ISetTextAppService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SetTextAppService.ISetTextPresenter")]
+    public interface ISetTextPresenter {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Show", ReplyAction="http://tempuri.org/ISetTextAppService/ShowResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextPresenter/Show", ReplyAction="http://tempuri.org/ISetTextPresenter/ShowResponse")]
         JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel Show();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Show", ReplyAction="http://tempuri.org/ISetTextAppService/ShowResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextPresenter/Show", ReplyAction="http://tempuri.org/ISetTextPresenter/ShowResponse")]
         System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel> ShowAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Save", ReplyAction="http://tempuri.org/ISetTextAppService/SaveResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextPresenter/Save", ReplyAction="http://tempuri.org/ISetTextPresenter/SaveResponse")]
         JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel viewModel);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Save", ReplyAction="http://tempuri.org/ISetTextAppService/SaveResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextPresenter/Save", ReplyAction="http://tempuri.org/ISetTextPresenter/SaveResponse")]
         System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.SetTextAppService.SetTextViewModel viewModel);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISetTextAppServiceChannel : JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextAppService, System.ServiceModel.IClientChannel {
+    public interface ISetTextPresenterChannel : JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextPresenter, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SetTextAppServiceClient : System.ServiceModel.ClientBase<JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextAppService>, JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextAppService {
+    public partial class SetTextPresenterClient : System.ServiceModel.ClientBase<JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextPresenter>, JJ.Apps.SetText.WinForms.Online.SetTextAppService.ISetTextPresenter {
         
-        public SetTextAppServiceClient() {
+        public SetTextPresenterClient() {
         }
         
-        public SetTextAppServiceClient(string endpointConfigurationName) : 
+        public SetTextPresenterClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public SetTextAppServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public SetTextPresenterClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public SetTextAppServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public SetTextPresenterClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public SetTextAppServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public SetTextPresenterClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

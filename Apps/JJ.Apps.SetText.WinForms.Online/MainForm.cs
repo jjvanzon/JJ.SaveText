@@ -34,7 +34,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private new void Show()
         {
-            using (var service = new SetTextAppServiceClient())
+            using (var service = new SetTextPresenterClient ())
             {
                 _viewModel = service.Show();
                 ApplyViewModel();
@@ -43,7 +43,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private void Save()
         {
-            using (var service = new SetTextAppServiceClient())
+            using (var service = new SetTextPresenterClient())
             {
                 _viewModel = service.Save(_viewModel);
                 ApplyViewModel();

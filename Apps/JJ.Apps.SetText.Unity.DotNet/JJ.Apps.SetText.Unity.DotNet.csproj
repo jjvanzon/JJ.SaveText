@@ -38,10 +38,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.Xml\JJ.Framework.Persistence.Xml.csproj">
-      <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
-      <Name>JJ.Framework.Persistence.Xml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence.Memory\JJ.Models.SetText.Persistence.Memory.csproj">
       <Project>{becfecbe-8ec2-485e-921e-2fb6fe048aac}</Project>
       <Name>JJ.Models.SetText.Persistence.Memory</Name>
