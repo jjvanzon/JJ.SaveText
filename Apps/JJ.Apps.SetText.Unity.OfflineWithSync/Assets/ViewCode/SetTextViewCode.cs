@@ -18,6 +18,7 @@ using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
+using JJ.Apps.SetText.AppService.Interface.Clients;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -136,30 +137,5 @@ public class SetTextViewCode : MonoBehaviour
 	{
 		string url = "http://localhost:51116/SetTextWithSyncAppService.svc";
 		return new SetTextWithSyncAppServiceClient (url);
-	}
-	
-	private class SetTextWithSyncAppServiceClient : ClientBase<ISetTextWithSyncPresenter>, ISetTextWithSyncPresenter
-	{
-		public SetTextWithSyncAppServiceClient(string url)
-			: base(new BasicHttpBinding(), new EndpointAddress(url))
-		{ }
-		
-		public SetTextWithSyncViewModel Show()
-		{
-			SetTextWithSyncViewModel viewModel = Channel.Show ();
-			// TODO: Null-coallesce with a better pattern? Null-coallesce at all?
-			viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<ValidationMessage>();
-			return viewModel;
-		}
-		
-		public SetTextWithSyncViewModel Save(SetTextWithSyncViewModel viewModel)
-		{
-			return Channel.Save (viewModel);
-		}
-		
-		public SetTextWithSyncViewModel Synchronize(SetTextWithSyncViewModel viewModel)
-		{
-			return Channel.Synchronize (viewModel);
-		}
 	}
 }

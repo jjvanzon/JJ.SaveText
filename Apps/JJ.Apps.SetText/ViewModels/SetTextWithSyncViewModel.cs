@@ -14,7 +14,7 @@ namespace JJ.Apps.SetText.ViewModels
         public string Text { get; set; }
 
         [DataMember]
-        public List<ValidationMessage> ValidationMessages { get; set; }
+        public IList<ValidationMessage> ValidationMessages { get; set; }
 
         [DataMember]
         public bool TextWasSavedMessageVisible { get; set; }

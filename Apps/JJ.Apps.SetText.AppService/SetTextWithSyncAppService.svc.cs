@@ -12,10 +12,11 @@ using JJ.Apps.SetText.AppService.Helpers;
 using JJ.Apps.SetText.Presenters;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Apps.SetText.PresenterInterfaces;
+using JJ.Apps.SetText.AppService.Interface;
 
 namespace JJ.Apps.SetText.AppService
 {
-    public class SetTextWithSyncAppService : ISetTextWithSyncPresenter
+    public class SetTextWithSyncAppService : ISetTextWithSyncAppService
     {
         public SetTextWithSyncViewModel Show()
         {

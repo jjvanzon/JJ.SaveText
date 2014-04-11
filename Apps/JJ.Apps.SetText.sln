@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Of
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.OnlineOfflineSwitched", "JJ.Apps.SetText.WinForms.OnlineOfflineSwitched\JJ.Apps.SetText.WinForms.OnlineOfflineSwitched.csproj", "{59A98F56-001A-4094-B783-E7024768F425}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService.Interface", "JJ.Apps.SetText.AppService.Interface\JJ.Apps.SetText.AppService.Interface.csproj", "{4A052265-9896-4D0B-A9B0-14D052BC95D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -346,6 +348,12 @@ Global
 		{59A98F56-001A-4094-B783-E7024768F425}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
 		{59A98F56-001A-4094-B783-E7024768F425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A98F56-001A-4094-B783-E7024768F425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A052265-9896-4D0B-A9B0-14D052BC95D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A052265-9896-4D0B-A9B0-14D052BC95D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A052265-9896-4D0B-A9B0-14D052BC95D0}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A052265-9896-4D0B-A9B0-14D052BC95D0}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{4A052265-9896-4D0B-A9B0-14D052BC95D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A052265-9896-4D0B-A9B0-14D052BC95D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

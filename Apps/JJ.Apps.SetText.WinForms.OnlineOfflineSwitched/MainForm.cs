@@ -15,6 +15,8 @@ using JJ.Framework.Persistence.Xml;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
+using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.AppService.Interface.Clients;
 
 namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 {

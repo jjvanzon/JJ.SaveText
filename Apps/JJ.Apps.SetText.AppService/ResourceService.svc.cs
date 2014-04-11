@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.AppService.Interface.Models;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;

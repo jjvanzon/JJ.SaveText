@@ -81,7 +81,7 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxText);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "JJ.Apps.SetText.WinForms.OfflineWithSync";
             this.ResumeLayout(false);
             this.PerformLayout();
 

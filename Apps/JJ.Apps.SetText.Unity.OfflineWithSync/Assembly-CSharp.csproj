@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ViewCode\SetTextViewCode.cs" />
+ <Reference Include="JJ.Apps.SetText.AppService.Interface">
+ <HintPath>Assets\Libraries\JJ.Apps.SetText.AppService.Interface.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Apps.SetText">
  <HintPath>Assets\Libraries\JJ.Apps.SetText.dll</HintPath>
  </Reference>
@@ -105,13 +108,13 @@
  <HintPath>Assets\Libraries\SgmlReaderDll.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\Libraries\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
+ <HintPath>Assets\Libraries\en-US\JJ.Apps.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Business.SetText.resources">
  <HintPath>Assets\Libraries\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
- <HintPath>Assets\Libraries\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
+ <HintPath>Assets\Libraries\en-US\JJ.Framework.Validation.resources.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.Serialization">
  <HintPath>Assets\Plugins\System.Runtime.Serialization.dll</HintPath>

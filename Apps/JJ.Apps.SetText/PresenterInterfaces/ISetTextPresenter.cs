@@ -7,13 +7,9 @@ using System.Text;
 
 namespace JJ.Apps.SetText.PresenterInterfaces
 {
-    [ServiceContract]
     public interface ISetTextPresenter
     {
-        [OperationContract]
         SetTextViewModel Show();
-
-        [OperationContract]
         SetTextViewModel Save(SetTextViewModel viewModel);
     }
 }

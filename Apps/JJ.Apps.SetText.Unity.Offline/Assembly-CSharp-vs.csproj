@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ViewCode\SetTextViewCode.cs" />
+ <Reference Include="JJ.Apps.SetText.AppService.Interface">
+ <HintPath>Assets\Libraries\JJ.Apps.SetText.AppService.Interface.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Apps.SetText">
  <HintPath>Assets\Libraries\JJ.Apps.SetText.dll</HintPath>
  </Reference>

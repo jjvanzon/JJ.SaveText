@@ -60,16 +60,16 @@
             this.labelValidationMessages.TabIndex = 2;
             this.labelValidationMessages.Text = "label1";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 353);
+            this.ClientSize = new System.Drawing.Size(371, 353);
             this.Controls.Add(this.labelValidationMessages);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxText);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "JJ.Apps.SetText.WinForms.Offline";
             this.ResumeLayout(false);
             this.PerformLayout();
 
