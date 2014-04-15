@@ -42,12 +42,18 @@ namespace JJ.Apps.SetText.Presenters
             if (result.Successful)
             {
                 _entityRepository.Commit();
+                SetTextViewModel viewModel2 = CreateViewModel();
+                viewModel2.TextWasSavedMessageVisible = true;
+                return viewModel2;
             }
-
-            SetTextViewModel viewModel2 = CreateViewModel();
-            viewModel2.ValidationMessages = result.ValidationMessages;
-            viewModel2.TextWasSavedMessageVisible = result.Successful;
-            return viewModel2;
+            else
+            {
+                SetTextViewModel viewModel2 = CreateViewModel();
+                viewModel2.ValidationMessages = result.ValidationMessages;
+                viewModel2.TextWasSavedMessageVisible = false;
+                viewModel2.Text = viewModel.Text; // Keep entered value.
+                return viewModel2;
+            }
         }
 
         private SetTextViewModel CreateViewModel()

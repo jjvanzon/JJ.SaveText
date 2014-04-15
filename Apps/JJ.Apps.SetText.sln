@@ -80,6 +80,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Services", "..\Framework\JJ.Framework.Services\JJ.Framework.Services.csproj", "{9C4C8C7E-240F-46BD-A9BF-CF1875A026F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Online", "JJ.Apps.SetText.WinForms.Online\JJ.Apps.SetText.WinForms.Online.csproj", "{FBBB9772-A706-4881-AA42-F3EBCA7A272B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0F59DBC8-E641-496D-9DA6-059E4EFE01EF} = {0F59DBC8-E641-496D-9DA6-059E4EFE01EF}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Offline", "JJ.Apps.SetText.WinForms.Offline\JJ.Apps.SetText.WinForms.Offline.csproj", "{C0871BAD-F76E-4EB8-AD78-858B794122AE}"
 EndProject

@@ -17,6 +17,7 @@ using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Apps.SetText.AppService.Interface;
 using JJ.Apps.SetText.AppService.Interface.Clients;
+using JJ.Apps.SetText.Resources;
 
 namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 {
@@ -29,6 +30,8 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
         public MainForm()
         {
             InitializeComponent();
+
+            SetTitlesAndLabels();
 
             GoOffline();
 
@@ -76,12 +79,12 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 
             if (_viewModel.TextWasSavedMessageVisible)
             {
-                sb.AppendLine("Saved!");
+                sb.AppendLine(Messages.Saved);
             }
 
             if (_viewModel.SyncSuccessfulMessageVisible)
             {
-                sb.AppendLine("Synchronized with server!");
+                sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
             foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
@@ -96,10 +99,15 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 
             if (_viewModel.TextWasSavedButNotYetSynchronized)
             {
-                sb.AppendLine("Synchronization pending.");
+                sb.AppendLine(Messages.SynchronizationPending);
             }
 
             labelValidationMessages.Text = sb.ToString();
+        }
+
+        private void SetTitlesAndLabels()
+        {
+            buttonSave.Text = Titles.SetText;
         }
 
         // Online / Offline
@@ -125,11 +133,11 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
         {
             if (IsOnline)
             {
-                buttonSwitchBetweenOnlineAndOffline.Text = "Go Offline";
+                buttonSwitchBetweenOnlineAndOffline.Text = Titles.GoOffline;
             }
             else
             {
-                buttonSwitchBetweenOnlineAndOffline.Text = "Go Online";
+                buttonSwitchBetweenOnlineAndOffline.Text = Titles.GoOnline;
             }
         }
 

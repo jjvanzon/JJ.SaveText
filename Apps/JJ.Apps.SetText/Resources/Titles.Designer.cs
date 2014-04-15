@@ -61,11 +61,38 @@ namespace JJ.Apps.SetText.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GoOffline.
+        /// </summary>
+        public static string GoOffline {
+            get {
+                return ResourceManager.GetString("GoOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GoOnline.
+        /// </summary>
+        public static string GoOnline {
+            get {
+                return ResourceManager.GetString("GoOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SetText.
         /// </summary>
         public static string SetText {
             get {
                 return ResourceManager.GetString("SetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Synchronize.
+        /// </summary>
+        public static string Synchronize {
+            get {
+                return ResourceManager.GetString("Synchronize", resourceCulture);
             }
         }
     }

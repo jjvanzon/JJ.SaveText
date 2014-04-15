@@ -38,16 +38,19 @@ namespace JJ.Apps.SetText.Presenters
             if (saveResult.Successful)
             {
                 _entityRepository.Commit();
+                SetTextWithSyncViewModel viewModel2 = CreateViewModel();
+                viewModel2.TextWasSavedMessageVisible = true;
+                viewModel2.TextWasSavedButNotYetSynchronized = saveResult.Successful;
+                return viewModel2;
             }
-
-            // TODO: In a stateful situation and when there are validation messages, this wil overwrite my original value!
-            SetTextWithSyncViewModel viewModel2 = CreateViewModel();
-            viewModel2.ValidationMessages = saveResult.ValidationMessages;
-            viewModel2.TextWasSavedMessageVisible = saveResult.Successful;
-
-            viewModel2.TextWasSavedButNotYetSynchronized = saveResult.Successful;
-
-            return viewModel2;
+            else
+            {
+                SetTextWithSyncViewModel viewModel2 = CreateViewModel();
+                viewModel2.TextWasSavedMessageVisible = false;
+                viewModel2.ValidationMessages = saveResult.ValidationMessages;
+                viewModel2.Text = viewModel.Text; // Keep entered value.
+                return viewModel2;
+            }
         }
 
         /// <summary>
@@ -64,20 +67,22 @@ namespace JJ.Apps.SetText.Presenters
             if (syncResult.Successful)
             {
                 _entityRepository.Commit();
-            }
-
-            SetTextWithSyncViewModel viewModel2 = CreateViewModel();
-            viewModel2.SyncValidationMessages = syncResult.ValidationMessages;
-            viewModel2.SyncSuccessfulMessageVisible = syncResult.Successful;
-
-            if (syncResult.Successful)
-            {
+                SetTextWithSyncViewModel viewModel2 = CreateViewModel();
+                viewModel2.SyncValidationMessages = syncResult.ValidationMessages;
+                viewModel2.SyncSuccessfulMessageVisible = true;
                 viewModel2.TextWasSavedButNotYetSynchronized = false;
+                return viewModel2;
             }
-
-            return viewModel2;
+            else
+            {
+                SetTextWithSyncViewModel viewModel2 = CreateViewModel();
+                viewModel2.SyncValidationMessages = syncResult.ValidationMessages;
+                viewModel2.SyncSuccessfulMessageVisible = false;
+                viewModel2.Text = viewModel.Text; // Keep entered value.
+                return viewModel2;
+            }
         }
-
+        
         private SetTextWithSyncViewModel CreateViewModel()
         {
             string text = _textSetter.GetText();

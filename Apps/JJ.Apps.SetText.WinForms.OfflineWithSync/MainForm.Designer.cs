@@ -65,7 +65,7 @@
             // 
             this.buttonSynchronize.Location = new System.Drawing.Point(274, 50);
             this.buttonSynchronize.Name = "buttonSynchronize";
-            this.buttonSynchronize.Size = new System.Drawing.Size(75, 23);
+            this.buttonSynchronize.Size = new System.Drawing.Size(100, 23);
             this.buttonSynchronize.TabIndex = 3;
             this.buttonSynchronize.Text = "Synchronize";
             this.buttonSynchronize.UseVisualStyleBackColor = true;

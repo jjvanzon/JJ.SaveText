@@ -14,6 +14,8 @@ using JJ.Business.SetText;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
+using System.Globalization;
+using System.Threading;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -31,6 +33,13 @@ public class SetTextViewCode : MonoBehaviour
 
 	void OnGUI()
 	{
+		// Don't know how to do it properly.
+		if (CultureInfo.CurrentUICulture.Name == "en-US") 
+		{
+			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
+			Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
+		}
+
 		if (_viewModel == null)
 		{
 			Show ();

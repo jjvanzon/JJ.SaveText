@@ -30,6 +30,6 @@ namespace JJ.Apps.SetText.ViewModels
         public bool SyncSuccessfulMessageVisible { get; set; }
 
         [DataMember]
-        public List<ValidationMessage> SyncValidationMessages { get; set; }
+        public IList<ValidationMessage> SyncValidationMessages { get; set; }
     }
 }

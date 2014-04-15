@@ -68,5 +68,23 @@ namespace JJ.Apps.SetText.Resources {
                 return ResourceManager.GetString("Saved", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SynchronizationPending.
+        /// </summary>
+        public static string SynchronizationPending {
+            get {
+                return ResourceManager.GetString("SynchronizationPending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SynchronizedWithServer.
+        /// </summary>
+        public static string SynchronizedWithServer {
+            get {
+                return ResourceManager.GetString("SynchronizedWithServer", resourceCulture);
+            }
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿using JJ.Apps.SetText.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -17,6 +16,8 @@ using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Apps.SetText.AppService.Interface;
 using JJ.Apps.SetText.AppService.Interface.Clients;
+using JJ.Apps.SetText.Resources;
+using JJ.Apps.SetText.ViewModels;
 
 namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 {
@@ -34,6 +35,8 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
             _context = CreateContext();
             _presenter = CreatePresenter(_context);
             _appService = CreateAppServiceClient();
+
+            SetTitlesAndLabels();
 
             Show();
         }
@@ -79,12 +82,12 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 
             if (_viewModel.TextWasSavedMessageVisible)
             {
-                sb.AppendLine("Saved!");
+                sb.AppendLine(Messages.Saved);
             }
 
             if (_viewModel.SyncSuccessfulMessageVisible)
             {
-                sb.AppendLine("Synchronized with server!");
+                sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
             foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
@@ -99,10 +102,17 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 
             if (_viewModel.TextWasSavedButNotYetSynchronized)
             {
-                sb.AppendLine("Synchronization pending.");
+                sb.AppendLine(Messages.SynchronizationPending);
             }
 
             labelValidationMessages.Text = sb.ToString();
+        }
+
+
+        private void SetTitlesAndLabels()
+        {
+            buttonSave.Text = Titles.SetText;
+            buttonSynchronize.Text = Titles.Synchronize;
         }
 
         private ISetTextWithSyncPresenter CreatePresenter(IContext context)

@@ -19,6 +19,7 @@ using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.AppService.Interface.Clients;
+using System.Globalization;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -36,6 +37,13 @@ public class SetTextViewCode : MonoBehaviour
 
 	void OnGUI()
 	{
+		// Don't know how to do it properly.
+		if (CultureInfo.CurrentUICulture.Name == "en-US") 
+		{
+			System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
+			System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
+		}
+
 		if (_viewModel == null)
 		{
 			Show ();
@@ -66,7 +74,7 @@ public class SetTextViewCode : MonoBehaviour
 
 		if (_viewModel.SyncSuccessfulMessageVisible) 
 		{
-			GUI.Label (new Rect (10, 350, 200, 20), "Synchronized with server.");
+			GUI.Label (new Rect (10, 350, 200, 20), Messages.SynchronizedWithServer);
 			y += 30;
 		}
 		

@@ -1,5 +1,6 @@
 ﻿using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.Presenters;
+using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Framework.Persistence;
 using JJ.Models.Canonical;
@@ -28,7 +29,9 @@ namespace JJ.Apps.SetText.WinForms.Offline
 
             _context = CreateContext();
             _presenter = CreatePresenter(_context);
-            
+
+            SetTitlesAndLabels();
+
             Show();
         }
 
@@ -61,7 +64,7 @@ namespace JJ.Apps.SetText.WinForms.Offline
             var sb = new StringBuilder();
             if (_viewModel.TextWasSavedMessageVisible)
             {
-                sb.AppendLine("Saved!");
+                sb.AppendLine(Messages.Saved);
             }
 
             foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
@@ -70,6 +73,11 @@ namespace JJ.Apps.SetText.WinForms.Offline
             }
 
             labelValidationMessages.Text = sb.ToString();
+        }
+
+        private void SetTitlesAndLabels()
+        {
+            buttonSave.Text = Titles.SetText;
         }
 
         private ISetTextPresenter CreatePresenter(IContext context)
