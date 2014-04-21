@@ -145,7 +145,7 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
                     return false;
                 }
 
-                throw new Exception(String.Format("_presenter is of an unexpected type: {0}.", _presenter.GetType()));
+                throw new Exception("Both _service and _presenter are null.");
             }
         }
 
