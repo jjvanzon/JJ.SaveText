@@ -81,27 +81,17 @@ public class SetTextViewCode : MonoBehaviour
 
 	private void Show()
 	{
-		var appService = CreateServiceClient();
-		try
+		using (var appService = CreateServiceClient())
 		{
 			_viewModel = appService.Show();
-		}
-		finally
-		{
-			appService.Close ();
 		}
 	}
 
 	private void Save()
 	{
-		var appService = CreateServiceClient();
-		try
+		using (var appService = CreateServiceClient())
 		{
 			_viewModel = appService.Save(_viewModel);
-		}
-		finally
-		{
-			appService.Close ();
 		}
 	}
 

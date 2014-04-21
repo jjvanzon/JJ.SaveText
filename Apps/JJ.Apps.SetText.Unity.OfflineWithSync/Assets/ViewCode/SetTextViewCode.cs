@@ -157,15 +157,12 @@ public class SetTextViewCode : MonoBehaviour
 			if (serviceIsAvailable)
 			{
 				Debug.Log("serviceIsAvailable");
-				var appService = CreateServiceClient();
-				try
+
+				using (SetTextWithSyncAppServiceClient appService = CreateServiceClient())
 				{
 					_viewModel = appService.Synchronize(_viewModel);
+
 					Debug.Log("Synchronized");
-				}
-				finally
-				{
-					appService.Close ();
 				}
 			}
 		}
