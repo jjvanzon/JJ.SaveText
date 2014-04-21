@@ -26,10 +26,7 @@ using System.Globalization;
 public class SetTextViewCode : MonoBehaviour
 {
 	private SetTextWithSyncViewModel _viewModel;
-	private System.Threading.Timer _timerSynchronization;
-
-	//private int _checkServiceIsAvailableCounter;
-	//private string _httpStatus;
+	private System.Threading.Timer _syncTimer;
 
 	// Use this for initialization
 	void Start ()
@@ -43,19 +40,14 @@ public class SetTextViewCode : MonoBehaviour
 
 	void OnGUI()
 	{
-		// Don't know how to do it properly in Unity.
-		if (CultureInfo.CurrentUICulture.Name == "en-US") 
-		{
-			System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
-			System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
-		}
+		EnsureCultureIsInitialized ();
 
 		if (_viewModel == null)
 		{
 			Show ();
 		}
 
-		InitializeTimerSynchronization ();
+		EnsureSyncTimerIsInitialized ();
 
 		int y = 50;
 
@@ -97,18 +89,20 @@ public class SetTextViewCode : MonoBehaviour
 			GUI.Label (new Rect (10, y, 200, 20), validationMessage.Text);
 			y += 30;
 		}
+	}
 
-		//if (_checkServiceIsAvailableCounter > 0)
-		//{
-		//	GUI.Label (new Rect (10, y, 400, 50), String.Format ("Check service is available counter: {0}.", _checkServiceIsAvailableCounter));
-		//	y += 60;
-		//}
+	private void EnsureCultureIsInitialized()
+	{
+		// Don't know how to do it properly in Unity.
+		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
+		    CultureInfo.CurrentUICulture.Name == "") 
+		{
+			CultureInfo cultureInfo = new CultureInfo("nl-NL");
+			Thread.CurrentThread.CurrentUICulture = cultureInfo;
+			Thread.CurrentThread.CurrentCulture = cultureInfo;
 
-		//if (_checkServiceIsAvailableCounter > 0)
-		//{
-		//	GUI.Label (new Rect (10, y, 400, 20), String.Format ("Last HTTP status: {0}.", _httpStatus));
-		//	y += 30;
-		//}
+			Debug.Log("Culture is initialized.");
+		}
 	}
 
 	private void Show()
@@ -133,19 +127,23 @@ public class SetTextViewCode : MonoBehaviour
 
 	// Synchronization
 
-	private void InitializeTimerSynchronization()
+	private void EnsureSyncTimerIsInitialized()
 	{
-		if (_timerSynchronization == null) 
+		if (_syncTimer == null) 
 		{
-			_timerSynchronization = new System.Threading.Timer(
-				timerSynchronizationCallback, 
+			_syncTimer = new System.Threading.Timer(
+				syncTimerCallback, 
 				null, 
-				0,
-				GetSynchronizationTimerIntervalInMilliseconds ());
+				GetSyncTimerIntervalInMilliseconds(),
+				GetSyncTimerIntervalInMilliseconds());
+
+			Debug.Log("_syncTimer is initialized.");
 		}
 	}
-	private void timerSynchronizationCallback(object state)
+	private void syncTimerCallback(object state)
 	{
+		Debug.Log("syncTimerCallback");
+
 		Async(() => ConditionalSynchronize());
 	}
 
@@ -153,18 +151,30 @@ public class SetTextViewCode : MonoBehaviour
 	{
 		if (_viewModel.TextWasSavedButNotYetSynchronized)
 		{
+			Debug.Log("TextWasSavedButNotYetSynchronized");
+
 			bool serviceIsAvailable = CheckServiceIsAvailable();
 			if (serviceIsAvailable)
 			{
+				Debug.Log("serviceIsAvailable");
 				var appService = CreateServiceClient();
-				_viewModel = appService.Synchronize(_viewModel);
-				appService.Close ();
+				try
+				{
+					_viewModel = appService.Synchronize(_viewModel);
+					Debug.Log("Synchronized");
+				}
+				finally
+				{
+					appService.Close ();
+				}
 			}
 		}
 	}
 
 	private bool CheckServiceIsAvailable()
 	{
+		Debug.Log("CheckServiceIsAvailable");
+
 		string url = GetUrl ();
 		int timeout = GetCheckServiceAvailabilityTimeoutInMilliseconds();
 		
@@ -175,18 +185,17 @@ public class SetTextViewCode : MonoBehaviour
 		try
 		{
 			HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-			//_httpStatus = response.StatusCode.ToString ();
+
+			Debug.Log(String.Format ("HTTP status: {0}.", response.StatusCode));
+
 			return response.StatusCode == HttpStatusCode.OK;
 		}
 		catch (WebException ex)
 		{
-			//_httpStatus = "EXCEPTION! " + ex.Message;
+			Debug.Log(String.Format ("EXCEPTION! {0}", ex.Message));
+
 			return false;
 		}
-		//finally
-		//{
-		//	_checkServiceIsAvailableCounter++;
-		//}
 	}
 
 	private void Async(Action action)
@@ -200,7 +209,8 @@ public class SetTextViewCode : MonoBehaviour
 	private IContext CreateContext()
 	{
 		//IContext context = new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
-		IContext context = new XmlContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
+		string folderPath = Application.persistentDataPath;
+		IContext context = new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
 		return context;
 	}
 
@@ -217,7 +227,7 @@ public class SetTextViewCode : MonoBehaviour
 		return 2000;
 	}
 
-	private int GetSynchronizationTimerIntervalInMilliseconds()
+	private int GetSyncTimerIntervalInMilliseconds()
 	{
 		// TODO: Make setting.
 		return 5000;

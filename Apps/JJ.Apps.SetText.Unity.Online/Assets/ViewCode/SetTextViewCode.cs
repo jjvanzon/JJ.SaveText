@@ -37,12 +37,7 @@ public class SetTextViewCode : MonoBehaviour
 
 	void OnGUI()
 	{
-		// Don't know how to do it properly.
-		if (CultureInfo.CurrentUICulture.Name == "en-US") 
-		{
-			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
-			Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
-		}
+		EnsureCultureIsInitialized ();
 
 		if (_viewModel == null)
 		{
@@ -73,16 +68,41 @@ public class SetTextViewCode : MonoBehaviour
 		}
 	}
 
+	private void EnsureCultureIsInitialized()
+	{
+		// Don't know how to do it properly.
+		if (CultureInfo.CurrentUICulture.Name == "en-US") 
+		{
+			CultureInfo cultureInfo = new CultureInfo("nl-NL");
+			Thread.CurrentThread.CurrentUICulture = cultureInfo;
+			Thread.CurrentThread.CurrentCulture = cultureInfo;
+		}
+	}
+
 	private void Show()
 	{
 		var appService = CreateServiceClient();
-		_viewModel = appService.Show();
+		try
+		{
+			_viewModel = appService.Show();
+		}
+		finally
+		{
+			appService.Close ();
+		}
 	}
 
 	private void Save()
 	{
 		var appService = CreateServiceClient();
-		_viewModel = appService.Save(_viewModel);
+		try
+		{
+			_viewModel = appService.Save(_viewModel);
+		}
+		finally
+		{
+			appService.Close ();
+		}
 	}
 
 	private SetTextAppServiceClient CreateServiceClient()

@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="..\JJ.Apps.SetText.Unity.Offline\Assets\ViewCode\SetTextViewCode.cs">
     <Files>
-      <File FileName="..\JJ.Apps.SetText.Unity.Offline\Assets\ViewCode\SetTextViewCode.cs" Line="68" Column="27" />
+      <File FileName="..\JJ.Apps.SetText.Unity.Offline\Assets\ViewCode\SetTextViewCode.cs" Line="105" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

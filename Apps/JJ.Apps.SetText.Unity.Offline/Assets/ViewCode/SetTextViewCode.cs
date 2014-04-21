@@ -33,13 +33,7 @@ public class SetTextViewCode : MonoBehaviour
 
 	void OnGUI()
 	{
-		// Don't know how to do it properly.
-		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
-		    CultureInfo.CurrentUICulture.Name == "") 
-		{
-			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
-			Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
-		}
+		EnsureCultureIsInitialized ();
 
 		if (_viewModel == null)
 		{
@@ -70,6 +64,18 @@ public class SetTextViewCode : MonoBehaviour
 		}
 	}
 
+	private void EnsureCultureIsInitialized()
+	{
+		// Don't know how to do it properly in Unity.
+		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
+		    CultureInfo.CurrentUICulture.Name == "") 
+		{
+			CultureInfo cultureInfo = new CultureInfo("nl-NL");
+			Thread.CurrentThread.CurrentUICulture = cultureInfo;
+			Thread.CurrentThread.CurrentCulture = cultureInfo;
+		}
+	}
+
 	private void Show()
 	{
 		using (IContext context = CreateContext()) 
@@ -93,8 +99,6 @@ public class SetTextViewCode : MonoBehaviour
 	private IContext CreateContext()
 	{
 		//return new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
-
-		//string folderPath = "";
 		string folderPath = Application.persistentDataPath;
 		return new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
 	}
