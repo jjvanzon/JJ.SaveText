@@ -1,5 +1,8 @@
-﻿using JJ.Apps.SetText.WinForms.Online.ResourceService;
-using JJ.Apps.SetText.WinForms.Online.SetTextAppService;
+﻿using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.Resources;
+using JJ.Apps.SetText.ViewModels;
+using JJ.Framework.Configuration;
+using JJ.Models.Canonical;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +41,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private new void Show()
         {
-            using (var service = new SetTextAppServiceClient())
+            using (SetTextAppServiceClient service = CreateAppServiceClient())
             {
                 _viewModel = service.Show();
                 ApplyViewModel();
@@ -47,7 +50,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private void Save()
         {
-            using (var service = new SetTextAppServiceClient())
+            using (SetTextAppServiceClient service = CreateAppServiceClient())
             {
                 _viewModel = service.Save(_viewModel);
                 ApplyViewModel();
@@ -56,7 +59,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private void SetTitlesAndLabels()
         {
-            buttonSave.Text = ResourceHelper.Titles.SetText;
+            buttonSave.Text = Titles.SetText;
         }
 
         private void ApplyViewModel()
@@ -66,7 +69,7 @@ namespace JJ.Apps.SetText.WinForms.Online
             var sb = new StringBuilder();
             if (_viewModel.TextWasSavedMessageVisible)
             {
-                sb.AppendLine(ResourceHelper.Messages.Saved);
+                sb.AppendLine(Messages.Saved);
             }
 
             foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
@@ -75,6 +78,12 @@ namespace JJ.Apps.SetText.WinForms.Online
             }
 
             labelValidationMessages.Text = sb.ToString();
+        }
+
+        private SetTextAppServiceClient CreateAppServiceClient()
+        {
+            string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
+            return new SetTextAppServiceClient(url);
         }
     }
 }

@@ -15,9 +15,10 @@ using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.AppService.Interface.Clients;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
+using System.Net;
+using System.Threading;
 
 namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 {
@@ -36,6 +37,7 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
             _presenter = CreatePresenter(_context);
             _appService = CreateAppServiceClient();
 
+            InitializeTimerConditionalSynchronize();
             SetTitlesAndLabels();
 
             Show();
@@ -51,11 +53,6 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
             _viewModel.Text = textBoxText.Text;
         }
 
-        private void buttonSynchronize_Click(object sender, EventArgs e)
-        {
-            Synchronize();
-        }
-
         private new void Show()
         {
             _viewModel = _presenter.Show();
@@ -65,12 +62,6 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
         private void Save()
         {
             _viewModel = _presenter.Save(_viewModel);
-            ApplyViewModel();
-        }
-
-        private void Synchronize()
-        {
-            _viewModel = _appService.Synchronize(_viewModel);
             ApplyViewModel();
         }
 
@@ -108,11 +99,9 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
             labelValidationMessages.Text = sb.ToString();
         }
 
-
         private void SetTitlesAndLabels()
         {
             buttonSave.Text = Titles.SetText;
-            buttonSynchronize.Text = Titles.Synchronize;
         }
 
         private ISetTextWithSyncPresenter CreatePresenter(IContext context)
@@ -131,6 +120,63 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
         {
             string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
             return new SetTextWithSyncAppServiceClient(url);
+        }
+
+        // Synchronization
+
+        private void InitializeTimerConditionalSynchronize()
+        {
+            timerSynchronization.Interval = AppSettings<IAppSettings>.Get(x => x.SynchronizationTimerIntervalInMilliseconds);
+        }
+
+        private void timerSynchronization_Tick(object sender, EventArgs e)
+        {
+            Async(() => ConditionalSynchronize());
+        }
+
+        private void ConditionalSynchronize()
+        {
+            if (_viewModel.TextWasSavedButNotYetSynchronized)
+            {
+                bool serviceIsAvailable = CheckServiceIsAvailable();
+                if (serviceIsAvailable)
+                {
+                    _viewModel = _appService.Synchronize(_viewModel);
+
+                    OnUiThread(() => ApplyViewModel());
+                }
+            }
+        }
+
+        private bool CheckServiceIsAvailable()
+        {
+            string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
+            int timeout = AppSettings<IAppSettings>.Get(x => x.CheckServiceAvailabilityTimeoutInMilliseconds);
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Timeout = timeout;
+
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                return response.StatusCode == HttpStatusCode.OK;
+            }
+            catch (WebException)
+            {
+                return false;
+            }
+        }
+
+        private void Async(Action action)
+        {
+            var thread = new Thread(new ThreadStart(action));
+            thread.Start();
+        }
+
+        private void OnUiThread(Action action)
+        {
+            this.BeginInvoke(action);
         }
     }
 }

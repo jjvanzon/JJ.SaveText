@@ -80,6 +80,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IResourceService.cs" />
+    <Compile Include="ResourceService\Labels.cs" />
+    <Compile Include="ResourceService\Messages.cs" />
+    <Compile Include="ResourceService\Titles.cs" />
     <Compile Include="SetTextWithSyncAppService.svc.cs">
       <DependentUpon>SetTextWithSyncAppService.svc</DependentUpon>
     </Compile>

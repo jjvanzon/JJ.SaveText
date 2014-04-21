@@ -15,6 +15,6 @@ namespace JJ.Models.SetText.Persistence.EntityFramework5
     public partial class Entity
     {
         public int ID { get; set; }
-        public string Test { get; set; }
+        public string Text { get; set; }
     }
 }

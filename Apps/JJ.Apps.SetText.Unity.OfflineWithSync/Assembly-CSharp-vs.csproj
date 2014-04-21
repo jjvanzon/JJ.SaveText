@@ -108,7 +108,7 @@
  <HintPath>Assets\Libraries\SgmlReaderDll.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\Libraries\en-US\JJ.Apps.SetText.resources.dll</HintPath>
+ <HintPath>Assets\Libraries\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Business.SetText.resources">
  <HintPath>Assets\Libraries\nl-NL\JJ.Business.SetText.resources.dll</HintPath>

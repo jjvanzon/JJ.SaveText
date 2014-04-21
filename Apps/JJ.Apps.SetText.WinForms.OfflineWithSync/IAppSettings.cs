@@ -9,5 +9,7 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
     internal interface IAppSettings
     {
         string AppServiceUrl { get; }
+        int SynchronizationTimerIntervalInMilliseconds { get; }
+        int CheckServiceAvailabilityTimeoutInMilliseconds { get; }
     }
 }

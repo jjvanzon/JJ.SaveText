@@ -35,18 +35,23 @@
             // 
             // textBoxText
             // 
-            this.textBoxText.Location = new System.Drawing.Point(60, 23);
+            this.textBoxText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxText.Location = new System.Drawing.Point(8, 8);
             this.textBoxText.Multiline = true;
             this.textBoxText.Name = "textBoxText";
-            this.textBoxText.Size = new System.Drawing.Size(152, 119);
+            this.textBoxText.Size = new System.Drawing.Size(401, 168);
             this.textBoxText.TabIndex = 0;
             this.textBoxText.TextChanged += new System.EventHandler(this.textBoxText_TextChanged);
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(105, 167);
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.Location = new System.Drawing.Point(154, 197);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Size = new System.Drawing.Size(106, 23);
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -54,9 +59,10 @@
             // 
             // labelValidationMessages
             // 
-            this.labelValidationMessages.Location = new System.Drawing.Point(73, 217);
+            this.labelValidationMessages.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelValidationMessages.Location = new System.Drawing.Point(8, 249);
             this.labelValidationMessages.Name = "labelValidationMessages";
-            this.labelValidationMessages.Size = new System.Drawing.Size(155, 85);
+            this.labelValidationMessages.Size = new System.Drawing.Size(401, 94);
             this.labelValidationMessages.TabIndex = 2;
             this.labelValidationMessages.Text = "label1";
             // 
@@ -64,11 +70,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 353);
+            this.ClientSize = new System.Drawing.Size(417, 351);
             this.Controls.Add(this.labelValidationMessages);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxText);
             this.Name = "MainForm";
+            this.Padding = new System.Windows.Forms.Padding(8);
             this.Text = "JJ.Apps.SetText.WinForms.Offline";
             this.ResumeLayout(false);
             this.PerformLayout();

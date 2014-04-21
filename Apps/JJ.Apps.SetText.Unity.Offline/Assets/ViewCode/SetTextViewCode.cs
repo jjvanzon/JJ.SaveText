@@ -34,7 +34,8 @@ public class SetTextViewCode : MonoBehaviour
 	void OnGUI()
 	{
 		// Don't know how to do it properly.
-		if (CultureInfo.CurrentUICulture.Name == "en-US") 
+		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
+		    CultureInfo.CurrentUICulture.Name == "") 
 		{
 			Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("nl-NL");
 			Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("nl-NL");
@@ -91,8 +92,10 @@ public class SetTextViewCode : MonoBehaviour
 
 	private IContext CreateContext()
 	{
-		//IContext context = new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
-		IContext context = new XmlContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
-		return context;
+		//return new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
+
+		//string folderPath = "";
+		string folderPath = Application.persistentDataPath;
+		return new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
 	}
 }

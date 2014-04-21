@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SetTextDB_DEVModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SetTextDB_DEVModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="SetTextDB_DEVModelStoreContainer">
           <EntitySet Name="Entity" EntityType="SetTextDB_DEVModel.Store.Entity" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -13,10 +13,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="Test" Type="varchar" Nullable="false" MaxLength="1024" />
+          <Property Name="Text" Type="varchar" Nullable="false" MaxLength="1024" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SetTextDB_DEVModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -28,7 +27,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Test" Type="String" Nullable="false" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -39,8 +38,8 @@
           <EntitySetMapping Name="Entities">
             <EntityTypeMapping TypeName="SetTextDB_DEVModel.Entity">
               <MappingFragment StoreEntitySet="Entity">
+                <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Test" ColumnName="Test" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
