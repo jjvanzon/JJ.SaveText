@@ -18,17 +18,17 @@ namespace JJ.Apps.SetText.AppService.Interface
             : base(new BasicHttpBinding(), new EndpointAddress(url))
         { }
 
-        public SetTextWithSyncViewModel Show()
+        public SetTextViewModel Show()
         {
             return Channel.Show();
         }
 
-        public SetTextWithSyncViewModel Save(SetTextWithSyncViewModel viewModel)
+        public SetTextViewModel Save(SetTextViewModel viewModel)
         {
             return Channel.Save(viewModel);
         }
 
-        public SetTextWithSyncViewModel Synchronize(SetTextWithSyncViewModel viewModel)
+        public SetTextViewModel Synchronize(SetTextViewModel viewModel)
         {
             return Channel.Synchronize(viewModel);
         }

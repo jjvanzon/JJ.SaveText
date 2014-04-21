@@ -61,7 +61,6 @@
     </Compile>
     <Compile Include="ViewModels\Helpers\ViewModelExtensions_NullCoallesce.cs" />
     <Compile Include="ViewModels\SetTextViewModel.cs" />
-    <Compile Include="ViewModels\SetTextWithSyncViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\JJ.Business.SetText\JJ.Business.SetText.csproj">

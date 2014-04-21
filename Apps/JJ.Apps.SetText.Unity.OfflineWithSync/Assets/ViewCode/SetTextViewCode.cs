@@ -25,7 +25,7 @@ using System.Globalization;
 
 public class SetTextViewCode : MonoBehaviour
 {
-	private SetTextWithSyncViewModel _viewModel;
+	private SetTextViewModel _viewModel;
 	private System.Threading.Timer _syncTimer;
 
 	// Use this for initialization
@@ -81,12 +81,6 @@ public class SetTextViewCode : MonoBehaviour
 		if (_viewModel.SyncSuccessfulMessageVisible) 
 		{
 			GUI.Label (new Rect (10, 350, 200, 20), Messages.SynchronizedWithServer);
-			y += 30;
-		}
-		
-		foreach (var validationMessage in _viewModel.SyncValidationMessages) 
-		{
-			GUI.Label (new Rect (10, y, 200, 20), validationMessage.Text);
 			y += 30;
 		}
 	}

@@ -18,7 +18,7 @@ namespace JJ.Apps.SetText.AppService
 {
     public class SetTextWithSyncAppService : ISetTextWithSyncAppService
     {
-        public SetTextWithSyncViewModel Show()
+        public SetTextViewModel Show()
         {
             using (IContext context = PersistenceHelper.CreateContext())
             {
@@ -29,7 +29,7 @@ namespace JJ.Apps.SetText.AppService
             }
         }
 
-        public SetTextWithSyncViewModel Save(SetTextWithSyncViewModel viewModel)
+        public SetTextViewModel Save(SetTextViewModel viewModel)
         {
             using (IContext context = PersistenceHelper.CreateContext())
             {
@@ -40,7 +40,7 @@ namespace JJ.Apps.SetText.AppService
             }
         }
 
-        public SetTextWithSyncViewModel Synchronize(SetTextWithSyncViewModel viewModel)
+        public SetTextViewModel Synchronize(SetTextViewModel viewModel)
         {
             using (IContext context = PersistenceHelper.CreateContext())
             {

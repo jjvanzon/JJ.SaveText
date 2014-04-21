@@ -9,8 +9,8 @@ namespace JJ.Apps.SetText.PresenterInterfaces
 {
     public interface ISetTextWithSyncPresenter
     {
-        SetTextWithSyncViewModel Show();
-        SetTextWithSyncViewModel Save(SetTextWithSyncViewModel viewModel);
-        SetTextWithSyncViewModel Synchronize(SetTextWithSyncViewModel viewModel);
+        SetTextViewModel Show();
+        SetTextViewModel Save(SetTextViewModel viewModel);
+        SetTextViewModel Synchronize(SetTextViewModel viewModel);
     }
 }

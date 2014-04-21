@@ -8,6 +8,7 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 {
     internal interface IAppSettings
     {
-        string AppServiceUrl { get; }
+        string SetTextWithSyncAppServiceUrl { get; }
+        string SetTextAppServiceUrl { get; }
     }
 }

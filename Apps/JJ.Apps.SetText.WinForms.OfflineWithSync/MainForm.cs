@@ -26,7 +26,7 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
     {
         private IContext _context;
         private ISetTextWithSyncPresenter _presenter;
-        private SetTextWithSyncViewModel _viewModel;
+        private SetTextViewModel _viewModel;
         private ISetTextWithSyncPresenter _appService;
 
         public MainForm()
@@ -82,11 +82,6 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
             }
 
             foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
-            {
-                sb.AppendLine(validationMessage.Text);
-            }
-
-            foreach (ValidationMessage validationMessage in _viewModel.SyncValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

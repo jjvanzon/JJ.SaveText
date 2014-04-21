@@ -14,12 +14,12 @@ namespace JJ.Apps.SetText.AppService.Interface
     public interface ISetTextWithSyncAppService
     {
         [OperationContract]
-        SetTextWithSyncViewModel Show();
+        SetTextViewModel Show();
 
         [OperationContract]
-        SetTextWithSyncViewModel Save(SetTextWithSyncViewModel viewModel);
+        SetTextViewModel Save(SetTextViewModel viewModel);
 
         [OperationContract]
-        SetTextWithSyncViewModel Synchronize(SetTextWithSyncViewModel viewModel);
+        SetTextViewModel Synchronize(SetTextViewModel viewModel);
     }
 }

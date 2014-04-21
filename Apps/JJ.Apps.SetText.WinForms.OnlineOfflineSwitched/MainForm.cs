@@ -17,14 +17,16 @@ using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Apps.SetText.AppService.Interface;
 using JJ.Apps.SetText.Resources;
+using JJ.Framework.Common;
 
 namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 {
     public partial class MainForm : Form
     {
         private IContext _context;
-        private ISetTextWithSyncPresenter _presenter;
-        private SetTextWithSyncViewModel _viewModel;
+        private SetTextWithSyncPresenter _presenter;
+        private SetTextAppServiceClient _service;
+        private SetTextViewModel _viewModel;
 
         public MainForm()
         {
@@ -36,6 +38,17 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 
             Show();
         }
+
+        ~MainForm()
+        {
+            if (_service != null)
+            {
+                IDisposable disposable = _service as IDisposable;
+                disposable.Dispose();
+            }
+        }
+
+        // Events
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -52,23 +65,35 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
             SwitchBetweenOnlineAndOffline();
         }
 
+        // Actions
+
         private new void Show()
         {
-            _viewModel = _presenter.Show();
+            if (IsOnline)
+            {
+                _viewModel = _service.Show();
+            }
+            else
+            {
+                _viewModel = _presenter.Show();
+            }
             ApplyViewModel();
         }
 
         private void Save()
         {
-            _viewModel = _presenter.Save(_viewModel);
+            if (IsOnline)
+            {
+                _viewModel = _service.Save(_viewModel);
+            }
+            else
+            {
+                _viewModel = _presenter.Save(_viewModel);
+            }
             ApplyViewModel();
         }
 
-        private void Synchronize()
-        {
-            _viewModel = _presenter.Synchronize(_viewModel);
-            ApplyViewModel();
-        }
+        // Apply to GUI
 
         private void ApplyViewModel()
         {
@@ -91,11 +116,6 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
                 sb.AppendLine(validationMessage.Text);
             }
 
-            foreach (ValidationMessage validationMessage in _viewModel.SyncValidationMessages)
-            {
-                sb.AppendLine(validationMessage.Text);
-            }
-
             if (_viewModel.TextWasSavedButNotYetSynchronized)
             {
                 sb.AppendLine(Messages.SynchronizationPending);
@@ -113,7 +133,20 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 
         private bool IsOnline
         {
-            get { return _presenter is SetTextWithSyncAppServiceClient; }
+            get 
+            {
+                if (_service != null)
+                {
+                    return true;
+                }
+
+                if (_presenter != null)
+                {
+                    return false;
+                }
+
+                throw new Exception(String.Format("_presenter is of an unexpected type: {0}.", _presenter.GetType()));
+            }
         }
 
         private void SwitchBetweenOnlineAndOffline()
@@ -142,34 +175,58 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 
         private void GoOnline()
         {
+            // Synchronize
+            using (SetTextWithSyncAppServiceClient appServiceWithSync = CreateAppServiceClientWithSync())
+            {
+                _viewModel = appServiceWithSync.Synchronize(_viewModel);
+                ApplyViewModel();
+            }
+
+            // Clean up presenter
             if (_context != null)
             {
                 _context.Dispose();
                 _context = null;
             }
+            _presenter = null;
 
-            _presenter = CreateOnlinePresenter();
+            // Create app service client
+            _service = CreateAppServiceClient();
 
-            Synchronize();
-
+            // Apply to GUI
             ApplyIsOnline();
         }
 
         private void GoOffline()
         {
-            _context = CreateContext();
-            _presenter = CreateOfflinePresenter(_context);
+            // Clean up app service client
+            if (_service != null)
+            {
+                _service.Close();
+                _service = null;
+            }
 
+            // Create presenter
+            _context = CreateContext();
+            _presenter = CreatePresenter(_context);
+
+            // Apply to GUI
             ApplyIsOnline();
         }
 
-        private ISetTextWithSyncPresenter CreateOnlinePresenter()
+        private SetTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
+            string url = AppSettings<IAppSettings>.Get(x => x.SetTextWithSyncAppServiceUrl);
             return new SetTextWithSyncAppServiceClient(url);
         }
 
-        private ISetTextWithSyncPresenter CreateOfflinePresenter(IContext context)
+        private SetTextAppServiceClient CreateAppServiceClient()
+        {
+            string url = AppSettings<IAppSettings>.Get(x => x.SetTextAppServiceUrl);
+            return new SetTextAppServiceClient(url);
+        }
+
+        private SetTextWithSyncPresenter CreatePresenter(IContext context)
         {
             IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
             return new SetTextWithSyncPresenter(repository);

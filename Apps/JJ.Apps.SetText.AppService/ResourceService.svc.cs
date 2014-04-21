@@ -1,6 +1,5 @@
 ﻿using JJ.Apps.SetText.AppService.Interface;
 using JJ.Apps.SetText.AppService.Models;
-using JJ.Apps.SetText.AppService.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
