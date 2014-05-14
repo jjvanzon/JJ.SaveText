@@ -112,6 +112,10 @@
       <Project>{ae912326-cda3-4cba-b8db-e59b36e403b3}</Project>
       <Name>JJ.Business.SetText</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Configuration\JJ.Framework.Configuration.csproj">
+      <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
+      <Name>JJ.Framework.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.EntityFramework5\JJ.Framework.Persistence.EntityFramework5.csproj">
       <Project>{9676e4c3-1a1f-45b8-8ffd-c398f14002e7}</Project>
       <Name>JJ.Framework.Persistence.EntityFramework5</Name>

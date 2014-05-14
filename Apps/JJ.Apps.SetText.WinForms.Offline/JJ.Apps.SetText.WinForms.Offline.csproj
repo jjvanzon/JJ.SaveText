@@ -41,6 +41,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm.cs">
@@ -82,9 +83,9 @@
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.Xml\JJ.Framework.Persistence.Xml.csproj">
-      <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
-      <Name>JJ.Framework.Persistence.Xml</Name>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.Xml.Linq\JJ.Framework.Persistence.Xml.Linq.csproj">
+      <Project>{ba423767-a57e-4278-bba8-5c01f3e8d555}</Project>
+      <Name>JJ.Framework.Persistence.Xml.Linq</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence\JJ.Framework.Persistence.csproj">
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
@@ -94,9 +95,9 @@
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Models.Canonical</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence.Xml\JJ.Models.SetText.Persistence.Xml.csproj">
-      <Project>{292046bb-5667-4231-b8aa-bad57cd1b481}</Project>
-      <Name>JJ.Models.SetText.Persistence.Xml</Name>
+    <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence.Xml.Linq\JJ.Models.SetText.Persistence.Xml.Linq.csproj">
+      <Project>{6b54e0e9-ff92-4dd9-93a4-262544e74163}</Project>
+      <Name>JJ.Models.SetText.Persistence.Xml.Linq</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence\JJ.Models.SetText.Persistence.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>

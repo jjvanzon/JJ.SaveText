@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_WP8;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_WINRT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_SERIALIZATION_BY_CODEGENERATION;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,7 +39,7 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/WP8Support/Tools/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
 	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
@@ -56,14 +56,8 @@
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\Libraries\JJ.Framework.Common.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Configuration">
- <HintPath>Assets\Libraries\JJ.Framework.Configuration.dll</HintPath>
- </Reference>
  <Reference Include="JJ.Framework.Net4">
  <HintPath>Assets\Libraries\JJ.Framework.Net4.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Net45">
- <HintPath>Assets\Libraries\JJ.Framework.Net45.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Persistence">
  <HintPath>Assets\Libraries\JJ.Framework.Persistence.dll</HintPath>
@@ -71,17 +65,14 @@
  <Reference Include="JJ.Framework.Persistence.Memory">
  <HintPath>Assets\Libraries\JJ.Framework.Persistence.Memory.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Persistence.Xml">
- <HintPath>Assets\Libraries\JJ.Framework.Persistence.Xml.dll</HintPath>
+ <Reference Include="JJ.Framework.Persistence.Xml.Linq">
+ <HintPath>Assets\Libraries\JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Reflection">
  <HintPath>Assets\Libraries\JJ.Framework.Reflection.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Validation">
  <HintPath>Assets\Libraries\JJ.Framework.Validation.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Xml">
- <HintPath>Assets\Libraries\JJ.Framework.Xml.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.Canonical">
  <HintPath>Assets\Libraries\JJ.Models.Canonical.dll</HintPath>
@@ -95,11 +86,8 @@
  <Reference Include="JJ.Models.SetText.Persistence.Memory">
  <HintPath>Assets\Libraries\JJ.Models.SetText.Persistence.Memory.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Models.SetText.Persistence.Xml">
- <HintPath>Assets\Libraries\JJ.Models.SetText.Persistence.Xml.dll</HintPath>
- </Reference>
- <Reference Include="SgmlReaderDll">
- <HintPath>Assets\Libraries\SgmlReaderDll.dll</HintPath>
+ <Reference Include="JJ.Models.SetText.Persistence.Xml.Linq">
+ <HintPath>Assets\Libraries\JJ.Models.SetText.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.resources">
  <HintPath>Assets\Libraries\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
@@ -109,6 +97,12 @@
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
  <HintPath>Assets\Libraries\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization">
+ <HintPath>Assets\Plugins\System.Runtime.Serialization.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.Linq">
+ <HintPath>Assets\Plugins\System.Xml.Linq.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
