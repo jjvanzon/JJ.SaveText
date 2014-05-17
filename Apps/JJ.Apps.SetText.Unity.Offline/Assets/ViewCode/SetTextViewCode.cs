@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using System.Globalization;
+using System.Threading;
 using JJ.Framework.Common;
 using JJ.Framework.Persistence;
-//using JJ.Framework.Persistence.Memory;
-//using JJ.Framework.Persistence.Xml;
+using JJ.Framework.Persistence.Memory;
 using JJ.Framework.Persistence.Xml.Linq;
+using JJ.Business.SetText;
+using JJ.Business.SetText.Resources;
 using JJ.Models.SetText;
-//using JJ.Models.SetText.Persistence.Memory.Mapping;
-//using JJ.Models.SetText.Persistence.Xml.Mapping;
-using JJ.Models.SetText.Persistence.Xml.Linq.Mapping;
 using JJ.Models.SetText.Persistence.Repositories;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
-using JJ.Business.SetText;
+using JJ.Models.SetText.Persistence.Memory.Mapping;
+using JJ.Models.SetText.Persistence.Xml.Linq.Mapping;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
-using System.Globalization;
-using System.Threading;
-using System;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -43,13 +42,8 @@ public class SetTextViewCode : MonoBehaviour
 		{
 			if (_lastException != null)
 			{
-				/*if (_lastException.InnerException != null)
-				{
-					_lastException = _lastException.InnerException;
-				}*/
 				string exceptionMessage = ExceptionHelper.FormatExceptionWithInnerExceptions(_lastException, includeStackTrace: true);
-				GUI.Label (new Rect(0, 0, 580, 1500), exceptionMessage);
-				//GUI.Label (new Rect(0, 25, 600, 1200), _lastException.StackTrace);
+				GUI.Label (new Rect(0, 0, 580, 3000), exceptionMessage);
 				if (GUI.Button (new Rect(580, 0, 100, 20), "Clear"))
 				{
 					_lastException = null;
@@ -98,94 +92,6 @@ public class SetTextViewCode : MonoBehaviour
 		}
 	}
 
-	/*private void EnsureCultureIsInitialized()
-	{
-		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
-			CultureInfo.CurrentUICulture.Name == "") 
-		{
-			CultureInfo cultureInfo = GetCultureInfo ("nl-NL");
-			JJ.Apps.SetText.Resources.Labels.Culture = cultureInfo;
-			JJ.Apps.SetText.Resources.Titles.Culture = cultureInfo;
-			JJ.Apps.SetText.Resources.Messages.Culture = cultureInfo;
-			JJ.Business.SetText.Resources.PropertyDisplayNames.Culture = cultureInfo;
-			// Oops, not public.
-			//JJ.Framework.Validation.Resources
-		}
-	}*/
-
-	private void EnsureCultureIsInitialized()
-	{
-		// 2014-05-11: Temporarily skip this to get it to run in iOS.
-		//return;
-
-		if (_debugInfo == null)
-		{
-			_debugInfo = "";
-			_debugInfo += "EnsureCultureIsInitialized()" + Environment.NewLine;
-			_debugInfo += "Initial CurrentUICulture = " + CultureInfo.CurrentUICulture.Name + ", ";
-			_debugInfo += "Initial CurrentCulture = " + CultureInfo.CurrentCulture.Name + Environment.NewLine;
-		}
-
-		// Don't know how to do it properly in Unity.
-		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
-		    CultureInfo.CurrentUICulture.Name == "")
-		{
-			CultureInfo cultureInfo = GetCultureInfo("nl-NL");
-			Thread.CurrentThread.CurrentUICulture = cultureInfo;
-			_debugInfo += "CurrentUICulture changed to nl-NL, ";
-		}
-
-		if (CultureInfo.CurrentCulture.Name == "en-US" ||
-		    CultureInfo.CurrentCulture.Name == "") 
-		{
-			CultureInfo cultureInfo = GetCultureInfo("nl-NL");
-			Thread.CurrentThread.CurrentCulture = cultureInfo;
-			_debugInfo += "CurrentCulture changed to nl-NL, ";
-		}
-
-		
-		if (Messages.Culture == null ||
-			Messages.Culture.Name == "en-US" ||
-		    Messages.Culture.Name == "") 
-		{
-			CultureInfo cultureInfo = GetCultureInfo("nl-NL");
-			Messages.Culture = cultureInfo;
-			_debugInfo += "Messages.Culture changed to nl-NL, ";
-		}
-		
-		if (Labels.Culture == null ||
-		    Labels.Culture.Name == "en-US" ||
-		    Labels.Culture.Name == "") 
-		{
-			CultureInfo cultureInfo = GetCultureInfo("nl-NL");
-			Labels.Culture = cultureInfo;
-			_debugInfo += "Labels.Culture changed to nl-NL, ";
-		}
-		
-		if (Titles.Culture == null ||
-		    Titles.Culture.Name == "en-US" ||
-		    Titles.Culture.Name == "") 
-		{
-			CultureInfo cultureInfo = GetCultureInfo("nl-NL");
-			Titles.Culture = cultureInfo;
-			_debugInfo += "Titles.Culture changed to nl-NL, ";
-		}
-	}
-
-	private CultureInfo GetCultureInfo(string cultureName)
-	{
-		// On iOS the CultureInfo constructor does not work, because its implementation needs JIT compilation, which is not supported.
-		// But I think I remember that the GetCultureInfo has compatibilities with another platform (Android?)
-		//if (Application.platform == RuntimePlatform.IPhonePlayer) 
-		//{
-			return CultureInfo.GetCultureInfo (cultureName);
-		//}
-		//else
-		//{
-		//	return new CultureInfo(cultureName);
-		//}
-	}
-
 	private void Show()
 	{
 		using (IContext context = CreateContext()) 
@@ -206,12 +112,63 @@ public class SetTextViewCode : MonoBehaviour
 		}
 	}
 
+	// Culture
+
+	private bool _cultureIsInitialized = false;
+
+	private void EnsureCultureIsInitialized()
+	{
+		EnsureCultureIsInitialized_ByAssigningResourceCulture ();
+	}
+
+	private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
+	{
+		if (!_cultureIsInitialized)
+		{
+			_cultureIsInitialized = true;
+			
+			CultureInfo cultureInfo = GetCultureInfo ("nl-NL");
+			Labels.Culture = cultureInfo;
+			Titles.Culture = cultureInfo;
+			Messages.Culture = cultureInfo;
+			PropertyDisplayNames.Culture = cultureInfo;
+			JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
+		}
+	}
+	
+	private void EnsureCultureIsInitialized_ByAssigningThreadCulture()
+	{
+		if (!_cultureIsInitialized)
+		{
+			_cultureIsInitialized = true;
+
+			CultureInfo cultureInfo = GetCultureInfo ("nl-NL");
+			Thread.CurrentThread.CurrentUICulture = cultureInfo;
+			Thread.CurrentThread.CurrentCulture = cultureInfo;
+		}
+	}
+
+	private CultureInfo GetCultureInfo(string cultureName)
+	{
+		return new CultureInfo(cultureName);
+	}
+
+	// Persistence
+
 	private IContext CreateContext()
 	{
-		//return new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
+		return CreateXmlContext ();
+	}
 
+	private IContext CreateMemoryContext()
+	{
+		return new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
+	}
+
+	private IContext CreateXmlContext()
+	{
 		// Windows Phone will not take the absolute location that Application.persistentDataPath.
-		// TODO: Is there a better property to use than Application.persistentDataPath, that will work on all the platforms we target?
+		// TODO: Is there a better property to use than Application.persistentDataPath, that will work on all the targeted platforms?
 		string folderPath;
 		if (Application.platform == RuntimePlatform.WP8Player) 
 		{
@@ -219,10 +176,9 @@ public class SetTextViewCode : MonoBehaviour
 		}
 		else
 		{
-			 folderPath = Application.persistentDataPath;
+			folderPath = Application.persistentDataPath;
 		}
-
-		//return new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
+		
 		return new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Linq.Mapping.EntityMapping).Assembly);
 	}
 }
