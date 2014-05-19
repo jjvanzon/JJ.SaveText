@@ -48,61 +48,61 @@
   <ItemGroup>
      <Compile Include="Assets\ViewCode\SetTextViewCode.cs" />
  <Reference Include="JJ.Apps.SetText">
- <HintPath>Assets\Libraries\JJ.Apps.SetText.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Business.SetText">
- <HintPath>Assets\Libraries\JJ.Business.SetText.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Business.SetText.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Common">
- <HintPath>Assets\Libraries\JJ.Framework.Common.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Net4">
- <HintPath>Assets\Libraries\JJ.Framework.Net4.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Net4.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Persistence">
- <HintPath>Assets\Libraries\JJ.Framework.Persistence.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Persistence.Memory">
- <HintPath>Assets\Libraries\JJ.Framework.Persistence.Memory.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.Memory.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Persistence.Xml.Linq">
- <HintPath>Assets\Libraries\JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Reflection">
- <HintPath>Assets\Libraries\JJ.Framework.Reflection.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Reflection.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Validation">
- <HintPath>Assets\Libraries\JJ.Framework.Validation.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Validation.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.Canonical">
- <HintPath>Assets\Libraries\JJ.Models.Canonical.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Models.Canonical.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.SetText">
- <HintPath>Assets\Libraries\JJ.Models.SetText.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.SetText.Persistence">
- <HintPath>Assets\Libraries\JJ.Models.SetText.Persistence.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.SetText.Persistence.Memory">
- <HintPath>Assets\Libraries\JJ.Models.SetText.Persistence.Memory.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.Memory.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.SetText.Persistence.Xml.Linq">
- <HintPath>Assets\Libraries\JJ.Models.SetText.Persistence.Xml.Linq.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\Libraries\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\en-US\JJ.Apps.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Business.SetText.resources">
- <HintPath>Assets\Libraries\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
- <HintPath>Assets\Libraries\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\en-US\JJ.Framework.Validation.resources.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.Serialization">
- <HintPath>Assets\Plugins\System.Runtime.Serialization.dll</HintPath>
+ <HintPath>Assets\Mono\System.Runtime.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="System.Xml.Linq">
- <HintPath>Assets\Plugins\System.Xml.Linq.dll</HintPath>
+ <HintPath>Assets\Mono\System.Xml.Linq.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
