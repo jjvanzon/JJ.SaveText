@@ -50,6 +50,9 @@
  <Reference Include="JJ.Apps.SetText">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Apps.SetText.Unity.DotNet">
+ <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Unity.DotNet.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Business.SetText">
  <HintPath>Assets\DotNetAssemblies\JJ.Business.SetText.dll</HintPath>
  </Reference>
@@ -90,13 +93,13 @@
  <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\DotNetAssemblies\en-US\JJ.Apps.SetText.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Business.SetText.resources">
  <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
- <HintPath>Assets\DotNetAssemblies\en-US\JJ.Framework.Validation.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.Serialization">
  <HintPath>Assets\Mono\System.Runtime.Serialization.dll</HintPath>

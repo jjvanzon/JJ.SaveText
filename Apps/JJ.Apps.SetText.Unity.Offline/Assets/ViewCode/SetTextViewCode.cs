@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿// Offline
+
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using System.Globalization;
 using System.Threading;
+using System.Reflection;
 using JJ.Framework.Common;
 using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Memory;
@@ -162,7 +165,9 @@ public class SetTextViewCode : MonoBehaviour
 
 	private IContext CreateMemoryContext()
 	{
-		return new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
+		Assembly modelAssembly = typeof(Entity).Assembly;
+		Assembly mappingAssembly = typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly;
+		return new MemoryContext("", modelAssembly, mappingAssembly);
 	}
 
 	private IContext CreateXmlContext()
@@ -178,7 +183,9 @@ public class SetTextViewCode : MonoBehaviour
 		{
 			folderPath = Application.persistentDataPath;
 		}
-		
-		return new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Linq.Mapping.EntityMapping).Assembly);
+
+		Assembly modelAssembly = typeof(Entity).Assembly;
+		Assembly mappingAssembly = typeof(JJ.Models.SetText.Persistence.Xml.Linq.Mapping.EntityMapping).Assembly;
+		return new XmlContext(folderPath, modelAssembly, mappingAssembly);
 	}
 }
