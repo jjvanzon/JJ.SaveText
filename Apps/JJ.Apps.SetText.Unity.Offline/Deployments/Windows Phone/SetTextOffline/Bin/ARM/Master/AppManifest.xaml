@@ -1,0 +1,32 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="SetTextOffline" EntryPointType="SetTextOffline.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="SetTextOffline" Source="SetTextOffline.dll" />
+    <AssemblyPart x:Name="Assembly-CSharp" Source="Assembly-CSharp.dll" />
+    <AssemblyPart x:Name="JJ.Apps.SetText" Source="JJ.Apps.SetText.dll" />
+    <AssemblyPart x:Name="JJ.Apps.SetText.Unity.DotNet" Source="JJ.Apps.SetText.Unity.DotNet.dll" />
+    <AssemblyPart x:Name="JJ.Business.SetText" Source="JJ.Business.SetText.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Common" Source="JJ.Framework.Common.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Net4" Source="JJ.Framework.Net4.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Persistence" Source="JJ.Framework.Persistence.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Persistence.Memory" Source="JJ.Framework.Persistence.Memory.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Persistence.Xml.Linq" Source="JJ.Framework.Persistence.Xml.Linq.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Reflection" Source="JJ.Framework.Reflection.dll" />
+    <AssemblyPart x:Name="JJ.Framework.Validation" Source="JJ.Framework.Validation.dll" />
+    <AssemblyPart x:Name="JJ.Models.Canonical" Source="JJ.Models.Canonical.dll" />
+    <AssemblyPart x:Name="JJ.Models.SetText" Source="JJ.Models.SetText.dll" />
+    <AssemblyPart x:Name="JJ.Models.SetText.Persistence" Source="JJ.Models.SetText.Persistence.dll" />
+    <AssemblyPart x:Name="JJ.Models.SetText.Persistence.Memory" Source="JJ.Models.SetText.Persistence.Memory.dll" />
+    <AssemblyPart x:Name="JJ.Models.SetText.Persistence.Xml.Linq" Source="JJ.Models.SetText.Persistence.Xml.Linq.dll" />
+    <AssemblyPart x:Name="UnityEngine" Source="UnityEngine.dll" />
+    <AssemblyPart x:Name="UnityEngineProxy" Source="UnityEngineProxy.dll" />
+    <AssemblyPart x:Name="WinRTBridge" Source="WinRTBridge.dll" />
+    <AssemblyPart x:Name="WinRTLegacy" Source="WinRTLegacy.dll" />
+    <AssemblyPart x:Name="BridgeInterface" Source="BridgeInterface.dll" />
+    <AssemblyPart x:Name="UnityEngineDelegates" Source="UnityEngineDelegates.dll" />
+    <AssemblyPart x:Name="UnityPlayer" Source="UnityPlayer.dll" />
+    <AssemblyPart Source="nl-NL/SetTextOffline.resources.dll" />
+    <AssemblyPart Source="nl-NL/JJ.Apps.SetText.resources.dll" />
+    <AssemblyPart Source="nl-NL/JJ.Business.SetText.resources.dll" />
+    <AssemblyPart Source="nl-NL/JJ.Framework.Validation.resources.dll" />
+  </Deployment.Parts>
+</Deployment>

@@ -61,23 +61,29 @@ public class SetTextViewCode : MonoBehaviour
 				Show ();
 			}
 
-			GUI.Label (new Rect (10, 50, 200, 20), Titles.SetText);
+			int y = 50;
 
-			GUI.Label (new Rect (10, 80, 200, 20), Labels.Text);
+			GUI.Label (new Rect (10, y, 200, 20), Titles.SetText);
+			y += 30;
 
-			_viewModel.Text = GUI.TextField (new Rect (10, 110, 200, 200), _viewModel.Text ?? "");
+			GUI.Label (new Rect (10, y, 200, 20), Labels.Text);
+			y += 30;
 
-			if (GUI.Button (new Rect (10, 320, 200, 20), Titles.SetText)) 
+			_viewModel.Text = GUI.TextField (new Rect (10, y, 200, 160), _viewModel.Text ?? "");
+			y += 170;
+
+			if (GUI.Button (new Rect (10, y, 200, 20), Titles.SetText)) 
 			{
 				Save();
 			}
+			y += 30;
 
 			if (_viewModel.TextWasSavedMessageVisible) 
 			{
-				GUI.Label (new Rect (10, 350, 200, 20), Messages.Saved);
+				GUI.Label (new Rect (10, y, 200, 20), Messages.Saved);
+				y += 30;
 			}
 
-			int y = 360;
 			foreach (var validationMessage in _viewModel.ValidationMessages) 
 			{
 				GUI.Label (new Rect (10, y, 200, 20), validationMessage.Text);
