@@ -95,5 +95,14 @@ namespace JJ.Apps.SetText.Resources {
                 return ResourceManager.GetString("Synchronize", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TryAgain.
+        /// </summary>
+        public static string TryAgain {
+            get {
+                return ResourceManager.GetString("TryAgain", resourceCulture);
+            }
+        }
     }
 }

@@ -10,6 +10,18 @@ namespace JJ.Apps.SetText.AppService.Models
     public class Titles
     {
         [DataMember]
+        public string GoOffline { get; set; }
+
+        [DataMember]
+        public string GoOnline { get; set; }
+
+        [DataMember]
         public string SetText { get; set; }
+
+        [DataMember]
+        public string Synchronize { get; set; }
+
+        [DataMember]
+        public string TryAgain { get; set; }
     }
 }

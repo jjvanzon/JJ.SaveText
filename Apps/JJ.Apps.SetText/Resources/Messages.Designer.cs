@@ -70,6 +70,15 @@ namespace JJ.Apps.SetText.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ServiceUnavailable {0}.
+        /// </summary>
+        public static string ServiceUnavailable {
+            get {
+                return ResourceManager.GetString("ServiceUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SynchronizationPending.
         /// </summary>
         public static string SynchronizationPending {

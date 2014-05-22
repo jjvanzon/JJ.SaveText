@@ -11,5 +11,14 @@ namespace JJ.Apps.SetText.AppService.Models
     {
         [DataMember]
         public string Saved { get; set; }
+
+        [DataMember]
+        public string ServiceUnavailable { get; set; }
+
+        [DataMember]
+        public string SynchronizationPending { get; set; }
+
+        [DataMember]
+        public string SynchronizedWithServer { get; set; }
     }
 }

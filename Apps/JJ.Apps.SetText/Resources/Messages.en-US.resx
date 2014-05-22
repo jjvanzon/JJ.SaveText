@@ -120,6 +120,10 @@
   <data name="Saved" xml:space="preserve">
     <value>Saved!</value>
   </data>
+  <data name="ServiceUnavailable" xml:space="preserve">
+    <value>Service unavailable. Attempts: {0}</value>
+    <comment>{0} = number of attempt</comment>
+  </data>
   <data name="SynchronizationPending" xml:space="preserve">
     <value>Synchronization pending.</value>
   </data>

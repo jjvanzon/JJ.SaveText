@@ -129,4 +129,7 @@
   <data name="Synchronize" xml:space="preserve">
     <value>Synchronize</value>
   </data>
+  <data name="TryAgain" xml:space="preserve">
+    <value>Try Again</value>
+  </data>
 </root>

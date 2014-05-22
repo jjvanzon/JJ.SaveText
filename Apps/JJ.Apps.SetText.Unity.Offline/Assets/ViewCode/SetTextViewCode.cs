@@ -26,12 +26,24 @@ using JJ.Apps.SetText.Resources;
 public class SetTextViewCode : MonoBehaviour
 {
 	private SetTextViewModel _viewModel;
+
+	private string _cultureName = "nl-NL";
+
 	private Exception _lastException;
 	private string _debugInfo;
 
-	// Use this for initialization
+	private int _width = 200;
+	private int _lineHeight = 24;
+	private int _spacing = 10;
+	private int _textBoxHeight = 160;
+	private GUIStyle _titleStyle;
+
 	void Start ()
 	{
+		_titleStyle = new GUIStyle ();
+		_titleStyle.fontStyle = FontStyle.Bold;
+		_titleStyle.fontSize = 14;
+		_titleStyle.normal.textColor = new Color (255, 255, 255);
 	}
 	
 	// Update is called once per frame
@@ -47,7 +59,7 @@ public class SetTextViewCode : MonoBehaviour
 			{
 				string exceptionMessage = ExceptionHelper.FormatExceptionWithInnerExceptions(_lastException, includeStackTrace: true);
 				GUI.Label (new Rect(0, 0, 580, 3000), exceptionMessage);
-				if (GUI.Button (new Rect(580, 0, 100, 20), "Clear"))
+				if (GUI.Button (new Rect(580, 0, 100, _lineHeight), "Clear"))
 				{
 					_lastException = null;
 				}
@@ -61,33 +73,38 @@ public class SetTextViewCode : MonoBehaviour
 				Show ();
 			}
 
-			int y = 50;
+			int y = _spacing;
 
-			GUI.Label (new Rect (10, y, 200, 20), Titles.SetText);
-			y += 30;
+			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Titles.SetText, _titleStyle);
+			y += _lineHeight;
+			y += _spacing;
 
-			GUI.Label (new Rect (10, y, 200, 20), Labels.Text);
-			y += 30;
+			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Labels.Text);
+			y += _lineHeight;
 
-			_viewModel.Text = GUI.TextField (new Rect (10, y, 200, 160), _viewModel.Text ?? "");
-			y += 170;
+			_viewModel.Text = GUI.TextField (new Rect (_spacing, y, _width, _textBoxHeight), _viewModel.Text ?? "");
+			y += _textBoxHeight;
+			y += _spacing;
 
-			if (GUI.Button (new Rect (10, y, 200, 20), Titles.SetText)) 
+			if (GUI.Button (new Rect (_spacing, y, _width, _lineHeight), Titles.SetText)) 
 			{
 				Save();
 			}
-			y += 30;
+			y += _lineHeight;
+			y += _spacing;
 
 			if (_viewModel.TextWasSavedMessageVisible) 
 			{
-				GUI.Label (new Rect (10, y, 200, 20), Messages.Saved);
-				y += 30;
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Messages.Saved);
+				y += _lineHeight;
+				y += _spacing;
 			}
 
 			foreach (var validationMessage in _viewModel.ValidationMessages) 
 			{
-				GUI.Label (new Rect (10, y, 200, 20), validationMessage.Text);
-				y += 30;
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), validationMessage.Text);
+				y += _lineHeight;
+				y += _spacing;
 			}
 
 			//if (!String.IsNullOrEmpty(_debugInfo))
@@ -136,7 +153,7 @@ public class SetTextViewCode : MonoBehaviour
 		{
 			_cultureIsInitialized = true;
 			
-			CultureInfo cultureInfo = GetCultureInfo ("nl-NL");
+			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
 			Labels.Culture = cultureInfo;
 			Titles.Culture = cultureInfo;
 			Messages.Culture = cultureInfo;
@@ -151,7 +168,7 @@ public class SetTextViewCode : MonoBehaviour
 		{
 			_cultureIsInitialized = true;
 
-			CultureInfo cultureInfo = GetCultureInfo ("nl-NL");
+			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
 			Thread.CurrentThread.CurrentUICulture = cultureInfo;
 			Thread.CurrentThread.CurrentCulture = cultureInfo;
 		}
@@ -159,6 +176,7 @@ public class SetTextViewCode : MonoBehaviour
 
 	private CultureInfo GetCultureInfo(string cultureName)
 	{
+		// This is compatible with more platforms.
 		return new CultureInfo(cultureName);
 	}
 
