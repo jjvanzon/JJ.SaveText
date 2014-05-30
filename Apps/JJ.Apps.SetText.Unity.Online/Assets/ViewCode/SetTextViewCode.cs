@@ -5,19 +5,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
-using System.ServiceModel;
 using JJ.Framework.Common;
 using JJ.Models.Canonical;
-using JJ.Models.SetText;
-using JJ.Business.SetText;
-using JJ.Business.SetText.Resources;
+//using JJ.Models.SetText;
+//using JJ.Business.SetText;
+//using JJ.Business.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
-using JJ.Apps.SetText.Resources;
-using JJ.Apps.SetText.PresenterInterfaces;
-using JJ.Apps.SetText.AppService.Interface;
+//using JJ.Apps.SetText.Resources;
+//using JJ.Apps.SetText.PresenterInterfaces;
+//using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.Unity.Online;
 using System.Globalization;
 using System.Threading;
 using System.Net;
+using System.ServiceModel;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class SetTextViewCode : MonoBehaviour
 	private int _spacing = 10;
 	private int _textBoxHeight = 160;
 	private GUIStyle _titleStyle;
+
+	private ResourceHelper _resourceHelper;
 	
 	void Start ()
 	{
@@ -45,6 +48,8 @@ public class SetTextViewCode : MonoBehaviour
 		_titleStyle.fontStyle = FontStyle.Bold;
 		_titleStyle.fontSize = 14;
 		_titleStyle.normal.textColor = new Color (255, 255, 255);
+
+		_resourceHelper = new ResourceHelper (_cultureName);
 	}
 	
 	// Update is called once per frame
@@ -71,12 +76,12 @@ public class SetTextViewCode : MonoBehaviour
 
 			if (_lastWebException != null)
 			{
-				string message = String.Format(Messages.ServiceUnavailable, _attempts);
+				string message = String.Format(_resourceHelper.Messages.ServiceUnavailable, _attempts);
 				GUI.Label (new Rect(_spacing, _spacing, _width, _lineHeight), message);
 				y += _lineHeight;
 				y += _spacing;
 
-				if (GUI.Button (new Rect(_spacing, y, _width, _lineHeight), Titles.TryAgain))
+				if (GUI.Button (new Rect(_spacing, y, _width, _lineHeight), _resourceHelper.Titles.TryAgain))
 				{
 					_lastAction();
 					_lastWebException = null;
@@ -85,25 +90,25 @@ public class SetTextViewCode : MonoBehaviour
 				return;
 			}
 
-			EnsureCultureIsInitialized ();
+			//EnsureCultureIsInitialized ();
 
 			if (_viewModel == null)
 			{
 				Show ();
 			}
 
-			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Titles.SetText, _titleStyle);
+			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), _resourceHelper.Titles.SetText, _titleStyle);
 			y += _lineHeight;
 			y += _spacing;
 
-			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Labels.Text);
+			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), _resourceHelper.Labels.Text);
 			y += _lineHeight;
 
 			_viewModel.Text = GUI.TextField (new Rect (_spacing, y, _width, _textBoxHeight), _viewModel.Text ?? "");
 			y += _textBoxHeight;
 			y += _spacing;
 
-			if (GUI.Button (new Rect (_spacing, y, _width, _lineHeight), Titles.SetText)) 
+			if (GUI.Button (new Rect (_spacing, y, _width, _lineHeight), _resourceHelper.Titles.SetText)) 
 			{
 				Save();
 			}
@@ -112,7 +117,7 @@ public class SetTextViewCode : MonoBehaviour
 
 			if (_viewModel.TextWasSavedMessageVisible) 
 			{
-				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Messages.Saved);
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), _resourceHelper.Messages.Saved);
 				y += _lineHeight;
 				y += _spacing;
 			}
@@ -160,28 +165,31 @@ public class SetTextViewCode : MonoBehaviour
 
 	// Culture
 
-	private bool _cultureIsInitialized = false;
+	//private bool _cultureIsInitialized = false;
 
-	private void EnsureCultureIsInitialized()
-	{
-		EnsureCultureIsInitialized_ByAssigningResourceCulture ();
-	}
+	//private void EnsureCultureIsInitialized()
+	//{
+		// TODO: AssigningResourceCulture is not an option now, and AssigningThreadCulture does not work on iOS 6!
+		//EnsureCultureIsInitialized_ByAssigningResourceCulture ();
+		//EnsureCultureIsInitialized_ByAssigningThreadCulture ();
+	//}
 
-	private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
-	{
-		if (!_cultureIsInitialized)
-		{
-			_cultureIsInitialized = true;
+	//private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
+	//{
+		//if (!_cultureIsInitialized)
+		//{
+			//_cultureIsInitialized = true;
 			
-			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			Labels.Culture = cultureInfo;
-			Titles.Culture = cultureInfo;
-			Messages.Culture = cultureInfo;
-			PropertyDisplayNames.Culture = cultureInfo;
-			JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
-		}
-	}
-	
+			//CultureInfo cultureInfo = GetCultureInfo (_cultureName);
+			//ResourceHelper.Labels.Culture = cultureInfo;
+			//ResourceHelper.Titles.Culture = cultureInfo;
+			//ResourceHelper.Messages.Culture = cultureInfo;
+			//PropertyDisplayNames.Culture = cultureInfo;
+			//JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
+		//}
+	//}
+
+	/*
 	private void EnsureCultureIsInitialized_ByAssigningThreadCulture()
 	{
 		if (!_cultureIsInitialized)
@@ -199,13 +207,15 @@ public class SetTextViewCode : MonoBehaviour
 		// This is compatible with more platforms.
 		return new CultureInfo(cultureName);
 	}
+	*/
 	
 	// Service Client
 	
 	private SetTextAppServiceClient CreateServiceClient()
 	{
-		string url = _url;
-		SetTextAppServiceClient client = new SetTextAppServiceClient (url);
+		SetTextAppServiceClient client = new SetTextAppServiceClient (
+			new BasicHttpBinding(), 
+			new EndpointAddress(_url));
 		return client;
 	}
 }

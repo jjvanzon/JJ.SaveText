@@ -46,51 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AppCode\ResourceHelper.cs" />
+     <Compile Include="Assets\AppCode\ResourceServiceClient.cs" />
+     <Compile Include="Assets\AppCode\SetTextAppServiceClient.cs" />
      <Compile Include="Assets\ViewCode\SetTextViewCode.cs" />
- <Reference Include="JJ.Apps.SetText.AppService.Interface">
- <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.AppService.Interface.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Apps.SetText">
- <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Apps.SetText.Unity.DotNet">
- <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Unity.DotNet.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Business.SetText">
- <HintPath>Assets\DotNetAssemblies\JJ.Business.SetText.dll</HintPath>
- </Reference>
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Net4">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Net4.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Persistence">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Reflection">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Reflection.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Validation">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Validation.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Models.Canonical">
- <HintPath>Assets\DotNetAssemblies\JJ.Models.Canonical.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Models.SetText">
- <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Models.SetText.Persistence">
- <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Business.SetText.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Validation.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.Serialization">
  <HintPath>Assets\Mono\System.Runtime.Serialization.dll</HintPath>

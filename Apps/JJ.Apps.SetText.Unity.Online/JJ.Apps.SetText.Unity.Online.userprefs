@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\JJ.Apps.SetText.Unity.OfflineWithSync\Assets\ViewCode\SetTextViewCode.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ViewCode\SetTextViewCode.cs">
     <Files>
-      <File FileName="..\JJ.Apps.SetText.Unity.OfflineWithSync\Assets\ViewCode\SetTextViewCode.cs" Line="191" Column="2" />
+      <File FileName="Assets\ViewCode\SetTextViewCode.cs" Line="34" Column="24" />
+      <File FileName="Assets\AppCode\ResourceHelper.cs" Line="11" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
