@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿// OfflineWithSync
+
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,31 +8,53 @@ using System.Xml;
 using System.ServiceModel;
 using System.Net;
 using System.Threading;
+using System.Reflection;
+using System.Globalization;
+using JJ.Framework.Common;
 using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Memory;
-using JJ.Framework.Persistence.Xml;
+using JJ.Framework.Persistence.Xml.Linq;
 using JJ.Models.Canonical;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.Memory.Mapping;
-using JJ.Models.SetText.Persistence.Xml.Mapping;
+using JJ.Models.SetText.Persistence.Xml.Linq.Mapping;
 using JJ.Models.SetText.Persistence.Repositories;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Business.SetText;
+using JJ.Business.SetText.Resources;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.AppService.Interface;
-using System.Globalization;
 
 public class SetTextViewCode : MonoBehaviour
 {
 	private SetTextViewModel _viewModel;
+
+	// TODO: Make settings
+	private string _cultureName = "nl-NL";
+	private string _url = "http://83.82.26.17:6371/SetTextWithSyncAppService.svc";
+	private int _checkServiceAvailabilityTimeoutInMilliseconds = 2000; // Note: If you make the time-out too small, Unity seems to not recover from a previous connection failure somehow.
+	private int _syncTimerIntervalInMilliseconds = 5000;
+
+	private Exception _lastException;
+	private string _debugInfo;
+	
+	private int _width = 200;
+	private int _lineHeight = 24;
+	private int _spacing = 10;
+	private int _textBoxHeight = 160;
+	private GUIStyle _titleStyle;
+
 	private System.Threading.Timer _syncTimer;
 
-	// Use this for initialization
 	void Start ()
 	{
+		_titleStyle = new GUIStyle ();
+		_titleStyle.fontStyle = FontStyle.Bold;
+		_titleStyle.fontSize = 14;
+		_titleStyle.normal.textColor = new Color (255, 255, 255);
 	}
 	
 	// Update is called once per frame
@@ -40,62 +64,84 @@ public class SetTextViewCode : MonoBehaviour
 
 	void OnGUI()
 	{
-		EnsureCultureIsInitialized ();
-
-		if (_viewModel == null)
+		try
 		{
-			Show ();
+			if (_lastException != null)
+			{
+				string exceptionMessage = ExceptionHelper.FormatExceptionWithInnerExceptions(_lastException, includeStackTrace: true);
+				GUI.Label (new Rect(0, 0, 580, 3000), exceptionMessage);
+				if (GUI.Button (new Rect(580, 0, 100, _lineHeight), "Clear"))
+				{
+					_lastException = null;
+				}
+				return;
+			}
+
+			EnsureCultureIsInitialized ();
+
+			if (_viewModel == null)
+			{
+				Show ();
+			}
+
+			EnsureSyncTimerIsInitialized ();
+			
+			int y = _spacing;
+
+			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Titles.SetText);
+			y += _lineHeight;
+			y += _spacing;
+
+			GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Labels.Text);
+			y += _lineHeight;
+
+			_viewModel.Text = GUI.TextField (new Rect (_spacing, y, _width, _textBoxHeight), _viewModel.Text ?? "");
+			y += _textBoxHeight;
+			y += _spacing;
+
+			if (GUI.Button (new Rect (_spacing, y, _width, _lineHeight), Titles.SetText)) 
+			{
+				Save();
+			}
+			y += _lineHeight;
+			y += _spacing;
+
+			if (_viewModel.TextWasSavedMessageVisible) 
+			{
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Messages.Saved);
+				y += _lineHeight;
+				y += _spacing;
+			}
+			
+			if (_viewModel.SyncSuccessfulMessageVisible) 
+			{
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Messages.SynchronizedWithServer);
+				y += _lineHeight;
+				y += _spacing;
+			}
+
+			foreach (var validationMessage in _viewModel.ValidationMessages) 
+			{
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), validationMessage.Text);
+				y += _lineHeight;
+				y += _spacing;
+			}
+
+			if (_viewModel.TextWasSavedButNotYetSynchronized) 
+			{
+				GUI.Label (new Rect (_spacing, y, _width, _lineHeight), Messages.SynchronizationPending);
+				y += _lineHeight;
+				y += _spacing;
+			}
+
+			//if (!String.IsNullOrEmpty(_debugInfo))
+			//{
+			//	GUI.Label (new Rect(0, 0, 600, 600), "DebugInfo: " + _debugInfo);
+			//}
 		}
-
-		EnsureSyncTimerIsInitialized ();
-
-		int y = 50;
-
-		GUI.Label (new Rect (10, y, 200, 20), Titles.SetText);
-		y += 30;
-
-		GUI.Label (new Rect (10, y, 200, 20), Labels.Text);
-		y += 30;
-
-		_viewModel.Text = GUI.TextField (new Rect (10, 110, 200, 200), _viewModel.Text ?? "");
-		y += 210;
-
-		if (GUI.Button (new Rect (10, y, 200, 20), Titles.SetText)) 
+		catch (Exception ex)
 		{
-			Save();
-		}
-		y += 30;
-
-		if (_viewModel.TextWasSavedMessageVisible) 
-		{
-			GUI.Label (new Rect (10, y, 200, 20), Messages.Saved);
-			y += 30;
-		}
-
-		foreach (var validationMessage in _viewModel.ValidationMessages) 
-		{
-			GUI.Label (new Rect (10, y, 200, 20), validationMessage.Text);
-			y += 30;
-		}
-
-		if (_viewModel.SyncSuccessfulMessageVisible) 
-		{
-			GUI.Label (new Rect (10, 350, 200, 20), Messages.SynchronizedWithServer);
-			y += 30;
-		}
-	}
-
-	private void EnsureCultureIsInitialized()
-	{
-		// Don't know how to do it properly in Unity.
-		if (CultureInfo.CurrentUICulture.Name == "en-US" ||
-		    CultureInfo.CurrentUICulture.Name == "") 
-		{
-			CultureInfo cultureInfo = new CultureInfo("nl-NL");
-			Thread.CurrentThread.CurrentUICulture = cultureInfo;
-			Thread.CurrentThread.CurrentCulture = cultureInfo;
-
-			Debug.Log("Culture is initialized.");
+			_lastException = ex;
 		}
 	}
 
@@ -119,6 +165,48 @@ public class SetTextViewCode : MonoBehaviour
 		}
 	}
 
+	// Culture
+	
+	private bool _cultureIsInitialized = false;
+	
+	private void EnsureCultureIsInitialized()
+	{
+		EnsureCultureIsInitialized_ByAssigningResourceCulture ();
+	}
+	
+	private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
+	{
+		if (!_cultureIsInitialized)
+		{
+			_cultureIsInitialized = true;
+			
+			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
+			Labels.Culture = cultureInfo;
+			Titles.Culture = cultureInfo;
+			Messages.Culture = cultureInfo;
+			PropertyDisplayNames.Culture = cultureInfo;
+			JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
+		}
+	}
+	
+	private void EnsureCultureIsInitialized_ByAssigningThreadCulture()
+	{
+		if (!_cultureIsInitialized)
+		{
+			_cultureIsInitialized = true;
+			
+			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
+			Thread.CurrentThread.CurrentUICulture = cultureInfo;
+			Thread.CurrentThread.CurrentCulture = cultureInfo;
+		}
+	}
+	
+	private CultureInfo GetCultureInfo(string cultureName)
+	{
+		// This is compatible with more platforms.
+		return new CultureInfo(cultureName);
+	}
+
 	// Synchronization
 
 	private void EnsureSyncTimerIsInitialized()
@@ -128,8 +216,8 @@ public class SetTextViewCode : MonoBehaviour
 			_syncTimer = new System.Threading.Timer(
 				syncTimerCallback, 
 				null, 
-				GetSyncTimerIntervalInMilliseconds(),
-				GetSyncTimerIntervalInMilliseconds());
+				_syncTimerIntervalInMilliseconds,
+				_syncTimerIntervalInMilliseconds);
 
 			Debug.Log("_syncTimer is initialized.");
 		}
@@ -166,8 +254,8 @@ public class SetTextViewCode : MonoBehaviour
 	{
 		Debug.Log("CheckServiceIsAvailable");
 
-		string url = GetUrl ();
-		int timeout = GetCheckServiceAvailabilityTimeoutInMilliseconds();
+		string url = _url;
+		int timeout = _checkServiceAvailabilityTimeoutInMilliseconds;
 		
 		HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 		request.Method = "GET";
@@ -195,38 +283,44 @@ public class SetTextViewCode : MonoBehaviour
 		thread.Start();
 	}
 
-	// Helpers
-
+	// Persistence
+	
 	private IContext CreateContext()
 	{
-		//IContext context = new MemoryContext("", typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly);
-		string folderPath = Application.persistentDataPath;
-		IContext context = new XmlContext(folderPath, typeof(Entity).Assembly, typeof(JJ.Models.SetText.Persistence.Xml.Mapping.EntityMapping).Assembly);
-		return context;
+		return CreateXmlContext ();
 	}
+	
+	private IContext CreateMemoryContext()
+	{
+		Assembly modelAssembly = typeof(Entity).Assembly;
+		Assembly mappingAssembly = typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly;
+		return new MemoryContext("", modelAssembly, mappingAssembly);
+	}
+	
+	private IContext CreateXmlContext()
+	{
+		// Windows Phone will not take the absolute location that Application.persistentDataPath.
+		// TODO: Is there a better property to use than Application.persistentDataPath, that will work on all the targeted platforms?
+		string folderPath;
+		if (Application.platform == RuntimePlatform.WP8Player) 
+		{
+			folderPath = "";
+		}
+		else
+		{
+			folderPath = Application.persistentDataPath;
+		}
+		
+		Assembly modelAssembly = typeof(Entity).Assembly;
+		Assembly mappingAssembly = typeof(JJ.Models.SetText.Persistence.Xml.Linq.Mapping.EntityMapping).Assembly;
+		return new XmlContext(folderPath, modelAssembly, mappingAssembly);
+	}
+
+	// Helpers
 
 	private SetTextWithSyncAppServiceClient CreateServiceClient()
 	{
-		string url = GetUrl ();
+		string url = _url;
 		return new SetTextWithSyncAppServiceClient (url);
-	}
-
-	private int GetCheckServiceAvailabilityTimeoutInMilliseconds()
-	{
-		// TODO: Make setting.
-		// Note: If you make the time-out too small, Unity seems to not recover from a previous connection failure somehow.
-		return 2000;
-	}
-
-	private int GetSyncTimerIntervalInMilliseconds()
-	{
-		// TODO: Make setting.
-		return 5000;
-	}
-
-	private string GetUrl()
-	{
-		// TODO: Make setting.
-		return "http://localhost:51116/SetTextWithSyncAppService.svc";
 	}
 }

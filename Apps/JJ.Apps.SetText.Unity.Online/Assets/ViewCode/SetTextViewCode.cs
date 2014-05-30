@@ -23,7 +23,8 @@ public class SetTextViewCode : MonoBehaviour
 {
 	private SetTextViewModel _viewModel;
 
-	private string _url = "http://localhost:51116/SetTextAppService.svc";
+	// TODO: Make settings
+	private string _url = "http://83.82.26.17:6371/SetTextAppService.svc";
 	private string _cultureName = "nl-NL";
 
 	private Exception _lastException;
