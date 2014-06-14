@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="SetTextAppService" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_ISetTextAppService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_ISetTextAppService" soapVersion="1_1" anonymous="optional" definition="http://localhost:6371/SetTextAppService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:6371/SetTextAppService.svc?wsdl"><con:part><con:url>http://localhost:6371/SetTextAppService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SetTextAppService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISetTextAppService_Show_InputMessage">
+    <wsdl:part name="parameters" element="tns:Show"/>
+  </wsdl:message>
+  <wsdl:message name="ISetTextAppService_Show_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ISetTextAppService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save"/>
+  </wsdl:message>
+  <wsdl:message name="ISetTextAppService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ISetTextAppService">
+    <wsdl:operation name="Show">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISetTextAppService/Show" message="tns:ISetTextAppService_Show_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISetTextAppService/ShowResponse" message="tns:ISetTextAppService_Show_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISetTextAppService/Save" message="tns:ISetTextAppService_Save_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/ISetTextAppService/SaveResponse" message="tns:ISetTextAppService_Save_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISetTextAppService" type="tns:ISetTextAppService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Show">
+      <soap:operation soapAction="http://tempuri.org/ISetTextAppService/Show" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/ISetTextAppService/Save" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SetTextAppService">
+    <wsdl:port name="BasicHttpBinding_ISetTextAppService" binding="tns:BasicHttpBinding_ISetTextAppService">
+      <soap:address location="http://localhost:6371/SetTextAppService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+  <xs:element name="Show">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ShowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ShowResult" nillable="true" type="q1:SetTextViewModel" xmlns:q1="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Save">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="viewModel" nillable="true" type="q2:SetTextViewModel" xmlns:q2="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveResult" nillable="true" type="q3:SetTextViewModel" xmlns:q3="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels">
+  <xs:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical"/>
+  <xs:complexType name="SetTextViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SyncSuccessfulMessageVisible" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TextWasSavedButNotYetSynchronized" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="TextWasSavedMessageVisible" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ValidationMessages" nillable="true" type="q1:ArrayOfValidationMessage" xmlns:q1="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetTextViewModel" nillable="true" type="tns:SetTextViewModel"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd3</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical">
+  <xs:complexType name="ArrayOfValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValidationMessage" nillable="true" type="tns:ValidationMessage"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValidationMessage" nillable="true" type="tns:ArrayOfValidationMessage"/>
+  <xs:complexType name="ValidationMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PropertyKey" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationMessage" nillable="true" type="tns:ValidationMessage"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/ISetTextAppService/Save" name="Save" bindingOperationName="Save" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:jj="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels" xmlns:jj1="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Save>
+         <tem:viewModel>
+            <jj:SyncSuccessfulMessageVisible>false</jj:SyncSuccessfulMessageVisible>
+            <jj:Text>qwerqwr</jj:Text>
+            <jj:TextWasSavedButNotYetSynchronized>false</jj:TextWasSavedButNotYetSynchronized>
+            <jj:TextWasSavedMessageVisible>false</jj:TextWasSavedMessageVisible>
+         </tem:viewModel>
+      </tem:Save>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Save"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+		        xmlns:tem="http://tempuri.org/" 
+		        xmlns:jj="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels" 
+		        xmlns:jj1="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Save>
+         <tem:viewModel>
+            <jj:SyncSuccessfulMessageVisible>false</jj:SyncSuccessfulMessageVisible>
+            <jj:Text>qwerqwr</jj:Text>
+            <jj:TextWasSavedButNotYetSynchronized>false</jj:TextWasSavedButNotYetSynchronized>
+            <jj:TextWasSavedMessageVisible>false</jj:TextWasSavedMessageVisible>
+         </tem:viewModel>
+      </tem:Save>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Save"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint><con:request><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" 
+		  xmlns:o="http://tempuri.org/" 
+		  xmlns:vm="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels" 
+		  xmlns:c="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical">
+   <s:Header/>
+   <s:Body>
+      <o:Save>
+         <o:viewModel>
+            <vm:SyncSuccessfulMessageVisible>false</vm:SyncSuccessfulMessageVisible>
+            <vm:Text>Hi!</vm:Text>
+            <vm:TextWasSavedButNotYetSynchronized>false</vm:TextWasSavedButNotYetSynchronized>
+            <vm:TextWasSavedMessageVisible>false</vm:TextWasSavedMessageVisible>
+         </o:viewModel>
+      </o:Save>
+   </s:Body>
+</s:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Save"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ISetTextAppService/Show" name="Show" bindingOperationName="Show" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Show/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Show"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

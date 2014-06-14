@@ -16,7 +16,7 @@ using JJ.Apps.SetText.AppService.Interface;
 
 namespace JJ.Apps.SetText.AppService
 {
-    public class SetAppTextService : ISetTextAppService
+    public class SetTextAppService : ISetTextAppService
     {
         public SetTextViewModel Show()
         {

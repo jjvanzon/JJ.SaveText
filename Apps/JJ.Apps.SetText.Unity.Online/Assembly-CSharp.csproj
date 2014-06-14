@@ -53,11 +53,8 @@
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
  </Reference>
- <Reference Include="System.Runtime.Serialization">
- <HintPath>Assets\Mono\System.Runtime.Serialization.dll</HintPath>
- </Reference>
- <Reference Include="System.ServiceModel">
- <HintPath>Assets\Mono\System.ServiceModel.dll</HintPath>
+ <Reference Include="System.Web.Services">
+ <HintPath>Assets\Mono\System.Web.Services.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

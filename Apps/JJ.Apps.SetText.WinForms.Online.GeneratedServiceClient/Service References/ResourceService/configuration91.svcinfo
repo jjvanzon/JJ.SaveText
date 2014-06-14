@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="0q6kpqGUzD2bkfcFAuzyk/r4eEQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="q8mXmvWEFEbAbWX5X8H7xsVFyKo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IResourceService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IResourceService" contract="ResourceService.IResourceService" bindingType="basicHttpBinding" address="http://localhost:51116/ResourceService.svc" bindingConfiguration="BasicHttpBinding_IResourceService">
+    <endpoint name="BasicHttpBinding_IResourceService" contract="ResourceService.IResourceService" bindingType="basicHttpBinding" address="http://localhost:6371/ResourceService.svc" bindingConfiguration="BasicHttpBinding_IResourceService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:51116/ResourceService.svc</serializedValue>
+          <serializedValue>http://localhost:6371/ResourceService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

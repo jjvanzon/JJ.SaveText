@@ -23,7 +23,13 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppServi
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SyncSuccessfulMessageVisibleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool TextWasSavedButNotYetSynchronizedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool TextWasSavedMessageVisibleField;
@@ -42,6 +48,19 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppServi
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool SyncSuccessfulMessageVisible {
+            get {
+                return this.SyncSuccessfulMessageVisibleField;
+            }
+            set {
+                if ((this.SyncSuccessfulMessageVisibleField.Equals(value) != true)) {
+                    this.SyncSuccessfulMessageVisibleField = value;
+                    this.RaisePropertyChanged("SyncSuccessfulMessageVisible");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Text {
             get {
                 return this.TextField;
@@ -50,6 +69,19 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppServi
                 if ((object.ReferenceEquals(this.TextField, value) != true)) {
                     this.TextField = value;
                     this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool TextWasSavedButNotYetSynchronized {
+            get {
+                return this.TextWasSavedButNotYetSynchronizedField;
+            }
+            set {
+                if ((this.TextWasSavedButNotYetSynchronizedField.Equals(value) != true)) {
+                    this.TextWasSavedButNotYetSynchronizedField = value;
+                    this.RaisePropertyChanged("TextWasSavedButNotYetSynchronized");
                 }
             }
         }

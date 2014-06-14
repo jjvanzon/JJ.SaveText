@@ -25,6 +25,15 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SavedField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ServiceUnavailableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SynchronizationPendingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SynchronizedWithServerField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -44,6 +53,45 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService
                 if ((object.ReferenceEquals(this.SavedField, value) != true)) {
                     this.SavedField = value;
                     this.RaisePropertyChanged("Saved");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ServiceUnavailable {
+            get {
+                return this.ServiceUnavailableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServiceUnavailableField, value) != true)) {
+                    this.ServiceUnavailableField = value;
+                    this.RaisePropertyChanged("ServiceUnavailable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SynchronizationPending {
+            get {
+                return this.SynchronizationPendingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SynchronizationPendingField, value) != true)) {
+                    this.SynchronizationPendingField = value;
+                    this.RaisePropertyChanged("SynchronizationPending");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SynchronizedWithServer {
+            get {
+                return this.SynchronizedWithServerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SynchronizedWithServerField, value) != true)) {
+                    this.SynchronizedWithServerField = value;
+                    this.RaisePropertyChanged("SynchronizedWithServer");
                 }
             }
         }
@@ -113,7 +161,19 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GoOfflineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GoOnlineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SetTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SynchronizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TryAgainField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -126,6 +186,32 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GoOffline {
+            get {
+                return this.GoOfflineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GoOfflineField, value) != true)) {
+                    this.GoOfflineField = value;
+                    this.RaisePropertyChanged("GoOffline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GoOnline {
+            get {
+                return this.GoOnlineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GoOnlineField, value) != true)) {
+                    this.GoOnlineField = value;
+                    this.RaisePropertyChanged("GoOnline");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SetText {
             get {
                 return this.SetTextField;
@@ -134,6 +220,32 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService
                 if ((object.ReferenceEquals(this.SetTextField, value) != true)) {
                     this.SetTextField = value;
                     this.RaisePropertyChanged("SetText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Synchronize {
+            get {
+                return this.SynchronizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SynchronizeField, value) != true)) {
+                    this.SynchronizeField = value;
+                    this.RaisePropertyChanged("Synchronize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TryAgain {
+            get {
+                return this.TryAgainField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TryAgainField, value) != true)) {
+                    this.TryAgainField = value;
+                    this.RaisePropertyChanged("TryAgain");
                 }
             }
         }

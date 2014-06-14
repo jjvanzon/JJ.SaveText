@@ -1,6 +1,6 @@
 ﻿using System;
-using JJ.Apps.SetText.AppService.Models;
-using System.ServiceModel;
+//using JJ.Apps.SetText.AppService.Models;
+//using System.ServiceModel;
 
 namespace JJ.Apps.SetText.Unity.Online
 {
@@ -21,7 +21,7 @@ namespace JJ.Apps.SetText.Unity.Online
 
         private void LoadResources(string cultureName)
         {
-			using (ResourceServiceClient service = CreateServiceClient())
+			using (ResourceService service = CreateServiceClient())
             {
                 Labels = service.GetLabels(cultureName);
                 Titles = service.GetTitles(cultureName);
@@ -29,11 +29,20 @@ namespace JJ.Apps.SetText.Unity.Online
             }
         }
 
+		/*
 		private ResourceServiceClient CreateServiceClient()
 		{
 			ResourceServiceClient client = new ResourceServiceClient (
 				new BasicHttpBinding(), 
 				new EndpointAddress(_url));
+			return client;
+		}
+		*/
+		
+		private ResourceService CreateServiceClient()
+		{
+			ResourceService client = new ResourceService ();
+			client.Url = _url;
 			return client;
 		}
     }

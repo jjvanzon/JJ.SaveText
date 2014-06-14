@@ -6,11 +6,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using JJ.Framework.Common;
-using JJ.Models.Canonical;
+//using JJ.Models.Canonical;
 //using JJ.Models.SetText;
 //using JJ.Business.SetText;
 //using JJ.Business.SetText.Resources;
-using JJ.Apps.SetText.ViewModels;
+//using JJ.Apps.SetText.ViewModels;
 //using JJ.Apps.SetText.Resources;
 //using JJ.Apps.SetText.PresenterInterfaces;
 //using JJ.Apps.SetText.AppService.Interface;
@@ -18,7 +18,7 @@ using JJ.Apps.SetText.Unity.Online;
 using System.Globalization;
 using System.Threading;
 using System.Net;
-using System.ServiceModel;
+//using System.ServiceModel;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -211,6 +211,14 @@ public class SetTextViewCode : MonoBehaviour
 	
 	// Service Client
 	
+	private SetTextAppService CreateServiceClient()
+	{
+		SetTextAppService client = new SetTextAppService ();
+		client.Url = _url;
+		return client;
+	}
+
+	/*
 	private SetTextAppServiceClient CreateServiceClient()
 	{
 		SetTextAppServiceClient client = new SetTextAppServiceClient (
@@ -218,4 +226,5 @@ public class SetTextViewCode : MonoBehaviour
 			new EndpointAddress(_url));
 		return client;
 	}
+	*/
 }

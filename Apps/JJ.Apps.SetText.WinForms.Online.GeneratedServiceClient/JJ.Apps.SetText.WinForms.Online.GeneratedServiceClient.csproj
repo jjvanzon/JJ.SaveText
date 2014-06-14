@@ -101,7 +101,7 @@
     <None Include="Service References\SetTextAppService\JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SetTextAppService\SetAppTextService.wsdl" />
+    <None Include="Service References\SetTextAppService\SetTextAppService.wsdl" />
     <None Include="Service References\SetTextAppService\SetTextAppService.xsd" />
     <None Include="Service References\SetTextAppService\SetTextAppService1.xsd" />
     <None Include="Service References\SetTextAppService\SetTextAppService2.xsd" />
@@ -118,21 +118,6 @@
     <WCFMetadataStorage Include="Service References\SetTextAppService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SetTextAppService\SetTextAppService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SetTextAppService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SetTextAppService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SetTextAppService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\ResourceService\ResourceService.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +128,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ResourceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\SetTextAppService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
