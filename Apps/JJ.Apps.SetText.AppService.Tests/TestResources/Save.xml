@@ -1,0 +1,16 @@
+﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+            xmlns:o="http://tempuri.org/"
+            xmlns:vm="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"
+            xmlns:c="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical">
+  <s:Header/>
+  <s:Body>
+    <o:Save>
+      <o:viewModel>
+        <vm:SyncSuccessfulMessageVisible>false</vm:SyncSuccessfulMessageVisible>
+        <vm:Text>Hi</vm:Text>
+        <vm:TextWasSavedButNotYetSynchronized>false</vm:TextWasSavedButNotYetSynchronized>
+        <vm:TextWasSavedMessageVisible>false</vm:TextWasSavedMessageVisible>
+      </o:viewModel>
+    </o:Save>
+  </s:Body>
+</s:Envelope>

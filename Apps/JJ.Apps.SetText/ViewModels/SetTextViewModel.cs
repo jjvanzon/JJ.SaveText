@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Models.Canonical;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 namespace JJ.Apps.SetText.ViewModels
 {
@@ -14,6 +15,7 @@ namespace JJ.Apps.SetText.ViewModels
         public string Text { get; set; }
 
         [DataMember]
+        [XmlArrayItem("ValidationMessage")] // HACK
         public IList<ValidationMessage> ValidationMessages { get; set; }
 
         [DataMember]
