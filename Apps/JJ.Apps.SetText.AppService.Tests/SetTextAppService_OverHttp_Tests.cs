@@ -10,6 +10,8 @@ using System.Linq;
 using System.Xml.Linq;
 using JJ.Framework.Common;
 using System.Reflection;
+using JJ.Framework.SoapClient;
+using JJ.Models.Canonical;
 
 namespace JJ.Apps.SetText.AppService.Tests
 {
@@ -23,9 +25,11 @@ namespace JJ.Apps.SetText.AppService.Tests
         {
             string url = "http://localhost:6371/settextappservice.svc";
             string soapAction = "http://tempuri.org/ISetTextAppService/Save";
-            byte[] dataToSend = EmbeddedResourceHelper.GetEmbeddedResourceBytes(Assembly.GetExecutingAssembly(), "TestResources", "Save.xml");
+            byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
 
-            HttpWebRequest request = CreateSoapPost(url, soapAction, dataToSend);
+            //byte[] dataToSend = GetBytesToSendFromViewModel();
+
+            HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
@@ -47,7 +51,7 @@ namespace JJ.Apps.SetText.AppService.Tests
             string soapAction = "http://tempuri.org/ISetTextAppService/Save";
             byte[] dataToSend = EmbeddedResourceHelper.GetEmbeddedResourceBytes(Assembly.GetExecutingAssembly(), "TestResources", "Save_WithValidationMessages.xml");
 
-            HttpWebRequest request = CreateSoapPost(url, soapAction, dataToSend);
+            HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
@@ -62,7 +66,7 @@ namespace JJ.Apps.SetText.AppService.Tests
             }
         }
 
-        private HttpWebRequest CreateSoapPost(string url, string soapAction, byte[] content)
+        private HttpWebRequest CreateSoapRequest(string url, string soapAction, byte[] content)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = HTTP_METHOD_POST;
@@ -75,6 +79,30 @@ namespace JJ.Apps.SetText.AppService.Tests
             requestStream.Write(content, 0, content.Length);
 
             return request;
+        }
+
+        private byte[] GetBytesToSendFromEmbeddedResource()
+        {
+            return EmbeddedResourceHelper.GetEmbeddedResourceBytes(Assembly.GetExecutingAssembly(), "TestResources", "Save.xml");
+        }
+
+        private byte[] GetBytesToSendFromViewModel()
+        {
+            XmlNamespaceMapping[] namespaceMappings = XmlNamespaceMappingFactory.CreateXmlNamespaceMappings(typeof(ValidationMessage).Namespace, typeof(SetTextViewModel).Namespace);
+            var converter = new ObjectToXmlConverter(XmlCasingEnum.UnmodifiedCase, namespaceMappings, "Save");
+
+            SetTextViewModel viewModel = CreateViewModel();
+            string text = converter.ConvertToString(viewModel);
+
+            throw new NotImplementedException();
+        }
+
+        private SetTextViewModel CreateViewModel()
+        {
+            return new SetTextViewModel
+            {
+                Text = "Hi!",
+            };
         }
 
         private SetTextViewModel ParseReceivedData(string data)
