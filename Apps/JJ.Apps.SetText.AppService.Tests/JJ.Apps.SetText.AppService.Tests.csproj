@@ -61,9 +61,9 @@
       <Project>{44fd9133-5fe7-4824-bd35-27273706d127}</Project>
       <Name>JJ.Framework.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.SoapClient\JJ.Framework.SoapClient.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Soap\JJ.Framework.Soap.csproj">
       <Project>{2b86213c-a758-4db9-bd37-5e7d2f4d7c4d}</Project>
-      <Name>JJ.Framework.SoapClient</Name>
+      <Name>JJ.Framework.Soap</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\JJ.Framework.Xml.Linq\JJ.Framework.Xml.Linq.csproj">
       <Project>{8dcbf3f3-b30f-4c11-8957-bea7f43ee173}</Project>

@@ -10,7 +10,7 @@ using System.Linq;
 using System.Xml.Linq;
 using JJ.Framework.Common;
 using System.Reflection;
-using JJ.Framework.SoapClient;
+using JJ.Framework.Soap;
 using JJ.Models.Canonical;
 
 namespace JJ.Apps.SetText.AppService.Tests
@@ -88,8 +88,7 @@ namespace JJ.Apps.SetText.AppService.Tests
 
         private byte[] GetBytesToSendFromViewModel()
         {
-            XmlNamespaceMapping[] namespaceMappings = XmlNamespaceMappingFactory.CreateXmlNamespaceMappings(typeof(ValidationMessage).Namespace, typeof(SetTextViewModel).Namespace);
-            var converter = new ObjectToXmlConverter(XmlCasingEnum.UnmodifiedCase, namespaceMappings, "Save");
+            var converter = new ObjectToXmlConverter(XmlCasingEnum.UnmodifiedCase, useNamespaces: true, rootElementName: "Save");
 
             SetTextViewModel viewModel = CreateViewModel();
             string text = converter.ConvertToString(viewModel);
