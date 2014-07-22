@@ -88,7 +88,7 @@ namespace JJ.Apps.SetText.AppService.Tests
 
         private byte[] GetBytesToSendFromViewModel()
         {
-            var converter = new ObjectToXmlConverter(XmlCasingEnum.UnmodifiedCase, generateNamespaces: true, rootElementName: "Save");
+            var converter = new ObjectToXmlConverter(XmlCasingEnum.UnmodifiedCase, mustGenerateNamespaces: true, rootElementName: "Save");
 
             SetTextViewModel viewModel = CreateViewModel();
             string text = converter.ConvertToString(viewModel);
