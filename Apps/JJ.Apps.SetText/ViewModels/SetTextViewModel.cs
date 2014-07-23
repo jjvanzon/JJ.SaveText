@@ -15,7 +15,6 @@ namespace JJ.Apps.SetText.ViewModels
         public string Text { get; set; }
 
         [DataMember]
-        [XmlArrayItem("ValidationMessage")] // HACK
         public IList<ValidationMessage> ValidationMessages { get; set; }
 
         [DataMember]
