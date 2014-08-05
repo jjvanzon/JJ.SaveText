@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -62,8 +62,20 @@
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Framework.IO">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.IO.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.Logging">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Logging.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.Mathematics">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Mathematics.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Framework.Net4">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Net4.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.Net45">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Net45.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Persistence">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.dll</HintPath>
@@ -74,11 +86,20 @@
  <Reference Include="JJ.Framework.Persistence.Xml.Linq">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Framework.PlatformCompatibility">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.PlatformCompatibility.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Framework.Reflection">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Reflection.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Framework.Soap">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Soap.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Framework.Validation">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Validation.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.Xml.Linq">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.Canonical">
  <HintPath>Assets\DotNetAssemblies\JJ.Models.Canonical.dll</HintPath>
@@ -103,12 +124,6 @@
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
  <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization">
- <HintPath>Assets\Mono\System.Runtime.Serialization.dll</HintPath>
- </Reference>
- <Reference Include="System.ServiceModel">
- <HintPath>Assets\Mono\System.ServiceModel.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,6 +12,7 @@ using JJ.Framework.Common;
 using System.Reflection;
 using JJ.Framework.Soap;
 using JJ.Models.Canonical;
+using JJ.Framework.Configuration;
 
 namespace JJ.Apps.SetText.AppService.Tests
 {
@@ -23,7 +24,7 @@ namespace JJ.Apps.SetText.AppService.Tests
         [TestMethod]
         public void Test_SetTextAppService_OverHttp_Save()
         {
-            string url = "http://localhost:6371/settextappservice.svc";
+            string url = AppSettings<IAppSettings>.Get(x => x.SetTextAppServiceUrl);
             string soapAction = "http://tempuri.org/ISetTextAppService/Save";
             byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
 

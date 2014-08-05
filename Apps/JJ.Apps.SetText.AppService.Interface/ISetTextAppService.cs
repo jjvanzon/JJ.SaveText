@@ -14,9 +14,9 @@ namespace JJ.Apps.SetText.AppService.Interface
     public interface ISetTextAppService
     {
         [OperationContract]
-        SetTextViewModel Show();
+        SetTextViewModel Show(string cultureName);
 
         [OperationContract]
-        SetTextViewModel Save(SetTextViewModel viewModel);
+        SetTextViewModel Save(SetTextViewModel viewModel, string cultureName);
     }
 }

@@ -5,20 +5,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
-using JJ.Framework.Common;
-//using JJ.Models.Canonical;
-//using JJ.Models.SetText;
-//using JJ.Business.SetText;
-//using JJ.Business.SetText.Resources;
-//using JJ.Apps.SetText.ViewModels;
-//using JJ.Apps.SetText.Resources;
-//using JJ.Apps.SetText.PresenterInterfaces;
-//using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.Unity.Online;
 using System.Globalization;
 using System.Threading;
 using System.Net;
-//using System.ServiceModel;
+using JJ.Framework.Logging;
+using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.AppService.Interface.CustomClient;
+using JJ.Apps.SetText.Unity.Online;
+using JJ.Apps.SetText.PresenterInterfaces;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -90,8 +85,6 @@ public class SetTextViewCode : MonoBehaviour
 				return;
 			}
 
-			//EnsureCultureIsInitialized ();
-
 			if (_viewModel == null)
 			{
 				Show ();
@@ -148,83 +141,20 @@ public class SetTextViewCode : MonoBehaviour
 	private void Show()
 	{
 		_lastAction = Show;
-		using (var appService = CreateServiceClient())
-		{
-			_viewModel = appService.Show();
-		}
+		ISetTextPresenter appService = CreateServiceClient ();
+		_viewModel = appService.Show();
 	}
 
 	private void Save()
 	{
 		_lastAction = Save;
-		using (var appService = CreateServiceClient())
-		{
-			_viewModel = appService.Save(_viewModel);
-		}
+		ISetTextPresenter appService = CreateServiceClient ();
+		_viewModel = appService.Save(_viewModel);
 	}
 
-	// Culture
-
-	//private bool _cultureIsInitialized = false;
-
-	//private void EnsureCultureIsInitialized()
-	//{
-		// TODO: AssigningResourceCulture is not an option now, and AssigningThreadCulture does not work on iOS 6!
-		//EnsureCultureIsInitialized_ByAssigningResourceCulture ();
-		//EnsureCultureIsInitialized_ByAssigningThreadCulture ();
-	//}
-
-	//private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
-	//{
-		//if (!_cultureIsInitialized)
-		//{
-			//_cultureIsInitialized = true;
-			
-			//CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			//ResourceHelper.Labels.Culture = cultureInfo;
-			//ResourceHelper.Titles.Culture = cultureInfo;
-			//ResourceHelper.Messages.Culture = cultureInfo;
-			//PropertyDisplayNames.Culture = cultureInfo;
-			//JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
-		//}
-	//}
-
-	/*
-	private void EnsureCultureIsInitialized_ByAssigningThreadCulture()
+	private ISetTextPresenter CreateServiceClient()
 	{
-		if (!_cultureIsInitialized)
-		{
-			_cultureIsInitialized = true;
-
-			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			Thread.CurrentThread.CurrentUICulture = cultureInfo;
-			Thread.CurrentThread.CurrentCulture = cultureInfo;
-		}
-	}
-
-	private CultureInfo GetCultureInfo(string cultureName)
-	{
-		// This is compatible with more platforms.
-		return new CultureInfo(cultureName);
-	}
-	*/
-	
-	// Service Client
-	
-	private SetTextAppService CreateServiceClient()
-	{
-		SetTextAppService client = new SetTextAppService ();
-		client.Url = _url;
+		var client = new SetTextAppServiceClient (_url, _cultureName);
 		return client;
 	}
-
-	/*
-	private SetTextAppServiceClient CreateServiceClient()
-	{
-		SetTextAppServiceClient client = new SetTextAppServiceClient (
-			new BasicHttpBinding(), 
-			new EndpointAddress(_url));
-		return client;
-	}
-	*/
 }

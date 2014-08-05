@@ -59,6 +59,9 @@
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Framework.Logging">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Logging.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Framework.Net4">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Net4.dll</HintPath>
  </Reference>
@@ -70,6 +73,9 @@
  </Reference>
  <Reference Include="JJ.Framework.Persistence.Xml.Linq">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.PlatformCompatibility">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.PlatformCompatibility.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Reflection">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Reflection.dll</HintPath>
@@ -100,9 +106,6 @@
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
  <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
- </Reference>
- <Reference Include="System.Runtime.Serialization">
- <HintPath>Assets\Mono\System.Runtime.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="System.Xml.Linq">
  <HintPath>Assets\Mono\System.Xml.Linq.dll</HintPath>

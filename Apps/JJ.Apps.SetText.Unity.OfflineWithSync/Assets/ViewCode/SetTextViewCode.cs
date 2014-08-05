@@ -4,13 +4,12 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
-using System.ServiceModel;
 using System.Net;
 using System.Threading;
 using System.Reflection;
 using System.Globalization;
-using JJ.Framework.Common;
+using JJ.Framework.Logging;
+using JJ.Framework.PlatformCompatibility;
 using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Memory;
 using JJ.Framework.Persistence.Xml.Linq;
@@ -27,6 +26,7 @@ using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.AppService.Interface.CustomClient;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -55,6 +55,8 @@ public class SetTextViewCode : MonoBehaviour
 		_titleStyle.fontStyle = FontStyle.Bold;
 		_titleStyle.fontSize = 14;
 		_titleStyle.normal.textColor = new Color (255, 255, 255);
+
+		InitializeCulture ();
 	}
 	
 	// Update is called once per frame
@@ -76,8 +78,6 @@ public class SetTextViewCode : MonoBehaviour
 				}
 				return;
 			}
-
-			EnsureCultureIsInitialized ();
 
 			if (_viewModel == null)
 			{
@@ -167,44 +167,17 @@ public class SetTextViewCode : MonoBehaviour
 
 	// Culture
 	
-	private bool _cultureIsInitialized = false;
-	
-	private void EnsureCultureIsInitialized()
+	private void InitializeCulture()
 	{
-		EnsureCultureIsInitialized_ByAssigningResourceCulture ();
-	}
-	
-	private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
-	{
-		if (!_cultureIsInitialized)
-		{
-			_cultureIsInitialized = true;
-			
-			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			Labels.Culture = cultureInfo;
-			Titles.Culture = cultureInfo;
-			Messages.Culture = cultureInfo;
-			PropertyDisplayNames.Culture = cultureInfo;
-			JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
-		}
-	}
-	
-	private void EnsureCultureIsInitialized_ByAssigningThreadCulture()
-	{
-		if (!_cultureIsInitialized)
-		{
-			_cultureIsInitialized = true;
-			
-			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			Thread.CurrentThread.CurrentUICulture = cultureInfo;
-			Thread.CurrentThread.CurrentCulture = cultureInfo;
-		}
-	}
-	
-	private CultureInfo GetCultureInfo(string cultureName)
-	{
-		// This is compatible with more platforms.
-		return new CultureInfo(cultureName);
+		// Assigning thread culture is not possible on iOS 6.
+		// So assign resource cultures instead.
+
+		CultureInfo cultureInfo = CultureInfo_PlatformSafe.GetCultureInfo (_cultureName);
+		Labels.Culture = cultureInfo;
+		Titles.Culture = cultureInfo;
+		Messages.Culture = cultureInfo;
+		PropertyDisplayNames.Culture = cultureInfo;
+		JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
 	}
 
 	// Synchronization
@@ -240,12 +213,10 @@ public class SetTextViewCode : MonoBehaviour
 			{
 				Debug.Log("serviceIsAvailable");
 
-				using (SetTextWithSyncAppServiceClient appService = CreateServiceClient())
-				{
-					_viewModel = appService.Synchronize(_viewModel);
+				ISetTextWithSyncPresenter appService = CreateServiceClient();
+				_viewModel = appService.Synchronize(_viewModel);
 
-					Debug.Log("Synchronized");
-				}
+				Debug.Log("Synchronized");
 			}
 		}
 	}
@@ -318,9 +289,8 @@ public class SetTextViewCode : MonoBehaviour
 
 	// Helpers
 
-	private SetTextWithSyncAppServiceClient CreateServiceClient()
+	private ISetTextWithSyncPresenter CreateServiceClient()
 	{
-		string url = _url;
-		return new SetTextWithSyncAppServiceClient (url);
+		return new SetTextWithSyncAppServiceClient (_url, _cultureName);
 	}
 }

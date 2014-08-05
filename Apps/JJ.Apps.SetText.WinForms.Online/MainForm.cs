@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.AppService.Interface;
+﻿using JJ.Apps.SetText.AppService.Interface.WcfClient;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Framework.Configuration;
@@ -83,7 +83,8 @@ namespace JJ.Apps.SetText.WinForms.Online
         private SetTextAppServiceClient CreateAppServiceClient()
         {
             string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
-            return new SetTextAppServiceClient(url);
+            string cultureName = CultureInfo.CurrentUICulture.Name;
+            return new SetTextAppServiceClient(url, cultureName);
         }
     }
 }

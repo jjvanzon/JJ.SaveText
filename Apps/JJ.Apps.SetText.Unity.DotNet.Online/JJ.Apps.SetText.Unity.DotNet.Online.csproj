@@ -38,6 +38,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Logging\JJ.Framework.Logging.csproj">
+      <Project>{ceeb755d-de12-4e70-816e-546c429b44b7}</Project>
+      <Name>JJ.Framework.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Apps.SetText.AppService.Interface\JJ.Apps.SetText.AppService.Interface.csproj">
       <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
       <Name>JJ.Apps.SetText.AppService.Interface</Name>

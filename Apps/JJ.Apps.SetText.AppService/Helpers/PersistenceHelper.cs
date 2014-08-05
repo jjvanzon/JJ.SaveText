@@ -6,7 +6,7 @@ using System.Web;
 
 namespace JJ.Apps.SetText.AppService.Helpers
 {
-    public static class PersistenceHelper
+    internal static class PersistenceHelper
     {
         public static TRepositoryInterface CreateRepository<TRepositoryInterface>(IContext context)
         {

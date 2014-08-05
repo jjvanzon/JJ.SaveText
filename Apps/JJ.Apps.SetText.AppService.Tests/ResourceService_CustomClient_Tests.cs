@@ -1,0 +1,29 @@
+﻿using JJ.Apps.SetText.AppService.Interface.CustomClient;
+using JJ.Apps.SetText.AppService.Interface.Models;
+using JJ.Apps.SetText.ViewModels;
+using JJ.Framework.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace JJ.Apps.SetText.AppService.Tests
+{
+    [TestClass]
+    public class ResourceService_CustomClient_Tests
+    {
+        [TestMethod]
+        public void Test_ResourceService_CustomClient()
+        {
+            string url = AppSettings<IAppSettings>.Get(x => x.ResourceServiceUrl);
+            string cultureName = "nl-NL";
+            
+            var client = new ResourceServiceClient(url);
+            Labels labels = client.GetLabels(cultureName);
+            Messages messages = client.GetMessages(cultureName);
+            Titles titles = client.GetTitles(cultureName);
+        }
+    }
+}

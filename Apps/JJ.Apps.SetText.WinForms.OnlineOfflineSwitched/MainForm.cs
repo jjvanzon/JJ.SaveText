@@ -15,9 +15,10 @@ using JJ.Framework.Persistence.Xml;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
-using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.AppService.Interface.WcfClient;
 using JJ.Apps.SetText.Resources;
 using JJ.Framework.Common;
+using System.Globalization;
 
 namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 {
@@ -217,13 +218,15 @@ namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
         private SetTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
         {
             string url = AppSettings<IAppSettings>.Get(x => x.SetTextWithSyncAppServiceUrl);
-            return new SetTextWithSyncAppServiceClient(url);
+            string cultureName = CultureInfo.CurrentUICulture.Name;
+            return new SetTextWithSyncAppServiceClient(url, cultureName);
         }
 
         private SetTextAppServiceClient CreateAppServiceClient()
         {
             string url = AppSettings<IAppSettings>.Get(x => x.SetTextAppServiceUrl);
-            return new SetTextAppServiceClient(url);
+            string cultureName = CultureInfo.CurrentUICulture.Name;
+            return new SetTextAppServiceClient(url, cultureName);
         }
 
         private SetTextWithSyncPresenter CreatePresenter(IContext context)

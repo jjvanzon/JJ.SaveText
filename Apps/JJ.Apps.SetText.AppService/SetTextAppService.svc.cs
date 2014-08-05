@@ -8,18 +8,22 @@ using System.Text;
 using Canonical = JJ.Models.Canonical;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Framework.Persistence;
-using JJ.Apps.SetText.AppService.Helpers;
 using JJ.Apps.SetText.Presenters;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.AppService.Interface;
+using System.Threading;
+using System.Globalization;
+using JJ.Apps.SetText.AppService.Helpers;
 
 namespace JJ.Apps.SetText.AppService
 {
     public class SetTextAppService : ISetTextAppService
     {
-        public SetTextViewModel Show()
+        public SetTextViewModel Show(string cultureName)
         {
+            ServiceHelper.SetCulture(cultureName);
+
             using (IContext context = PersistenceHelper.CreateContext())
             {
                 IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
@@ -29,8 +33,10 @@ namespace JJ.Apps.SetText.AppService
             }
         }
 
-        public SetTextViewModel Save(SetTextViewModel viewModel)
+        public SetTextViewModel Save(SetTextViewModel viewModel, string cultureName)
         {
+            ServiceHelper.SetCulture(cultureName);
+
             using (IContext context = PersistenceHelper.CreateContext())
             {
                 IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);

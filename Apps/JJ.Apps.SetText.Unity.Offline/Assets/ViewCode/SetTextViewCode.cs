@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Threading;
 using System.Reflection;
 using JJ.Framework.Common;
+using JJ.Framework.Logging;
 using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Memory;
 using JJ.Framework.Persistence.Xml.Linq;
@@ -22,6 +23,7 @@ using JJ.Models.SetText.Persistence.Xml.Linq.Mapping;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
+using JJ.Framework.PlatformCompatibility;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -44,6 +46,8 @@ public class SetTextViewCode : MonoBehaviour
 		_titleStyle.fontStyle = FontStyle.Bold;
 		_titleStyle.fontSize = 14;
 		_titleStyle.normal.textColor = new Color (255, 255, 255);
+
+		InitializeCulture ();
 	}
 	
 	// Update is called once per frame
@@ -65,8 +69,6 @@ public class SetTextViewCode : MonoBehaviour
 				}
 				return;
 			}
-
-			EnsureCultureIsInitialized ();
 
 			if (_viewModel == null)
 			{
@@ -140,44 +142,17 @@ public class SetTextViewCode : MonoBehaviour
 
 	// Culture
 
-	private bool _cultureIsInitialized = false;
-
-	private void EnsureCultureIsInitialized()
+	private void InitializeCulture()
 	{
-		EnsureCultureIsInitialized_ByAssigningResourceCulture ();
-	}
+		// Assigning thread culture is not possible on iOS 6.
+		// So assign resource cultures instead.
 
-	private void EnsureCultureIsInitialized_ByAssigningResourceCulture()
-	{
-		if (!_cultureIsInitialized)
-		{
-			_cultureIsInitialized = true;
-			
-			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			Labels.Culture = cultureInfo;
-			Titles.Culture = cultureInfo;
-			Messages.Culture = cultureInfo;
-			PropertyDisplayNames.Culture = cultureInfo;
-			JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
-		}
-	}
-	
-	private void EnsureCultureIsInitialized_ByAssigningThreadCulture()
-	{
-		if (!_cultureIsInitialized)
-		{
-			_cultureIsInitialized = true;
-
-			CultureInfo cultureInfo = GetCultureInfo (_cultureName);
-			Thread.CurrentThread.CurrentUICulture = cultureInfo;
-			Thread.CurrentThread.CurrentCulture = cultureInfo;
-		}
-	}
-
-	private CultureInfo GetCultureInfo(string cultureName)
-	{
-		// This is compatible with more platforms.
-		return new CultureInfo(cultureName);
+		CultureInfo cultureInfo = CultureInfo_PlatformSafe.GetCultureInfo(_cultureName);
+		Labels.Culture = cultureInfo;
+		Titles.Culture = cultureInfo;
+		Messages.Culture = cultureInfo;
+		PropertyDisplayNames.Culture = cultureInfo;
+		JJ.Framework.Validation.Resources.Messages.Culture = cultureInfo;
 	}
 
 	// Persistence

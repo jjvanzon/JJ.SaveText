@@ -14,11 +14,12 @@ using JJ.Framework.Persistence.Xml;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
-using JJ.Apps.SetText.AppService.Interface;
+using JJ.Apps.SetText.AppService.Interface.WcfClient;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
 using System.Net;
 using System.Threading;
+using System.Globalization;
 
 namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 {
@@ -114,7 +115,8 @@ namespace JJ.Apps.SetText.WinForms.OfflineWithSync
         private ISetTextWithSyncPresenter CreateAppServiceClient()
         {
             string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
-            return new SetTextWithSyncAppServiceClient(url);
+            string cultureName = CultureInfo.CurrentUICulture.Name;
+            return new SetTextWithSyncAppServiceClient(url, cultureName);
         }
 
         // Synchronization

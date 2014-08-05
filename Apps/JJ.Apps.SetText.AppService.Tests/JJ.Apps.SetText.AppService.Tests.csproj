@@ -53,13 +53,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SetTextWithSyncAppService_CustomClient_Tests.cs" />
+    <Compile Include="ResourceService_CustomClient_Tests.cs" />
+    <Compile Include="IAppSettings.cs" />
     <Compile Include="SetTextAppService_OverHttp_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetTextAppService_CustomClient_Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\JJ.Framework.Common\JJ.Framework.Common.csproj">
       <Project>{44fd9133-5fe7-4824-bd35-27273706d127}</Project>
       <Name>JJ.Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Configuration\JJ.Framework.Configuration.csproj">
+      <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
+      <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\JJ.Framework.Soap\JJ.Framework.Soap.csproj">
       <Project>{2b86213c-a758-4db9-bd37-5e7d2f4d7c4d}</Project>
@@ -73,12 +81,18 @@
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Models.Canonical</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JJ.Apps.SetText.AppService.Interface\JJ.Apps.SetText.AppService.Interface.csproj">
+      <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
+      <Name>JJ.Apps.SetText.AppService.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Apps.SetText\JJ.Apps.SetText.csproj">
       <Project>{44b139ab-bdf0-414a-aa01-4b7e62adcf57}</Project>
       <Name>JJ.Apps.SetText</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TestResources\Save_WithValidationMessages.xml" />
     <EmbeddedResource Include="TestResources\Save.xml" />
