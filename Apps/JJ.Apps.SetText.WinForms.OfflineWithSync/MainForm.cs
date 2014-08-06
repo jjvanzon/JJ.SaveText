@@ -14,7 +14,7 @@ using JJ.Framework.Persistence.Xml;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
-using JJ.Apps.SetText.AppService.Interface.WcfClient;
+using JJ.Apps.SetText.AppService.Client.Wcf;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
 using System.Net;

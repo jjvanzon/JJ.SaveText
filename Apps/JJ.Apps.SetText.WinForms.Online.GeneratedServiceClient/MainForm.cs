@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService;
+﻿using JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceAppService;
 using JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.AppService.Interface.CustomClient;
+﻿using JJ.Apps.SetText.AppService.Client.Custom;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Framework.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

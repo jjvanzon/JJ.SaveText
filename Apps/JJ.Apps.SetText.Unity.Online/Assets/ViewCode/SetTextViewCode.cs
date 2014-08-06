@@ -11,7 +11,7 @@ using System.Net;
 using JJ.Framework.Logging;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.AppService.Interface.CustomClient;
+using JJ.Apps.SetText.AppService.Client.Custom;
 using JJ.Apps.SetText.Unity.Online;
 using JJ.Apps.SetText.PresenterInterfaces;
 

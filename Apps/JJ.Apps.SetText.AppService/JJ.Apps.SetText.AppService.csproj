@@ -79,7 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SetTextWithSyncAppService.svc" />
-    <Content Include="ResourceService.svc" />
+    <Content Include="ResourceAppService.svc" />
     <Content Include="SetTextAppService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -89,8 +89,8 @@
       <DependentUpon>SetTextWithSyncAppService.svc</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PersistenceHelper.cs" />
-    <Compile Include="ResourceService.svc.cs">
-      <DependentUpon>ResourceService.svc</DependentUpon>
+    <Compile Include="ResourceAppService.svc.cs">
+      <DependentUpon>ResourceAppService.svc</DependentUpon>
     </Compile>
     <Compile Include="SetTextAppService.svc.cs">
       <DependentUpon>SetTextAppService.svc</DependentUpon>

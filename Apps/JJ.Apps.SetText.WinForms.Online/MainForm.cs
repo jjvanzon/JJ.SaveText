@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.AppService.Interface.WcfClient;
+﻿using JJ.Apps.SetText.AppService.Client.Wcf;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Framework.Configuration;

@@ -37,24 +37,15 @@
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomClient\SetTextWithSyncAppServiceClient.cs" />
-    <Compile Include="IResourceService.cs" />
+    <Compile Include="IResourceAppService.cs" />
     <Compile Include="Models\Labels.cs" />
     <Compile Include="Models\Messages.cs" />
     <Compile Include="Models\Titles.cs" />
-    <Compile Include="CustomClient\ResourceServiceClient.cs" />
-    <Compile Include="CustomClient\SetTextAppServiceClient.cs" />
-    <Compile Include="WcfClient\SetTextAppServiceClient.cs" />
     <Compile Include="ISetTextAppService.cs" />
     <Compile Include="ISetTextWithSyncAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WcfClient\SetTextWithSyncAppServiceClient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Soap\JJ.Framework.Soap.csproj">
-      <Project>{2b86213c-a758-4db9-bd37-5e7d2f4d7c4d}</Project>
-      <Name>JJ.Framework.Soap</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Models\JJ.Models.Canonical\JJ.Models.Canonical.csproj">
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Models.Canonical</Name>

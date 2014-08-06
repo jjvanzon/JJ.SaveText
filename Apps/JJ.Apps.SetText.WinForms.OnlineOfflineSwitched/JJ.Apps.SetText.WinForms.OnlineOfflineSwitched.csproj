@@ -111,6 +111,10 @@
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
       <Name>JJ.Models.SetText</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JJ.Apps.SetText.AppService.Client\JJ.Apps.SetText.AppService.Client.csproj">
+      <Project>{f35c6131-d793-49d3-8044-e8b06f9cb107}</Project>
+      <Name>JJ.Apps.SetText.AppService.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Apps.SetText.AppService.Interface\JJ.Apps.SetText.AppService.Interface.csproj">
       <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
       <Name>JJ.Apps.SetText.AppService.Interface</Name>

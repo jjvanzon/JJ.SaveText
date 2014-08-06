@@ -26,7 +26,7 @@ using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.ViewModels;
 using JJ.Apps.SetText.Resources;
 using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.AppService.Interface.CustomClient;
+using JJ.Apps.SetText.AppService.Client.Custom;
 
 public class SetTextViewCode : MonoBehaviour
 {

@@ -54,6 +54,10 @@
       <Project>{6b54e0e9-ff92-4dd9-93a4-262544e74163}</Project>
       <Name>JJ.Models.SetText.Persistence.Xml.Linq</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JJ.Apps.SetText.AppService.Client\JJ.Apps.SetText.AppService.Client.csproj">
+      <Project>{f35c6131-d793-49d3-8044-e8b06f9cb107}</Project>
+      <Name>JJ.Apps.SetText.AppService.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Apps.SetText.AppService.Interface\JJ.Apps.SetText.AppService.Interface.csproj">
       <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
       <Name>JJ.Apps.SetText.AppService.Interface</Name>

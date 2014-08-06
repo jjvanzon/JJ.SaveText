@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceService;
+﻿using JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.ResourceAppService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient
         {
             string cultureName = GetCultureName();
 
-            using (var service = new ResourceServiceClient())
+            using (var service = new ResourceAppServiceClient())
             {
                 Labels = service.GetLabels(cultureName);
                 Titles = service.GetTitles(cultureName);

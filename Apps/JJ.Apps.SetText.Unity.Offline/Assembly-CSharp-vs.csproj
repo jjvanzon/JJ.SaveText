@@ -62,9 +62,6 @@
  <Reference Include="JJ.Framework.Logging">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Logging.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Net4">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Net4.dll</HintPath>
- </Reference>
  <Reference Include="JJ.Framework.Persistence">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.dll</HintPath>
  </Reference>
@@ -99,13 +96,13 @@
  <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\en-US\JJ.Apps.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Business.SetText.resources">
  <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Framework.Validation.resources.dll</HintPath>
+ <HintPath>Assets\DotNetAssemblies\en-US\JJ.Framework.Validation.resources.dll</HintPath>
  </Reference>
  <Reference Include="System.Xml.Linq">
  <HintPath>Assets\Mono\System.Xml.Linq.dll</HintPath>

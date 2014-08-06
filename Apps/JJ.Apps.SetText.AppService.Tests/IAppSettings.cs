@@ -10,7 +10,7 @@ namespace JJ.Apps.SetText.AppService.Tests
     {
         string SetTextAppServiceUrl { get; }
         string SetTextWithSyncAppServiceUrl { get; }
-        string ResourceServiceUrl { get; }
+        string ResourceAppServiceUrl { get; }
         string CultureName { get; }
     }
 }
