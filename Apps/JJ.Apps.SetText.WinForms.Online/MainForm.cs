@@ -1,6 +1,6 @@
 ﻿using JJ.Apps.SetText.AppService.Client.Wcf;
-using JJ.Apps.SetText.Resources;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.AppService.Interface.Models;
+using JJ.Apps.SetText.Interface.ViewModels;
 using JJ.Framework.Configuration;
 using JJ.Models.Canonical;
 using System;
@@ -59,7 +59,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private void SetTitlesAndLabels()
         {
-            buttonSave.Text = Titles.SetText;
+            buttonSave.Text = ResourceHelper.Titles.SetText;
         }
 
         private void ApplyViewModel()
@@ -69,7 +69,7 @@ namespace JJ.Apps.SetText.WinForms.Online
             var sb = new StringBuilder();
             if (_viewModel.TextWasSavedMessageVisible)
             {
-                sb.AppendLine(Messages.Saved);
+                sb.AppendLine(ResourceHelper.Messages.Saved);
             }
 
             foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
@@ -82,7 +82,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 
         private SetTextAppServiceClient CreateAppServiceClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
+            string url = AppSettings<IAppSettings>.Get(x => x.SetTextAppService);
             string cultureName = CultureInfo.CurrentUICulture.Name;
             return new SetTextAppServiceClient(url, cultureName);
         }

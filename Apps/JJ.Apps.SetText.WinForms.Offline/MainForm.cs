@@ -1,7 +1,7 @@
-﻿using JJ.Apps.SetText.PresenterInterfaces;
+﻿using JJ.Apps.SetText.Interface.PresenterInterfaces;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.Resources;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.Interface.ViewModels;
 using JJ.Framework.Persistence;
 using JJ.Models.Canonical;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;

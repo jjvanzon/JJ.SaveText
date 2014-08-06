@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using JJ.Apps.SetText.PresenterInterfaces;
 using JJ.Apps.SetText.Presenters;
 using JJ.Models.Canonical;
 using JJ.Framework.Persistence;
@@ -16,10 +15,11 @@ using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Apps.SetText.AppService.Client.Wcf;
 using JJ.Apps.SetText.Resources;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.Interface.ViewModels;
 using System.Net;
 using System.Threading;
 using System.Globalization;
+using JJ.Apps.SetText.Interface.PresenterInterfaces;
 
 namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 {

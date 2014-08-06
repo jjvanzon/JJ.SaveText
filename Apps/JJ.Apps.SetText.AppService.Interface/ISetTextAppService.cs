@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.ViewModels;
+﻿using JJ.Apps.SetText.Interface.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

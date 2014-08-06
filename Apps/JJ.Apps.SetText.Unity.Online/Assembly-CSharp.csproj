@@ -54,14 +54,8 @@
  <Reference Include="JJ.Apps.SetText.AppService.Interface">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.AppService.Interface.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Apps.SetText">
- <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.dll</HintPath>
- </Reference>
  <Reference Include="JJ.Apps.SetText.Unity.DotNet">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Unity.DotNet.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Business.SetText">
- <HintPath>Assets\DotNetAssemblies\JJ.Business.SetText.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
@@ -75,9 +69,6 @@
  <Reference Include="JJ.Framework.Mathematics">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Mathematics.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Persistence">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.dll</HintPath>
- </Reference>
  <Reference Include="JJ.Framework.PlatformCompatibility">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.PlatformCompatibility.dll</HintPath>
  </Reference>
@@ -87,29 +78,14 @@
  <Reference Include="JJ.Framework.Soap">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Soap.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Validation">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Validation.dll</HintPath>
- </Reference>
  <Reference Include="JJ.Framework.Xml.Linq">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.Canonical">
  <HintPath>Assets\DotNetAssemblies\JJ.Models.Canonical.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Models.SetText">
- <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Models.SetText.Persistence">
- <HintPath>Assets\DotNetAssemblies\JJ.Models.SetText.Persistence.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Apps.SetText.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Apps.SetText.resources.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Business.SetText.resources">
- <HintPath>Assets\DotNetAssemblies\nl-NL\JJ.Business.SetText.resources.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Validation.resources">
- <HintPath>Assets\DotNetAssemblies\en-US\JJ.Framework.Validation.resources.dll</HintPath>
+ <Reference Include="JJ.Apps.SetText.Interface">
+ <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Interface.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,7 +21,7 @@ using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Models.SetText.Persistence.Memory.Mapping;
 using JJ.Models.SetText.Persistence.Xml.Linq.Mapping;
 using JJ.Apps.SetText.Presenters;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.Interface.ViewModels;
 using JJ.Apps.SetText.Resources;
 using JJ.Framework.PlatformCompatibility;
 

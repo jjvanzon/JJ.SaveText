@@ -6,13 +6,12 @@ using JJ.Framework.Validation;
 using JJ.Models.SetText;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Business.SetText.Validation;
-using JJ.Apps.SetText.Presenters.Helpers;
-using JJ.Apps.SetText.ViewModels;
-using JJ.Apps.SetText.ViewModels.Helpers;
+using JJ.Apps.SetText.Interface.ViewModels;
+using JJ.Apps.SetText.Helpers;
 using JJ.Business.SetText;
 using Canonical = JJ.Models.Canonical;
 using JJ.Models.Canonical;
-using JJ.Apps.SetText.PresenterInterfaces;
+using JJ.Apps.SetText.Interface.PresenterInterfaces;
 
 namespace JJ.Apps.SetText.Presenters
 {

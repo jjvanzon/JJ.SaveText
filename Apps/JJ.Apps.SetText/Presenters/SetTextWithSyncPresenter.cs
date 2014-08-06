@@ -1,14 +1,14 @@
-﻿using JJ.Apps.SetText.ViewModels;
-using JJ.Business.SetText;
-using JJ.Models.SetText.Persistence.RepositoryInterfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using JJ.Apps.SetText.ViewModels.Helpers;
 using Canonical = JJ.Models.Canonical;
 using JJ.Models.Canonical;
-using JJ.Apps.SetText.PresenterInterfaces;
+using JJ.Models.SetText.Persistence.RepositoryInterfaces;
+using JJ.Business.SetText;
+using JJ.Apps.SetText.Interface.ViewModels;
+using JJ.Apps.SetText.Interface.PresenterInterfaces;
+using JJ.Apps.SetText.Helpers;
 
 namespace JJ.Apps.SetText.Presenters
 {

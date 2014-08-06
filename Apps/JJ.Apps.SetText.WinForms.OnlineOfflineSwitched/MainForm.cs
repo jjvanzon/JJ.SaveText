@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.ViewModels;
+﻿using JJ.Apps.SetText.Interface.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using JJ.Apps.SetText.PresenterInterfaces;
+using JJ.Apps.SetText.Interface.PresenterInterfaces;
 using JJ.Apps.SetText.Presenters;
 using JJ.Models.Canonical;
 using JJ.Framework.Persistence;

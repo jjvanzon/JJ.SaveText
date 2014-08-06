@@ -1,7 +1,7 @@
 ﻿using JJ.Apps.SetText.Mvc.Controllers.Helpers;
 using JJ.Apps.SetText.Mvc.Helpers;
 using JJ.Apps.SetText.Presenters;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.Interface.ViewModels;
 using JJ.Framework.Persistence;
 using JJ.Models.Canonical;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;

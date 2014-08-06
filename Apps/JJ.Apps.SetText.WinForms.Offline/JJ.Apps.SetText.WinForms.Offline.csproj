@@ -108,6 +108,10 @@
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
       <Name>JJ.Models.SetText</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JJ.Apps.SetText.Interface\JJ.Apps.SetText.Interface.csproj">
+      <Project>{f074226b-734d-4308-b1c5-30350a228d8b}</Project>
+      <Name>JJ.Apps.SetText.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Apps.SetText\JJ.Apps.SetText.csproj">
       <Project>{44b139ab-bdf0-414a-aa01-4b7e62adcf57}</Project>
       <Name>JJ.Apps.SetText</Name>

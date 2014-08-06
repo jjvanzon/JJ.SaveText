@@ -6,11 +6,11 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using Canonical = JJ.Models.Canonical;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.Interface.ViewModels;
 using JJ.Framework.Persistence;
 using JJ.Apps.SetText.Presenters;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
-using JJ.Apps.SetText.PresenterInterfaces;
+using JJ.Apps.SetText.Interface.PresenterInterfaces;
 using JJ.Apps.SetText.AppService.Interface;
 using JJ.Apps.SetText.AppService.Helpers;
 

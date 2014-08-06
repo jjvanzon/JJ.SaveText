@@ -7,6 +7,7 @@ namespace JJ.Apps.SetText.WinForms.Online
 {
     internal interface IAppSettings
     {
-        string AppServiceUrl { get; }
+        string SetTextAppService { get; }
+        string ResourceAppService { get; set; }
     }
 }

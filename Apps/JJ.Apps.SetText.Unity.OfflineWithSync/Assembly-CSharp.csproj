@@ -47,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ViewCode\SetTextViewCode.cs" />
+ <Reference Include="JJ.Apps.SetText.AppService.Client">
+ <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.AppService.Client.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Apps.SetText.AppService.Interface">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.AppService.Interface.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Apps.SetText.Interface">
+ <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Interface.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Apps.SetText.Unity.DotNet">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Unity.DotNet.dll</HintPath>
@@ -62,8 +68,14 @@
  <Reference Include="JJ.Framework.Common">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Common.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Framework.IO">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.IO.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Framework.Logging">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Logging.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.Mathematics">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Mathematics.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Persistence">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Persistence.dll</HintPath>
@@ -80,8 +92,14 @@
  <Reference Include="JJ.Framework.Reflection">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Reflection.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Framework.Soap">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Soap.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Framework.Validation">
  <HintPath>Assets\DotNetAssemblies\JJ.Framework.Validation.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Framework.Xml.Linq">
+ <HintPath>Assets\DotNetAssemblies\JJ.Framework.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Models.Canonical">
  <HintPath>Assets\DotNetAssemblies\JJ.Models.Canonical.dll</HintPath>
@@ -106,21 +124,6 @@
  </Reference>
  <Reference Include="JJ.Framework.Validation.resources">
  <HintPath>Assets\DotNetAssemblies\en-US\JJ.Framework.Validation.resources.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Xml.Linq">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Xml.Linq.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Soap">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Soap.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.Mathematics">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Framework.IO">
- <HintPath>Assets\DotNetAssemblies\JJ.Framework.IO.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Apps.SetText.AppService.Client">
- <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.AppService.Client.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

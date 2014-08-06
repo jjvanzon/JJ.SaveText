@@ -37,10 +37,9 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PresenterInterfaces\ISetTextPresenter.cs" />
-    <Compile Include="PresenterInterfaces\ISetTextWithSyncPresenter.cs" />
-    <Compile Include="Presenters\Helpers\ValidationMessagesExtensions.cs" />
-    <Compile Include="Presenters\Helpers\ValidationMessageExtensions.cs" />
+    <Compile Include="Helpers\ViewModelExtensions_NullCoallesce.cs" />
+    <Compile Include="Helpers\ValidationMessagesExtensions.cs" />
+    <Compile Include="Helpers\ValidationMessageExtensions.cs" />
     <Compile Include="Presenters\SetTextPresenter.cs" />
     <Compile Include="Presenters\SetTextWithSyncPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,8 +58,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="ViewModels\Helpers\ViewModelExtensions_NullCoallesce.cs" />
-    <Compile Include="ViewModels\SetTextViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Business\JJ.Business.SetText\JJ.Business.SetText.csproj">
@@ -82,6 +79,10 @@
     <ProjectReference Include="..\..\Models\JJ.Models.SetText\JJ.Models.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
       <Name>JJ.Models.SetText</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Apps.SetText.Interface\JJ.Apps.SetText.Interface.csproj">
+      <Project>{f074226b-734d-4308-b1c5-30350a228d8b}</Project>
+      <Name>JJ.Apps.SetText.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

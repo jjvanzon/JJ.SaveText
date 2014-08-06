@@ -50,6 +50,9 @@
  <Reference Include="JJ.Apps.SetText">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.dll</HintPath>
  </Reference>
+ <Reference Include="JJ.Apps.SetText.Interface">
+ <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Interface.dll</HintPath>
+ </Reference>
  <Reference Include="JJ.Apps.SetText.Unity.DotNet">
  <HintPath>Assets\DotNetAssemblies\JJ.Apps.SetText.Unity.DotNet.dll</HintPath>
  </Reference>

@@ -1,6 +1,6 @@
 ﻿using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.PresenterInterfaces;
-using JJ.Apps.SetText.ViewModels;
+using JJ.Apps.SetText.Interface.PresenterInterfaces;
+using JJ.Apps.SetText.Interface.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
