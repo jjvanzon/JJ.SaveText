@@ -4,34 +4,32 @@ using JJ.Framework.Soap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 
 namespace JJ.Apps.SetText.AppService.Client.Custom
 {
-    public class ResourceAppServiceClient : IResourceAppService
+    public class ResourceAppServiceClient : WcfSoapClient<IResourceAppService>, IResourceAppService
     {
-        private WcfSoapClient _serviceClient;
-
         public ResourceAppServiceClient(string url)
-        {
-            _serviceClient = new WcfSoapClient(url, typeof(IResourceAppService).Name);
-        }
+            : base(url)
+        { }
 
         public Messages GetMessages(string cultureName)
         {
-            Messages messages = _serviceClient.Invoke<Messages>("GetMessages", new SoapParameter("cultureName", cultureName));
+            Messages messages = Invoke(x => x.GetMessages(cultureName));
             return messages;
         }
 
         public Labels GetLabels(string cultureName)
         {
-            Labels labels = _serviceClient.Invoke<Labels>("GetLabels", new SoapParameter("cultureName", cultureName));
+            Labels labels = Invoke(x => x.GetLabels(cultureName));
             return labels;
         }
 
         public Titles GetTitles(string cultureName)
         {
-            Titles titles = _serviceClient.Invoke<Titles>("GetTitles", new SoapParameter("cultureName", cultureName));
+            Titles titles = Invoke(x => x.GetTitles(cultureName));
             return titles;
         }
     }

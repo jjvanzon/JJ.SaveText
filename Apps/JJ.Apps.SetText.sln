@@ -125,6 +125,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Interface", "JJ.Apps.SetText.Interface\JJ.Apps.SetText.Interface.csproj", "{F074226B-734D-4308-B1C5-30350A228D8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Online.CustomSoapClient", "JJ.Apps.SetText.WinForms.Online.CustomSoapClient\JJ.Apps.SetText.WinForms.Online.CustomSoapClient.csproj", "{F36B7455-7754-467E-8F64-72A33C687889}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -480,6 +482,12 @@ Global
 		{F074226B-734D-4308-B1C5-30350A228D8B}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
 		{F074226B-734D-4308-B1C5-30350A228D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F074226B-734D-4308-B1C5-30350A228D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36B7455-7754-467E-8F64-72A33C687889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36B7455-7754-467E-8F64-72A33C687889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36B7455-7754-467E-8F64-72A33C687889}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36B7455-7754-467E-8F64-72A33C687889}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{F36B7455-7754-467E-8F64-72A33C687889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36B7455-7754-467E-8F64-72A33C687889}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

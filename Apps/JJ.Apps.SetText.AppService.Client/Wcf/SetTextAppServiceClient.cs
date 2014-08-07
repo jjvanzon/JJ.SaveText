@@ -9,7 +9,7 @@ using System.Text;
 
 namespace JJ.Apps.SetText.AppService.Client.Wcf
 {
-    // If ISetTextAppService differs from ISetTextPresenter it will probably only be additional parameters for the service methods.
+    // ISetTextAppService differs from ISetTextPresenter only in the additional parameters for the service methods.
     // You can pass those to the constructor of the client, expose the presenter interface, and pass the extra parameters to the Channel.
 
     public class SetTextAppServiceClient : ClientBase<ISetTextAppService>, ISetTextPresenter
