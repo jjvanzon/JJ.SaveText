@@ -205,6 +205,7 @@
             <vm:TextWasSavedButNotYetSynchronized>false</vm:TextWasSavedButNotYetSynchronized>
             <vm:TextWasSavedMessageVisible>false</vm:TextWasSavedMessageVisible>
          </o:viewModel>
+         <o:cultureName>nl-NL</o:cultureName>
       </o:Save>
    </s:Body>
 </s:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Save"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request5_ScatteredNamespaceDeclarations"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint><con:request><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" 

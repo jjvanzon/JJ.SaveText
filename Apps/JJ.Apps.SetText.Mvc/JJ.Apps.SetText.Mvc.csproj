@@ -126,8 +126,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Helpers\ActionNames.cs" />
-    <Compile Include="Controllers\Helpers\TempDataKeys.cs" />
+    <Compile Include="Names\ActionNames.cs" />
+    <Compile Include="Names\TempDataKeys.cs" />
     <Compile Include="Controllers\SetTextController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

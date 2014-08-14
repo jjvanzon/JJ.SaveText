@@ -1,4 +1,4 @@
-﻿using JJ.Apps.SetText.Mvc.Controllers.Helpers;
+﻿using JJ.Apps.SetText.Mvc.Names;
 using JJ.Apps.SetText.Mvc.Helpers;
 using JJ.Apps.SetText.Presenters;
 using JJ.Apps.SetText.Interface.ViewModels;
