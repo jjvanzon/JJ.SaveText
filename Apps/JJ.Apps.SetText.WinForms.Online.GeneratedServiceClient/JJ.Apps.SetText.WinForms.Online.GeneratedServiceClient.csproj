@@ -119,21 +119,6 @@
     <WCFMetadataStorage Include="Service References\SetTextAppService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SetTextAppService\SetTextAppService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SetTextAppService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SetTextAppService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SetTextAppService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\ResourceAppService\ResourceAppService.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +129,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ResourceAppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\SetTextAppService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SetTextAppService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,8 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient
 {
     public partial class MainForm : Form
     {
+        private string _cultureName = Thread.CurrentThread.CurrentUICulture.Name;
+
         private SetTextViewModel _viewModel;
 
         public MainForm()
@@ -40,7 +43,7 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient
         {
             using (var service = new SetTextAppServiceClient())
             {
-                _viewModel = service.Show();
+                _viewModel = service.Show(_cultureName);
                 ApplyViewModel();
             }
         }
@@ -49,7 +52,7 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient
         {
             using (var service = new SetTextAppServiceClient())
             {
-                _viewModel = service.Save(_viewModel);
+                _viewModel = service.Save(_viewModel, _cultureName);
                 ApplyViewModel();
             }
         }

@@ -12,6 +12,8 @@ namespace JJ.Apps.SetText.AppService.Helpers
     {
         public static void SetCulture(string cultureName)
         {
+            if (cultureName == null) throw new ArgumentNullException("cultureName");
+
             CultureInfo cultureInfo = new CultureInfo(cultureName);
             Thread.CurrentThread.CurrentCulture = cultureInfo;
             Thread.CurrentThread.CurrentUICulture = cultureInfo;

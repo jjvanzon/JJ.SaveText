@@ -37,7 +37,8 @@ namespace JJ.Apps.SetText.Mvc.Helpers
                 persistenceConfiguration.ContextType,
                 location,
                 persistenceConfiguration.ModelAssembly,
-                persistenceConfiguration.MappingAssembly);
+                persistenceConfiguration.MappingAssembly,
+                persistenceConfiguration.Dialect);
 
             return context;
         }

@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels" />
+      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels" />
       <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical" />
     </xsd:schema>
   </wsdl:types>

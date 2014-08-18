@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6749c140-acad-486c-b523-e5ad923d8023" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="65f4c93b-1d04-4a0d-83bd-7c8839a454f2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:6371/ResourceAppService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ResourceAppService.disco" MetadataType="Disco" ID="3d403c0e-698a-4528-b952-80a751506e5c" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?disco" />
-    <MetadataFile FileName="ResourceAppService.xsd" MetadataType="Schema" ID="4063f966-9a14-46ba-9dc9-a75b427065a6" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ResourceAppService1.xsd" MetadataType="Schema" ID="859ccb2a-4af8-4e6a-9f93-b978c554083b" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ResourceAppService2.xsd" MetadataType="Schema" ID="37a0f248-cf50-4544-a80f-ac8ec8e53196" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ResourceAppService.wsdl" MetadataType="Wsdl" ID="ccd44700-eee4-46d0-be76-957edf90819b" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?wsdl" />
+    <MetadataFile FileName="ResourceAppService.disco" MetadataType="Disco" ID="3b3a7171-0f67-42a3-b39a-10c1625e2a2c" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?disco" />
+    <MetadataFile FileName="ResourceAppService.xsd" MetadataType="Schema" ID="1fe46a22-4a61-47c0-9d43-49d85bde27b4" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ResourceAppService1.xsd" MetadataType="Schema" ID="a9b545fc-8db6-4369-956e-3321fe60050a" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResourceAppService2.xsd" MetadataType="Schema" ID="13fcbaa7-a43d-485d-a28c-07edee849e61" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResourceAppService.wsdl" MetadataType="Wsdl" ID="bcfdfe45-64db-4d5a-ac85-6b177b222396" SourceId="1" SourceUrl="http://localhost:6371/ResourceAppService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="078ea2dd-8cdb-4bf4-9609-cddd6e170bf0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9111e06c-ee9e-40f1-9b6c-33ec707388d5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:6371/SetTextAppService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SetTextAppService.xsd" MetadataType="Schema" ID="51ca50dc-d808-4e71-9bee-a5882bdfed2b" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SetTextAppService1.xsd" MetadataType="Schema" ID="12f46aa8-80f8-47e4-8876-657db350cd90" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SetTextAppService.disco" MetadataType="Disco" ID="64e4ff31-6c72-4b9d-9c8f-187bed151bb2" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?disco" />
-    <MetadataFile FileName="SetTextAppService.wsdl" MetadataType="Wsdl" ID="bbeb24d7-1f4a-47ad-92c0-95ab5132739b" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?wsdl" />
-    <MetadataFile FileName="SetTextAppService2.xsd" MetadataType="Schema" ID="163de8d6-cd3a-4b0b-90af-874366709187" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SetTextAppService3.xsd" MetadataType="Schema" ID="876de0f9-e28a-43dd-8916-17b6434987d6" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SetTextAppService.xsd" MetadataType="Schema" ID="c83250c2-5803-4d96-82a6-24632ee82606" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SetTextAppService1.xsd" MetadataType="Schema" ID="28ce7419-084b-4f45-bdab-2b62f58d3eb5" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SetTextAppService.disco" MetadataType="Disco" ID="fc2c2af9-ae10-47ba-b88c-ebc0ff453484" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?disco" />
+    <MetadataFile FileName="SetTextAppService.wsdl" MetadataType="Wsdl" ID="3605cda8-dfc5-4ed9-b67d-0fba5763e08a" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?wsdl" />
+    <MetadataFile FileName="SetTextAppService2.xsd" MetadataType="Schema" ID="e528978a-57cd-4dd7-974a-055bd7eeec3c" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SetTextAppService3.xsd" MetadataType="Schema" ID="544c6ec5-7062-41c6-9782-ede5bc56648a" SourceId="1" SourceUrl="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

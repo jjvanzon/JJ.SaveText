@@ -15,7 +15,7 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppServi
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SetTextViewModel", Namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SetTextViewModel", Namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels")]
     [System.SerializableAttribute()]
     public partial class SetTextViewModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -188,16 +188,16 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppServi
     public interface ISetTextAppService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Show", ReplyAction="http://tempuri.org/ISetTextAppService/ShowResponse")]
-        JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Show();
+        JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Show(string cultureName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Show", ReplyAction="http://tempuri.org/ISetTextAppService/ShowResponse")]
-        System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> ShowAsync();
+        System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> ShowAsync(string cultureName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Save", ReplyAction="http://tempuri.org/ISetTextAppService/SaveResponse")]
-        JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel);
+        JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel, string cultureName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISetTextAppService/Save", ReplyAction="http://tempuri.org/ISetTextAppService/SaveResponse")]
-        System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel);
+        System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel, string cultureName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -227,20 +227,20 @@ namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppServi
                 base(binding, remoteAddress) {
         }
         
-        public JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Show() {
-            return base.Channel.Show();
+        public JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Show(string cultureName) {
+            return base.Channel.Show(cultureName);
         }
         
-        public System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> ShowAsync() {
-            return base.Channel.ShowAsync();
+        public System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> ShowAsync(string cultureName) {
+            return base.Channel.ShowAsync(cultureName);
         }
         
-        public JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel) {
-            return base.Channel.Save(viewModel);
+        public JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel Save(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel, string cultureName) {
+            return base.Channel.Save(viewModel, cultureName);
         }
         
-        public System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel) {
-            return base.Channel.SaveAsync(viewModel);
+        public System.Threading.Tasks.Task<JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel> SaveAsync(JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.SetTextAppService.SetTextViewModel viewModel, string cultureName) {
+            return base.Channel.SaveAsync(viewModel, cultureName);
         }
     }
 }
