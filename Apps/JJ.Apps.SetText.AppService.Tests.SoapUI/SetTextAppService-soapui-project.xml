@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
       <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
-      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+      <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels"/>
       <xsd:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical"/>
     </xsd:schema>
   </wsdl:types>
@@ -57,34 +57,37 @@
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
-  <xs:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+  <xs:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels"/>
   <xs:element name="Show">
     <xs:complexType>
-      <xs:sequence/>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cultureName" nillable="true" type="xs:string"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ShowResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ShowResult" nillable="true" type="q1:SetTextViewModel" xmlns:q1="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+        <xs:element minOccurs="0" name="ShowResult" nillable="true" type="q1:SetTextViewModel" xmlns:q1="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Save">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="viewModel" nillable="true" type="q2:SetTextViewModel" xmlns:q2="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+        <xs:element minOccurs="0" name="viewModel" nillable="true" type="q2:SetTextViewModel" xmlns:q2="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels"/>
+        <xs:element minOccurs="0" name="cultureName" nillable="true" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SaveResult" nillable="true" type="q3:SetTextViewModel" xmlns:q3="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels"/>
+        <xs:element minOccurs="0" name="SaveResult" nillable="true" type="q3:SetTextViewModel" xmlns:q3="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.ViewModels">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:6371/SetTextAppService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/JJ.Apps.SetText.Interface.ViewModels">
   <xs:import schemaLocation="http://localhost:6371/SetTextAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/JJ.Models.Canonical"/>
   <xs:complexType name="SetTextViewModel">
     <xs:sequence>
@@ -249,7 +252,9 @@
 </a:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Save"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/ISetTextAppService/Show" name="Show" bindingOperationName="Show" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:6371/SetTextAppService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
    <soapenv:Header/>
    <soapenv:Body>
-      <tem:Show/>
+      <tem:Show>
+         <tem:cultureName>nl-NL</tem:cultureName>
+      </tem:Show>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ISetTextAppService/Show"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_IResourceService" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IResourceService" soapVersion="1_1" anonymous="optional" definition="http://localhost:6371/ResourceService.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:6371/ResourceService.svc?wsdl"><con:part><con:url>http://localhost:6371/ResourceService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ResourceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
   <wsdl:types>
