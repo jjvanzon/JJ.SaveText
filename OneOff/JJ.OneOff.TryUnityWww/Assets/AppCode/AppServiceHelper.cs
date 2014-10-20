@@ -6,10 +6,8 @@ using System.Text;
 
 public static class AppServiceHelper
 {
-	public static string SendSoapMessage(string url, string soapAction, string stringToSend)
+	public static string SendSoapMessage(string url, string soapAction, string stringToSend, int  timeoutInMilliseconds)
 	{
-		int timeoutInMilliseconds = 30000;
-
 		byte[] bytesToSend = StreamHelper.StringToBytes(stringToSend, Encoding.UTF8);
 		
 		Hashtable header = new Hashtable();

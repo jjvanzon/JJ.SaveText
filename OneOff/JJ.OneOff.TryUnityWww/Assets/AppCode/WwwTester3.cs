@@ -44,11 +44,12 @@ public class WwwTester3 : MonoBehaviour
 			string operationName = "Show";
 			string interfaceName = "ISetTextAppService";
 			string soapAction = String.Format("http://tempuri.org/{0}/{1}", interfaceName, operationName);
+			int timeoutInMillsecods = 10000;
 
 			string stringToSend = GetStringToSend();
 			try
 			{
-				_resultString = AppServiceHelper.SendSoapMessage(url, soapAction, stringToSend);
+				_resultString = AppServiceHelper.SendSoapMessage(url, soapAction, stringToSend, timeoutInMillsecods);
 				Debug.Log("Status = Ok");
 				Debug.Log(_resultString);
 			}
