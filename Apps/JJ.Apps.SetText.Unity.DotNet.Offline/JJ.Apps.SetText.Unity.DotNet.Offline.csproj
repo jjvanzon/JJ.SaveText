@@ -7,8 +7,8 @@
     <ProjectGuid>{9BC68E57-61E1-4084-9D12-749123B2B4CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JJ.Apps.SetText.Unity.DotNet</RootNamespace>
-    <AssemblyName>JJ.Apps.SetText.Unity.DotNet</AssemblyName>
+    <RootNamespace>JJ.Apps.SetText.Unity.DotNet.Offline</RootNamespace>
+    <AssemblyName>JJ.Apps.SetText.Unity.DotNet.Offline</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

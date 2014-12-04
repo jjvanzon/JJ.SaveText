@@ -38,9 +38,7 @@ public class WwwTester5 : MonoBehaviour
 		{
 			if (_lastException != null)
 			{
-				// JJ.Framework.Logging does not workon Windows Phone 8, because it references something out of System.Diagnostics that is not supported
-				//string exceptionMessage = ExceptionHelper.FormatExceptionWithInnerExceptions(_lastException, includeStackTrace: true);
-				string exceptionMessage = _lastException.Message;
+				string exceptionMessage = ExceptionHelper.FormatExceptionWithInnerExceptions(_lastException, includeStackTrace: true);
 
 				GUI.Label (new Rect(0, 0, 580, 3000), exceptionMessage);
 				if (GUI.Button (new Rect(580, 0, 100, _lineHeight), "Clear"))
@@ -132,9 +130,7 @@ public class WwwTester5 : MonoBehaviour
 	private byte[] GetBytesToSend()
 	{
 		string text = GetStringToSend ();
-		// JJ.Framework.IO does not work on Windows Phone 8, because it uses an overload not supported on Windows Phone 8.
-		//byte[] bytes = StreamHelper.StringToBytes (text, Encoding.UTF8);
-		byte[] bytes = Encoding.UTF8.GetBytes (text);
+		byte[] bytes = StreamHelper.StringToBytes (text, Encoding.UTF8);
 		return bytes;
 	}
 }

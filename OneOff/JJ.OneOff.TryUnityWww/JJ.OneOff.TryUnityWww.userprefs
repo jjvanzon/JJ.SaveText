@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\AppCode\AppServiceHelper.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Apps\JJ.Apps.SetText.Unity.Online.WwwObject\Assets\AppCode\AsyncSoapMessageSender.cs">
     <Files>
-      <File FileName="Assets\AppCode\WwwTester5.cs" Line="117" Column="2" />
-      <File FileName="Assets\AppCode\AppServiceHelper.cs" Line="11" Column="1" />
-      <File FileName="Assets\AppCode\AsyncSoapMessageSender.cs" Line="30" Column="3" />
+      <File FileName="..\..\Apps\JJ.Apps.SetText.Unity.Online.WwwObject\Assets\ViewCode\SetTextViewCode.cs" Line="144" Column="12" />
+      <File FileName="..\..\Apps\JJ.Apps.SetText.Unity.Online.WwwObject\Assets\AppCode\AsyncSoapMessageSender.cs" Line="36" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
