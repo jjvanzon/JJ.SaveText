@@ -5,7 +5,7 @@ using System.Web;
 
 namespace JJ.Apps.SetText.Mvc.Names
 {
-    public class TempDataKeys
+    internal class TempDataKeys
     {
         public const string ViewModel = "ViewModel";
     }

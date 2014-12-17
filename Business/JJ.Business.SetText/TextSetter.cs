@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using JJ.Framework.Reflection;
 
 namespace JJ.Business.SetText
 {
@@ -19,7 +20,7 @@ namespace JJ.Business.SetText
 
         public TextSetter(IEntityRepository entityRepository)
         {
-            if (entityRepository == null) throw new ArgumentNullException("entityRepository");
+            if (entityRepository == null) throw new NullException(() => entityRepository);
             _entityRepository = entityRepository;
         }
 

@@ -12,6 +12,7 @@ using JJ.Business.SetText;
 using Canonical = JJ.Models.Canonical;
 using JJ.Models.Canonical;
 using JJ.Apps.SetText.Interface.PresenterInterfaces;
+using JJ.Framework.Reflection;
 
 namespace JJ.Apps.SetText.Presenters
 {
@@ -22,7 +23,7 @@ namespace JJ.Apps.SetText.Presenters
 
         public SetTextPresenter(IEntityRepository entityRepository)
         {
-            if (entityRepository == null) throw new ArgumentNullException("entityRepository");
+            if (entityRepository == null) throw new NullException(() => entityRepository);
 
             _entityRepository = entityRepository;
             _textSetter = new TextSetter(entityRepository);

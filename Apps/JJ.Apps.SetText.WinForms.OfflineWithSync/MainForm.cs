@@ -23,7 +23,7 @@ using JJ.Apps.SetText.Interface.PresenterInterfaces;
 
 namespace JJ.Apps.SetText.WinForms.OfflineWithSync
 {
-    public partial class MainForm : Form
+    internal partial class MainForm : Form
     {
         private IContext _context;
         private ISetTextWithSyncPresenter _presenter;

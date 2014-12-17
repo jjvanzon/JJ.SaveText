@@ -1,4 +1,5 @@
 ﻿using JJ.Framework.Persistence;
+using JJ.Framework.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -12,7 +13,7 @@ namespace JJ.Apps.SetText.AppService.Helpers
     {
         public static void SetCulture(string cultureName)
         {
-            if (cultureName == null) throw new ArgumentNullException("cultureName");
+            if (cultureName == null) throw new NullException(() => cultureName);
 
             CultureInfo cultureInfo = new CultureInfo(cultureName);
             Thread.CurrentThread.CurrentCulture = cultureInfo;

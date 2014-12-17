@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace JJ.Apps.SetText.WinForms.Offline
 {
-    public partial class MainForm : Form
+    internal partial class MainForm : Form
     {
         private IContext _context;
         private ISetTextPresenter _presenter;

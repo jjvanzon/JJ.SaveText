@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient
 {
-    public partial class MainForm : Form
+    internal partial class MainForm : Form
     {
         private string _cultureName = Thread.CurrentThread.CurrentUICulture.Name;
 

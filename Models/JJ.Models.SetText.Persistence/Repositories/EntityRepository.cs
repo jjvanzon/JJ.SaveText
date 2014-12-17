@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using JJ.Framework.Persistence;
+using JJ.Framework.Reflection;
 
 namespace JJ.Models.SetText.Persistence.Repositories
 {
@@ -13,7 +14,7 @@ namespace JJ.Models.SetText.Persistence.Repositories
 
         public EntityRepository(IContext context)
         {
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new NullException(() => context);
 
             _context = context;
         }

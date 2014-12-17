@@ -1,5 +1,6 @@
 ﻿using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Memory;
+using JJ.Framework.Reflection;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace JJ.Models.SetText.Memory.Repositories
 
         public EntityRepository(IContext context)
         {
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new NullException(() => context);
 
             _context = (MemoryContext)context;
         }

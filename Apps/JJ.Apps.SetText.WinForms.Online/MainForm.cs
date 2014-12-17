@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace JJ.Apps.SetText.WinForms.Online
 {
-    public partial class MainForm : Form
+    internal partial class MainForm : Form
     {
         private SetTextViewModel _viewModel;
 

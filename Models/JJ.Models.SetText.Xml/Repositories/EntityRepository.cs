@@ -1,5 +1,6 @@
 ﻿using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Xml;
+using JJ.Framework.Reflection;
 using JJ.Models.SetText.Persistence.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace JJ.Models.SetText.Xml.Repositories
 
         public EntityRepository(IContext context)
         {
-            if (context == null) throw new ArgumentNullException("context");
+            if (context == null) throw new NullException(() => context);
 
             _context = (XmlContext)context;
             _document = _context.GetDocument<Entity>();

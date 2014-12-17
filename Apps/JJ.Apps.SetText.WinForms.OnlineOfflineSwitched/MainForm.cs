@@ -22,7 +22,7 @@ using System.Globalization;
 
 namespace JJ.Apps.SetText.WinForms.OnlineOfflineSwitched
 {
-    public partial class MainForm : Form
+    internal partial class MainForm : Form
     {
         private IContext _context;
         private SetTextWithSyncPresenter _presenter;

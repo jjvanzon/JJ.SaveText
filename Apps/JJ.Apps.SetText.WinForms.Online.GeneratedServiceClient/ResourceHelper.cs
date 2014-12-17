@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient
 {
-    public static class ResourceHelper
+    internal static class ResourceHelper
     {
         static ResourceHelper()
         {

@@ -9,6 +9,7 @@ using JJ.Business.SetText;
 using JJ.Apps.SetText.Interface.ViewModels;
 using JJ.Apps.SetText.Interface.PresenterInterfaces;
 using JJ.Apps.SetText.Helpers;
+using JJ.Framework.Reflection;
 
 namespace JJ.Apps.SetText.Presenters
 {
@@ -19,7 +20,7 @@ namespace JJ.Apps.SetText.Presenters
 
         public SetTextWithSyncPresenter(IEntityRepository entityRepository)
         {
-            if (entityRepository == null) throw new ArgumentNullException("entityRepository");
+            if (entityRepository == null) throw new NullException(() => entityRepository);
 
             _entityRepository = entityRepository;
             _textSetter = new TextSetter(entityRepository);
