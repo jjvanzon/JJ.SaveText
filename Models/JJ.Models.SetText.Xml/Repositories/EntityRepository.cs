@@ -14,7 +14,7 @@ namespace JJ.Models.SetText.Xml.Repositories
     {
         private XmlContext _context;
         private XmlDocument _document;
-        private XmlToEntityConverter<Entity> _converter;
+        private XmlToEntityConverter _converter;
 
         public EntityRepository(IContext context)
         {
@@ -22,7 +22,7 @@ namespace JJ.Models.SetText.Xml.Repositories
 
             _context = (XmlContext)context;
             _document = _context.GetDocument<Entity>();
-            _converter = _context.GetConverter<Entity>();
+            _converter = _context.GetConverter();
         }
 
         public Entity Get(int id)
