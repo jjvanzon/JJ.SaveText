@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Validation", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml", "Framework\JJ.Framework.Xml\JJ.Framework.Xml.csproj", "{F6EA0941-40FF-4679-A1A6-EACD5C9BA42B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.Canonical", "Models\JJ.Models.Canonical\JJ.Models.Canonical.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.CanonicalModel", "Business\JJ.Business.CanonicalModel\JJ.Business.CanonicalModel.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation", "Framework\JJ.Framework.Presentation\JJ.Framework.Presentation.csproj", "{79B0EAC3-5159-4FC8-B3D8-53315B205444}"
 EndProject
@@ -41,50 +41,50 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.J
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection.Tests", "Framework\JJ.Framework.Reflection.Tests\JJ.Framework.Reflection.Tests.csproj", "{E150EBF6-16F7-4299-B4BD-791757D6CC9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText", "Models\JJ.Models.SetText\JJ.Models.SetText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText", "Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.Persistence", "Models\JJ.Models.SetText.Persistence\JJ.Models.SetText.Persistence.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.Persistence", "Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.Persistence.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.NHibernate", "Models\JJ.Models.SetText.NHibernate\JJ.Models.SetText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.NHibernate", "Persistence\JJ.Persistence.SetText.NHibernate\JJ.Persistence.SetText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.EntityFramework5", "Models\JJ.Models.SetText.EntityFramework5\JJ.Models.SetText.EntityFramework5.csproj", "{77AB85CE-6402-4AA3-A9A9-83121D5D9C6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.EntityFramework5", "Persistence\JJ.Persistence.SetText.EntityFramework5\JJ.Persistence.SetText.EntityFramework5.csproj", "{77AB85CE-6402-4AA3-A9A9-83121D5D9C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.Xml", "Models\JJ.Models.SetText.Xml\JJ.Models.SetText.Xml.csproj", "{292046BB-5667-4231-B8AA-BAD57CD1B481}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.Xml", "Persistence\JJ.Persistence.SetText.Xml\JJ.Persistence.SetText.Xml.csproj", "{292046BB-5667-4231-B8AA-BAD57CD1B481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText", "Apps\JJ.Apps.SetText\JJ.Apps.SetText.csproj", "{44B139AB-BDF0-414A-AA01-4B7E62ADCF57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText", "Presentation\JJ.Presentation.SetText\JJ.Presentation.SetText.csproj", "{44B139AB-BDF0-414A-AA01-4B7E62ADCF57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Mvc", "Apps\JJ.Apps.SetText.Mvc\JJ.Apps.SetText.Mvc.csproj", "{93E3A63D-1523-4DE4-9B9D-FC6CE7CD6AC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Mvc", "Presentation\JJ.Presentation.SetText.Mvc\JJ.Presentation.SetText.Mvc.csproj", "{93E3A63D-1523-4DE4-9B9D-FC6CE7CD6AC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.SetText", "Business\JJ.Business.SetText\JJ.Business.SetText.csproj", "{AE912326-CDA3-4CBA-B8DB-E59B36E403B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Html", "Apps\JJ.Apps.SetText.Html\JJ.Apps.SetText.Html.csproj", "{26EEC1BC-7E27-4541-8C5C-BA993B703F2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Html", "Presentation\JJ.Presentation.SetText.Html\JJ.Presentation.SetText.Html.csproj", "{26EEC1BC-7E27-4541-8C5C-BA993B703F2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService", "Apps\JJ.Apps.SetText.AppService\JJ.Apps.SetText.AppService.csproj", "{0F59DBC8-E641-496D-9DA6-059E4EFE01EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService", "Presentation\JJ.Presentation.SetText.AppService\JJ.Presentation.SetText.AppService.csproj", "{0F59DBC8-E641-496D-9DA6-059E4EFE01EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Persistence.Xml", "Framework\JJ.Framework.Persistence.Xml\JJ.Framework.Persistence.Xml.csproj", "{3EDF4C94-F84A-43B2-95A5-F47DC30F1A5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmlReaderDll", "External Components\SgmlReader\Source Code Adapted\sgmlreaderdll\SgmlReaderDll.csproj", "{499527FF-AE52-450F-B3E3-4AD53E1712AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Unity.DotNet.Offline", "Apps\JJ.Apps.SetText.Unity.DotNet.Offline\JJ.Apps.SetText.Unity.DotNet.Offline.csproj", "{9BC68E57-61E1-4084-9D12-749123B2B4CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Offline", "Presentation\JJ.Presentation.SetText.Unity.DotNet.Offline\JJ.Presentation.SetText.Unity.DotNet.Offline.csproj", "{9BC68E57-61E1-4084-9D12-749123B2B4CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Persistence.Memory", "Framework\JJ.Framework.Persistence.Memory\JJ.Framework.Persistence.Memory.csproj", "{86348B50-ECA9-4849-A221-73F0ED31713B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.Memory", "Models\JJ.Models.SetText.Memory\JJ.Models.SetText.Memory.csproj", "{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.Memory", "Persistence\JJ.Persistence.SetText.Memory\JJ.Persistence.SetText.Memory.csproj", "{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Online", "Apps\JJ.Apps.SetText.WinForms.Online\JJ.Apps.SetText.WinForms.Online.csproj", "{FBBB9772-A706-4881-AA42-F3EBCA7A272B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online", "Presentation\JJ.Presentation.SetText.WinForms.Online\JJ.Presentation.SetText.WinForms.Online.csproj", "{FBBB9772-A706-4881-AA42-F3EBCA7A272B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0F59DBC8-E641-496D-9DA6-059E4EFE01EF} = {0F59DBC8-E641-496D-9DA6-059E4EFE01EF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Offline", "Apps\JJ.Apps.SetText.WinForms.Offline\JJ.Apps.SetText.WinForms.Offline.csproj", "{C0871BAD-F76E-4EB8-AD78-858B794122AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Offline", "Presentation\JJ.Presentation.SetText.WinForms.Offline\JJ.Presentation.SetText.WinForms.Offline.csproj", "{C0871BAD-F76E-4EB8-AD78-858B794122AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.OfflineWithSync", "Apps\JJ.Apps.SetText.WinForms.OfflineWithSync\JJ.Apps.SetText.WinForms.OfflineWithSync.csproj", "{44CECF36-B1C2-4BDA-BA63-8F66E803EF85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.OfflineWithSync", "Presentation\JJ.Presentation.SetText.WinForms.OfflineWithSync\JJ.Presentation.SetText.WinForms.OfflineWithSync.csproj", "{44CECF36-B1C2-4BDA-BA63-8F66E803EF85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.OnlineOfflineSwitched", "Apps\JJ.Apps.SetText.WinForms.OnlineOfflineSwitched\JJ.Apps.SetText.WinForms.OnlineOfflineSwitched.csproj", "{59A98F56-001A-4094-B783-E7024768F425}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched", "Presentation\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched.csproj", "{59A98F56-001A-4094-B783-E7024768F425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService.Interface", "Apps\JJ.Apps.SetText.AppService.Interface\JJ.Apps.SetText.AppService.Interface.csproj", "{4A052265-9896-4D0B-A9B0-14D052BC95D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Interface", "Presentation\JJ.Presentation.SetText.AppService.Interface\JJ.Presentation.SetText.AppService.Interface.csproj", "{4A052265-9896-4D0B-A9B0-14D052BC95D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient", "Apps\JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient\JJ.Apps.SetText.WinForms.Online.GeneratedServiceClient.csproj", "{79CE5669-81DD-4E92-890A-2F518D7E41D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient", "Presentation\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient.csproj", "{79CE5669-81DD-4E92-890A-2F518D7E41D4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0F59DBC8-E641-496D-9DA6-059E4EFE01EF} = {0F59DBC8-E641-496D-9DA6-059E4EFE01EF}
 	EndProjectSection
@@ -93,15 +93,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Testing", "Fra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Persistence.Xml.Linq", "Framework\JJ.Framework.Persistence.Xml.Linq\JJ.Framework.Persistence.Xml.Linq.csproj", "{BA423767-A57E-4278-BBA8-5C01F3E8D555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Models.SetText.Xml.Linq", "Models\JJ.Models.SetText.Xml.Linq\JJ.Models.SetText.Xml.Linq.csproj", "{6B54E0E9-FF92-4DD9-93A4-262544E74163}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.Xml.Linq", "Persistence\JJ.Persistence.SetText.Xml.Linq\JJ.Persistence.SetText.Xml.Linq.csproj", "{6B54E0E9-FF92-4DD9-93A4-262544E74163}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Common.Tests", "Framework\JJ.Framework.Common.Tests\JJ.Framework.Common.Tests.csproj", "{FF1E5681-3980-429A-87E4-AE0B769595B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Unity.DotNet.Online", "Apps\JJ.Apps.SetText.Unity.DotNet.Online\JJ.Apps.SetText.Unity.DotNet.Online.csproj", "{BFF2CB2F-C1B7-4DFF-A35B-90038B9F5063}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Online", "Presentation\JJ.Presentation.SetText.Unity.DotNet.Online\JJ.Presentation.SetText.Unity.DotNet.Online.csproj", "{BFF2CB2F-C1B7-4DFF-A35B-90038B9F5063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Unity.DotNet.OfflineWithSync", "Apps\JJ.Apps.SetText.Unity.DotNet.OfflineWithSync\JJ.Apps.SetText.Unity.DotNet.OfflineWithSync.csproj", "{C0410B6E-9E98-4341-B54B-7E4D76748D3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync", "Presentation\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync.csproj", "{C0410B6E-9E98-4341-B54B-7E4D76748D3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService.Tests", "Apps\JJ.Apps.SetText.AppService.Tests\JJ.Apps.SetText.AppService.Tests.csproj", "{80473C02-D43B-483F-9D00-21C64FCCC342}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Tests", "Presentation\JJ.Presentation.SetText.AppService.Tests\JJ.Presentation.SetText.AppService.Tests.csproj", "{80473C02-D43B-483F-9D00-21C64FCCC342}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Linq", "Framework\JJ.Framework.Xml.Linq\JJ.Framework.Xml.Linq.csproj", "{8DCBF3F3-B30F-4C11-8957-BEA7F43EE173}"
 EndProject
@@ -121,11 +121,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.PlatformCompat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Logging", "Framework\JJ.Framework.Logging\JJ.Framework.Logging.csproj", "{CEEB755D-DE12-4E70-816E-546C429B44B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.AppService.Client", "Apps\JJ.Apps.SetText.AppService.Client\JJ.Apps.SetText.AppService.Client.csproj", "{F35C6131-D793-49D3-8044-E8B06F9CB107}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Client", "Presentation\JJ.Presentation.SetText.AppService.Client\JJ.Presentation.SetText.AppService.Client.csproj", "{F35C6131-D793-49D3-8044-E8B06F9CB107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.Interface", "Apps\JJ.Apps.SetText.Interface\JJ.Apps.SetText.Interface.csproj", "{F074226B-734D-4308-B1C5-30350A228D8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Interface", "Presentation\JJ.Presentation.SetText.Interface\JJ.Presentation.SetText.Interface.csproj", "{F074226B-734D-4308-B1C5-30350A228D8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Apps.SetText.WinForms.Online.CustomSoapClient", "Apps\JJ.Apps.SetText.WinForms.Online.CustomSoapClient\JJ.Apps.SetText.WinForms.Online.CustomSoapClient.csproj", "{F36B7455-7754-467E-8F64-72A33C687889}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online.CustomSoapClient", "Presentation\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient.csproj", "{F36B7455-7754-467E-8F64-72A33C687889}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.Server", "Framework\JJ.Framework.Soap.Tests.Server\JJ.Framework.Soap.Tests.Server.csproj", "{D3440F56-DBD9-4B17-84E5-532E1D6FFE24}"
 EndProject

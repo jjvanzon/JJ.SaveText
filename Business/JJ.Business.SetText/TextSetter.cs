@@ -1,9 +1,9 @@
 ﻿using JJ.Business.SetText.Validation;
 using JJ.Business.SetText.Helpers;
 using JJ.Framework.Validation;
-using JJ.Models.Canonical;
-using JJ.Models.SetText;
-using JJ.Models.SetText.Persistence.RepositoryInterfaces;
+using JJ.Business.CanonicalModel;
+using JJ.Persistence.SetText;
+using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +46,7 @@ namespace JJ.Business.SetText
             entity.Text = value;
             _entityRepository.Update(entity);
 
-            result.ValidationMessages = new List<JJ.Models.Canonical.ValidationMessage>();
+            result.ValidationMessages = new List<JJ.Business.CanonicalModel.ValidationMessage>();
             result.Successful = true;
             return result;
         }

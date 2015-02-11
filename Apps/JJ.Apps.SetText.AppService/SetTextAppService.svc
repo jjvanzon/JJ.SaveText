@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="JJ.Apps.SetText.AppService.SetTextAppService" CodeBehind="SetTextAppService.svc.cs" %>

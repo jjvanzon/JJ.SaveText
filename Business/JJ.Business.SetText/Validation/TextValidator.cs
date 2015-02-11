@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JJ.Framework.Validation;
-using JJ.Models.SetText;
+using JJ.Persistence.SetText;
 using JJ.Business.SetText.Resources;
 
 namespace JJ.Business.SetText.Validation

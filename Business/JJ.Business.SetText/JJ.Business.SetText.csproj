@@ -55,17 +55,17 @@
       <Project>{59ddc853-62af-4f86-a803-3d4dd491e978}</Project>
       <Name>JJ.Framework.Validation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Models\JJ.Models.Canonical\JJ.Models.Canonical.csproj">
+    <ProjectReference Include="..\JJ.Business.CanonicalModel\JJ.Business.CanonicalModel.csproj">
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
-      <Name>JJ.Models.Canonical</Name>
+      <Name>JJ.Business.CanonicalModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Models\JJ.Models.SetText.Persistence\JJ.Models.SetText.Persistence.csproj">
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.Persistence.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
-      <Name>JJ.Models.SetText.Persistence</Name>
+      <Name>JJ.Persistence.SetText.Persistence</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Models\JJ.Models.SetText\JJ.Models.SetText.csproj">
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
-      <Name>JJ.Models.SetText</Name>
+      <Name>JJ.Persistence.SetText</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0410B6E-9E98-4341-B54B-7E4D76748D3A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync</RootNamespace>
+    <AssemblyName>JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Logging\JJ.Framework.Logging.csproj">
+      <Project>{ceeb755d-de12-4e70-816e-546c429b44b7}</Project>
+      <Name>JJ.Framework.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\JJ.Framework.PlatformCompatibility\JJ.Framework.PlatformCompatibility.csproj">
+      <Project>{59622a6e-a9ae-438c-a164-05dea2fcf8cf}</Project>
+      <Name>JJ.Framework.PlatformCompatibility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Memory\JJ.Persistence.SetText.Memory.csproj">
+      <Project>{becfecbe-8ec2-485e-921e-2fb6fe048aac}</Project>
+      <Name>JJ.Persistence.SetText.Memory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Xml.Linq\JJ.Persistence.SetText.Xml.Linq.csproj">
+      <Project>{6b54e0e9-ff92-4dd9-93a4-262544e74163}</Project>
+      <Name>JJ.Persistence.SetText.Xml.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Presentation.SetText.AppService.Client\JJ.Presentation.SetText.AppService.Client.csproj">
+      <Project>{f35c6131-d793-49d3-8044-e8b06f9cb107}</Project>
+      <Name>JJ.Presentation.SetText.AppService.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Presentation.SetText.AppService.Interface\JJ.Presentation.SetText.AppService.Interface.csproj">
+      <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
+      <Name>JJ.Presentation.SetText.AppService.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Presentation.SetText.Interface\JJ.Presentation.SetText.Interface.csproj">
+      <Project>{f074226b-734d-4308-b1c5-30350a228d8b}</Project>
+      <Name>JJ.Presentation.SetText.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Presentation.SetText\JJ.Presentation.SetText.csproj">
+      <Project>{44b139ab-bdf0-414a-aa01-4b7e62adcf57}</Project>
+      <Name>JJ.Presentation.SetText</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
