@@ -1,9 +1,9 @@
 ﻿using System;
-using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.AppService.Interface.Models;
-using JJ.Apps.SetText.AppService.Client.Custom;
+using JJ.Presentation.SetText.AppService.Interface;
+using JJ.Presentation.SetText.AppService.Interface.Models;
+using JJ.Presentation.SetText.AppService.Client.Custom;
 
-namespace JJ.Apps.SetText.Unity.Online
+namespace JJ.Presentation.SetText.Unity.Online
 {
     public class ResourceHelper
     {

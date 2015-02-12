@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText", "Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.Persistence", "Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.Persistence.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.DefaultRepositories", "Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.DefaultRepositories.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.NHibernate", "Persistence\JJ.Persistence.SetText.NHibernate\JJ.Persistence.SetText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
 EndProject
@@ -130,6 +130,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.Server", "Framework\JJ.Framework.Soap.Tests.Server\JJ.Framework.Soap.Tests.Server.csproj", "{D3440F56-DBD9-4B17-84E5-532E1D6FFE24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.ServiceInterface", "Framework\JJ.Framework.Soap.Tests.ServiceInterface\JJ.Framework.Soap.Tests.ServiceInterface.csproj", "{9F0128B1-B662-474D-9B73-3FD8E9783B40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject", "Presentation\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject.csproj", "{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -504,6 +506,12 @@ Global
 		{9F0128B1-B662-474D-9B73-3FD8E9783B40}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
 		{9F0128B1-B662-474D-9B73-3FD8E9783B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F0128B1-B662-474D-9B73-3FD8E9783B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
+		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

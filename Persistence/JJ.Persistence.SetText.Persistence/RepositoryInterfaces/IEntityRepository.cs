@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JJ.Persistence.SetText.Persistence.RepositoryInterfaces
+namespace JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces
 {
     public interface IEntityRepository
     {

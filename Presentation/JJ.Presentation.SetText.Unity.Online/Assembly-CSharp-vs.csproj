@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{77D5EF4E-3257-A860-6EBE-DC6B13D05713}</ProjectGuid>
+	<ProjectGuid>{157B6F54-7BEF-A378-C35E-EEC9B6507E72}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -48,44 +48,44 @@
   <ItemGroup>
      <Compile Include="Assets\AppCode\ResourceHelper.cs" />
      <Compile Include="Assets\ViewCode\SetTextViewCode.cs" />
- <Reference Include="JJ.Presentation.SetText.AppService.Client">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.AppService.Client.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Presentation.SetText.AppService.Interface">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.AppService.Interface.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Presentation.SetText.Interface">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.Interface.dll</HintPath>
- </Reference>
- <Reference Include="JJ.Presentation.SetText.Unity.DotNet">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.Unity.DotNet.dll</HintPath>
+ <Reference Include="JJ.Business.CanonicalModel">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Business.CanonicalModel.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Common">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Common.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Common.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.IO">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.IO.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.IO.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Logging">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Logging.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Logging.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Mathematics">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Mathematics.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Mathematics.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.PlatformCompatibility">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.PlatformCompatibility.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.PlatformCompatibility.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Reflection">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Reflection.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Reflection.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Soap">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Soap.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Soap.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.Xml.Linq">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Xml.Linq.dll</HintPath>
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Framework.Xml.Linq.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Persistence.Canonical">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Apps/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Persistence.Canonical.dll</HintPath>
+ <Reference Include="JJ.Presentation.SetText.AppService.Client">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.AppService.Client.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Presentation.SetText.AppService.Interface">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.AppService.Interface.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Presentation.SetText.Interface">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.Interface.dll</HintPath>
+ </Reference>
+ <Reference Include="JJ.Presentation.SetText.Unity.DotNet.Online">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Online/Assets/DotNetAssemblies/JJ.Presentation.SetText.Unity.DotNet.Online.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\JJ.Presentation.SetText.Unity.Online\Assets\AppCode\ResourceHelper.cs">
+    <Files>
+      <File FileName="..\JJ.Presentation.SetText.Unity.Online\Assets\ViewCode\SetTextViewCode.cs" Line="15" Column="34" />
+      <File FileName="..\JJ.Presentation.SetText.Unity.Online\Assets\AppCode\ResourceHelper.cs" Line="2" Column="52" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

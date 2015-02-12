@@ -13,7 +13,7 @@ using JJ.Business.CanonicalModel;
 using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Xml;
 using JJ.Persistence.SetText;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Presentation.SetText.AppService.Client.Wcf;
 using JJ.Presentation.SetText.Resources;

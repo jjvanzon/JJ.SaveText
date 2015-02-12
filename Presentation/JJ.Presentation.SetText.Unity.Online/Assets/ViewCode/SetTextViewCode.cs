@@ -9,11 +9,11 @@ using System.Globalization;
 using System.Threading;
 using System.Net;
 using JJ.Framework.Logging;
-using JJ.Apps.SetText.Interface.ViewModels;
-using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.AppService.Client.Custom;
-using JJ.Apps.SetText.Unity.Online;
-using JJ.Apps.SetText.Interface.PresenterInterfaces;
+using JJ.Presentation.SetText.Interface.ViewModels;
+using JJ.Presentation.SetText.AppService.Interface;
+using JJ.Presentation.SetText.AppService.Client.Custom;
+using JJ.Presentation.SetText.Unity.Online;
+using JJ.Presentation.SetText.Interface.PresenterInterfaces;
 
 public class SetTextViewCode : MonoBehaviour
 {

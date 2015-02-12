@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Canonical = JJ.Business.CanonicalModel;
 using JJ.Business.CanonicalModel;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Business.SetText;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;

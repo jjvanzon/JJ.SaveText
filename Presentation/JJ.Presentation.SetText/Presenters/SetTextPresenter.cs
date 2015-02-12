@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Framework.Validation;
 using JJ.Persistence.SetText;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Business.SetText.Validation;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Presentation.SetText.Helpers;

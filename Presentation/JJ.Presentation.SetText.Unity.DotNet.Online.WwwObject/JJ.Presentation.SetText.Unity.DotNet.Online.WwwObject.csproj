@@ -42,6 +42,10 @@
       <Project>{ceeb755d-de12-4e70-816e-546c429b44b7}</Project>
       <Name>JJ.Framework.Logging</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JJ.Presentation.SetText.AppService.Client\JJ.Presentation.SetText.AppService.Client.csproj">
+      <Project>{f35c6131-d793-49d3-8044-e8b06f9cb107}</Project>
+      <Name>JJ.Presentation.SetText.AppService.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Presentation.SetText.AppService.Interface\JJ.Presentation.SetText.AppService.Interface.csproj">
       <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
       <Name>JJ.Presentation.SetText.AppService.Interface</Name>

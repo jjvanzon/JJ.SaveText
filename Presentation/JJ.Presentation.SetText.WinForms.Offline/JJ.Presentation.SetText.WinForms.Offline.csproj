@@ -100,9 +100,9 @@
       <Project>{6b54e0e9-ff92-4dd9-93a4-262544e74163}</Project>
       <Name>JJ.Persistence.SetText.Xml.Linq</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.Persistence.csproj">
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
-      <Name>JJ.Persistence.SetText.Persistence</Name>
+      <Name>JJ.Persistence.SetText.DefaultRepositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>

@@ -9,7 +9,7 @@ using Canonical = JJ.Business.CanonicalModel;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Framework.Persistence;
 using JJ.Presentation.SetText.Presenters;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
 using JJ.Presentation.SetText.AppService.Interface;
 using JJ.Presentation.SetText.AppService.Helpers;

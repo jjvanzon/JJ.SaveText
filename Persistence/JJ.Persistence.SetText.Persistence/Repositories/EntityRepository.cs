@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Persistence;
 using JJ.Framework.Reflection;
 
-namespace JJ.Persistence.SetText.Persistence.Repositories
+namespace JJ.Persistence.SetText.DefaultRepositories.Repositories
 {
     public class EntityRepository : IEntityRepository
     {

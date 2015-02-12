@@ -53,9 +53,9 @@
       <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
       <Name>JJ.Framework.Reflection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.Persistence.csproj">
+    <ProjectReference Include="..\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
-      <Name>JJ.Persistence.SetText.Persistence</Name>
+      <Name>JJ.Persistence.SetText.DefaultRepositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>

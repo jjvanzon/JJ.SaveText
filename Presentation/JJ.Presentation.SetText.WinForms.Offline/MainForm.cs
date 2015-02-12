@@ -4,7 +4,7 @@ using JJ.Presentation.SetText.Resources;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Framework.Persistence;
 using JJ.Business.CanonicalModel;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -13,20 +13,17 @@ using JJ.Framework.PlatformCompatibility;
 using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Memory;
 using JJ.Framework.Persistence.Xml.Linq;
-using JJ.Models.Canonical;
-using JJ.Models.SetText;
-using JJ.Models.SetText.Persistence.Memory.Mapping;
-using JJ.Models.SetText.Persistence.Xml.Linq.Mapping;
-using JJ.Models.SetText.Persistence.Repositories;
-using JJ.Models.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Business.CanonicalModel;
 using JJ.Business.SetText;
 using JJ.Business.SetText.Resources;
-using JJ.Apps.SetText.Interface.ViewModels;
-using JJ.Apps.SetText.Interface.PresenterInterfaces;
-using JJ.Apps.SetText.Presenters;
-using JJ.Apps.SetText.Resources;
-using JJ.Apps.SetText.AppService.Interface;
-using JJ.Apps.SetText.AppService.Client.Custom;
+using JJ.Presentation.SetText.Interface.ViewModels;
+using JJ.Presentation.SetText.Interface.PresenterInterfaces;
+using JJ.Presentation.SetText.Presenters;
+using JJ.Presentation.SetText.Resources;
+using JJ.Presentation.SetText.AppService.Interface;
+using JJ.Presentation.SetText.AppService.Client.Custom;
 
 public class SetTextViewCode : MonoBehaviour
 {
@@ -149,7 +146,7 @@ public class SetTextViewCode : MonoBehaviour
 	{
 		using (IContext context = CreateContext()) 
 		{
-			IEntityRepository entityRepository = new EntityRepository(context);
+			IEntityRepository entityRepository = CreateRepository(context);
 			var presenter = new SetTextWithSyncPresenter(entityRepository);
 			_viewModel = presenter.Show ();
 		}
@@ -159,7 +156,7 @@ public class SetTextViewCode : MonoBehaviour
 	{
 		using (IContext context = CreateContext()) 
 		{
-			IEntityRepository entityRepository = new EntityRepository(context);
+			IEntityRepository entityRepository = CreateRepository(context);
 			var presenter = new SetTextWithSyncPresenter(entityRepository);
 			_viewModel = presenter.Save (_viewModel);
 		}
@@ -195,6 +192,7 @@ public class SetTextViewCode : MonoBehaviour
 			Debug.Log("_syncTimer is initialized.");
 		}
 	}
+
 	private void syncTimerCallback(object state)
 	{
 		Debug.Log("syncTimerCallback");
@@ -264,7 +262,7 @@ public class SetTextViewCode : MonoBehaviour
 	private IContext CreateMemoryContext()
 	{
 		Assembly modelAssembly = typeof(Entity).Assembly;
-		Assembly mappingAssembly = typeof(JJ.Models.SetText.Persistence.Memory.Mapping.EntityMapping).Assembly;
+		Assembly mappingAssembly = typeof(JJ.Persistence.SetText.Memory.Mapping.EntityMapping).Assembly;
 		return new MemoryContext("", modelAssembly, mappingAssembly);
 	}
 	
@@ -283,8 +281,23 @@ public class SetTextViewCode : MonoBehaviour
 		}
 		
 		Assembly modelAssembly = typeof(Entity).Assembly;
-		Assembly mappingAssembly = typeof(JJ.Models.SetText.Persistence.Xml.Linq.Mapping.EntityMapping).Assembly;
+		Assembly mappingAssembly = typeof(JJ.Persistence.SetText.Xml.Linq.Mapping.EntityMapping).Assembly;
 		return new XmlContext(folderPath, modelAssembly, mappingAssembly);
+	}
+
+	private IEntityRepository CreateRepository(IContext context)
+	{
+		return CreateXmlRepository (context);
+	}
+	
+	private IEntityRepository CreateMemoryRepository(IContext context)
+	{
+		return new JJ.Persistence.SetText.Memory.Repositories.EntityRepository(context);
+	}
+	
+	private IEntityRepository CreateXmlRepository(IContext context)
+	{
+		return new JJ.Persistence.SetText.Xml.Linq.Repositories.EntityRepository(context);
 	}
 
 	// Helpers

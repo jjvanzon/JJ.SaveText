@@ -58,6 +58,10 @@
       <Project>{6b54e0e9-ff92-4dd9-93a4-262544e74163}</Project>
       <Name>JJ.Persistence.SetText.Xml.Linq</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj">
+      <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
+      <Name>JJ.Persistence.SetText</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JJ.Presentation.SetText\JJ.Presentation.SetText.csproj">
       <Project>{44b139ab-bdf0-414a-aa01-4b7e62adcf57}</Project>
       <Name>JJ.Presentation.SetText</Name>

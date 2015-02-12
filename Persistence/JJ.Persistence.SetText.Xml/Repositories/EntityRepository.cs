@@ -1,7 +1,7 @@
 ﻿using JJ.Framework.Persistence;
 using JJ.Framework.Persistence.Xml;
 using JJ.Framework.Reflection;
-using JJ.Persistence.SetText.Persistence.RepositoryInterfaces;
+using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
