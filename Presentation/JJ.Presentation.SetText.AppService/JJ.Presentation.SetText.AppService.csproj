@@ -151,7 +151,7 @@
       <Project>{292046bb-5667-4231-b8aa-bad57cd1b481}</Project>
       <Name>JJ.Persistence.SetText.Xml</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.DefaultRepositories.csproj">
+    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.DefaultRepositories\JJ.Persistence.SetText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
       <Name>JJ.Persistence.SetText.DefaultRepositories</Name>
     </ProjectReference>

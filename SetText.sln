@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText", "Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.DefaultRepositories", "Persistence\JJ.Persistence.SetText.Persistence\JJ.Persistence.SetText.DefaultRepositories.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.DefaultRepositories", "Persistence\JJ.Persistence.SetText.DefaultRepositories\JJ.Persistence.SetText.DefaultRepositories.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Persistence.SetText.NHibernate", "Persistence\JJ.Persistence.SetText.NHibernate\JJ.Persistence.SetText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
 EndProject
