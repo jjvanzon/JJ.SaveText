@@ -13,10 +13,10 @@ namespace JJ.Persistence.SetText.EntityFramework5
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SetTextDB_DEVEntities : DbContext
+    public partial class DEV_SetTextDBEntities : DbContext
     {
-        public SetTextDB_DEVEntities()
-            : base("name=SetTextDB_DEVEntities")
+        public DEV_SetTextDBEntities()
+            : base("name=DEV_SetTextDBEntities")
         {
         }
     
