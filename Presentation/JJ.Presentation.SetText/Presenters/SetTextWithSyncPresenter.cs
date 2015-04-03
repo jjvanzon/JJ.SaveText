@@ -9,7 +9,7 @@ using JJ.Business.SetText;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
 using JJ.Presentation.SetText.Helpers;
-using JJ.Framework.Reflection;
+using JJ.Framework.Reflection.Exceptions;
 
 namespace JJ.Presentation.SetText.Presenters
 {

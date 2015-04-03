@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Persistence;
-using JJ.Framework.Reflection;
+using JJ.Framework.Reflection.Exceptions;
 
 namespace JJ.Persistence.SetText.DefaultRepositories.Repositories
 {

@@ -1,6 +1,6 @@
 ﻿using JJ.Framework.Configuration;
 using JJ.Framework.Persistence;
-using JJ.Framework.Reflection;
+using JJ.Framework.Reflection.Exceptions;
 using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;

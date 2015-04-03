@@ -12,7 +12,7 @@ using JJ.Business.SetText;
 using Canonical = JJ.Business.CanonicalModel;
 using JJ.Business.CanonicalModel;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
-using JJ.Framework.Reflection;
+using JJ.Framework.Reflection.Exceptions;
 
 namespace JJ.Presentation.SetText.Presenters
 {
