@@ -30,9 +30,9 @@ namespace JJ.Business.SetText
             return entity.Text;
         }
 
-        public Result SetText(string value)
+        public VoidResult SetText(string value)
         {
-            var result = new Result();
+            var result = new VoidResult();
 
             IValidator validator = new TextValidator(value);
             if (!validator.IsValid)

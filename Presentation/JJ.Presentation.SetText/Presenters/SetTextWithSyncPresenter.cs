@@ -35,7 +35,7 @@ namespace JJ.Presentation.SetText.Presenters
         {
             viewModel.NullCoallesce();
 
-            Result saveResult = _textSetter.SetText(viewModel.Text);
+            VoidResult saveResult = _textSetter.SetText(viewModel.Text);
             if (saveResult.Successful)
             {
                 _entityRepository.Commit();
@@ -64,7 +64,7 @@ namespace JJ.Presentation.SetText.Presenters
         {
             viewModel.NullCoallesce();
 
-            Result syncResult = _textSetter.SetText(viewModel.Text);
+            VoidResult syncResult = _textSetter.SetText(viewModel.Text);
             if (syncResult.Successful)
             {
                 _entityRepository.Commit();
