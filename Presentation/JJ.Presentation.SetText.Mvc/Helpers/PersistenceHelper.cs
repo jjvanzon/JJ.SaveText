@@ -1,13 +1,13 @@
 ﻿using JJ.Framework.Configuration;
-using JJ.Framework.Persistence;
+using JJ.Framework.Data;
 using JJ.Framework.Reflection.Exceptions;
-using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
-using JJ.Persistence.SetText.DefaultRepositories.Repositories;
+using JJ.Data.SetText.DefaultRepositories.Repositories;
 using System.Web.Hosting;
 
 namespace JJ.Presentation.SetText.Mvc.Helpers

@@ -65,14 +65,14 @@
  <Reference Include="JJ.Framework.Mathematics">
  <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Mathematics.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Persistence">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Persistence.dll</HintPath>
+ <Reference Include="JJ.Framework.Data">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Data.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Persistence.Memory">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Persistence.Memory.dll</HintPath>
+ <Reference Include="JJ.Framework.Data.Memory">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Data.Memory.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Framework.Persistence.Xml.Linq">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
+ <Reference Include="JJ.Framework.Data.Xml.Linq">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Data.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Framework.PlatformCompatibility">
  <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.PlatformCompatibility.dll</HintPath>
@@ -86,17 +86,17 @@
  <Reference Include="JJ.Framework.Xml.Linq">
  <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Framework.Xml.Linq.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Persistence.SetText.DefaultRepositories">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Persistence.SetText.DefaultRepositories.dll</HintPath>
+ <Reference Include="JJ.Data.SetText.DefaultRepositories">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Data.SetText.DefaultRepositories.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Persistence.SetText">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Persistence.SetText.dll</HintPath>
+ <Reference Include="JJ.Data.SetText">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Data.SetText.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Persistence.SetText.Memory">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Persistence.SetText.Memory.dll</HintPath>
+ <Reference Include="JJ.Data.SetText.Memory">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Data.SetText.Memory.dll</HintPath>
  </Reference>
- <Reference Include="JJ.Persistence.SetText.Xml.Linq">
- <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Persistence.SetText.Xml.Linq.dll</HintPath>
+ <Reference Include="JJ.Data.SetText.Xml.Linq">
+ <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Data.SetText.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="JJ.Presentation.SetText">
  <HintPath>D:/JJ/Dev/1. Products/2. Code/1. Software System/X/9. JJ/Presentation/JJ.Presentation.SetText.Unity.Offline/Assets/DotNetAssemblies/JJ.Presentation.SetText.dll</HintPath>

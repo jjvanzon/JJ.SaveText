@@ -182,14 +182,14 @@
     <Reference Include="JJ.Framework.Net4">
       <HintPath>JJ.Framework.Net4.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Framework.Persistence">
-      <HintPath>JJ.Framework.Persistence.dll</HintPath>
+    <Reference Include="JJ.Framework.Data">
+      <HintPath>JJ.Framework.Data.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Framework.Persistence.Memory">
-      <HintPath>JJ.Framework.Persistence.Memory.dll</HintPath>
+    <Reference Include="JJ.Framework.Data.Memory">
+      <HintPath>JJ.Framework.Data.Memory.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Framework.Persistence.Xml.Linq">
-      <HintPath>JJ.Framework.Persistence.Xml.Linq.dll</HintPath>
+    <Reference Include="JJ.Framework.Data.Xml.Linq">
+      <HintPath>JJ.Framework.Data.Xml.Linq.dll</HintPath>
     </Reference>
     <Reference Include="JJ.Framework.Reflection">
       <HintPath>JJ.Framework.Reflection.dll</HintPath>
@@ -200,20 +200,20 @@
     <Reference Include="JJ.Framework.Validation.resources">
       <HintPath>JJ.Framework.Validation.resources.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Persistence.Canonical">
-      <HintPath>JJ.Persistence.Canonical.dll</HintPath>
+    <Reference Include="JJ.Data.Canonical">
+      <HintPath>JJ.Data.Canonical.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Persistence.SetText">
-      <HintPath>JJ.Persistence.SetText.dll</HintPath>
+    <Reference Include="JJ.Data.SetText">
+      <HintPath>JJ.Data.SetText.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Persistence.SetText.Persistence">
-      <HintPath>JJ.Persistence.SetText.Persistence.dll</HintPath>
+    <Reference Include="JJ.Data.SetText.Persistence">
+      <HintPath>JJ.Data.SetText.Persistence.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Persistence.SetText.Persistence.Memory">
-      <HintPath>JJ.Persistence.SetText.Persistence.Memory.dll</HintPath>
+    <Reference Include="JJ.Data.SetText.Persistence.Memory">
+      <HintPath>JJ.Data.SetText.Persistence.Memory.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Persistence.SetText.Persistence.Xml.Linq">
-      <HintPath>JJ.Persistence.SetText.Persistence.Xml.Linq.dll</HintPath>
+    <Reference Include="JJ.Data.SetText.Persistence.Xml.Linq">
+      <HintPath>JJ.Data.SetText.Persistence.Xml.Linq.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>UnityEngine.dll</HintPath>

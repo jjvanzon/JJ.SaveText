@@ -84,29 +84,29 @@
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.Xml.Linq\JJ.Framework.Persistence.Xml.Linq.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
       <Project>{ba423767-a57e-4278-bba8-5c01f3e8d555}</Project>
-      <Name>JJ.Framework.Persistence.Xml.Linq</Name>
+      <Name>JJ.Framework.Data.Xml.Linq</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence\JJ.Framework.Persistence.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Data\JJ.Framework.Data.csproj">
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
-      <Name>JJ.Framework.Persistence</Name>
+      <Name>JJ.Framework.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Business\JJ.Business.CanonicalModel\JJ.Business.CanonicalModel.csproj">
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Business.CanonicalModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Xml.Linq\JJ.Persistence.SetText.Xml.Linq.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText.Xml.Linq\JJ.Data.SetText.Xml.Linq.csproj">
       <Project>{6b54e0e9-ff92-4dd9-93a4-262544e74163}</Project>
-      <Name>JJ.Persistence.SetText.Xml.Linq</Name>
+      <Name>JJ.Data.SetText.Xml.Linq</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.DefaultRepositories\JJ.Persistence.SetText.DefaultRepositories.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText.DefaultRepositories\JJ.Data.SetText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
-      <Name>JJ.Persistence.SetText.DefaultRepositories</Name>
+      <Name>JJ.Data.SetText.DefaultRepositories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText\JJ.Data.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
-      <Name>JJ.Persistence.SetText</Name>
+      <Name>JJ.Data.SetText</Name>
     </ProjectReference>
     <ProjectReference Include="..\JJ.Presentation.SetText.Interface\JJ.Presentation.SetText.Interface.csproj">
       <Project>{f074226b-734d-4308-b1c5-30350a228d8b}</Project>

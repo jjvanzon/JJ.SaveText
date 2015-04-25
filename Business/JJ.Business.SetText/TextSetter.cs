@@ -2,8 +2,8 @@
 using JJ.Business.SetText.Helpers;
 using JJ.Framework.Validation;
 using JJ.Business.CanonicalModel;
-using JJ.Persistence.SetText;
-using JJ.Persistence.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SetText;
+using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

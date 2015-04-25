@@ -115,21 +115,21 @@
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.EntityFramework5\JJ.Framework.Persistence.EntityFramework5.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Data.EntityFramework5\JJ.Framework.Data.EntityFramework5.csproj">
       <Project>{9676e4c3-1a1f-45b8-8ffd-c398f14002e7}</Project>
-      <Name>JJ.Framework.Persistence.EntityFramework5</Name>
+      <Name>JJ.Framework.Data.EntityFramework5</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.NHibernate\JJ.Framework.Persistence.NHibernate.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Data.NHibernate\JJ.Framework.Data.NHibernate.csproj">
       <Project>{db783ed9-fde6-458f-a094-457b7f4283a0}</Project>
-      <Name>JJ.Framework.Persistence.NHibernate</Name>
+      <Name>JJ.Framework.Data.NHibernate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence.Xml\JJ.Framework.Persistence.Xml.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Data.Xml\JJ.Framework.Data.Xml.csproj">
       <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
-      <Name>JJ.Framework.Persistence.Xml</Name>
+      <Name>JJ.Framework.Data.Xml</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\JJ.Framework.Persistence\JJ.Framework.Persistence.csproj">
+    <ProjectReference Include="..\..\Framework\JJ.Framework.Data\JJ.Framework.Data.csproj">
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
-      <Name>JJ.Framework.Persistence</Name>
+      <Name>JJ.Framework.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\JJ.Framework.Reflection\JJ.Framework.Reflection.csproj">
       <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
@@ -139,25 +139,25 @@
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Business.CanonicalModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.EntityFramework5\JJ.Persistence.SetText.EntityFramework5.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText.EntityFramework5\JJ.Data.SetText.EntityFramework5.csproj">
       <Project>{77ab85ce-6402-4aa3-a9a9-83121d5d9c6d}</Project>
-      <Name>JJ.Persistence.SetText.EntityFramework5</Name>
+      <Name>JJ.Data.SetText.EntityFramework5</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.NHibernate\JJ.Persistence.SetText.NHibernate.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText.NHibernate\JJ.Data.SetText.NHibernate.csproj">
       <Project>{48145ed7-5bb1-4ecb-9fb0-0dbd35b80ea9}</Project>
-      <Name>JJ.Persistence.SetText.NHibernate</Name>
+      <Name>JJ.Data.SetText.NHibernate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.Xml\JJ.Persistence.SetText.Xml.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText.Xml\JJ.Data.SetText.Xml.csproj">
       <Project>{292046bb-5667-4231-b8aa-bad57cd1b481}</Project>
-      <Name>JJ.Persistence.SetText.Xml</Name>
+      <Name>JJ.Data.SetText.Xml</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText.DefaultRepositories\JJ.Persistence.SetText.DefaultRepositories.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText.DefaultRepositories\JJ.Data.SetText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
-      <Name>JJ.Persistence.SetText.DefaultRepositories</Name>
+      <Name>JJ.Data.SetText.DefaultRepositories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Persistence\JJ.Persistence.SetText\JJ.Persistence.SetText.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.SetText\JJ.Data.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
-      <Name>JJ.Persistence.SetText</Name>
+      <Name>JJ.Data.SetText</Name>
     </ProjectReference>
     <ProjectReference Include="..\JJ.Presentation.SetText.AppService.Interface\JJ.Presentation.SetText.AppService.Interface.csproj">
       <Project>{4a052265-9896-4d0b-a9b0-14d052bc95d0}</Project>
