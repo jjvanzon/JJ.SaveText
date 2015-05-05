@@ -7,9 +7,9 @@ namespace JJ.Business.SetText.Helpers
 {
     internal static class ValidationMessageExtensions
     {
-        public static JJ.Business.CanonicalModel.ValidationMessage ToCanonical(this JJ.Framework.Validation.ValidationMessage sourceEntity)
+        public static JJ.Business.CanonicalModel.Message ToCanonical(this JJ.Framework.Validation.ValidationMessage sourceEntity)
         {
-            return new JJ.Business.CanonicalModel.ValidationMessage
+            return new JJ.Business.CanonicalModel.Message
             {
                 PropertyKey = sourceEntity.PropertyKey,
                 Text = sourceEntity.Text

@@ -31,7 +31,7 @@ namespace JJ.Presentation.SetText.Mvc.Controllers
                 }
             }
 
-            foreach (ValidationMessage validationMessage in viewModel.ValidationMessages)
+            foreach (Message validationMessage in viewModel.ValidationMessages)
             {
                 ModelState.AddModelError(validationMessage.PropertyKey, validationMessage.Text);
             }

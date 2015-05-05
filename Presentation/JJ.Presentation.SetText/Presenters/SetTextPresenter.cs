@@ -49,7 +49,7 @@ namespace JJ.Presentation.SetText.Presenters
             else
             {
                 SetTextViewModel viewModel2 = CreateViewModel();
-                viewModel2.ValidationMessages = result.ValidationMessages;
+                viewModel2.ValidationMessages = result.Messages;
                 viewModel2.TextWasSavedMessageVisible = false;
                 viewModel2.Text = viewModel.Text; // Keep entered value.
                 return viewModel2;
@@ -62,7 +62,7 @@ namespace JJ.Presentation.SetText.Presenters
             var viewModel = new SetTextViewModel
             {
                 Text = text,
-                ValidationMessages = new List<Canonical.ValidationMessage>()
+                ValidationMessages = new List<Canonical.Message>()
             };
             return viewModel;
         }

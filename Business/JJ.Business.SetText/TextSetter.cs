@@ -38,7 +38,7 @@ namespace JJ.Business.SetText
             if (!validator.IsValid)
             {
                 result.Successful = false;
-                result.ValidationMessages = validator.ValidationMessages.ToCanonical();
+                result.Messages = validator.ValidationMessages.ToCanonical();
                 return result;
             }
 
@@ -46,7 +46,7 @@ namespace JJ.Business.SetText
             entity.Text = value;
             _entityRepository.Update(entity);
 
-            result.ValidationMessages = new List<JJ.Business.CanonicalModel.ValidationMessage>();
+            result.Messages = new List<JJ.Business.CanonicalModel.Message>();
             result.Successful = true;
             return result;
         }

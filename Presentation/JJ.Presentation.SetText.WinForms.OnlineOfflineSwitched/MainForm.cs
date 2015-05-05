@@ -19,6 +19,7 @@ using JJ.Presentation.SetText.AppService.Client.Wcf;
 using JJ.Presentation.SetText.Resources;
 using JJ.Framework.Common;
 using System.Globalization;
+using Message = JJ.Business.CanonicalModel.Message;
 
 namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
 {
@@ -112,7 +113,7 @@ namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
                 sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
-            foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
+            foreach (Message validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

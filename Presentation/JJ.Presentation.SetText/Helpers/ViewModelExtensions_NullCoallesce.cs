@@ -13,7 +13,7 @@ namespace JJ.Presentation.SetText.Helpers
         public static void NullCoallesce(this SetTextViewModel viewModel)
         {
             if (viewModel == null) throw new NullException(() => viewModel);
-            viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<Canonical.ValidationMessage>();
+            viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<Canonical.Message>();
         }
     }
 }

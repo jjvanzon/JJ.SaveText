@@ -20,6 +20,7 @@ using System.Net;
 using System.Threading;
 using System.Globalization;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
+using Message = JJ.Business.CanonicalModel.Message;
 
 namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
 {
@@ -82,7 +83,7 @@ namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
                 sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
-            foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
+            foreach (Message validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

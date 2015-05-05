@@ -48,7 +48,7 @@ namespace JJ.Presentation.SetText.Presenters
             {
                 SetTextViewModel viewModel2 = CreateViewModel();
                 viewModel2.TextWasSavedMessageVisible = false;
-                viewModel2.ValidationMessages = saveResult.ValidationMessages;
+                viewModel2.ValidationMessages = saveResult.Messages;
                 viewModel2.Text = viewModel.Text; // Keep entered value.
                 return viewModel2;
             }
@@ -69,7 +69,7 @@ namespace JJ.Presentation.SetText.Presenters
             {
                 _entityRepository.Commit();
                 SetTextViewModel viewModel2 = CreateViewModel();
-                viewModel2.ValidationMessages = syncResult.ValidationMessages;
+                viewModel2.ValidationMessages = syncResult.Messages;
                 viewModel2.SyncSuccessfulMessageVisible = true;
                 viewModel2.TextWasSavedButNotYetSynchronized = false;
                 return viewModel2;
@@ -77,7 +77,7 @@ namespace JJ.Presentation.SetText.Presenters
             else
             {
                 SetTextViewModel viewModel2 = CreateViewModel();
-                viewModel2.ValidationMessages = syncResult.ValidationMessages;
+                viewModel2.ValidationMessages = syncResult.Messages;
                 viewModel2.SyncSuccessfulMessageVisible = false;
                 viewModel2.Text = viewModel.Text; // Keep entered value.
                 return viewModel2;
@@ -90,7 +90,7 @@ namespace JJ.Presentation.SetText.Presenters
             var viewModel = new SetTextViewModel
             {
                 Text = text,
-                ValidationMessages = new List<Canonical.ValidationMessage>(),
+                ValidationMessages = new List<Canonical.Message>(),
             };
             return viewModel;
         }

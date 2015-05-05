@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Message = JJ.Business.CanonicalModel.Message;
 
 namespace JJ.Presentation.SetText.WinForms.Offline
 {
@@ -67,7 +68,7 @@ namespace JJ.Presentation.SetText.WinForms.Offline
                 sb.AppendLine(Messages.Saved);
             }
 
-            foreach (ValidationMessage validationMessage in _viewModel.ValidationMessages)
+            foreach (Message validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }
