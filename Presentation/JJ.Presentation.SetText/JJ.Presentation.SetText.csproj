@@ -42,8 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\ViewModelExtensions_NullCoallesce.cs" />
-    <Compile Include="Helpers\ValidationMessagesExtensions.cs" />
-    <Compile Include="Helpers\ValidationMessageExtensions.cs" />
     <Compile Include="Presenters\SetTextPresenter.cs" />
     <Compile Include="Presenters\SetTextWithSyncPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +62,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\JJ.Business.Canonical\JJ.Business.Canonical.csproj">
+      <Project>{4dbe5e36-4b54-4e5f-9b4f-5bbf33a3cef1}</Project>
+      <Name>JJ.Business.Canonical</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Business\JJ.Business.SetText\JJ.Business.SetText.csproj">
       <Project>{ae912326-cda3-4cba-b8db-e59b36e403b3}</Project>
       <Name>JJ.Business.SetText</Name>

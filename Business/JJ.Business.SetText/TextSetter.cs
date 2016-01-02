@@ -1,5 +1,4 @@
 ﻿using JJ.Business.SetText.Validation;
-using JJ.Business.SetText.Helpers;
 using JJ.Framework.Validation;
 using JJ.Business.CanonicalModel;
 using JJ.Data.SetText;
@@ -9,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JJ.Framework.Reflection.Exceptions;
+using JJ.Business.Canonical;
 
 namespace JJ.Business.SetText
 {

@@ -39,8 +39,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\ValidationMessageExtensions.cs" />
-    <Compile Include="Helpers\ValidationMessagesExtensions.cs" />
     <Compile Include="Resources\PropertyDisplayNames.Designer.cs">
       <DependentUpon>PropertyDisplayNames.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -70,6 +68,10 @@
     <ProjectReference Include="..\..\Data\JJ.Data.SetText\JJ.Data.SetText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
       <Name>JJ.Data.SetText</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JJ.Business.Canonical\JJ.Business.Canonical.csproj">
+      <Project>{4dbe5e36-4b54-4e5f-9b4f-5bbf33a3cef1}</Project>
+      <Name>JJ.Business.Canonical</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
