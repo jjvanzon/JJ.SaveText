@@ -3,7 +3,7 @@ using JJ.Presentation.SetText.Mvc.Helpers;
 using JJ.Presentation.SetText.Presenters;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Framework.Data;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;

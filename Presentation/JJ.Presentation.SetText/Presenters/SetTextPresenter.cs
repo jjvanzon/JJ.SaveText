@@ -9,8 +9,8 @@ using JJ.Business.SetText.Validation;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Presentation.SetText.Helpers;
 using JJ.Business.SetText;
-using Canonical = JJ.Business.CanonicalModel;
-using JJ.Business.CanonicalModel;
+using Canonical = JJ.Data.Canonical;
+using JJ.Data.Canonical;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
 using JJ.Framework.Reflection.Exceptions;
 

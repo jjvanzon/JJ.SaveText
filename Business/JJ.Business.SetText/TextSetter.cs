@@ -1,6 +1,6 @@
 ﻿using JJ.Business.SetText.Validation;
 using JJ.Framework.Validation;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using JJ.Data.SetText;
 using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
@@ -46,7 +46,7 @@ namespace JJ.Business.SetText
             entity.Text = value;
             _entityRepository.Update(entity);
 
-            result.Messages = new List<JJ.Business.CanonicalModel.Message>();
+            result.Messages = new List<JJ.Data.Canonical.Message>();
             result.Successful = true;
             return result;
         }

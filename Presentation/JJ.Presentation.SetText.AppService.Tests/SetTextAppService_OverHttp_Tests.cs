@@ -11,7 +11,7 @@ using System.Xml.Linq;
 using JJ.Framework.Common;
 using System.Reflection;
 using JJ.Framework.Soap;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using JJ.Framework.Configuration;
 
 namespace JJ.Presentation.SetText.AppService.Tests

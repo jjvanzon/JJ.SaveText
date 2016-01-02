@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Canonical = JJ.Business.CanonicalModel;
-using JJ.Business.CanonicalModel;
+using Canonical = JJ.Data.Canonical;
+using JJ.Data.Canonical;
 using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Business.SetText;
 using JJ.Presentation.SetText.Interface.ViewModels;

@@ -3,7 +3,7 @@ using JJ.Presentation.SetText.Presenters;
 using JJ.Presentation.SetText.Resources;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Framework.Data;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Message = JJ.Business.CanonicalModel.Message;
+using Message = JJ.Data.Canonical.Message;
 
 namespace JJ.Presentation.SetText.WinForms.Offline
 {

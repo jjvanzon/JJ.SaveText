@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JJ.Presentation.SetText.Presenters;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using JJ.Framework.Data;
 using JJ.Framework.Data.Xml;
 using JJ.Data.SetText;
@@ -20,7 +20,7 @@ using System.Net;
 using System.Threading;
 using System.Globalization;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
-using Message = JJ.Business.CanonicalModel.Message;
+using Message = JJ.Data.Canonical.Message;
 
 namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
 {

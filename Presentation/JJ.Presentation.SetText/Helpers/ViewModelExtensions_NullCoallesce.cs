@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Canonical = JJ.Business.CanonicalModel;
+using Canonical = JJ.Data.Canonical;
 
 namespace JJ.Presentation.SetText.Helpers
 {

@@ -124,7 +124,7 @@ namespace JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient.SetText
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ValidationMessage", Namespace="http://schemas.datacontract.org/2004/07/JJ.Business.CanonicalModel")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValidationMessage", Namespace="http://schemas.datacontract.org/2004/07/JJ.Data.Canonical")]
     [System.SerializableAttribute()]
     public partial class ValidationMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

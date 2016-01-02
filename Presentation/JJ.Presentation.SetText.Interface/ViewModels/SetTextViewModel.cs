@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using System.Runtime.Serialization;
 
 namespace JJ.Presentation.SetText.Interface.ViewModels

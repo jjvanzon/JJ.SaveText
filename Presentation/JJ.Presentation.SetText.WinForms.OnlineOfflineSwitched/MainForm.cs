@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JJ.Presentation.SetText.Interface.PresenterInterfaces;
 using JJ.Presentation.SetText.Presenters;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using JJ.Framework.Data;
 using JJ.Framework.Data.Xml;
 using JJ.Data.SetText;
@@ -19,7 +19,7 @@ using JJ.Presentation.SetText.AppService.Client.Wcf;
 using JJ.Presentation.SetText.Resources;
 using JJ.Framework.Common;
 using System.Globalization;
-using Message = JJ.Business.CanonicalModel.Message;
+using Message = JJ.Data.Canonical.Message;
 
 namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
 {

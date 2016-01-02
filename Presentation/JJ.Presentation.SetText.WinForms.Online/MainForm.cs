@@ -2,7 +2,7 @@
 using JJ.Presentation.SetText.AppService.Interface.Models;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Framework.Configuration;
-using JJ.Business.CanonicalModel;
+using JJ.Data.Canonical;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Message = JJ.Business.CanonicalModel.Message;
+using Message = JJ.Data.Canonical.Message;
 
 namespace JJ.Presentation.SetText.WinForms.Online
 {

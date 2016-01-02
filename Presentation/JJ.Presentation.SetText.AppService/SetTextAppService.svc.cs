@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using Canonical = JJ.Business.CanonicalModel;
+using Canonical = JJ.Data.Canonical;
 using JJ.Presentation.SetText.Interface.ViewModels;
 using JJ.Framework.Data;
 using JJ.Presentation.SetText.Presenters;
