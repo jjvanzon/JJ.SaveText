@@ -210,9 +210,9 @@
       <Project>{59ddc853-62af-4f86-a803-3d4dd491e978}</Project>
       <Name>JJ.Framework.Validation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Business\JJ.Business.CanonicalModel\JJ.Business.CanonicalModel.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.Canonical\JJ.Data.Canonical.csproj">
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
-      <Name>JJ.Business.CanonicalModel</Name>
+      <Name>JJ.Data.Canonical</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Data\JJ.Data.SetText.EntityFramework5\JJ.Data.SetText.EntityFramework5.csproj">
       <Project>{77ab85ce-6402-4aa3-a9a9-83121d5d9c6d}</Project>

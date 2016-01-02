@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Validation", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml", "Framework\JJ.Framework.Xml\JJ.Framework.Xml.csproj", "{F6EA0941-40FF-4679-A1A6-EACD5C9BA42B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.CanonicalModel", "Business\JJ.Business.CanonicalModel\JJ.Business.CanonicalModel.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.Canonical", "Data\JJ.Data.Canonical\JJ.Data.Canonical.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation", "Framework\JJ.Framework.Presentation\JJ.Framework.Presentation.csproj", "{79B0EAC3-5159-4FC8-B3D8-53315B205444}"
 EndProject
@@ -638,10 +638,10 @@ Global
 		SccProjectTopLevelParentUniqueName14 = SetText.sln
 		SccProjectName14 = Framework/JJ.Framework.Xml
 		SccLocalPath14 = Framework\\JJ.Framework.Xml
-		SccProjectUniqueName15 = Business\\JJ.Business.CanonicalModel\\JJ.Business.CanonicalModel.csproj
+		SccProjectUniqueName15 = Data\\JJ.Data.Canonical\\JJ.Data.Canonical.csproj
 		SccProjectTopLevelParentUniqueName15 = SetText.sln
-		SccProjectName15 = Business/JJ.Business.CanonicalModel
-		SccLocalPath15 = Business\\JJ.Business.CanonicalModel
+		SccProjectName15 = Data/JJ.Data.Canonical
+		SccLocalPath15 = Data\\JJ.Data.Canonical
 		SccProjectUniqueName16 = Framework\\JJ.Framework.Presentation\\JJ.Framework.Presentation.csproj
 		SccProjectTopLevelParentUniqueName16 = SetText.sln
 		SccProjectName16 = Framework/JJ.Framework.Presentation

@@ -81,9 +81,9 @@
       <Project>{8dcbf3f3-b30f-4c11-8957-bea7f43ee173}</Project>
       <Name>JJ.Framework.Xml.Linq</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Business\JJ.Business.CanonicalModel\JJ.Business.CanonicalModel.csproj">
+    <ProjectReference Include="..\..\Data\JJ.Data.Canonical\JJ.Data.Canonical.csproj">
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
-      <Name>JJ.Business.CanonicalModel</Name>
+      <Name>JJ.Data.Canonical</Name>
     </ProjectReference>
     <ProjectReference Include="..\JJ.Presentation.SetText.AppService.Client\JJ.Presentation.SetText.AppService.Client.csproj">
       <Project>{f35c6131-d793-49d3-8044-e8b06f9cb107}</Project>
