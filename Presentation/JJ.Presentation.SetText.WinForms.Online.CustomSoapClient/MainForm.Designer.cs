@@ -76,7 +76,7 @@
             this.Controls.Add(this.textBoxText);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Text = "JJ.Presentation.SetText.WinForms.Online";
+            this.Text = "JJ.Presentation.SetText.WinForms.Online.CustomSoapClient";
             this.ResumeLayout(false);
             this.PerformLayout();
 
