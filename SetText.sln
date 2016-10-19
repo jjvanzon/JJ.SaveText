@@ -1,21 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data", "Framework\JJ.Framework.Data\JJ.Framework.Data.csproj", "{7ADEDDCE-6903-4A58-94F5-D0B39B21330F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data", "Framework\Data\JJ.Framework.Data.csproj", "{7ADEDDCE-6903-4A58-94F5-D0B39B21330F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.NHibernate", "Framework\JJ.Framework.Data.NHibernate\JJ.Framework.Data.NHibernate.csproj", "{DB783ED9-FDE6-458F-A094-457B7F4283A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.NHibernate", "Framework\Data.NHibernate\JJ.Framework.Data.NHibernate.csproj", "{DB783ED9-FDE6-458F-A094-457B7F4283A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Configuration", "Framework\JJ.Framework.Configuration\JJ.Framework.Configuration.csproj", "{805A8237-05ED-40AE-8D1A-9288373EA5E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Configuration", "Framework\Configuration\JJ.Framework.Configuration.csproj", "{805A8237-05ED-40AE-8D1A-9288373EA5E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection", "Framework\JJ.Framework.Reflection\JJ.Framework.Reflection.csproj", "{1A8E047C-7893-4918-B415-CE3928E815D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection", "Framework\Reflection\JJ.Framework.Reflection.csproj", "{1A8E047C-7893-4918-B415-CE3928E815D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Common", "Framework\JJ.Framework.Common\JJ.Framework.Common.csproj", "{44FD9133-5FE7-4824-BD35-27273706D127}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Common", "Framework\Common\JJ.Framework.Common.csproj", "{44FD9133-5FE7-4824-BD35-27273706D127}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{E3DC759D-B004-4E6C-8381-D5D5C74A5B92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.EntityFramework5", "Framework\JJ.Framework.Data.EntityFramework5\JJ.Framework.Data.EntityFramework5.csproj", "{9676E4C3-1A1F-45B8-8FFD-C398F14002E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.EntityFramework5", "Framework\Data.EntityFramework5\JJ.Framework.Data.EntityFramework5.csproj", "{9676E4C3-1A1F-45B8-8FFD-C398F14002E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle.NCore.Framework NET 3.5", "External Components\NPersist\Source Code\NCore\Framework\Puzzle.NCore.Framework NET 3.5.csproj", "{5FB1569E-253E-42A7-A4E8-B4651FC6DCA2}"
 EndProject
@@ -25,115 +25,115 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle.NPath.Framework.NET 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle.NPersist.Framework.NET 3.5", "External Components\NPersist\Source Code\NPersist\Framework\Puzzle.NPersist.Framework.NET 3.5.csproj", "{E6C03D2A-D150-4473-9439-D300746A1390}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.Mvc", "Framework\JJ.Framework.Presentation.Mvc\JJ.Framework.Presentation.Mvc.csproj", "{FED3C829-D92A-4800-9462-A175CCAC4C70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.Mvc", "Framework\Presentation.Mvc\JJ.Framework.Presentation.Mvc.csproj", "{FED3C829-D92A-4800-9462-A175CCAC4C70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.IO", "Framework\JJ.Framework.IO\JJ.Framework.IO.csproj", "{C600657B-7E29-44B5-83A1-747FAB30D5D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.IO", "Framework\IO\JJ.Framework.IO.csproj", "{C600657B-7E29-44B5-83A1-747FAB30D5D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.WinForms", "Framework\JJ.Framework.Presentation.WinForms\JJ.Framework.Presentation.WinForms.csproj", "{84A66716-C686-4B8E-A092-CFE38CA7DDE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.WinForms", "Framework\Presentation.WinForms\JJ.Framework.Presentation.WinForms.csproj", "{84A66716-C686-4B8E-A092-CFE38CA7DDE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Validation", "Framework\JJ.Framework.Validation\JJ.Framework.Validation.csproj", "{59DDC853-62AF-4F86-A803-3D4DD491E978}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Validation", "Framework\Validation\JJ.Framework.Validation.csproj", "{59DDC853-62AF-4F86-A803-3D4DD491E978}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml", "Framework\JJ.Framework.Xml\JJ.Framework.Xml.csproj", "{F6EA0941-40FF-4679-A1A6-EACD5C9BA42B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml", "Framework\Xml\JJ.Framework.Xml.csproj", "{F6EA0941-40FF-4679-A1A6-EACD5C9BA42B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.Canonical", "Data\JJ.Data.Canonical\JJ.Data.Canonical.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.Canonical", "Data\Canonical\JJ.Data.Canonical.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation", "Framework\JJ.Framework.Presentation\JJ.Framework.Presentation.csproj", "{79B0EAC3-5159-4FC8-B3D8-53315B205444}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation", "Framework\Presentation\JJ.Framework.Presentation.csproj", "{79B0EAC3-5159-4FC8-B3D8-53315B205444}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.JavaScript", "Framework\JJ.Framework.Presentation.JavaScript\JJ.Framework.Presentation.JavaScript.csproj", "{BD4CF454-BE0B-490F-997D-665DA7EBEC96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Presentation.JavaScript", "Framework\Presentation.JavaScript\JJ.Framework.Presentation.JavaScript.csproj", "{BD4CF454-BE0B-490F-997D-665DA7EBEC96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection.Tests", "Framework\JJ.Framework.Reflection.Tests\JJ.Framework.Reflection.Tests.csproj", "{E150EBF6-16F7-4299-B4BD-791757D6CC9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Reflection.Tests", "Framework\Reflection.Tests\JJ.Framework.Reflection.Tests.csproj", "{E150EBF6-16F7-4299-B4BD-791757D6CC9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText", "Data\JJ.Data.SetText\JJ.Data.SetText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText", "Data\SetText\JJ.Data.SetText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.DefaultRepositories", "Data\JJ.Data.SetText.DefaultRepositories\JJ.Data.SetText.DefaultRepositories.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.DefaultRepositories", "Data\SetText.DefaultRepositories\JJ.Data.SetText.DefaultRepositories.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.NHibernate", "Data\JJ.Data.SetText.NHibernate\JJ.Data.SetText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.NHibernate", "Data\SetText.NHibernate\JJ.Data.SetText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.EntityFramework5", "Data\JJ.Data.SetText.EntityFramework5\JJ.Data.SetText.EntityFramework5.csproj", "{77AB85CE-6402-4AA3-A9A9-83121D5D9C6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.EntityFramework5", "Data\SetText.EntityFramework5\JJ.Data.SetText.EntityFramework5.csproj", "{77AB85CE-6402-4AA3-A9A9-83121D5D9C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.Xml", "Data\JJ.Data.SetText.Xml\JJ.Data.SetText.Xml.csproj", "{292046BB-5667-4231-B8AA-BAD57CD1B481}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.Xml", "Data\SetText.Xml\JJ.Data.SetText.Xml.csproj", "{292046BB-5667-4231-B8AA-BAD57CD1B481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText", "Presentation\JJ.Presentation.SetText\JJ.Presentation.SetText.csproj", "{44B139AB-BDF0-414A-AA01-4B7E62ADCF57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText", "Presentation\SetText\JJ.Presentation.SetText.csproj", "{44B139AB-BDF0-414A-AA01-4B7E62ADCF57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Mvc", "Presentation\JJ.Presentation.SetText.Mvc\JJ.Presentation.SetText.Mvc.csproj", "{93E3A63D-1523-4DE4-9B9D-FC6CE7CD6AC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Mvc", "Presentation\SetText.Mvc\JJ.Presentation.SetText.Mvc.csproj", "{93E3A63D-1523-4DE4-9B9D-FC6CE7CD6AC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.SetText", "Business\JJ.Business.SetText\JJ.Business.SetText.csproj", "{AE912326-CDA3-4CBA-B8DB-E59B36E403B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.SetText", "Business\SetText\JJ.Business.SetText.csproj", "{AE912326-CDA3-4CBA-B8DB-E59B36E403B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Html", "Presentation\JJ.Presentation.SetText.Html\JJ.Presentation.SetText.Html.csproj", "{26EEC1BC-7E27-4541-8C5C-BA993B703F2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Html", "Presentation\SetText.Html\JJ.Presentation.SetText.Html.csproj", "{26EEC1BC-7E27-4541-8C5C-BA993B703F2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService", "Presentation\JJ.Presentation.SetText.AppService\JJ.Presentation.SetText.AppService.csproj", "{0F59DBC8-E641-496D-9DA6-059E4EFE01EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService", "Presentation\SetText.AppService\JJ.Presentation.SetText.AppService.csproj", "{0F59DBC8-E641-496D-9DA6-059E4EFE01EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.Xml", "Framework\JJ.Framework.Data.Xml\JJ.Framework.Data.Xml.csproj", "{3EDF4C94-F84A-43B2-95A5-F47DC30F1A5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.Xml", "Framework\Data.Xml\JJ.Framework.Data.Xml.csproj", "{3EDF4C94-F84A-43B2-95A5-F47DC30F1A5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SgmlReaderDll", "External Components\SgmlReader\Source Code Adapted\sgmlreaderdll\SgmlReaderDll.csproj", "{499527FF-AE52-450F-B3E3-4AD53E1712AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Offline", "Presentation\JJ.Presentation.SetText.Unity.DotNet.Offline\JJ.Presentation.SetText.Unity.DotNet.Offline.csproj", "{9BC68E57-61E1-4084-9D12-749123B2B4CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Offline", "Presentation\SetText.Unity.DotNet.Offline\JJ.Presentation.SetText.Unity.DotNet.Offline.csproj", "{9BC68E57-61E1-4084-9D12-749123B2B4CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.Memory", "Framework\JJ.Framework.Data.Memory\JJ.Framework.Data.Memory.csproj", "{86348B50-ECA9-4849-A221-73F0ED31713B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.Memory", "Framework\Data.Memory\JJ.Framework.Data.Memory.csproj", "{86348B50-ECA9-4849-A221-73F0ED31713B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.Memory", "Data\JJ.Data.SetText.Memory\JJ.Data.SetText.Memory.csproj", "{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.Memory", "Data\SetText.Memory\JJ.Data.SetText.Memory.csproj", "{BECFECBE-8EC2-485E-921E-2FB6FE048AAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online", "Presentation\JJ.Presentation.SetText.WinForms.Online\JJ.Presentation.SetText.WinForms.Online.csproj", "{FBBB9772-A706-4881-AA42-F3EBCA7A272B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online", "Presentation\SetText.WinForms.Online\JJ.Presentation.SetText.WinForms.Online.csproj", "{FBBB9772-A706-4881-AA42-F3EBCA7A272B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0F59DBC8-E641-496D-9DA6-059E4EFE01EF} = {0F59DBC8-E641-496D-9DA6-059E4EFE01EF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Offline", "Presentation\JJ.Presentation.SetText.WinForms.Offline\JJ.Presentation.SetText.WinForms.Offline.csproj", "{C0871BAD-F76E-4EB8-AD78-858B794122AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Offline", "Presentation\SetText.WinForms.Offline\JJ.Presentation.SetText.WinForms.Offline.csproj", "{C0871BAD-F76E-4EB8-AD78-858B794122AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.OfflineWithSync", "Presentation\JJ.Presentation.SetText.WinForms.OfflineWithSync\JJ.Presentation.SetText.WinForms.OfflineWithSync.csproj", "{44CECF36-B1C2-4BDA-BA63-8F66E803EF85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.OfflineWithSync", "Presentation\SetText.WinForms.OfflineWithSync\JJ.Presentation.SetText.WinForms.OfflineWithSync.csproj", "{44CECF36-B1C2-4BDA-BA63-8F66E803EF85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched", "Presentation\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched.csproj", "{59A98F56-001A-4094-B783-E7024768F425}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched", "Presentation\SetText.WinForms.OnlineOfflineSwitched\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched.csproj", "{59A98F56-001A-4094-B783-E7024768F425}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Interface", "Presentation\JJ.Presentation.SetText.AppService.Interface\JJ.Presentation.SetText.AppService.Interface.csproj", "{4A052265-9896-4D0B-A9B0-14D052BC95D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Interface", "Presentation\SetText.AppService.Interface\JJ.Presentation.SetText.AppService.Interface.csproj", "{4A052265-9896-4D0B-A9B0-14D052BC95D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient", "Presentation\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient.csproj", "{79CE5669-81DD-4E92-890A-2F518D7E41D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient", "Presentation\SetText.WinForms.Online.GeneratedServiceClient\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient.csproj", "{79CE5669-81DD-4E92-890A-2F518D7E41D4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0F59DBC8-E641-496D-9DA6-059E4EFE01EF} = {0F59DBC8-E641-496D-9DA6-059E4EFE01EF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Testing", "Framework\JJ.Framework.Testing\JJ.Framework.Testing.csproj", "{369D4E9E-4EFF-4699-83B3-C4951EE0A3C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Testing", "Framework\Testing\JJ.Framework.Testing.csproj", "{369D4E9E-4EFF-4699-83B3-C4951EE0A3C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.Xml.Linq", "Framework\JJ.Framework.Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj", "{BA423767-A57E-4278-BBA8-5C01F3E8D555}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.Xml.Linq", "Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj", "{BA423767-A57E-4278-BBA8-5C01F3E8D555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.Xml.Linq", "Data\JJ.Data.SetText.Xml.Linq\JJ.Data.SetText.Xml.Linq.csproj", "{6B54E0E9-FF92-4DD9-93A4-262544E74163}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SetText.Xml.Linq", "Data\SetText.Xml.Linq\JJ.Data.SetText.Xml.Linq.csproj", "{6B54E0E9-FF92-4DD9-93A4-262544E74163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Common.Tests", "Framework\JJ.Framework.Common.Tests\JJ.Framework.Common.Tests.csproj", "{FF1E5681-3980-429A-87E4-AE0B769595B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Common.Tests", "Framework\Common.Tests\JJ.Framework.Common.Tests.csproj", "{FF1E5681-3980-429A-87E4-AE0B769595B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Online", "Presentation\JJ.Presentation.SetText.Unity.DotNet.Online\JJ.Presentation.SetText.Unity.DotNet.Online.csproj", "{BFF2CB2F-C1B7-4DFF-A35B-90038B9F5063}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Online", "Presentation\SetText.Unity.DotNet.Online\JJ.Presentation.SetText.Unity.DotNet.Online.csproj", "{BFF2CB2F-C1B7-4DFF-A35B-90038B9F5063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync", "Presentation\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync.csproj", "{C0410B6E-9E98-4341-B54B-7E4D76748D3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync", "Presentation\SetText.Unity.DotNet.OfflineWithSync\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync.csproj", "{C0410B6E-9E98-4341-B54B-7E4D76748D3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Tests", "Presentation\JJ.Presentation.SetText.AppService.Tests\JJ.Presentation.SetText.AppService.Tests.csproj", "{80473C02-D43B-483F-9D00-21C64FCCC342}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Tests", "Presentation\SetText.AppService.Tests\JJ.Presentation.SetText.AppService.Tests.csproj", "{80473C02-D43B-483F-9D00-21C64FCCC342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Linq", "Framework\JJ.Framework.Xml.Linq\JJ.Framework.Xml.Linq.csproj", "{8DCBF3F3-B30F-4C11-8957-BEA7F43EE173}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Linq", "Framework\Xml.Linq\JJ.Framework.Xml.Linq.csproj", "{8DCBF3F3-B30F-4C11-8957-BEA7F43EE173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Linq.Tests", "Framework\JJ.Framework.Xml.Linq.Tests\JJ.Framework.Xml.Linq.Tests.csproj", "{A247CCEF-12FF-4254-93FC-287366920AB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Linq.Tests", "Framework\Xml.Linq.Tests\JJ.Framework.Xml.Linq.Tests.csproj", "{A247CCEF-12FF-4254-93FC-287366920AB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Tests", "Framework\JJ.Framework.Xml.Tests\JJ.Framework.Xml.Tests.csproj", "{22AAF27D-B7B6-40E0-BA70-56145DCBA7BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Xml.Tests", "Framework\Xml.Tests\JJ.Framework.Xml.Tests.csproj", "{22AAF27D-B7B6-40E0-BA70-56145DCBA7BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap", "Framework\JJ.Framework.Soap\JJ.Framework.Soap.csproj", "{2B86213C-A758-4DB9-BD37-5E7D2F4D7C4D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap", "Framework\Soap\JJ.Framework.Soap.csproj", "{2B86213C-A758-4DB9-BD37-5E7D2F4D7C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests", "Framework\JJ.Framework.Soap.Tests\JJ.Framework.Soap.Tests.csproj", "{3B1E7DE6-17DD-4140-AD96-21DCF5F0CB25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests", "Framework\Soap.Tests\JJ.Framework.Soap.Tests.csproj", "{3B1E7DE6-17DD-4140-AD96-21DCF5F0CB25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Mathematics", "Framework\JJ.Framework.Mathematics\JJ.Framework.Mathematics.csproj", "{810B90B9-F501-4B91-B019-2AD5AAD63304}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Mathematics", "Framework\Mathematics\JJ.Framework.Mathematics.csproj", "{810B90B9-F501-4B91-B019-2AD5AAD63304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Mathematics.Tests", "Framework\JJ.Framework.Mathematics.Tests\JJ.Framework.Mathematics.Tests.csproj", "{7AD57E8B-0EC3-443C-877C-E0F4E8DE30F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Mathematics.Tests", "Framework\Mathematics.Tests\JJ.Framework.Mathematics.Tests.csproj", "{7AD57E8B-0EC3-443C-877C-E0F4E8DE30F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.PlatformCompatibility", "Framework\JJ.Framework.PlatformCompatibility\JJ.Framework.PlatformCompatibility.csproj", "{59622A6E-A9AE-438C-A164-05DEA2FCF8CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.PlatformCompatibility", "Framework\PlatformCompatibility\JJ.Framework.PlatformCompatibility.csproj", "{59622A6E-A9AE-438C-A164-05DEA2FCF8CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Logging", "Framework\JJ.Framework.Logging\JJ.Framework.Logging.csproj", "{CEEB755D-DE12-4E70-816E-546C429B44B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Logging", "Framework\Logging\JJ.Framework.Logging.csproj", "{CEEB755D-DE12-4E70-816E-546C429B44B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Client", "Presentation\JJ.Presentation.SetText.AppService.Client\JJ.Presentation.SetText.AppService.Client.csproj", "{F35C6131-D793-49D3-8044-E8B06F9CB107}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.AppService.Client", "Presentation\SetText.AppService.Client\JJ.Presentation.SetText.AppService.Client.csproj", "{F35C6131-D793-49D3-8044-E8B06F9CB107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Interface", "Presentation\JJ.Presentation.SetText.Interface\JJ.Presentation.SetText.Interface.csproj", "{F074226B-734D-4308-B1C5-30350A228D8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Interface", "Presentation\SetText.Interface\JJ.Presentation.SetText.Interface.csproj", "{F074226B-734D-4308-B1C5-30350A228D8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online.CustomSoapClient", "Presentation\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient.csproj", "{F36B7455-7754-467E-8F64-72A33C687889}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.WinForms.Online.CustomSoapClient", "Presentation\SetText.WinForms.Online.CustomSoapClient\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient.csproj", "{F36B7455-7754-467E-8F64-72A33C687889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.Server", "Framework\JJ.Framework.Soap.Tests.Server\JJ.Framework.Soap.Tests.Server.csproj", "{D3440F56-DBD9-4B17-84E5-532E1D6FFE24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.Server", "Framework\Soap.Tests.Server\JJ.Framework.Soap.Tests.Server.csproj", "{D3440F56-DBD9-4B17-84E5-532E1D6FFE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.ServiceInterface", "Framework\JJ.Framework.Soap.Tests.ServiceInterface\JJ.Framework.Soap.Tests.ServiceInterface.csproj", "{9F0128B1-B662-474D-9B73-3FD8E9783B40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.ServiceInterface", "Framework\Soap.Tests.ServiceInterface\JJ.Framework.Soap.Tests.ServiceInterface.csproj", "{9F0128B1-B662-474D-9B73-3FD8E9783B40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject", "Presentation\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject.csproj", "{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject", "Presentation\SetText.Unity.DotNet.Online.WwwObject\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject.csproj", "{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentNHibernate", "External Components\FluentNHibernate\Source Code\1.3\src\FluentNHibernate\FluentNHibernate.csproj", "{529145D5-6CC3-4016-89B5-826563024AF1}"
 EndProject
@@ -578,236 +578,236 @@ Global
 		SccNumberOfProjects = 65
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://jjs-server:8080/tfs/defaultcollection
-		SccProjectUniqueName0 = Framework\\JJ.Framework.Data.NHibernate\\JJ.Framework.Data.NHibernate.csproj
+		SccProjectUniqueName0 = External\u0020Components\\NHibernate\\Source\u0020Code\\3.3.1.GA\\src\\NHibernate\\NHibernate.csproj
 		SccProjectTopLevelParentUniqueName0 = SetText.sln
-		SccProjectName0 = Framework/JJ.Framework.Data.NHibernate
-		SccLocalPath0 = Framework\\JJ.Framework.Data.NHibernate
-		SccProjectUniqueName1 = Framework\\JJ.Framework.Configuration\\JJ.Framework.Configuration.csproj
+		SccProjectName0 = External\u0020Components/NHibernate/Source\u0020Code/3.3.1.GA/src/NHibernate
+		SccLocalPath0 = External\u0020Components\\NHibernate\\Source\u0020Code\\3.3.1.GA\\src\\NHibernate
+		SccProjectUniqueName1 = External\u0020Components\\FluentNHibernate\\Source\u0020Code\\1.3\\src\\FluentNHibernate\\FluentNHibernate.csproj
 		SccProjectTopLevelParentUniqueName1 = SetText.sln
-		SccProjectName1 = Framework/JJ.Framework.Configuration
-		SccLocalPath1 = Framework\\JJ.Framework.Configuration
-		SccProjectUniqueName2 = Framework\\JJ.Framework.Reflection\\JJ.Framework.Reflection.csproj
+		SccProjectName1 = External\u0020Components/FluentNHibernate/Source\u0020Code/1.3/src/FluentNHibernate
+		SccLocalPath1 = External\u0020Components\\FluentNHibernate\\Source\u0020Code\\1.3\\src\\FluentNHibernate
+		SccProjectUniqueName2 = Framework\\PlatformCompatibility\\JJ.Framework.PlatformCompatibility.csproj
 		SccProjectTopLevelParentUniqueName2 = SetText.sln
-		SccProjectName2 = Framework/JJ.Framework.Reflection
-		SccLocalPath2 = Framework\\JJ.Framework.Reflection
-		SccProjectUniqueName3 = Framework\\JJ.Framework.Common\\JJ.Framework.Common.csproj
+		SccProjectName2 = Framework/PlatformCompatibility
+		SccLocalPath2 = Framework\\PlatformCompatibility
+		SccProjectUniqueName3 = Framework\\Common\\JJ.Framework.Common.csproj
 		SccProjectTopLevelParentUniqueName3 = SetText.sln
-		SccProjectName3 = Framework/JJ.Framework.Common
-		SccLocalPath3 = Framework\\JJ.Framework.Common
-		SccProjectUniqueName4 = Framework\\JJ.Framework.Data\\JJ.Framework.Data.csproj
+		SccProjectName3 = Framework/Common
+		SccLocalPath3 = Framework\\Common
+		SccProjectUniqueName4 = Framework\\Reflection\\JJ.Framework.Reflection.csproj
 		SccProjectTopLevelParentUniqueName4 = SetText.sln
-		SccProjectName4 = Framework/JJ.Framework.Data
-		SccLocalPath4 = Framework\\JJ.Framework.Data
-		SccProjectUniqueName5 = Framework\\JJ.Framework.Data.EntityFramework5\\JJ.Framework.Data.EntityFramework5.csproj
+		SccProjectName4 = Framework/Reflection
+		SccLocalPath4 = Framework\\Reflection
+		SccProjectUniqueName5 = Framework\\Data\\JJ.Framework.Data.csproj
 		SccProjectTopLevelParentUniqueName5 = SetText.sln
-		SccProjectName5 = Framework/JJ.Framework.Data.EntityFramework5
-		SccLocalPath5 = Framework\\JJ.Framework.Data.EntityFramework5
-		SccProjectUniqueName6 = External\u0020Components\\NPersist\\Source\u0020Code\\NCore\\Framework\\Puzzle.NCore.Framework\u0020NET\u00203.5.csproj
+		SccProjectName5 = Framework/Data
+		SccLocalPath5 = Framework\\Data
+		SccProjectUniqueName6 = Framework\\Data.NHibernate\\JJ.Framework.Data.NHibernate.csproj
 		SccProjectTopLevelParentUniqueName6 = SetText.sln
-		SccProjectName6 = External\u0020Components/NPersist/Source\u0020Code/NCore/Framework
-		SccLocalPath6 = External\u0020Components\\NPersist\\Source\u0020Code\\NCore\\Framework
-		SccProjectUniqueName7 = External\u0020Components\\NPersist\\Source\u0020Code\\NAspect\\Framework\\Puzzle.NAspect.Framework.NET\u00203.5.csproj
+		SccProjectName6 = Framework/Data.NHibernate
+		SccLocalPath6 = Framework\\Data.NHibernate
+		SccProjectUniqueName7 = External\u0020Components\\SgmlReader\\Source\u0020Code\u0020Adapted\\sgmlreaderdll\\SgmlReaderDll.csproj
 		SccProjectTopLevelParentUniqueName7 = SetText.sln
-		SccProjectName7 = External\u0020Components/NPersist/Source\u0020Code/NAspect/Framework
-		SccLocalPath7 = External\u0020Components\\NPersist\\Source\u0020Code\\NAspect\\Framework
-		SccProjectUniqueName8 = External\u0020Components\\NPersist\\Source\u0020Code\\NPath\\Framework\\Puzzle.NPath.Framework.NET\u00203.5.csproj
+		SccProjectName7 = External\u0020Components/SgmlReader/Source\u0020Code\u0020Adapted/sgmlreaderdll
+		SccLocalPath7 = External\u0020Components\\SgmlReader\\Source\u0020Code\u0020Adapted\\sgmlreaderdll
+		SccProjectUniqueName8 = Framework\\Xml\\JJ.Framework.Xml.csproj
 		SccProjectTopLevelParentUniqueName8 = SetText.sln
-		SccProjectName8 = External\u0020Components/NPersist/Source\u0020Code/NPath/Framework
-		SccLocalPath8 = External\u0020Components\\NPersist\\Source\u0020Code\\NPath\\Framework
-		SccProjectUniqueName9 = External\u0020Components\\NPersist\\Source\u0020Code\\NPersist\\Framework\\Puzzle.NPersist.Framework.NET\u00203.5.csproj
+		SccProjectName8 = Framework/Xml
+		SccLocalPath8 = Framework\\Xml
+		SccProjectUniqueName9 = Framework\\Configuration\\JJ.Framework.Configuration.csproj
 		SccProjectTopLevelParentUniqueName9 = SetText.sln
-		SccProjectName9 = External\u0020Components/NPersist/Source\u0020Code/NPersist/Framework
-		SccLocalPath9 = External\u0020Components\\NPersist\\Source\u0020Code\\NPersist\\Framework
-		SccProjectUniqueName10 = Framework\\JJ.Framework.Presentation.Mvc\\JJ.Framework.Presentation.Mvc.csproj
+		SccProjectName9 = Framework/Configuration
+		SccLocalPath9 = Framework\\Configuration
+		SccProjectUniqueName10 = Framework\\Data.EntityFramework5\\JJ.Framework.Data.EntityFramework5.csproj
 		SccProjectTopLevelParentUniqueName10 = SetText.sln
-		SccProjectName10 = Framework/JJ.Framework.Presentation.Mvc
-		SccLocalPath10 = Framework\\JJ.Framework.Presentation.Mvc
-		SccProjectUniqueName11 = Framework\\JJ.Framework.IO\\JJ.Framework.IO.csproj
+		SccProjectName10 = Framework/Data.EntityFramework5
+		SccLocalPath10 = Framework\\Data.EntityFramework5
+		SccProjectUniqueName11 = External\u0020Components\\NPersist\\Source\u0020Code\\NCore\\Framework\\Puzzle.NCore.Framework\u0020NET\u00203.5.csproj
 		SccProjectTopLevelParentUniqueName11 = SetText.sln
-		SccProjectName11 = Framework/JJ.Framework.IO
-		SccLocalPath11 = Framework\\JJ.Framework.IO
-		SccProjectUniqueName12 = Framework\\JJ.Framework.Presentation.WinForms\\JJ.Framework.Presentation.WinForms.csproj
+		SccProjectName11 = External\u0020Components/NPersist/Source\u0020Code/NCore/Framework
+		SccLocalPath11 = External\u0020Components\\NPersist\\Source\u0020Code\\NCore\\Framework
+		SccProjectUniqueName12 = External\u0020Components\\NPersist\\Source\u0020Code\\NAspect\\Framework\\Puzzle.NAspect.Framework.NET\u00203.5.csproj
 		SccProjectTopLevelParentUniqueName12 = SetText.sln
-		SccProjectName12 = Framework/JJ.Framework.Presentation.WinForms
-		SccLocalPath12 = Framework\\JJ.Framework.Presentation.WinForms
-		SccProjectUniqueName13 = Framework\\JJ.Framework.Validation\\JJ.Framework.Validation.csproj
+		SccProjectName12 = External\u0020Components/NPersist/Source\u0020Code/NAspect/Framework
+		SccLocalPath12 = External\u0020Components\\NPersist\\Source\u0020Code\\NAspect\\Framework
+		SccProjectUniqueName13 = External\u0020Components\\NPersist\\Source\u0020Code\\NPath\\Framework\\Puzzle.NPath.Framework.NET\u00203.5.csproj
 		SccProjectTopLevelParentUniqueName13 = SetText.sln
-		SccProjectName13 = Framework/JJ.Framework.Validation
-		SccLocalPath13 = Framework\\JJ.Framework.Validation
-		SccProjectUniqueName14 = Framework\\JJ.Framework.Xml\\JJ.Framework.Xml.csproj
+		SccProjectName13 = External\u0020Components/NPersist/Source\u0020Code/NPath/Framework
+		SccLocalPath13 = External\u0020Components\\NPersist\\Source\u0020Code\\NPath\\Framework
+		SccProjectUniqueName14 = External\u0020Components\\NPersist\\Source\u0020Code\\NPersist\\Framework\\Puzzle.NPersist.Framework.NET\u00203.5.csproj
 		SccProjectTopLevelParentUniqueName14 = SetText.sln
-		SccProjectName14 = Framework/JJ.Framework.Xml
-		SccLocalPath14 = Framework\\JJ.Framework.Xml
-		SccProjectUniqueName15 = Data\\JJ.Data.Canonical\\JJ.Data.Canonical.csproj
+		SccProjectName14 = External\u0020Components/NPersist/Source\u0020Code/NPersist/Framework
+		SccLocalPath14 = External\u0020Components\\NPersist\\Source\u0020Code\\NPersist\\Framework
+		SccProjectUniqueName15 = Framework\\Presentation\\JJ.Framework.Presentation.csproj
 		SccProjectTopLevelParentUniqueName15 = SetText.sln
-		SccProjectName15 = Data/JJ.Data.Canonical
-		SccLocalPath15 = Data\\JJ.Data.Canonical
-		SccProjectUniqueName16 = Framework\\JJ.Framework.Presentation\\JJ.Framework.Presentation.csproj
+		SccProjectName15 = Framework/Presentation
+		SccLocalPath15 = Framework\\Presentation
+		SccProjectUniqueName16 = Framework\\Presentation.Mvc\\JJ.Framework.Presentation.Mvc.csproj
 		SccProjectTopLevelParentUniqueName16 = SetText.sln
-		SccProjectName16 = Framework/JJ.Framework.Presentation
-		SccLocalPath16 = Framework\\JJ.Framework.Presentation
-		SccProjectUniqueName17 = Framework\\JJ.Framework.Presentation.JavaScript\\JJ.Framework.Presentation.JavaScript.csproj
+		SccProjectName16 = Framework/Presentation.Mvc
+		SccLocalPath16 = Framework\\Presentation.Mvc
+		SccProjectUniqueName17 = Framework\\IO\\JJ.Framework.IO.csproj
 		SccProjectTopLevelParentUniqueName17 = SetText.sln
-		SccProjectName17 = Framework/JJ.Framework.Presentation.JavaScript
-		SccLocalPath17 = Framework\\JJ.Framework.Presentation.JavaScript
-		SccProjectUniqueName18 = Framework\\JJ.Framework.Reflection.Tests\\JJ.Framework.Reflection.Tests.csproj
+		SccProjectName17 = Framework/IO
+		SccLocalPath17 = Framework\\IO
+		SccProjectUniqueName18 = Framework\\Logging\\JJ.Framework.Logging.csproj
 		SccProjectTopLevelParentUniqueName18 = SetText.sln
-		SccProjectName18 = Framework/JJ.Framework.Reflection.Tests
-		SccLocalPath18 = Framework\\JJ.Framework.Reflection.Tests
-		SccProjectUniqueName19 = Data\\JJ.Data.SetText\\JJ.Data.SetText.csproj
-		SccProjectName19 = Data/JJ.Data.SetText
-		SccLocalPath19 = Data\\JJ.Data.SetText
-		SccProjectUniqueName20 = Data\\JJ.Data.SetText.DefaultRepositories\\JJ.Data.SetText.DefaultRepositories.csproj
-		SccProjectName20 = Data/JJ.Data.SetText.DefaultRepositories
-		SccLocalPath20 = Data\\JJ.Data.SetText.DefaultRepositories
-		SccProjectUniqueName21 = Data\\JJ.Data.SetText.NHibernate\\JJ.Data.SetText.NHibernate.csproj
-		SccProjectName21 = Data/JJ.Data.SetText.NHibernate
-		SccLocalPath21 = Data\\JJ.Data.SetText.NHibernate
-		SccProjectUniqueName22 = Data\\JJ.Data.SetText.EntityFramework5\\JJ.Data.SetText.EntityFramework5.csproj
-		SccProjectName22 = Data/JJ.Data.SetText.EntityFramework5
-		SccLocalPath22 = Data\\JJ.Data.SetText.EntityFramework5
-		SccProjectUniqueName23 = Data\\JJ.Data.SetText.Xml\\JJ.Data.SetText.Xml.csproj
-		SccProjectName23 = Data/JJ.Data.SetText.Xml
-		SccLocalPath23 = Data\\JJ.Data.SetText.Xml
-		SccProjectUniqueName24 = Presentation\\JJ.Presentation.SetText\\JJ.Presentation.SetText.csproj
-		SccProjectName24 = Presentation/JJ.Presentation.SetText
-		SccLocalPath24 = Presentation\\JJ.Presentation.SetText
-		SccProjectUniqueName25 = Presentation\\JJ.Presentation.SetText.Mvc\\JJ.Presentation.SetText.Mvc.csproj
-		SccProjectName25 = Presentation/JJ.Presentation.SetText.Mvc
-		SccLocalPath25 = Presentation\\JJ.Presentation.SetText.Mvc
-		SccProjectUniqueName26 = Business\\JJ.Business.SetText\\JJ.Business.SetText.csproj
-		SccProjectName26 = Business/JJ.Business.SetText
-		SccLocalPath26 = Business\\JJ.Business.SetText
-		SccProjectUniqueName27 = Presentation\\JJ.Presentation.SetText.Html\\JJ.Presentation.SetText.Html.csproj
-		SccProjectName27 = Presentation/JJ.Presentation.SetText.Html
-		SccLocalPath27 = Presentation\\JJ.Presentation.SetText.Html
-		SccProjectUniqueName28 = Presentation\\JJ.Presentation.SetText.AppService\\JJ.Presentation.SetText.AppService.csproj
-		SccProjectName28 = Presentation/JJ.Presentation.SetText.AppService
-		SccLocalPath28 = Presentation\\JJ.Presentation.SetText.AppService
-		SccProjectUniqueName29 = Framework\\JJ.Framework.Data.Xml\\JJ.Framework.Data.Xml.csproj
+		SccProjectName18 = Framework/Logging
+		SccLocalPath18 = Framework\\Logging
+		SccProjectUniqueName19 = Framework\\Presentation.WinForms\\JJ.Framework.Presentation.WinForms.csproj
+		SccProjectTopLevelParentUniqueName19 = SetText.sln
+		SccProjectName19 = Framework/Presentation.WinForms
+		SccLocalPath19 = Framework\\Presentation.WinForms
+		SccProjectUniqueName20 = Framework\\Validation\\JJ.Framework.Validation.csproj
+		SccProjectTopLevelParentUniqueName20 = SetText.sln
+		SccProjectName20 = Framework/Validation
+		SccLocalPath20 = Framework\\Validation
+		SccProjectUniqueName21 = Data\\Canonical\\JJ.Data.Canonical.csproj
+		SccProjectTopLevelParentUniqueName21 = SetText.sln
+		SccProjectName21 = Data/Canonical
+		SccLocalPath21 = Data\\Canonical
+		SccProjectUniqueName22 = Framework\\Presentation.JavaScript\\JJ.Framework.Presentation.JavaScript.csproj
+		SccProjectTopLevelParentUniqueName22 = SetText.sln
+		SccProjectName22 = Framework/Presentation.JavaScript
+		SccLocalPath22 = Framework\\Presentation.JavaScript
+		SccProjectUniqueName23 = Framework\\Testing\\JJ.Framework.Testing.csproj
+		SccProjectTopLevelParentUniqueName23 = SetText.sln
+		SccProjectName23 = Framework/Testing
+		SccLocalPath23 = Framework\\Testing
+		SccProjectUniqueName24 = Framework\\Reflection.Tests\\JJ.Framework.Reflection.Tests.csproj
+		SccProjectTopLevelParentUniqueName24 = SetText.sln
+		SccProjectName24 = Framework/Reflection.Tests
+		SccLocalPath24 = Framework\\Reflection.Tests
+		SccProjectUniqueName25 = Data\\SetText\\JJ.Data.SetText.csproj
+		SccProjectName25 = Data/SetText
+		SccLocalPath25 = Data\\SetText
+		SccProjectUniqueName26 = Data\\SetText.DefaultRepositories\\JJ.Data.SetText.DefaultRepositories.csproj
+		SccProjectName26 = Data/SetText.DefaultRepositories
+		SccLocalPath26 = Data\\SetText.DefaultRepositories
+		SccProjectUniqueName27 = Data\\SetText.NHibernate\\JJ.Data.SetText.NHibernate.csproj
+		SccProjectName27 = Data/SetText.NHibernate
+		SccLocalPath27 = Data\\SetText.NHibernate
+		SccProjectUniqueName28 = Data\\SetText.EntityFramework5\\JJ.Data.SetText.EntityFramework5.csproj
+		SccProjectName28 = Data/SetText.EntityFramework5
+		SccLocalPath28 = Data\\SetText.EntityFramework5
+		SccProjectUniqueName29 = Framework\\Data.Xml\\JJ.Framework.Data.Xml.csproj
 		SccProjectTopLevelParentUniqueName29 = SetText.sln
-		SccProjectName29 = Framework/JJ.Framework.Data.Xml
-		SccLocalPath29 = Framework\\JJ.Framework.Data.Xml
-		SccProjectUniqueName30 = External\u0020Components\\SgmlReader\\Source\u0020Code\u0020Adapted\\sgmlreaderdll\\SgmlReaderDll.csproj
-		SccProjectTopLevelParentUniqueName30 = SetText.sln
-		SccProjectName30 = External\u0020Components/SgmlReader/Source\u0020Code\u0020Adapted/sgmlreaderdll
-		SccLocalPath30 = External\u0020Components\\SgmlReader\\Source\u0020Code\u0020Adapted\\sgmlreaderdll
-		SccProjectUniqueName31 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.Offline\\JJ.Presentation.SetText.Unity.DotNet.Offline.csproj
-		SccProjectName31 = Presentation/JJ.Presentation.SetText.Unity.DotNet.Offline
-		SccLocalPath31 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.Offline
-		SccProjectUniqueName32 = Framework\\JJ.Framework.Data.Memory\\JJ.Framework.Data.Memory.csproj
-		SccProjectTopLevelParentUniqueName32 = SetText.sln
-		SccProjectName32 = Framework/JJ.Framework.Data.Memory
-		SccLocalPath32 = Framework\\JJ.Framework.Data.Memory
-		SccProjectUniqueName33 = Data\\JJ.Data.SetText.Memory\\JJ.Data.SetText.Memory.csproj
-		SccProjectName33 = Data/JJ.Data.SetText.Memory
-		SccLocalPath33 = Data\\JJ.Data.SetText.Memory
-		SccProjectUniqueName34 = Presentation\\JJ.Presentation.SetText.WinForms.Online\\JJ.Presentation.SetText.WinForms.Online.csproj
-		SccProjectName34 = Presentation/JJ.Presentation.SetText.WinForms.Online
-		SccLocalPath34 = Presentation\\JJ.Presentation.SetText.WinForms.Online
-		SccProjectUniqueName35 = Presentation\\JJ.Presentation.SetText.WinForms.Offline\\JJ.Presentation.SetText.WinForms.Offline.csproj
-		SccProjectName35 = Presentation/JJ.Presentation.SetText.WinForms.Offline
-		SccLocalPath35 = Presentation\\JJ.Presentation.SetText.WinForms.Offline
-		SccProjectUniqueName36 = Presentation\\JJ.Presentation.SetText.WinForms.OfflineWithSync\\JJ.Presentation.SetText.WinForms.OfflineWithSync.csproj
-		SccProjectName36 = Presentation/JJ.Presentation.SetText.WinForms.OfflineWithSync
-		SccLocalPath36 = Presentation\\JJ.Presentation.SetText.WinForms.OfflineWithSync
-		SccProjectUniqueName37 = Presentation\\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched\\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched.csproj
-		SccProjectName37 = Presentation/JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
-		SccLocalPath37 = Presentation\\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
-		SccProjectUniqueName38 = Presentation\\JJ.Presentation.SetText.AppService.Interface\\JJ.Presentation.SetText.AppService.Interface.csproj
-		SccProjectName38 = Presentation/JJ.Presentation.SetText.AppService.Interface
-		SccLocalPath38 = Presentation\\JJ.Presentation.SetText.AppService.Interface
-		SccProjectUniqueName39 = Presentation\\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient\\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient.csproj
-		SccProjectName39 = Presentation/JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient
-		SccLocalPath39 = Presentation\\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient
-		SccProjectUniqueName40 = Framework\\JJ.Framework.Testing\\JJ.Framework.Testing.csproj
-		SccProjectTopLevelParentUniqueName40 = SetText.sln
-		SccProjectName40 = Framework/JJ.Framework.Testing
-		SccLocalPath40 = Framework\\JJ.Framework.Testing
-		SccProjectUniqueName41 = Framework\\JJ.Framework.Data.Xml.Linq\\JJ.Framework.Data.Xml.Linq.csproj
-		SccProjectTopLevelParentUniqueName41 = SetText.sln
-		SccProjectName41 = Framework/JJ.Framework.Data.Xml.Linq
-		SccLocalPath41 = Framework\\JJ.Framework.Data.Xml.Linq
-		SccProjectUniqueName42 = Data\\JJ.Data.SetText.Xml.Linq\\JJ.Data.SetText.Xml.Linq.csproj
-		SccProjectName42 = Data/JJ.Data.SetText.Xml.Linq
-		SccLocalPath42 = Data\\JJ.Data.SetText.Xml.Linq
-		SccProjectUniqueName43 = Framework\\JJ.Framework.Common.Tests\\JJ.Framework.Common.Tests.csproj
-		SccProjectTopLevelParentUniqueName43 = SetText.sln
-		SccProjectName43 = Framework/JJ.Framework.Common.Tests
-		SccLocalPath43 = Framework\\JJ.Framework.Common.Tests
-		SccProjectUniqueName44 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.Online\\JJ.Presentation.SetText.Unity.DotNet.Online.csproj
-		SccProjectName44 = Presentation/JJ.Presentation.SetText.Unity.DotNet.Online
-		SccLocalPath44 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.Online
-		SccProjectUniqueName45 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync\\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync.csproj
-		SccProjectName45 = Presentation/JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync
-		SccLocalPath45 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync
-		SccProjectUniqueName46 = Presentation\\JJ.Presentation.SetText.AppService.Tests\\JJ.Presentation.SetText.AppService.Tests.csproj
-		SccProjectName46 = Presentation/JJ.Presentation.SetText.AppService.Tests
-		SccLocalPath46 = Presentation\\JJ.Presentation.SetText.AppService.Tests
-		SccProjectUniqueName47 = Framework\\JJ.Framework.Xml.Linq\\JJ.Framework.Xml.Linq.csproj
-		SccProjectTopLevelParentUniqueName47 = SetText.sln
-		SccProjectName47 = Framework/JJ.Framework.Xml.Linq
-		SccLocalPath47 = Framework\\JJ.Framework.Xml.Linq
-		SccProjectUniqueName48 = Framework\\JJ.Framework.Xml.Linq.Tests\\JJ.Framework.Xml.Linq.Tests.csproj
-		SccProjectTopLevelParentUniqueName48 = SetText.sln
-		SccProjectName48 = Framework/JJ.Framework.Xml.Linq.Tests
-		SccLocalPath48 = Framework\\JJ.Framework.Xml.Linq.Tests
-		SccProjectUniqueName49 = Framework\\JJ.Framework.Xml.Tests\\JJ.Framework.Xml.Tests.csproj
-		SccProjectTopLevelParentUniqueName49 = SetText.sln
-		SccProjectName49 = Framework/JJ.Framework.Xml.Tests
-		SccLocalPath49 = Framework\\JJ.Framework.Xml.Tests
-		SccProjectUniqueName50 = Framework\\JJ.Framework.Soap\\JJ.Framework.Soap.csproj
-		SccProjectTopLevelParentUniqueName50 = SetText.sln
-		SccProjectName50 = Framework/JJ.Framework.Soap
-		SccLocalPath50 = Framework\\JJ.Framework.Soap
-		SccProjectUniqueName51 = Framework\\JJ.Framework.Soap.Tests\\JJ.Framework.Soap.Tests.csproj
-		SccProjectTopLevelParentUniqueName51 = SetText.sln
-		SccProjectName51 = Framework/JJ.Framework.Soap.Tests
-		SccLocalPath51 = Framework\\JJ.Framework.Soap.Tests
-		SccProjectUniqueName52 = Framework\\JJ.Framework.Mathematics\\JJ.Framework.Mathematics.csproj
+		SccProjectName29 = Framework/Data.Xml
+		SccLocalPath29 = Framework\\Data.Xml
+		SccProjectUniqueName30 = Data\\SetText.Xml\\JJ.Data.SetText.Xml.csproj
+		SccProjectName30 = Data/SetText.Xml
+		SccLocalPath30 = Data\\SetText.Xml
+		SccProjectUniqueName31 = Business\\SetText\\JJ.Business.SetText.csproj
+		SccProjectName31 = Business/SetText
+		SccLocalPath31 = Business\\SetText
+		SccProjectUniqueName32 = Presentation\\SetText.Interface\\JJ.Presentation.SetText.Interface.csproj
+		SccProjectName32 = Presentation/SetText.Interface
+		SccLocalPath32 = Presentation\\SetText.Interface
+		SccProjectUniqueName33 = Presentation\\SetText\\JJ.Presentation.SetText.csproj
+		SccProjectName33 = Presentation/SetText
+		SccLocalPath33 = Presentation\\SetText
+		SccProjectUniqueName34 = Framework\\Data.Memory\\JJ.Framework.Data.Memory.csproj
+		SccProjectTopLevelParentUniqueName34 = SetText.sln
+		SccProjectName34 = Framework/Data.Memory
+		SccLocalPath34 = Framework\\Data.Memory
+		SccProjectUniqueName35 = Framework\\Mathematics\\JJ.Framework.Mathematics.csproj
+		SccProjectTopLevelParentUniqueName35 = SetText.sln
+		SccProjectName35 = Framework/Mathematics
+		SccLocalPath35 = Framework\\Mathematics
+		SccProjectUniqueName36 = Framework\\Xml.Linq\\JJ.Framework.Xml.Linq.csproj
+		SccProjectTopLevelParentUniqueName36 = SetText.sln
+		SccProjectName36 = Framework/Xml.Linq
+		SccLocalPath36 = Framework\\Xml.Linq
+		SccProjectUniqueName37 = Framework\\Data.Xml.Linq\\JJ.Framework.Data.Xml.Linq.csproj
+		SccProjectTopLevelParentUniqueName37 = SetText.sln
+		SccProjectName37 = Framework/Data.Xml.Linq
+		SccLocalPath37 = Framework\\Data.Xml.Linq
+		SccProjectUniqueName38 = Data\\SetText.Memory\\JJ.Data.SetText.Memory.csproj
+		SccProjectName38 = Data/SetText.Memory
+		SccLocalPath38 = Data\\SetText.Memory
+		SccProjectUniqueName39 = Data\\SetText.Xml.Linq\\JJ.Data.SetText.Xml.Linq.csproj
+		SccProjectName39 = Data/SetText.Xml.Linq
+		SccLocalPath39 = Data\\SetText.Xml.Linq
+		SccProjectUniqueName40 = Presentation\\SetText.Mvc\\JJ.Presentation.SetText.Mvc.csproj
+		SccProjectName40 = Presentation/SetText.Mvc
+		SccLocalPath40 = Presentation\\SetText.Mvc
+		SccProjectUniqueName41 = Presentation\\SetText.Html\\JJ.Presentation.SetText.Html.csproj
+		SccProjectName41 = Presentation/SetText.Html
+		SccLocalPath41 = Presentation\\SetText.Html
+		SccProjectUniqueName42 = Presentation\\SetText.AppService.Interface\\JJ.Presentation.SetText.AppService.Interface.csproj
+		SccProjectName42 = Presentation/SetText.AppService.Interface
+		SccLocalPath42 = Presentation\\SetText.AppService.Interface
+		SccProjectUniqueName43 = Presentation\\SetText.AppService\\JJ.Presentation.SetText.AppService.csproj
+		SccProjectName43 = Presentation/SetText.AppService
+		SccLocalPath43 = Presentation\\SetText.AppService
+		SccProjectUniqueName44 = Presentation\\SetText.Unity.DotNet.Offline\\JJ.Presentation.SetText.Unity.DotNet.Offline.csproj
+		SccProjectName44 = Presentation/SetText.Unity.DotNet.Offline
+		SccLocalPath44 = Presentation\\SetText.Unity.DotNet.Offline
+		SccProjectUniqueName45 = Framework\\Soap\\JJ.Framework.Soap.csproj
+		SccProjectTopLevelParentUniqueName45 = SetText.sln
+		SccProjectName45 = Framework/Soap
+		SccLocalPath45 = Framework\\Soap
+		SccProjectUniqueName46 = Presentation\\SetText.AppService.Client\\JJ.Presentation.SetText.AppService.Client.csproj
+		SccProjectName46 = Presentation/SetText.AppService.Client
+		SccLocalPath46 = Presentation\\SetText.AppService.Client
+		SccProjectUniqueName47 = Presentation\\SetText.WinForms.Online\\JJ.Presentation.SetText.WinForms.Online.csproj
+		SccProjectName47 = Presentation/SetText.WinForms.Online
+		SccLocalPath47 = Presentation\\SetText.WinForms.Online
+		SccProjectUniqueName48 = Presentation\\SetText.WinForms.Offline\\JJ.Presentation.SetText.WinForms.Offline.csproj
+		SccProjectName48 = Presentation/SetText.WinForms.Offline
+		SccLocalPath48 = Presentation\\SetText.WinForms.Offline
+		SccProjectUniqueName49 = Presentation\\SetText.WinForms.OfflineWithSync\\JJ.Presentation.SetText.WinForms.OfflineWithSync.csproj
+		SccProjectName49 = Presentation/SetText.WinForms.OfflineWithSync
+		SccLocalPath49 = Presentation\\SetText.WinForms.OfflineWithSync
+		SccProjectUniqueName50 = Presentation\\SetText.WinForms.OnlineOfflineSwitched\\JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched.csproj
+		SccProjectName50 = Presentation/SetText.WinForms.OnlineOfflineSwitched
+		SccLocalPath50 = Presentation\\SetText.WinForms.OnlineOfflineSwitched
+		SccProjectUniqueName51 = Presentation\\SetText.WinForms.Online.GeneratedServiceClient\\JJ.Presentation.SetText.WinForms.Online.GeneratedServiceClient.csproj
+		SccProjectName51 = Presentation/SetText.WinForms.Online.GeneratedServiceClient
+		SccLocalPath51 = Presentation\\SetText.WinForms.Online.GeneratedServiceClient
+		SccProjectUniqueName52 = Framework\\Common.Tests\\JJ.Framework.Common.Tests.csproj
 		SccProjectTopLevelParentUniqueName52 = SetText.sln
-		SccProjectName52 = Framework/JJ.Framework.Mathematics
-		SccLocalPath52 = Framework\\JJ.Framework.Mathematics
-		SccProjectUniqueName53 = Framework\\JJ.Framework.Mathematics.Tests\\JJ.Framework.Mathematics.Tests.csproj
-		SccProjectTopLevelParentUniqueName53 = SetText.sln
-		SccProjectName53 = Framework/JJ.Framework.Mathematics.Tests
-		SccLocalPath53 = Framework\\JJ.Framework.Mathematics.Tests
-		SccProjectUniqueName54 = Framework\\JJ.Framework.PlatformCompatibility\\JJ.Framework.PlatformCompatibility.csproj
-		SccProjectTopLevelParentUniqueName54 = SetText.sln
-		SccProjectName54 = Framework/JJ.Framework.PlatformCompatibility
-		SccLocalPath54 = Framework\\JJ.Framework.PlatformCompatibility
-		SccProjectUniqueName55 = Framework\\JJ.Framework.Logging\\JJ.Framework.Logging.csproj
-		SccProjectTopLevelParentUniqueName55 = SetText.sln
-		SccProjectName55 = Framework/JJ.Framework.Logging
-		SccLocalPath55 = Framework\\JJ.Framework.Logging
-		SccProjectUniqueName56 = Presentation\\JJ.Presentation.SetText.AppService.Client\\JJ.Presentation.SetText.AppService.Client.csproj
-		SccProjectName56 = Presentation/JJ.Presentation.SetText.AppService.Client
-		SccLocalPath56 = Presentation\\JJ.Presentation.SetText.AppService.Client
-		SccProjectUniqueName57 = Presentation\\JJ.Presentation.SetText.Interface\\JJ.Presentation.SetText.Interface.csproj
-		SccProjectName57 = Presentation/JJ.Presentation.SetText.Interface
-		SccLocalPath57 = Presentation\\JJ.Presentation.SetText.Interface
-		SccProjectUniqueName58 = Presentation\\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient\\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient.csproj
-		SccProjectName58 = Presentation/JJ.Presentation.SetText.WinForms.Online.CustomSoapClient
-		SccLocalPath58 = Presentation\\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient
-		SccProjectUniqueName59 = Framework\\JJ.Framework.Soap.Tests.Server\\JJ.Framework.Soap.Tests.Server.csproj
+		SccProjectName52 = Framework/Common.Tests
+		SccLocalPath52 = Framework\\Common.Tests
+		SccProjectUniqueName53 = Presentation\\SetText.Unity.DotNet.Online\\JJ.Presentation.SetText.Unity.DotNet.Online.csproj
+		SccProjectName53 = Presentation/SetText.Unity.DotNet.Online
+		SccLocalPath53 = Presentation\\SetText.Unity.DotNet.Online
+		SccProjectUniqueName54 = Presentation\\SetText.Unity.DotNet.OfflineWithSync\\JJ.Presentation.SetText.Unity.DotNet.OfflineWithSync.csproj
+		SccProjectName54 = Presentation/SetText.Unity.DotNet.OfflineWithSync
+		SccLocalPath54 = Presentation\\SetText.Unity.DotNet.OfflineWithSync
+		SccProjectUniqueName55 = Presentation\\SetText.AppService.Tests\\JJ.Presentation.SetText.AppService.Tests.csproj
+		SccProjectName55 = Presentation/SetText.AppService.Tests
+		SccLocalPath55 = Presentation\\SetText.AppService.Tests
+		SccProjectUniqueName56 = Framework\\Xml.Linq.Tests\\JJ.Framework.Xml.Linq.Tests.csproj
+		SccProjectTopLevelParentUniqueName56 = SetText.sln
+		SccProjectName56 = Framework/Xml.Linq.Tests
+		SccLocalPath56 = Framework\\Xml.Linq.Tests
+		SccProjectUniqueName57 = Framework\\Xml.Tests\\JJ.Framework.Xml.Tests.csproj
+		SccProjectTopLevelParentUniqueName57 = SetText.sln
+		SccProjectName57 = Framework/Xml.Tests
+		SccLocalPath57 = Framework\\Xml.Tests
+		SccProjectUniqueName58 = Framework\\Soap.Tests.ServiceInterface\\JJ.Framework.Soap.Tests.ServiceInterface.csproj
+		SccProjectTopLevelParentUniqueName58 = SetText.sln
+		SccProjectName58 = Framework/Soap.Tests.ServiceInterface
+		SccLocalPath58 = Framework\\Soap.Tests.ServiceInterface
+		SccProjectUniqueName59 = Framework\\Soap.Tests\\JJ.Framework.Soap.Tests.csproj
 		SccProjectTopLevelParentUniqueName59 = SetText.sln
-		SccProjectName59 = Framework/JJ.Framework.Soap.Tests.Server
-		SccLocalPath59 = Framework\\JJ.Framework.Soap.Tests.Server
-		SccProjectUniqueName60 = Framework\\JJ.Framework.Soap.Tests.ServiceInterface\\JJ.Framework.Soap.Tests.ServiceInterface.csproj
+		SccProjectName59 = Framework/Soap.Tests
+		SccLocalPath59 = Framework\\Soap.Tests
+		SccProjectUniqueName60 = Framework\\Mathematics.Tests\\JJ.Framework.Mathematics.Tests.csproj
 		SccProjectTopLevelParentUniqueName60 = SetText.sln
-		SccProjectName60 = Framework/JJ.Framework.Soap.Tests.ServiceInterface
-		SccLocalPath60 = Framework\\JJ.Framework.Soap.Tests.ServiceInterface
-		SccProjectUniqueName61 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject\\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject.csproj
-		SccProjectName61 = Presentation/JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject
-		SccLocalPath61 = Presentation\\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject
-		SccProjectUniqueName62 = External\u0020Components\\FluentNHibernate\\Source\u0020Code\\1.3\\src\\FluentNHibernate\\FluentNHibernate.csproj
+		SccProjectName60 = Framework/Mathematics.Tests
+		SccLocalPath60 = Framework\\Mathematics.Tests
+		SccProjectUniqueName61 = Presentation\\SetText.WinForms.Online.CustomSoapClient\\JJ.Presentation.SetText.WinForms.Online.CustomSoapClient.csproj
+		SccProjectName61 = Presentation/SetText.WinForms.Online.CustomSoapClient
+		SccLocalPath61 = Presentation\\SetText.WinForms.Online.CustomSoapClient
+		SccProjectUniqueName62 = Framework\\Soap.Tests.Server\\JJ.Framework.Soap.Tests.Server.csproj
 		SccProjectTopLevelParentUniqueName62 = SetText.sln
-		SccProjectName62 = External\u0020Components/FluentNHibernate/Source\u0020Code/1.3/src/FluentNHibernate
-		SccLocalPath62 = External\u0020Components\\FluentNHibernate\\Source\u0020Code\\1.3\\src\\FluentNHibernate
-		SccProjectUniqueName63 = External\u0020Components\\NHibernate\\Source\u0020Code\\3.3.1.GA\\src\\NHibernate\\NHibernate.csproj
-		SccProjectTopLevelParentUniqueName63 = SetText.sln
-		SccProjectName63 = External\u0020Components/NHibernate/Source\u0020Code/3.3.1.GA/src/NHibernate
-		SccLocalPath63 = External\u0020Components\\NHibernate\\Source\u0020Code\\3.3.1.GA\\src\\NHibernate
+		SccProjectName62 = Framework/Soap.Tests.Server
+		SccLocalPath62 = Framework\\Soap.Tests.Server
+		SccProjectUniqueName63 = Presentation\\SetText.Unity.DotNet.Online.WwwObject\\JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject.csproj
+		SccProjectName63 = Presentation/SetText.Unity.DotNet.Online.WwwObject
+		SccLocalPath63 = Presentation\\SetText.Unity.DotNet.Online.WwwObject
 		SccLocalPath64 = .
 	EndGlobalSection
 EndGlobal
