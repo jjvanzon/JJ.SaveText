@@ -6,30 +6,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using JJ.Presentation.SetText.Presenters;
+using JJ.Presentation.SaveText.Presenters;
 using JJ.Data.Canonical;
 using JJ.Framework.Data;
 using JJ.Framework.Data.Xml;
-using JJ.Data.SetText;
-using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SaveText;
+using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Configuration;
-using JJ.Presentation.SetText.AppService.Client.Wcf;
-using JJ.Presentation.SetText.Resources;
-using JJ.Presentation.SetText.Interface.ViewModels;
+using JJ.Presentation.SaveText.AppService.Client.Wcf;
+using JJ.Presentation.SaveText.Resources;
+using JJ.Presentation.SaveText.Interface.ViewModels;
 using System.Net;
 using System.Threading;
 using System.Globalization;
-using JJ.Presentation.SetText.Interface.PresenterInterfaces;
+using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
 using Message = JJ.Data.Canonical.Message;
 
-namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
+namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 {
     internal partial class MainForm : Form
     {
         private IContext _context;
-        private ISetTextWithSyncPresenter _presenter;
-        private SetTextViewModel _viewModel;
-        private ISetTextWithSyncPresenter _appService;
+        private ISaveTextWithSyncPresenter _presenter;
+        private SaveTextViewModel _viewModel;
+        private ISaveTextWithSyncPresenter _appService;
 
         public MainForm()
         {
@@ -98,13 +98,13 @@ namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
 
         private void SetTitlesAndLabels()
         {
-            buttonSave.Text = Titles.SetText;
+            buttonSave.Text = Titles.SaveText;
         }
 
-        private ISetTextWithSyncPresenter CreatePresenter(IContext context)
+        private ISaveTextWithSyncPresenter CreatePresenter(IContext context)
         {
             IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
-            return new SetTextWithSyncPresenter(repository);
+            return new SaveTextWithSyncPresenter(repository);
         }
 
         private IContext CreateContext()
@@ -113,11 +113,11 @@ namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
             return context;
         }
 
-        private ISetTextWithSyncPresenter CreateAppServiceClient()
+        private ISaveTextWithSyncPresenter CreateAppServiceClient()
         {
             string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
             string cultureName = CultureInfo.CurrentUICulture.Name;
-            return new SetTextWithSyncAppServiceClient(url, cultureName);
+            return new SaveTextWithSyncAppServiceClient(url, cultureName);
         }
 
         // Synchronization

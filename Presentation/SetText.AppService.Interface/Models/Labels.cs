@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace JJ.Presentation.SetText.AppService.Interface.Models
+namespace JJ.Presentation.SaveText.AppService.Interface.Models
 {
     [DataContract]
     public class Labels

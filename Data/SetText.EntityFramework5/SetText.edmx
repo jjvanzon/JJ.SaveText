@@ -4,9 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SetTextDB_DEVModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="SetTextDB_DEVModelStoreContainer">
-          <EntitySet Name="Entity" EntityType="SetTextDB_DEVModel.Store.Entity" store:Type="Tables" Schema="dbo" />
+    <Schema Namespace="SaveTextDB_DEVModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SaveTextDB_DEVModelStoreContainer">
+          <EntitySet Name="Entity" EntityType="SaveTextDB_DEVModel.Store.Entity" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="Entity">
           <Key>
@@ -18,9 +18,9 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DEV_SetTextDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="DEV_SetTextDBEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Entities" EntityType="DEV_SetTextDBModel.Entity" />
+      <Schema Namespace="DEV_SaveTextDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DEV_SaveTextDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Entities" EntityType="DEV_SaveTextDBModel.Entity" />
         </EntityContainer>
         <EntityType Name="Entity">
           <Key>
@@ -34,9 +34,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SetTextDB_DEVModelStoreContainer" CdmEntityContainer="DEV_SetTextDBEntities">
+        <EntityContainerMapping StorageEntityContainer="SaveTextDB_DEVModelStoreContainer" CdmEntityContainer="DEV_SaveTextDBEntities">
           <EntitySetMapping Name="Entities">
-            <EntityTypeMapping TypeName="DEV_SetTextDBModel.Entity">
+            <EntityTypeMapping TypeName="DEV_SaveTextDBModel.Entity">
               <MappingFragment StoreEntitySet="Entity">
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

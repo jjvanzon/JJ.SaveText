@@ -1,4 +1,4 @@
-﻿using JJ.Presentation.SetText.Interface.ViewModels;
+﻿using JJ.Presentation.SaveText.Interface.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,28 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using JJ.Presentation.SetText.Interface.PresenterInterfaces;
-using JJ.Presentation.SetText.Presenters;
+using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
+using JJ.Presentation.SaveText.Presenters;
 using JJ.Data.Canonical;
 using JJ.Framework.Data;
 using JJ.Framework.Data.Xml;
-using JJ.Data.SetText;
-using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SaveText;
+using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Configuration;
-using JJ.Presentation.SetText.AppService.Client.Wcf;
-using JJ.Presentation.SetText.Resources;
+using JJ.Presentation.SaveText.AppService.Client.Wcf;
+using JJ.Presentation.SaveText.Resources;
 using JJ.Framework.Common;
 using System.Globalization;
 using Message = JJ.Data.Canonical.Message;
 
-namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
+namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 {
     internal partial class MainForm : Form
     {
         private IContext _context;
-        private SetTextWithSyncPresenter _presenter;
-        private SetTextAppServiceClient _service;
-        private SetTextViewModel _viewModel;
+        private SaveTextWithSyncPresenter _presenter;
+        private SaveTextAppServiceClient _service;
+        private SaveTextViewModel _viewModel;
 
         public MainForm()
         {
@@ -128,7 +128,7 @@ namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
 
         private void SetTitlesAndLabels()
         {
-            buttonSave.Text = Titles.SetText;
+            buttonSave.Text = Titles.SaveText;
         }
 
         // Online / Offline
@@ -178,7 +178,7 @@ namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
         private void GoOnline()
         {
             // Synchronize
-            using (SetTextWithSyncAppServiceClient appServiceWithSync = CreateAppServiceClientWithSync())
+            using (SaveTextWithSyncAppServiceClient appServiceWithSync = CreateAppServiceClientWithSync())
             {
                 _viewModel = appServiceWithSync.Synchronize(_viewModel);
                 ApplyViewModel();
@@ -216,24 +216,24 @@ namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
             ApplyIsOnline();
         }
 
-        private SetTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
+        private SaveTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SetTextWithSyncAppServiceUrl);
+            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextWithSyncAppServiceUrl);
             string cultureName = CultureInfo.CurrentUICulture.Name;
-            return new SetTextWithSyncAppServiceClient(url, cultureName);
+            return new SaveTextWithSyncAppServiceClient(url, cultureName);
         }
 
-        private SetTextAppServiceClient CreateAppServiceClient()
+        private SaveTextAppServiceClient CreateAppServiceClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SetTextAppServiceUrl);
+            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
             string cultureName = CultureInfo.CurrentUICulture.Name;
-            return new SetTextAppServiceClient(url, cultureName);
+            return new SaveTextAppServiceClient(url, cultureName);
         }
 
-        private SetTextWithSyncPresenter CreatePresenter(IContext context)
+        private SaveTextWithSyncPresenter CreatePresenter(IContext context)
         {
             IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
-            return new SetTextWithSyncPresenter(repository);
+            return new SaveTextWithSyncPresenter(repository);
         }
 
         private IContext CreateContext()

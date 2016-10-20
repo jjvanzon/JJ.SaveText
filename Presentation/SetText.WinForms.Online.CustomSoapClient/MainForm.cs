@@ -1,6 +1,6 @@
-﻿using JJ.Presentation.SetText.AppService.Client.Custom;
-using JJ.Presentation.SetText.AppService.Interface.Models;
-using JJ.Presentation.SetText.Interface.ViewModels;
+﻿using JJ.Presentation.SaveText.AppService.Client.Custom;
+using JJ.Presentation.SaveText.AppService.Interface.Models;
+using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Configuration;
 using JJ.Data.Canonical;
 using System;
@@ -14,11 +14,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Message = JJ.Data.Canonical.Message;
 
-namespace JJ.Presentation.SetText.WinForms.Online
+namespace JJ.Presentation.SaveText.WinForms.Online
 {
     internal partial class MainForm : Form
     {
-        private SetTextViewModel _viewModel;
+        private SaveTextViewModel _viewModel;
 
         public MainForm()
         {
@@ -41,21 +41,21 @@ namespace JJ.Presentation.SetText.WinForms.Online
 
         private new void Show()
         {
-            SetTextAppServiceClient service = CreateAppServiceClient();
+            SaveTextAppServiceClient service = CreateAppServiceClient();
             _viewModel = service.Show();
             ApplyViewModel();
         }
 
         private void Save()
         {
-            SetTextAppServiceClient service = CreateAppServiceClient();
+            SaveTextAppServiceClient service = CreateAppServiceClient();
             _viewModel = service.Save(_viewModel);
             ApplyViewModel();
         }
 
         private void SetTitlesAndLabels()
         {
-            buttonSave.Text = ResourceHelper.Titles.SetText;
+            buttonSave.Text = ResourceHelper.Titles.SaveText;
         }
 
         private void ApplyViewModel()
@@ -76,11 +76,11 @@ namespace JJ.Presentation.SetText.WinForms.Online
             labelValidationMessages.Text = sb.ToString();
         }
 
-        private SetTextAppServiceClient CreateAppServiceClient()
+        private SaveTextAppServiceClient CreateAppServiceClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SetTextAppService);
+            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextAppService);
             string cultureName = CultureInfo.CurrentUICulture.Name;
-            return new SetTextAppServiceClient(url, cultureName);
+            return new SaveTextAppServiceClient(url, cultureName);
         }
     }
 }

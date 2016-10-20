@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Framework.Data.Memory;
 
-namespace JJ.Data.SetText.Memory.Mappings
+namespace JJ.Data.SaveText.Memory.Mappings
 {
     public class EntityMapping : MemoryMapping<Entity>
     {

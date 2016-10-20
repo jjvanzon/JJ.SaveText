@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JJ.Framework.Validation;
-using JJ.Data.SetText;
-using JJ.Business.SetText.Resources;
+using JJ.Data.SaveText;
+using JJ.Business.SaveText.Resources;
 
-namespace JJ.Business.SetText.Validation
+namespace JJ.Business.SaveText.Validation
 {
     internal class TextValidator : FluentValidator_WithoutConstructorArgumentNullCheck<string>
     {

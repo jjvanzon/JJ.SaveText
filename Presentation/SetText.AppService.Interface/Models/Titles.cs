@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace JJ.Presentation.SetText.AppService.Interface.Models
+namespace JJ.Presentation.SaveText.AppService.Interface.Models
 {
     [DataContract]
     public class Titles
@@ -16,7 +16,7 @@ namespace JJ.Presentation.SetText.AppService.Interface.Models
         public string GoOnline { get; set; }
 
         [DataMember]
-        public string SetText { get; set; }
+        public string SaveText { get; set; }
 
         [DataMember]
         public string Synchronize { get; set; }

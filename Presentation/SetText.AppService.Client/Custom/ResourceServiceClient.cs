@@ -1,5 +1,5 @@
-﻿using JJ.Presentation.SetText.AppService.Interface;
-using JJ.Presentation.SetText.AppService.Interface.Models;
+﻿using JJ.Presentation.SaveText.AppService.Interface;
+using JJ.Presentation.SaveText.AppService.Interface.Models;
 using JJ.Framework.Soap;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 
-namespace JJ.Presentation.SetText.AppService.Client.Custom
+namespace JJ.Presentation.SaveText.AppService.Client.Custom
 {
     public class ResourceAppServiceClient : CustomWcfSoapClient<IResourceAppService>, IResourceAppService
     {

@@ -1,4 +1,4 @@
-﻿namespace JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched
+﻿namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 {
     partial class MainForm
     {
@@ -90,7 +90,7 @@
             this.Controls.Add(this.textBoxText);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Text = "JJ.Presentation.SetText.WinForms.OnlineOfflineSwitched";
+            this.Text = "JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched";
             this.ResumeLayout(false);
             this.PerformLayout();
 

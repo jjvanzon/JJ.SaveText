@@ -1,6 +1,6 @@
-﻿using JJ.Presentation.SetText.AppService.Client.Custom;
-using JJ.Presentation.SetText.AppService.Interface.Models;
-using JJ.Presentation.SetText.Interface.ViewModels;
+﻿using JJ.Presentation.SaveText.AppService.Client.Custom;
+using JJ.Presentation.SaveText.AppService.Interface.Models;
+using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JJ.Presentation.SetText.AppService.Tests
+namespace JJ.Presentation.SaveText.AppService.Tests
 {
     [TestClass]
     public class ResourceAppService_CustomClient_Tests

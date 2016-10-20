@@ -1,13 +1,13 @@
 ﻿using JJ.Framework.Data;
 using JJ.Framework.Data.Memory;
 using JJ.Framework.Reflection.Exceptions;
-using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JJ.Data.SetText.Memory.Repositories
+namespace JJ.Data.SaveText.Memory.Repositories
 {
     public class EntityRepository : IEntityRepository
     {

@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="JJ.Presentation.SetText.Mvc.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="JJ.Presentation.SaveText.Mvc.MvcApplication" Language="C#" %>

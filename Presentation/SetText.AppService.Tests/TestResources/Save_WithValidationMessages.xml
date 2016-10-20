@@ -1,6 +1,6 @@
 ﻿<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
             xmlns:o="http://tempuri.org/"
-            xmlns:vm="http://schemas.datacontract.org/2004/07/JJ.Presentation.SetText.Interface.ViewModels"
+            xmlns:vm="http://schemas.datacontract.org/2004/07/JJ.Presentation.SaveText.Interface.ViewModels"
             xmlns:c="http://schemas.datacontract.org/2004/07/JJ.Business.CanonicalModel">
   <s:Header/>
   <s:Body>

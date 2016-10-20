@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace JJ.Data.SetText.NHibernate
+namespace JJ.Data.SaveText.NHibernate
 {
     public class EntityMapping : ClassMap<Entity>
     {

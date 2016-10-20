@@ -1,5 +1,5 @@
-﻿using JJ.Presentation.SetText.AppService.Interface;
-using JJ.Presentation.SetText.AppService.Interface.Models;
+﻿using JJ.Presentation.SaveText.AppService.Interface;
+using JJ.Presentation.SaveText.AppService.Interface.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,7 +10,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading;
 
-namespace JJ.Presentation.SetText.AppService
+namespace JJ.Presentation.SaveText.AppService
 {
     public class ResourceAppService : IResourceAppService
     {

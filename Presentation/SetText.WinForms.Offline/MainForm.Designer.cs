@@ -1,4 +1,4 @@
-﻿namespace JJ.Presentation.SetText.WinForms.Offline
+﻿namespace JJ.Presentation.SaveText.WinForms.Offline
 {
     partial class MainForm
     {
@@ -76,7 +76,7 @@
             this.Controls.Add(this.textBoxText);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Text = "JJ.Presentation.SetText.WinForms.Offline";
+            this.Text = "JJ.Presentation.SaveText.WinForms.Offline";
             this.ResumeLayout(false);
             this.PerformLayout();
 

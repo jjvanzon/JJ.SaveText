@@ -1,4 +1,4 @@
-﻿namespace JJ.Presentation.SetText.WinForms.Online
+﻿namespace JJ.Presentation.SaveText.WinForms.Online
 {
     partial class MainForm
     {
@@ -76,7 +76,7 @@
             this.Controls.Add(this.textBoxText);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(8);
-            this.Text = "JJ.Presentation.SetText.WinForms.Online.CustomSoapClient";
+            this.Text = "JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient";
             this.ResumeLayout(false);
             this.PerformLayout();
 

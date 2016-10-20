@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JJ.Presentation.SetText.WinForms.Offline")]
+[assembly: AssemblyTitle("JJ.Presentation.SaveText.WinForms.Offline")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JJ.Presentation.SetText.WinForms.Offline")]
+[assembly: AssemblyProduct("JJ.Presentation.SaveText.WinForms.Offline")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

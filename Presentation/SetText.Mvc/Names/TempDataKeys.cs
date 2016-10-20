@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace JJ.Presentation.SetText.Mvc.Names
+namespace JJ.Presentation.SaveText.Mvc.Names
 {
     internal class TempDataKeys
     {

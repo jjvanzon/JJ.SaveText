@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JJ.Data.SetText.EntityFramework5
+namespace JJ.Data.SaveText.EntityFramework5
 {
     using System;
     using System.Collections.Generic;

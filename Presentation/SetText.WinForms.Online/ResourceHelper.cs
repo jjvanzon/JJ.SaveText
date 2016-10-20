@@ -1,5 +1,5 @@
-﻿using JJ.Presentation.SetText.AppService.Client.Wcf;
-using JJ.Presentation.SetText.AppService.Interface.Models;
+﻿using JJ.Presentation.SaveText.AppService.Client.Wcf;
+using JJ.Presentation.SaveText.AppService.Interface.Models;
 using JJ.Framework.Configuration;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JJ.Presentation.SetText.WinForms.Online
+namespace JJ.Presentation.SaveText.WinForms.Online
 {
     internal static class ResourceHelper
     {

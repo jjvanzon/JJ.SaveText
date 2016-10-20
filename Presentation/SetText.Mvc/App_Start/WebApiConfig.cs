@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace JJ.Presentation.SetText.Mvc
+namespace JJ.Presentation.SaveText.Mvc
 {
     public static class WebApiConfig
     {

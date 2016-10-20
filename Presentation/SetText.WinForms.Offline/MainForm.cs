@@ -1,10 +1,10 @@
-﻿using JJ.Presentation.SetText.Interface.PresenterInterfaces;
-using JJ.Presentation.SetText.Presenters;
-using JJ.Presentation.SetText.Resources;
-using JJ.Presentation.SetText.Interface.ViewModels;
+﻿using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
+using JJ.Presentation.SaveText.Presenters;
+using JJ.Presentation.SaveText.Resources;
+using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Data;
 using JJ.Data.Canonical;
-using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +16,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Message = JJ.Data.Canonical.Message;
 
-namespace JJ.Presentation.SetText.WinForms.Offline
+namespace JJ.Presentation.SaveText.WinForms.Offline
 {
     internal partial class MainForm : Form
     {
         private IContext _context;
-        private ISetTextPresenter _presenter;
-        private SetTextViewModel _viewModel;
+        private ISaveTextPresenter _presenter;
+        private SaveTextViewModel _viewModel;
 
         public MainForm()
         {
@@ -78,13 +78,13 @@ namespace JJ.Presentation.SetText.WinForms.Offline
 
         private void SetTitlesAndLabels()
         {
-            buttonSave.Text = Titles.SetText;
+            buttonSave.Text = Titles.SaveText;
         }
 
-        private ISetTextPresenter CreatePresenter(IContext context)
+        private ISaveTextPresenter CreatePresenter(IContext context)
         {
             IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
-            return new SetTextPresenter(repository);
+            return new SaveTextPresenter(repository);
         }
 
         private IContext CreateContext()

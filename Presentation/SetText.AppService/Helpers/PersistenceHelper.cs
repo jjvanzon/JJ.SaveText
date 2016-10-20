@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace JJ.Presentation.SetText.AppService.Helpers
+namespace JJ.Presentation.SaveText.AppService.Helpers
 {
     internal static class PersistenceHelper
     {

@@ -1,0 +1,46 @@
+﻿@using JJ.Presentation.SaveText.Resources
+
+@model JJ.Presentation.SaveText.Interface.ViewModels.SaveTextViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Titles.SaveText</title>
+</head>
+<body>
+    @using (Html.BeginForm()) 
+    {
+
+        <h2>@Titles.SaveText</h2>
+        <p>
+            @Labels.Text
+        </p>
+
+        <p>
+            @Html.TextAreaFor(x => x.Text)
+            @Html.ValidationMessageFor(x => x.Text)
+        </p>
+
+        <p>
+            <input type="submit" value="@Titles.SaveText" />
+        </p>
+        
+        if (Model.TextWasSavedMessageVisible) 
+        {
+            <p>
+                @Messages.Saved
+            </p>
+        }
+
+        foreach (var validationMessage in Model.ValidationMessages)
+        {
+            <p style="color:red;">
+                @validationMessage.Text
+            </p>
+        }
+    }
+
+</body>
+</html>

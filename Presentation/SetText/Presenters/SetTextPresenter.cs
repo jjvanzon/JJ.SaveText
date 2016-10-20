@@ -3,52 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using JJ.Framework.Validation;
-using JJ.Data.SetText;
-using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
-using JJ.Business.SetText.Validation;
-using JJ.Presentation.SetText.Interface.ViewModels;
-using JJ.Presentation.SetText.Helpers;
-using JJ.Business.SetText;
+using JJ.Data.SaveText;
+using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Business.SaveText.Validation;
+using JJ.Presentation.SaveText.Interface.ViewModels;
+using JJ.Presentation.SaveText.Helpers;
+using JJ.Business.SaveText;
 using Canonical = JJ.Data.Canonical;
 using JJ.Data.Canonical;
-using JJ.Presentation.SetText.Interface.PresenterInterfaces;
+using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
 using JJ.Framework.Reflection.Exceptions;
 
-namespace JJ.Presentation.SetText.Presenters
+namespace JJ.Presentation.SaveText.Presenters
 {
-    public class SetTextPresenter : ISetTextPresenter
+    public class SaveTextPresenter : ISaveTextPresenter
     {
         private IEntityRepository _entityRepository;
-        private TextSetter _textSetter;
+        private TextSaver _textSetter;
 
-        public SetTextPresenter(IEntityRepository entityRepository)
+        public SaveTextPresenter(IEntityRepository entityRepository)
         {
             if (entityRepository == null) throw new NullException(() => entityRepository);
 
             _entityRepository = entityRepository;
-            _textSetter = new TextSetter(entityRepository);
+            _textSetter = new TextSaver(entityRepository);
         }
 
-        public SetTextViewModel Show()
+        public SaveTextViewModel Show()
         {
             return CreateViewModel();
         }
 
-        public SetTextViewModel Save(SetTextViewModel viewModel)
+        public SaveTextViewModel Save(SaveTextViewModel viewModel)
         {
             viewModel.NullCoallesce();
 
-            VoidResult result = _textSetter.SetText(viewModel.Text);
+            VoidResult result = _textSetter.SaveText(viewModel.Text);
             if (result.Successful)
             {
                 _entityRepository.Commit();
-                SetTextViewModel viewModel2 = CreateViewModel();
+                SaveTextViewModel viewModel2 = CreateViewModel();
                 viewModel2.TextWasSavedMessageVisible = true;
                 return viewModel2;
             }
             else
             {
-                SetTextViewModel viewModel2 = CreateViewModel();
+                SaveTextViewModel viewModel2 = CreateViewModel();
                 viewModel2.ValidationMessages = result.Messages;
                 viewModel2.TextWasSavedMessageVisible = false;
                 viewModel2.Text = viewModel.Text; // Keep entered value.
@@ -56,10 +56,10 @@ namespace JJ.Presentation.SetText.Presenters
             }
         }
 
-        private SetTextViewModel CreateViewModel()
+        private SaveTextViewModel CreateViewModel()
         {
             string text = _textSetter.GetText();
-            var viewModel = new SetTextViewModel
+            var viewModel = new SaveTextViewModel
             {
                 Text = text,
                 ValidationMessages = new List<Canonical.Message>()

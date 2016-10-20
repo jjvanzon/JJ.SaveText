@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JJ.Presentation.SetText.AppService.Tests
+namespace JJ.Presentation.SaveText.AppService.Tests
 {
     internal interface IAppSettings
     {
-        string SetTextAppServiceUrl { get; }
-        string SetTextWithSyncAppServiceUrl { get; }
+        string SaveTextAppServiceUrl { get; }
+        string SaveTextWithSyncAppServiceUrl { get; }
         string ResourceAppServiceUrl { get; }
         string CultureName { get; }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JJ.Business.SetText.Resources {
+namespace JJ.Business.SaveText.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace JJ.Business.SetText.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JJ.Business.SetText.Resources.PropertyDisplayNames", typeof(PropertyDisplayNames).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JJ.Business.SaveText.Resources.PropertyDisplayNames", typeof(PropertyDisplayNames).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

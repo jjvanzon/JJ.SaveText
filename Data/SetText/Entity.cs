@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JJ.Data.SetText
+namespace JJ.Data.SaveText
 {
     public class Entity
     {

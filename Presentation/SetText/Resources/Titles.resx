@@ -123,8 +123,8 @@
   <data name="GoOnline" xml:space="preserve">
     <value>GoOnline</value>
   </data>
-  <data name="SetText" xml:space="preserve">
-    <value>SetText</value>
+  <data name="SaveText" xml:space="preserve">
+    <value>SaveText</value>
   </data>
   <data name="Synchronize" xml:space="preserve">
     <value>Synchronize</value>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JJ.Presentation.SetText.WinForms.OfflineWithSync
+namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 {
     internal interface IAppSettings
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace JJ.Presentation.SetText.Mvc
+namespace JJ.Presentation.SaveText.Mvc
 {
     public class FilterConfig
     {

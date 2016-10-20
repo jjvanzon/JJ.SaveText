@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JJ.Presentation.SetText.WinForms.Offline
+namespace JJ.Presentation.SaveText.WinForms.Offline
 {
     static class Program
     {

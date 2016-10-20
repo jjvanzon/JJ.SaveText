@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using JJ.Data.SetText.DefaultRepositories.RepositoryInterfaces;
+using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Data;
 using JJ.Framework.Reflection.Exceptions;
 
-namespace JJ.Data.SetText.DefaultRepositories.Repositories
+namespace JJ.Data.SaveText.DefaultRepositories.Repositories
 {
     public class EntityRepository : IEntityRepository
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Framework.Data.Xml.Linq;
 
-namespace JJ.Data.SetText.Xml.Linq.Mapping
+namespace JJ.Data.SaveText.Xml.Linq.Mapping
 {
     public class EntityMapping : XmlMapping<Entity>
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JJ.Presentation.SetText.Resources {
+namespace JJ.Presentation.SaveText.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace JJ.Presentation.SetText.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JJ.Presentation.SetText.Resources.Titles", typeof(Titles).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("JJ.Presentation.SaveText.Resources.Titles", typeof(Titles).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -79,11 +79,11 @@ namespace JJ.Presentation.SetText.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SetText.
+        ///   Looks up a localized string similar to SaveText.
         /// </summary>
-        public static string SetText {
+        public static string SaveText {
             get {
-                return ResourceManager.GetString("SetText", resourceCulture);
+                return ResourceManager.GetString("SaveText", resourceCulture);
             }
         }
         

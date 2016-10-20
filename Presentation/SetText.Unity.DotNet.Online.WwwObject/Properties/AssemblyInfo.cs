@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject")]
+[assembly: AssemblyTitle("JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JJ.Presentation.SetText.Unity.DotNet.Online.WwwObject")]
+[assembly: AssemblyProduct("JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
