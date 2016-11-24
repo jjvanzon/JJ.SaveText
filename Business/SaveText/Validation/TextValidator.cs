@@ -8,7 +8,7 @@ using JJ.Business.SaveText.Resources;
 
 namespace JJ.Business.SaveText.Validation
 {
-    internal class TextValidator : FluentValidator_WithoutConstructorArgumentNullCheck<string>
+    internal class TextValidator : VersatileValidator_WithoutConstructorArgumentNullCheck<string>
     {
         public TextValidator(string value)
             : base(value)
