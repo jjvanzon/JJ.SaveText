@@ -1,0 +1,14 @@
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\jj.framework.persistence example.config
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Business.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Business.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Data.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.PlatformCompatibility.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Reflection.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Common.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Data.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.PlatformCompatibility.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Reflection.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\bin\Debug\JJ.Framework.Common.pdb
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\obj\Debug\JJ.Framework.Business.csprojResolveAssemblyReference.cache
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\obj\Debug\JJ.Framework.Business.dll
+D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Framework\Business\obj\Debug\JJ.Framework.Business.pdb
