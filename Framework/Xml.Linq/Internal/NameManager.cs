@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using JJ.Framework.Common;
 using JJ.Framework.PlatformCompatibility;
 using JJ.Framework.Reflection;
-using JJ.Framework.Reflection.Exceptions;
+using JJ.Framework.Exceptions;
 using JJ.Framework.Mathematics;
-using JJ.Framework.Common.Exceptions;
 
 namespace JJ.Framework.Xml.Linq.Internal
 {
