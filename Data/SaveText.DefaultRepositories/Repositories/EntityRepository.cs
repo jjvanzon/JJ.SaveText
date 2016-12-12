@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Data;
-using JJ.Framework.Reflection.Exceptions;
+using JJ.Framework.Exceptions;
 
 namespace JJ.Data.SaveText.DefaultRepositories.Repositories
 {

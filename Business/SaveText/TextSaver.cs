@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using JJ.Framework.Reflection.Exceptions;
+using JJ.Framework.Exceptions;
 using JJ.Business.Canonical;
 
 namespace JJ.Business.SaveText
