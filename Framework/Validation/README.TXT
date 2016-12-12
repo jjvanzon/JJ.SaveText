@@ -1,4 +1,4 @@
-﻿JJ.Framework.Validation contains a class VersatileValidator. It  ffers a neat fluent notation:
+﻿JJ.Framework.Validation contains a class VersatileValidator. It offers a neat fluent notation:
 
 	For(() => Thing.Value).NotNull().MaxLength(100);
 
