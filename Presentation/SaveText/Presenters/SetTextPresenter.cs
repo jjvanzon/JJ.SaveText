@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using JJ.Framework.Validation;
-using JJ.Data.SaveText;
+﻿using System.Collections.Generic;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
-using JJ.Business.SaveText.Validation;
 using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Presentation.SaveText.Helpers;
 using JJ.Business.SaveText;

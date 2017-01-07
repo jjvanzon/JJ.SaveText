@@ -3,16 +3,9 @@ using JJ.Presentation.SaveText.Presenters;
 using JJ.Presentation.SaveText.Resources;
 using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Data;
-using JJ.Data.Canonical;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Message = JJ.Data.Canonical.Message;
 

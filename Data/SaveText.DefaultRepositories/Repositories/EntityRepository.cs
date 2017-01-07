@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
+﻿using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Data;
 using JJ.Framework.Exceptions;
 

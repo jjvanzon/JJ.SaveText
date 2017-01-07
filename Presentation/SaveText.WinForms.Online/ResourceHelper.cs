@@ -1,11 +1,6 @@
 ﻿using JJ.Presentation.SaveText.AppService.Client.Wcf;
 using JJ.Presentation.SaveText.AppService.Interface.Models;
 using JJ.Framework.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JJ.Presentation.SaveText.WinForms.Online
 {

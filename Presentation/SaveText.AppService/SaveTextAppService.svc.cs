@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-using Canonical = JJ.Data.Canonical;
-using JJ.Presentation.SaveText.Interface.ViewModels;
+﻿using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Data;
 using JJ.Presentation.SaveText.Presenters;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
-using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
 using JJ.Presentation.SaveText.AppService.Interface;
-using System.Threading;
-using System.Globalization;
 using JJ.Presentation.SaveText.AppService.Helpers;
 
 namespace JJ.Presentation.SaveText.AppService

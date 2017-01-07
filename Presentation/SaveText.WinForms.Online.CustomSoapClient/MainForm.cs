@@ -1,16 +1,9 @@
 ﻿using JJ.Presentation.SaveText.AppService.Client.Custom;
-using JJ.Presentation.SaveText.AppService.Interface.Models;
 using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Configuration;
-using JJ.Data.Canonical;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Message = JJ.Data.Canonical.Message;
 

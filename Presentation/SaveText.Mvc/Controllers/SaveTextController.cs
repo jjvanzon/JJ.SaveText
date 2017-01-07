@@ -5,10 +5,6 @@ using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Data;
 using JJ.Data.Canonical;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace JJ.Presentation.SaveText.Mvc.Controllers

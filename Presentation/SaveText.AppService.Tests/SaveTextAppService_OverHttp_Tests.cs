@@ -5,13 +5,10 @@ using System.IO;
 using JJ.Presentation.SaveText.Interface.ViewModels;
 using System.Text;
 using JJ.Framework.Xml.Linq;
-using System.Xml;
 using System.Linq;
 using System.Xml.Linq;
 using JJ.Framework.Common;
 using System.Reflection;
-using JJ.Framework.Soap;
-using JJ.Data.Canonical;
 using JJ.Framework.Configuration;
 
 namespace JJ.Presentation.SaveText.AppService.Tests

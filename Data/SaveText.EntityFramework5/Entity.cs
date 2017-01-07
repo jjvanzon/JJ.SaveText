@@ -9,9 +9,7 @@
 
 namespace JJ.Data.SaveText.EntityFramework5
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class Entity
     {
         public int ID { get; set; }

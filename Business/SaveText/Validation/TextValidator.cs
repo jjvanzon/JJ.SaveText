@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using JJ.Framework.Validation;
-using JJ.Data.SaveText;
+﻿using JJ.Framework.Validation;
 using JJ.Business.SaveText.Resources;
 
 namespace JJ.Business.SaveText.Validation

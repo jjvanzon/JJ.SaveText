@@ -1,11 +1,6 @@
-﻿using JJ.Framework.Data;
-using JJ.Framework.Exceptions;
-using System;
-using System.Collections.Generic;
+﻿using JJ.Framework.Exceptions;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
-using System.Web;
 
 namespace JJ.Presentation.SaveText.AppService.Helpers
 {

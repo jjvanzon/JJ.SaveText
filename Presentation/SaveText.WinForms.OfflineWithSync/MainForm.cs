@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using JJ.Presentation.SaveText.Presenters;
-using JJ.Data.Canonical;
 using JJ.Framework.Data;
-using JJ.Framework.Data.Xml;
-using JJ.Data.SaveText;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Configuration;
 using JJ.Presentation.SaveText.AppService.Client.Wcf;

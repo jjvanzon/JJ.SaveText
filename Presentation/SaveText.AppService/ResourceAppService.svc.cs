@@ -1,13 +1,8 @@
 ﻿using JJ.Presentation.SaveText.AppService.Interface;
 using JJ.Presentation.SaveText.AppService.Interface.Models;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 using System.Threading;
 
 namespace JJ.Presentation.SaveText.AppService
