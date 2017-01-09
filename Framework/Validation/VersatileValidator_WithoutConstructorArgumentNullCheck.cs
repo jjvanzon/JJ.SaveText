@@ -1,5 +1,4 @@
 ﻿using JJ.Framework.Exceptions;
-using JJ.Framework.Validation.Resources;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,8 +6,8 @@ using JJ.Framework.PlatformCompatibility;
 using JJ.Framework.Reflection;
 using System.Collections.Generic;
 using JJ.Framework.Common;
-using System.Collections;
 using System.Globalization;
+using JJ.Framework.Collections;
 
 namespace JJ.Framework.Validation
 {
@@ -27,17 +26,16 @@ namespace JJ.Framework.Validation
         private string _propertyDisplayName;
         private IFormatProvider _formatProvider;
 
-        /// <summary>
-        /// Indicate which property value we are going to validate.
-        /// This name is used in validation messages and can best be set to a localized resource.
-        /// </summary>
+        /// <param name="propertyDisplayName">
+        /// Indicates which property value we are going to validate.
+        /// </param>
         /// <param name="propertyExpression">
         /// Used to extract both the value and a property key.
         /// The property key is used e.g. to make MVC display validation messages next to the corresponding html input element.
         /// The root of the expression is excluded from the property key, e.g. "() => MyObject.MyProperty" produces the property key "MyProperty".
         /// </param>
         /// <param name="formatProvider">
-        /// Use this parameter if the number format is different from the current culture.
+        /// Use this parameter if e.g. the number format is different from the current culture.
         /// </param>
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> For(Expression<Func<object>> propertyExpression, string propertyDisplayName, IFormatProvider formatProvider = null)
         {
@@ -49,8 +47,7 @@ namespace JJ.Framework.Validation
         }
 
         /// <summary>
-        /// Indicate which property value we are going to validate.
-        /// This name is used in validation messages and can best be set to a localized resource.
+        /// Indicates which property value we are going to validate.
         /// </summary>
         /// <param name="propertyKey">
         /// A technical key of the property we are going to validate.
@@ -60,7 +57,7 @@ namespace JJ.Framework.Validation
         /// Used in messages to indicate what property the validation message is about.
         /// </param>
         /// <param name="formatProvider">
-        /// Use this parameter if the number format is different from the current culture.
+        /// Use this parameter if e.g. the number format is different from the current culture.
         /// </param>
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> For(object value, string propertyKey, string propertyDisplayName, IFormatProvider formatProvider = null)
         {
