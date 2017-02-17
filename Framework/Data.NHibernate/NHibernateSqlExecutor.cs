@@ -1,7 +1,6 @@
 ﻿using JJ.Framework.Data.SqlClient;
 using JJ.Framework.Exceptions;
 using NHibernate;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -9,15 +8,15 @@ namespace JJ.Framework.Data.NHibernate
 {
     public class NHibernateSqlExecutor : ISqlExecutor
     {
-        private ISession _session;
-        private SqlConnection _sqlConnection;
+        private readonly ISession _session;
+        private readonly SqlConnection _sqlConnection;
 
         public NHibernateSqlExecutor(ISession session)
         {
             if (session == null) throw new NullException(() => session);
             _session = session;
             _sqlConnection = session.Connection as SqlConnection;
-            if (_sqlConnection == null) throw new Exception("session.Connection must be an SqlConnection.");
+            if (_sqlConnection == null) throw new IsNotTypeException<SqlConnection>(() => session.Connection);
         }
 
         public int ExecuteNonQuery(object sqlEnum, object parameters = null)

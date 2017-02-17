@@ -1,11 +1,10 @@
 ﻿using JJ.Framework.Exceptions;
-using System;
 using System.Diagnostics;
 using JJ.Framework.PlatformCompatibility;
 
 namespace JJ.Framework.Validation
 {
-    [DebuggerDisplay("{DebuggerDisplay}")]
+    [DebuggerDisplay("{" + nameof(DebuggerDisplay) + "}")]
     public class ValidationMessage
     {
         public string PropertyKey { get; private set; }
@@ -14,7 +13,7 @@ namespace JJ.Framework.Validation
         public ValidationMessage(string propertyKey, string text)
         {
             if (String_PlatformSupport.IsNullOrWhiteSpace(propertyKey)) throw new NullOrWhiteSpaceException(() => propertyKey);
-            if (String.IsNullOrEmpty(text)) throw new NullException(() => text);
+            if (string.IsNullOrEmpty(text)) throw new NullException(() => text);
 
             PropertyKey = propertyKey;
             Text = text;
@@ -24,7 +23,7 @@ namespace JJ.Framework.Validation
         {
             get
             {
-                return String.Format("{0}: {1}", PropertyKey, Text);
+                return $"{PropertyKey}: {Text}";
             }
         }
     }

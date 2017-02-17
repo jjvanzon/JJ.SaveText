@@ -1,5 +1,4 @@
 ﻿using JJ.Framework.Exceptions;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,11 +7,11 @@ namespace JJ.Framework.Data.SqlClient
 {
     internal class SqlExecutorWithConnectionString : ISqlExecutor
     {
-        private string _connectionString;
+        private readonly string _connectionString;
 
         public SqlExecutorWithConnectionString(string connectionString)
         {
-            if (String.IsNullOrEmpty(connectionString)) throw new NullOrEmptyException(() => connectionString);
+            if (string.IsNullOrEmpty(connectionString)) throw new NullOrEmptyException(() => connectionString);
             _connectionString = connectionString;
         }
 

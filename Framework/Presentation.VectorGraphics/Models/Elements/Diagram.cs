@@ -1,7 +1,6 @@
 ﻿using JJ.Framework.Presentation.VectorGraphics.Gestures;
 using JJ.Framework.Presentation.VectorGraphics.Models.Styling;
 using JJ.Framework.Presentation.VectorGraphics.Visitors;
-using System;
 using System.Collections.Generic;
 
 namespace JJ.Framework.Presentation.VectorGraphics.Models.Elements
@@ -18,7 +17,7 @@ namespace JJ.Framework.Presentation.VectorGraphics.Models.Elements
             Background = new Rectangle
             {
                 Diagram = this,
-                ZIndex = Int32.MinValue,
+                ZIndex = int.MinValue,
                 Tag = "Background"
             };
             Background.Style.LineStyle = new LineStyle { Visible = false };

@@ -72,7 +72,7 @@ namespace JJ.Framework.Reflection
                     return methodCallExpression.Method;
 
                 default:
-                    throw new NotSupportedException(String.Format("Member cannot be retrieved from NodeType {0}.", expression.Body.NodeType));
+                    throw new NotSupportedException($"Member cannot be retrieved from NodeType {expression.Body.NodeType}.");
             }
         }
 
@@ -170,8 +170,11 @@ namespace JJ.Framework.Reflection
         {
             if (expression == null) throw new ArgumentNullException(nameof(expression));
 
-            var translator = new ExpressionToTextTranslator();
-            translator.ShowIndexerValues = showIndexerValues;
+            var translator = new ExpressionToTextTranslator
+            {
+                ShowIndexerValues = showIndexerValues
+            };
+
             string result = translator.Execute(expression);
             return result;
         }
@@ -195,7 +198,7 @@ namespace JJ.Framework.Reflection
                         ParameterInfo parameter = parameters[i];
                         Expression argumentExpression = methodCallExpression.Arguments[i];
 
-                        object value = ExpressionHelper.GetValue(argumentExpression);
+                        object value = GetValue(argumentExpression);
 
                         var methodCallParameterInfo = new MethodCallParameterInfo(parameter.ParameterType, parameter.Name, value);
                         methodCallInfo.Parameters.Add(methodCallParameterInfo);
@@ -204,7 +207,7 @@ namespace JJ.Framework.Reflection
                     return methodCallInfo;
 
                 default:
-                    throw new NotSupportedException(String.Format("MethodCallInfo cannot be retrieved from NodeType {0}.", expression.Body.NodeType));
+                    throw new NotSupportedException($"MethodCallInfo cannot be retrieved from NodeType {expression.Body.NodeType}.");
             }
         }
     }

@@ -8,7 +8,7 @@ namespace JJ.Framework.Reflection
 {
     public class ReflectionCache
     {
-        private BindingFlags _bindingFlags;
+        private readonly BindingFlags _bindingFlags;
 
         public ReflectionCache(BindingFlags bindingFlags)
         {
@@ -17,14 +17,15 @@ namespace JJ.Framework.Reflection
 
         // Properties
 
-        private IDictionary<Type, PropertyInfo[]> _propertiesDictionary = new Dictionary<Type, PropertyInfo[]>();
-        private object _propertiesDictionaryLock = new object();
+        private readonly IDictionary<Type, PropertyInfo[]> _propertiesDictionary = new Dictionary<Type, PropertyInfo[]>();
+        private readonly object _propertiesDictionaryLock = new object();
 
         public PropertyInfo[] GetProperties(Type type)
         {
             lock (_propertiesDictionaryLock)
             {
                 PropertyInfo[] properties;
+                // ReSharper disable once InvertIf
                 if (!_propertiesDictionary.TryGetValue(type, out properties))
                 {
                     properties = type.GetProperties(_bindingFlags);
@@ -36,14 +37,15 @@ namespace JJ.Framework.Reflection
 
         // PropertyDictionaries
 
-        private IDictionary<Type, IDictionary<string, PropertyInfo>> _propertyDictionaryDictionary = new Dictionary<Type, IDictionary<string, PropertyInfo>>();
-        private object _propertyDictionaryDictionaryLock = new object();
+        private readonly IDictionary<Type, IDictionary<string, PropertyInfo>> _propertyDictionaryDictionary = new Dictionary<Type, IDictionary<string, PropertyInfo>>();
+        private readonly object _propertyDictionaryDictionaryLock = new object();
 
         public IDictionary<string, PropertyInfo> GetPropertyDictionary(Type type)
         {
             lock (_propertyDictionaryDictionaryLock)
             {
                 IDictionary<string, PropertyInfo> propertyDictionary;
+                // ReSharper disable once InvertIf
                 if (!_propertyDictionaryDictionary.TryGetValue(type, out propertyDictionary))
                 {
                     propertyDictionary = type.GetProperties(_bindingFlags).ToDictionary(x => x.Name);
@@ -55,14 +57,15 @@ namespace JJ.Framework.Reflection
 
         // Fields
 
-        private IDictionary<Type, FieldInfo[]> _fieldsDictionary = new Dictionary<Type, FieldInfo[]>();
-        private object _fieldsDictionaryLock = new object();
+        private readonly IDictionary<Type, FieldInfo[]> _fieldsDictionary = new Dictionary<Type, FieldInfo[]>();
+        private readonly object _fieldsDictionaryLock = new object();
 
         public FieldInfo[] GetFields(Type type)
         {
             lock (_fieldsDictionaryLock)
             {
                 FieldInfo[] fields;
+                // ReSharper disable once InvertIf
                 if (!_fieldsDictionary.TryGetValue(type, out fields))
                 {
                     fields = type.GetFields(_bindingFlags);
@@ -74,15 +77,15 @@ namespace JJ.Framework.Reflection
 
         // Types
 
-        private IDictionary<string, Type[]> _typeByShortNameDictionary = new Dictionary<string, Type[]>();
-        private object _typeByShortNameDictionaryLock = new object();
+        private readonly IDictionary<string, Type[]> _typeByShortNameDictionary = new Dictionary<string, Type[]>();
+        private readonly object _typeByShortNameDictionaryLock = new object();
 
         public Type GetTypeByShortName(string shortTypeName)
         {
             Type type = TryGetTypeByShortName(shortTypeName);
             if (type == null)
             {
-                throw new Exception(String.Format("Type with short name '{0}' not found in the AppDomain's assemblies.", shortTypeName));
+                throw new Exception($"Type with short name '{shortTypeName}' not found in the AppDomain's assemblies.");
             }
             return type;
         }
@@ -100,9 +103,9 @@ namespace JJ.Framework.Reflection
                     return null;
 
                 default:
-                    throw new Exception(String.Format(
-                        "Type with short name '{0}' found multiple times in the AppDomain's assemblies. Found types:{1}{2}",
-                        shortTypeName, Environment.NewLine, String_PlatformSupport.Join(Environment.NewLine, types.Select(x => x.FullName))));
+                    throw new Exception(
+                        $"Type with short name '{shortTypeName}' found multiple times in the AppDomain's assemblies. " + 
+                        $"Found types:{Environment.NewLine}{String_PlatformSupport.Join(Environment.NewLine, types.Select(x => x.FullName))}");
             }
         }
 
@@ -121,7 +124,7 @@ namespace JJ.Framework.Reflection
                 {
                     try
                     {
-                        list.AddRange(assembly.GetTypes().Where(x => String.Equals(x.Name, shortTypeName)));
+                        list.AddRange(assembly.GetTypes().Where(x => string.Equals(x.Name, shortTypeName)));
                     }
                     catch (ReflectionTypeLoadException)
                     {
@@ -140,8 +143,8 @@ namespace JJ.Framework.Reflection
 
         // Constructors
 
-        private IDictionary<Type, ConstructorInfo> _constructorDictionary = new Dictionary<Type, ConstructorInfo>();
-        private object _constructorDictionaryLock = new object();
+        private readonly IDictionary<Type, ConstructorInfo> _constructorDictionary = new Dictionary<Type, ConstructorInfo>();
+        private readonly object _constructorDictionaryLock = new object();
 
         public ConstructorInfo GetConstructor(Type type)
         {
@@ -161,12 +164,12 @@ namespace JJ.Framework.Reflection
                         return constructors[0];
 
                     case 0:
-                        throw new Exception(String.Format("No constructor found for type '{0}' for binding flags '{1}'.", type.FullName, _bindingFlags));
+                        throw new Exception($"No constructor found for type '{type.FullName}' for binding flags '{_bindingFlags}'.");
 
                     default:
-                        throw new Exception(String.Format(
-                            "Multiple constructors found on type '{0}' for binding flags '{1}'. Found constructors: {2}", 
-                            type.FullName, _bindingFlags, String_PlatformSupport.Join(", ", constructors.Select(x => x.ToString()))));
+                        throw new Exception(
+                            $"Multiple constructors found on type '{type.FullName}' for binding flags '{_bindingFlags}'. " +
+                            $"Found constructors: {String_PlatformSupport.Join(", ", constructors.Select(x => x.ToString()))}");
                 }
             }
         }

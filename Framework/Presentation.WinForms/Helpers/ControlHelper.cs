@@ -46,7 +46,7 @@ namespace JJ.Framework.Presentation.WinForms.Helpers
             bool autoScaleFactorIs1 = autoScaleFactor - 1 < 0.001; // Beware for rounding errors when equating floats.
             if (!autoScaleFactorIs1)
             {
-                float fontScalingCorrectionFactor = 0.9f; // Completely arbitrary experimentally obtained factor.
+                const float fontScalingCorrectionFactor = 0.9f; // Completely arbitrary experimentally obtained factor.
                 autoScaleFactor *= fontScalingCorrectionFactor;
             }
 
@@ -70,7 +70,7 @@ namespace JJ.Framework.Presentation.WinForms.Helpers
                 ancestor = ancestor.Parent;
             }
 
-            throw new Exception(String.Format("No ancestor UserControl found for Control '{0}'.", control.Name));
+            throw new Exception($"No ancestor UserControl found for Control '{control.Name}'.");
         }
 
         public static IList<TControl> GetDescendantsOfType<TControl>(Control control)
@@ -78,7 +78,7 @@ namespace JJ.Framework.Presentation.WinForms.Helpers
             if (control == null) throw new NullException(() => control);
 
             IList<TControl> descendants = control.Controls.Cast<Control>()
-                                                          .SelectRecursive(x => x.Controls.Cast<Control>())
+                                                          .UnionRecursive(x => x.Controls.Cast<Control>())
                                                           .OfType<TControl>()
                                                           .ToArray();
             return descendants;

@@ -13,6 +13,7 @@ namespace JJ.Framework.Reflection.Tests.ExpressionHelperTests
         [TestMethod]
         public void Test_ExpressionHelpers_GetText_LocalVariable()
         {
+            // ReSharper disable once ConvertToConstant.Local
             int variable = 1;
             Assert.AreEqual("variable", ExpressionHelper.GetText(() => variable));
         }

@@ -18,8 +18,8 @@ namespace JJ.Framework.Reflection
 
         // GetImplementation
 
-        private static object _implementationsDictionaryLock = new object();
-        private static Dictionary<string, Type[]> _implementationsDictionary = new Dictionary<string, Type[]>();
+        private static readonly object _implementationsDictionaryLock = new object();
+        private static readonly Dictionary<string, Type[]> _implementationsDictionary = new Dictionary<string, Type[]>();
 
         public static Type GetImplementation(Assembly assembly, Type baseType)
         {
@@ -27,7 +27,7 @@ namespace JJ.Framework.Reflection
 
             if (type == null)
             {
-                throw new Exception(String.Format("No implementation of type '{0}' found in assembly '{1}'.", baseType, assembly.GetName().Name));
+                throw new Exception($"No implementation of type '{baseType}' found in assembly '{assembly.GetName().Name}'.");
             }
 
             return type;
@@ -44,7 +44,7 @@ namespace JJ.Framework.Reflection
 
             if (types.Length > 1)
             {
-                throw new Exception(String.Format("Multiple implementations of type '{0}' found in assembly '{1}'.", baseType, assembly.GetName().Name));
+                throw new Exception($"Multiple implementations of type '{baseType}' found in assembly '{assembly.GetName().Name}'.");
             }
 
             return types[0];
@@ -64,6 +64,7 @@ namespace JJ.Framework.Reflection
             {
                 string key = GetImplementationsDictionaryKey(assembly, baseType);
                 Type[] types;
+                // ReSharper disable once InvertIf
                 if (!_implementationsDictionary.TryGetValue(key, out types))
                 {
                     types = assembly.GetTypes();
@@ -102,13 +103,13 @@ namespace JJ.Framework.Reflection
             Type itemType = TryGetItemType(collectionType);
             if (itemType == null)
             {
-                throw new Exception(String.Format("Type '{0}' has no item type.", collectionType.GetType().Name));
+                throw new Exception($"Type '{collectionType}' has no item type.");
             }
             return itemType;
         }
 
-        private static object _itemTypeDictionaryLock = new object ();
-        private static Dictionary<Type, Type> _itemTypeDictionary = new Dictionary<Type, Type>();
+        private static readonly object _itemTypeDictionaryLock = new object ();
+        private static readonly Dictionary<Type, Type> _itemTypeDictionary = new Dictionary<Type, Type>();
 
         public static Type TryGetItemType(Type collectionType)
         {
@@ -117,27 +118,29 @@ namespace JJ.Framework.Reflection
             lock (_itemTypeDictionaryLock)
             {
                 Type itemType;
-                if (!_itemTypeDictionary.TryGetValue(collectionType, out itemType))
+                if (_itemTypeDictionary.TryGetValue(collectionType, out itemType))
                 {
-                    // This works for IEnumerable<T> itself.
-                    if (collectionType.IsGenericType)
-                    {
-                        Type openGenericCollectionType = collectionType.GetGenericTypeDefinition();
-                        if (openGenericCollectionType == typeof(IEnumerable<>))
-                        {
-                            itemType = collectionType.GetGenericArguments()[0];
-                        }
-                    }
-
-                    // This works for types that implement IEnumerable<T> / have IEnumerable<T> as a base.
-                    Type enumerableInterface = collectionType.GetInterface_PlatformSafe(typeof(IEnumerable<>).FullName);
-                    if (enumerableInterface != null)
-                    {
-                        itemType = enumerableInterface.GetGenericArguments()[0];
-                    }
-
-                    _itemTypeDictionary.Add(collectionType, itemType);
+                    return itemType;
                 }
+
+                // This works for IEnumerable<T> itself.
+                if (collectionType.IsGenericType)
+                {
+                    Type openGenericCollectionType = collectionType.GetGenericTypeDefinition();
+                    if (openGenericCollectionType == typeof(IEnumerable<>))
+                    {
+                        itemType = collectionType.GetGenericArguments()[0];
+                    }
+                }
+
+                // This works for types that implement IEnumerable<T> / have IEnumerable<T> as a base.
+                Type enumerableInterface = collectionType.GetInterface_PlatformSafe(typeof(IEnumerable<>).FullName);
+                if (enumerableInterface != null)
+                {
+                    itemType = enumerableInterface.GetGenericArguments()[0];
+                }
+
+                _itemTypeDictionary.Add(collectionType, itemType);
 
                 return itemType;
             }
@@ -177,7 +180,7 @@ namespace JJ.Framework.Reflection
                 return false;
             }
 
-            string propertyName = method.Name.CutLeft("get_").CutLeft("set_");
+            string propertyName = method.Name.TrimStart("get_").TrimStart("set_");
 
             Type type = method.DeclaringType;
             var defaultMemberAttribute = (DefaultMemberAttribute)type.GetCustomAttributes(typeof(DefaultMemberAttribute), inherit: true).SingleOrDefault();
@@ -217,7 +220,7 @@ namespace JJ.Framework.Reflection
                     return getterOrSetter.IsStatic;
 
                 default:
-                    throw new Exception(String.Format("IsStatic cannot be obtained from member of type '{0}'.", member.GetType().Name));
+                    throw new Exception($"IsStatic cannot be obtained from member of type '{member.GetType()}'.");
             }
         }
 

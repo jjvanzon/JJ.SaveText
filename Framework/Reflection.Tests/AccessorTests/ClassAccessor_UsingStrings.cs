@@ -4,7 +4,7 @@ namespace JJ.Framework.Reflection.Tests.AccessorTests
 {
     internal class ClassAccessor_UsingStrings : ClassAccessorBase
     {
-        private static Accessor _staticAccessor;
+        private static readonly Accessor _staticAccessor;
 
         public ClassAccessor_UsingStrings(Class obj)
             : base(obj)
@@ -61,10 +61,10 @@ namespace JJ.Framework.Reflection.Tests.AccessorTests
             return (int)_accessor.InvokeMethod("IntMethodIntInt", parameter1, parameter2);
         }
 
-        public static int StaticField
+        public static int _staticField
         {
-            get { return (int)_staticAccessor.GetFieldValue("StaticField"); }
-            set { _staticAccessor.SetFieldValue("StaticField", value); }
+            get { return (int)_staticAccessor.GetFieldValue("_staticField"); }
+            set { _staticAccessor.SetFieldValue("_staticField", value); }
         }
 
         public static int StaticProperty

@@ -23,7 +23,7 @@ namespace JJ.Framework.Reflection
             _list = new List<object>();
             _stack = new Stack<object>();
             Visit(expression);
-            return _stack.Peek();;
+            return _stack.Peek();
         }
 
         protected virtual void Visit(Expression node)
@@ -81,7 +81,7 @@ namespace JJ.Framework.Reflection
                     }
 
                 default:
-                    throw new ArgumentException(String.Format("Value cannot be obtained from {0}.", node.NodeType));
+                    throw new ArgumentException($"Value cannot be obtained from {node.NodeType}.");
             }
         }
 
@@ -106,7 +106,7 @@ namespace JJ.Framework.Reflection
                     return;
 
                 default:
-                    throw new NotSupportedException(String.Format("Member types other than FieldInfo and PropertyInfo are not supported. Member type = {0}", node.Member.GetType().Name));
+                    throw new NotSupportedException($"Member types other than FieldInfo and PropertyInfo are not supported. Member type = {node.Member.GetType()}");
             }
         }
 
@@ -181,6 +181,7 @@ namespace JJ.Framework.Reflection
 
         protected virtual void VisitArrayLength(UnaryExpression node)
         {
+            // ReSharper disable once InvertIf
             if (node.Operand.NodeType == ExpressionType.MemberAccess)
             {
                 var memberExpression = (MemberExpression)node.Operand;
@@ -190,7 +191,7 @@ namespace JJ.Framework.Reflection
                 return;
             }
 
-            throw new ArgumentException(String.Format("Value cannot be obtained from NodeType {0}.", node.Operand.NodeType));
+            throw new ArgumentException($"Value cannot be obtained from NodeType {node.Operand.NodeType}.");
         }
 
         protected virtual void VisitArrayIndex(BinaryExpression node)
@@ -220,7 +221,7 @@ namespace JJ.Framework.Reflection
                     break;
 
                 default:
-                    throw new Exception(String.Format("ArrayIndex right side of NodeType '{0}' is not supported.", node.Right.NodeType));
+                    throw new Exception($"ArrayIndex right side of NodeType '{node.Right.NodeType}' is not supported.");
             }
 
             object arrayElement = array.GetValue(index);

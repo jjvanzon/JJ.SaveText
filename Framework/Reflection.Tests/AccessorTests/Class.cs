@@ -1,4 +1,7 @@
 ﻿using System.Collections.Generic;
+// ReSharper disable UnusedMember.Local
+// ReSharper disable UnusedParameter.Local
+#pragma warning disable 169
 
 namespace JJ.Framework.Reflection.Tests.AccessorTests
 {
@@ -32,7 +35,7 @@ namespace JJ.Framework.Reflection.Tests.AccessorTests
             return 1;
         }
 
-        private Dictionary<int, int> _intDictionary = new Dictionary<int, int>();
+        private readonly Dictionary<int, int> _intDictionary = new Dictionary<int, int>();
 
         private int this[int index]
         {
@@ -40,7 +43,7 @@ namespace JJ.Framework.Reflection.Tests.AccessorTests
             set { _intDictionary[index] = value; }
         }
 
-        private Dictionary<string, string> _stringDictionary = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> _stringDictionary = new Dictionary<string, string>();
 
         private string this[string key]
         {
@@ -48,7 +51,7 @@ namespace JJ.Framework.Reflection.Tests.AccessorTests
             set { _stringDictionary[key] = value; }
         }
 
-        private static int StaticField;
+        private static int _staticField;
 
         private static int StaticProperty { get; set; }
 

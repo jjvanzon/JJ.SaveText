@@ -26,11 +26,13 @@ namespace JJ.Framework.Data.EntityFramework5
             {
                 if (resourceName.EndsWith(".msl"))
                 {
-                    return resourceName.CutRight(".msl");
+                    return resourceName.TrimEnd(".msl");
                 }
             }
 
-            throw new Exception(String.Format("No .msl file found in the embedded resources of the mapping assembly '{0}'. (The .msl file is a resource generated out of an .edmx file.)", mappingAssembly.GetName().Name));
+            throw new Exception(
+                $"No .msl file found in the embedded resources of the mapping assembly '{mappingAssembly.GetName().Name}'. " + 
+                "(The .msl file is a resource generated out of an .edmx file.)");
         }
 
         private static string GetSpecialConnectionString(string connectionString, string modelName)
@@ -41,7 +43,7 @@ namespace JJ.Framework.Data.EntityFramework5
                 connectionString += ";MultipleActiveResultSets=True";
             }
 
-            string specialConnectionString = String.Format(@"metadata=res://*/{0}.csdl|res://*/{0}.ssdl|res://*/{0}.msl;provider=System.Data.SqlClient;provider connection string=""{1}""", modelName, connectionString);
+            string specialConnectionString = string.Format(@"metadata=res://*/{0}.csdl|res://*/{0}.ssdl|res://*/{0}.msl;provider=System.Data.SqlClient;provider connection string=""{1}""", modelName, connectionString);
             return specialConnectionString;
         }
     }

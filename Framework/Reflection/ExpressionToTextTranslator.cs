@@ -7,7 +7,7 @@ namespace JJ.Framework.Reflection
 {
     internal class ExpressionToTextTranslator
     {
-        private StringBuilder _sb = new StringBuilder();
+        private readonly StringBuilder _sb = new StringBuilder();
 
         /// <summary> 
         /// If you set this to true, an expression like MyArray[i] will translate to e.g. 
@@ -19,7 +19,7 @@ namespace JJ.Framework.Reflection
             Visit(expression);
 
             string result = _sb.ToString()
-                               .CutLeft(".")
+                               .TrimStart(".")
                                .Replace("(.", "(")
                                .Replace("[.", "[");
             return result;
@@ -93,7 +93,7 @@ namespace JJ.Framework.Reflection
         {
             if (node.Type.IsPrimitive)
             {
-                _sb.Append(node.Value.ToString());
+                _sb.Append(node.Value);
             }
             else if (node.Type == typeof(string))
             {
