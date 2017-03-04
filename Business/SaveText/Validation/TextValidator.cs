@@ -12,7 +12,7 @@ namespace JJ.Business.SaveText.Validation
         protected override void Execute()
         {
             // Make sure you get the right property key.
-            string Text = Object;
+            string Text = Obj;
 
             For(() => Text, PropertyDisplayNames.Text)
                 .NotNullOrWhiteSpace();
