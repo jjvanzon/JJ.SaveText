@@ -38,33 +38,37 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>..\..\packages\JetBrains.Annotations.10.2.1\lib\net\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebugHelper.cs" />
+    <Compile Include="ValidatorBase.cs" />
     <Compile Include="VersatileValidator.cs" />
     <Compile Include="VersatileValidator_WithoutConstructorArgumentNullCheck.cs" />
     <Compile Include="PropertyKeyHelper.cs" />
-    <Compile Include="Resources\ValidationMessageFormatter.cs" />
-    <Compile Include="Resources\ValidationMessages.Designer.cs">
+    <Compile Include="Resources\ValidationResourceFormatter.cs" />
+    <Compile Include="Resources\ValidationResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ValidationMessages.resx</DependentUpon>
+      <DependentUpon>ValidationResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ValidationMessage.cs" />
     <Compile Include="ValidationMessages.cs" />
-    <Compile Include="ValidatorBase.cs" />
+    <Compile Include="ValidatorBase_WithoutConstructorArgumentNullCheck.cs" />
     <Compile Include="IValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ValidationMessages.nl-NL.resx">
+    <EmbeddedResource Include="Resources\ValidationResources.nl-NL.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ValidationMessages.resx">
+    <EmbeddedResource Include="Resources\ValidationResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ValidationMessages.Designer.cs</LastGenOutput>
+      <LastGenOutput>ValidationResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

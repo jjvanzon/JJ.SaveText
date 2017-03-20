@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using JetBrains.Annotations;
 using JJ.Framework.Validation.Resources;
 using JJ.Framework.Reflection;
 using JJ.Framework.Exceptions;
@@ -12,14 +13,14 @@ namespace JJ.Framework.Validation
     [DebuggerDisplay("{" + nameof(DebuggerDisplay) + "}")]
     public class ValidationMessages : IEnumerable<ValidationMessage>
     {
-        private readonly List<ValidationMessage> _list = new List<ValidationMessage>();
+        [ItemNotNull] [NotNull] private readonly List<ValidationMessage> _list = new List<ValidationMessage>();
 
         /// <param name="propertyKeyExpression">
         /// Used to extract the property key.
         /// The property key is used e.g. to make MVC display validation messages next to the corresponding html input element.
         /// The root of the expression is excluded from the property key, e.g. "() => MyObject.MyProperty" produces the property key "MyProperty".
         /// </param>
-        public void Add(Expression<Func<object>> propertyKeyExpression, string message)
+        public void Add([NotNull] Expression<Func<object>> propertyKeyExpression, string message)
         {
             string propertyKey = PropertyKeyHelper.GetPropertyKeyFromExpression(propertyKeyExpression);
             Add(propertyKey, message);
@@ -37,15 +38,10 @@ namespace JJ.Framework.Validation
             _list.AddRange(validationMessages);
         }
 
-        public int Count
-        {
-            get { return _list.Count; }
-        }
+        public int Count => _list.Count;
 
-        public ValidationMessage this[int i]
-        {
-            get { return _list[i]; }
-        }
+        [NotNull]
+        public ValidationMessage this[int i] => _list[i];
 
         public IEnumerator<ValidationMessage> GetEnumerator()
         {
@@ -57,31 +53,28 @@ namespace JJ.Framework.Validation
             return _list.GetEnumerator();
         }
 
-        private string DebuggerDisplay
-        {
-            get { return DebugHelper.GetDebuggerDisplay(this); }
-        }
+        private string DebuggerDisplay => DebugHelper.GetDebuggerDisplay(this);
 
         public void AddContainsMessage(string propertyKey, string propertyDisplayName, object valueOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.Contains(propertyDisplayName, valueOrName));
+            Add(propertyKey, ValidationResourceFormatter.Contains(propertyDisplayName, valueOrName));
         }
 
-        public void AddContainsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
+        public void AddContainsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddContainsMessage(propertyKey, propertyDisplayName, valueOrName);
         }
 
-        public void AddContainsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> itemExpression)
+        public void AddContainsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, [NotNull] Expression<Func<object>> itemExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string itemExpressionText = ExpressionHelper.GetText(itemExpression);
             AddContainsMessage(propertyKey, propertyDisplayName, itemExpressionText);
         }
 
-        public void AddExistsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddExistsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddExistsMessage(propertyKey, propertyDisplayName);
@@ -90,15 +83,15 @@ namespace JJ.Framework.Validation
         public void AddExistsMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.Exists(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.Exists(propertyDisplayName));
         }
 
         public void AddFileAlreadyExistsMessage(string propertyKey, string filePath)
         {
-            Add(propertyKey, ValidationMessageFormatter.FileAlreadyExists(filePath));
+            Add(propertyKey, ValidationResourceFormatter.FileAlreadyExists(filePath));
         }
 
-        public void AddFileAlreadyExistsMessage(Expression<Func<object>> propertyKeyExpression, string filePath)
+        public void AddFileAlreadyExistsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string filePath)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddFileAlreadyExistsMessage(propertyKey, filePath);
@@ -106,10 +99,10 @@ namespace JJ.Framework.Validation
 
         public void AddFileNotFoundMessage(string propertyKey, string filePath)
         {
-            Add(propertyKey, ValidationMessageFormatter.FileNotFound(filePath));
+            Add(propertyKey, ValidationResourceFormatter.FileNotFound(filePath));
         }
 
-        public void AddFileNotFoundMessage(Expression<Func<object>> propertyKeyExpression, string filePath)
+        public void AddFileNotFoundMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string filePath)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddFileNotFoundMessage(propertyKey, filePath);
@@ -117,10 +110,10 @@ namespace JJ.Framework.Validation
 
         public void AddFolderAlreadyExistsMessage(string propertyKey, string folderPath)
         {
-            Add(propertyKey, ValidationMessageFormatter.FolderAlreadyExists(folderPath));
+            Add(propertyKey, ValidationResourceFormatter.FolderAlreadyExists(folderPath));
         }
 
-        public void AddFolderAlreadyExistsMessage(Expression<Func<object>> propertyKeyExpression, string folderPath)
+        public void AddFolderAlreadyExistsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string folderPath)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddFolderAlreadyExistsMessage(propertyKey, folderPath);
@@ -128,10 +121,10 @@ namespace JJ.Framework.Validation
 
         public void AddFolderNotFoundMessage(string propertyKey, string folderPath)
         {
-            Add(propertyKey, ValidationMessageFormatter.FolderNotFound(folderPath));
+            Add(propertyKey, ValidationResourceFormatter.FolderNotFound(folderPath));
         }
 
-        public void AddFolderNotFoundMessage(Expression<Func<object>> propertyKeyExpression, string folderPath)
+        public void AddFolderNotFoundMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string folderPath)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddFolderNotFoundMessage(propertyKey, folderPath);
@@ -140,16 +133,16 @@ namespace JJ.Framework.Validation
         public void AddGreaterThanMessage(string propertyKey, string propertyDisplayName, object limitOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.GreaterThan(propertyDisplayName, limitOrName));
+            Add(propertyKey, ValidationResourceFormatter.GreaterThan(propertyDisplayName, limitOrName));
         }
 
-        public void AddGreaterThanMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
+        public void AddGreaterThanMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddGreaterThanMessage(propertyKey, propertyDisplayName, limitOrName);
         }
 
-        public void AddGreaterThanMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
+        public void AddGreaterThanMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string limitExpressionText = ExpressionHelper.GetText(limitExpression);
@@ -159,16 +152,16 @@ namespace JJ.Framework.Validation
         public void AddGreaterThanOrEqualMessage(string propertyKey, string propertyDisplayName, object limitOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.GreaterThanOrEqual(propertyDisplayName, limitOrName));
+            Add(propertyKey, ValidationResourceFormatter.GreaterThanOrEqual(propertyDisplayName, limitOrName));
         }
 
-        public void AddGreaterThanOrEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
+        public void AddGreaterThanOrEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddGreaterThanOrEqualMessage(propertyKey, propertyDisplayName, limitOrName);
         }
 
-        public void AddGreaterThanOrEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
+        public void AddGreaterThanOrEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string limitExpressionText = ExpressionHelper.GetText(limitExpression);
@@ -178,10 +171,10 @@ namespace JJ.Framework.Validation
         public void AddHasNullsMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.HasNulls(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.HasNulls(propertyDisplayName));
         }
 
-        public void AddHasNullsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddHasNullsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddHasNullsMessage(propertyKey, propertyDisplayName);
@@ -190,10 +183,10 @@ namespace JJ.Framework.Validation
         public void AddIsInvalidChoiceMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.InvalidChoice(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.InvalidChoice(propertyDisplayName));
         }
 
-        public void AddIsInvalidChoiceMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsInvalidChoiceMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsInvalidChoiceMessage(propertyKey, propertyDisplayName);
@@ -202,10 +195,10 @@ namespace JJ.Framework.Validation
         public void AddIsInvalidMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.Invalid(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.Invalid(propertyDisplayName));
         }
 
-        public void AddIsInvalidMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsInvalidMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsInvalidMessage(propertyKey, propertyDisplayName);
@@ -214,10 +207,10 @@ namespace JJ.Framework.Validation
         public void AddInvalidIndexMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.InvalidIndex(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.InvalidIndex(propertyDisplayName));
         }
 
-        public void AddInvalidIndexMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddInvalidIndexMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddInvalidIndexMessage(propertyKey, propertyDisplayName);
@@ -226,10 +219,10 @@ namespace JJ.Framework.Validation
         public void AddIsBrokenNumberMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsBrokenNumber(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsBrokenNumber(propertyDisplayName));
         }
 
-        public void AddIsBrokenNumberMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsBrokenNumberMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsBrokenNumberMessage(propertyKey, propertyDisplayName);
@@ -238,10 +231,10 @@ namespace JJ.Framework.Validation
         public void AddIsEmptyMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsEmpty(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsEmpty(propertyDisplayName));
         }
 
-        public void AddIsEmptyMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsEmptyMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsEmptyMessage(propertyKey, propertyDisplayName);
@@ -250,16 +243,16 @@ namespace JJ.Framework.Validation
         public void AddIsEqualMessage(string propertyKey, string propertyDisplayName, object valueOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsEqual(propertyDisplayName, valueOrName));
+            Add(propertyKey, ValidationResourceFormatter.IsEqual(propertyDisplayName, valueOrName));
         }
 
-        public void AddIsEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
+        public void AddIsEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsEqualMessage(propertyKey, propertyDisplayName, valueOrName);
         }
 
-        public void AddIsEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> valueExpression)
+        public void AddIsEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> valueExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string valueExpressionText = ExpressionHelper.GetText(valueExpression);
@@ -269,10 +262,10 @@ namespace JJ.Framework.Validation
         public void AddIsFilledInMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsFilledIn(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsFilledIn(propertyDisplayName));
         }
 
-        public void AddIsFilledInMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsFilledInMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsFilledInMessage(propertyKey, propertyDisplayName);
@@ -281,10 +274,10 @@ namespace JJ.Framework.Validation
         public void AddIsInfinityMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsInfinity(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsInfinity(propertyDisplayName));
         }
 
-        public void AddIsInfinityMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsInfinityMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsInfinityMessage(propertyKey, propertyDisplayName);
@@ -293,10 +286,10 @@ namespace JJ.Framework.Validation
         public void AddIsInListMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsInList(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsInList(propertyDisplayName));
         }
 
-        public void AddIsInListMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsInListMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsInListMessage(propertyKey, propertyDisplayName);
@@ -305,10 +298,10 @@ namespace JJ.Framework.Validation
         public void AddIsIntegerMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsInteger(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsInteger(propertyDisplayName));
         }
 
-        public void AddIsIntegerMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsIntegerMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsIntegerMessage(propertyKey, propertyDisplayName);
@@ -317,10 +310,10 @@ namespace JJ.Framework.Validation
         public void AddIsNaNMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsNaN(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsNaN(propertyDisplayName));
         }
 
-        public void AddIsNaNMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsNaNMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsNaNMessage(propertyKey, propertyDisplayName);
@@ -329,10 +322,10 @@ namespace JJ.Framework.Validation
         public void AddIsOfTypeMessage(string propertyKey, string propertyDisplayName, string typeName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsOfType(propertyDisplayName, typeName));
+            Add(propertyKey, ValidationResourceFormatter.IsOfType(propertyDisplayName, typeName));
         }
 
-        public void AddIsOfTypeMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, string typeName)
+        public void AddIsOfTypeMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, string typeName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsOfTypeMessage(propertyKey, propertyDisplayName, typeName);
@@ -344,7 +337,7 @@ namespace JJ.Framework.Validation
             AddIsOfTypeMessage(propertyKey, propertyDisplayName, typeName);
         }
 
-        public void AddIsOfTypeMessage<T>(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsOfTypeMessage<T>([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string typeName = typeof(T).Name;
@@ -354,10 +347,10 @@ namespace JJ.Framework.Validation
         public void AddIsZeroMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.IsZero(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.IsZero(propertyDisplayName));
         }
 
-        public void AddIsZeroMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddIsZeroMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddIsZeroMessage(propertyKey, propertyDisplayName);
@@ -366,10 +359,10 @@ namespace JJ.Framework.Validation
         public void AddLengthExceededMessage(string propertyKey, string propertyDisplayName, int length)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.LengthExceeded(propertyDisplayName, length));
+            Add(propertyKey, ValidationResourceFormatter.LengthExceeded(propertyDisplayName, length));
         }
 
-        public void AddLengthExceededMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, int length)
+        public void AddLengthExceededMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, int length)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddLengthExceededMessage(propertyKey, propertyDisplayName, length);
@@ -378,16 +371,16 @@ namespace JJ.Framework.Validation
         public void AddLessThanMessage(string propertyKey, string propertyDisplayName, object limitOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.LessThan(propertyDisplayName, limitOrName));
+            Add(propertyKey, ValidationResourceFormatter.LessThan(propertyDisplayName, limitOrName));
         }
 
-        public void AddLessThanMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
+        public void AddLessThanMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddLessThanMessage(propertyKey, propertyDisplayName, limitOrName);
         }
 
-        public void AddLessThanMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
+        public void AddLessThanMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string limitExpressionText = ExpressionHelper.GetText(limitExpression);
@@ -397,23 +390,23 @@ namespace JJ.Framework.Validation
         public void AddLessThanOrEqualMessage(string propertyKey, string propertyDisplayName, object limitOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.LessThanOrEqual(propertyDisplayName, limitOrName));
+            Add(propertyKey, ValidationResourceFormatter.LessThanOrEqual(propertyDisplayName, limitOrName));
         }
 
-        public void AddLessThanOrEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
+        public void AddLessThanOrEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object limitOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddLessThanOrEqualMessage(propertyKey, propertyDisplayName, limitOrName);
         }
 
-        public void AddLessThanOrEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
+        public void AddLessThanOrEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> limitExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string limitExpressionText = ExpressionHelper.GetText(limitExpression);
             AddLessThanOrEqualMessage(propertyKey, propertyDisplayName, limitExpressionText);
         }
 
-        public void AddNotBothValidationMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName1, string propertyDisplayName2)
+        public void AddNotBothValidationMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName1, string propertyDisplayName2)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotBothValidationMessage(propertyKey, propertyDisplayName1, propertyDisplayName2);
@@ -424,16 +417,16 @@ namespace JJ.Framework.Validation
             if (string.IsNullOrEmpty(propertyDisplayName1)) throw new NullOrEmptyException(() => propertyDisplayName1);
             if (string.IsNullOrEmpty(propertyDisplayName2)) throw new NullOrEmptyException(() => propertyDisplayName2);
 
-            Add(propertyKey, ValidationMessageFormatter.NotBoth(propertyDisplayName1, propertyDisplayName2));
+            Add(propertyKey, ValidationResourceFormatter.NotBoth(propertyDisplayName1, propertyDisplayName2));
         }
 
         public void AddNotBrokenNumberMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotBrokenNumber(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotBrokenNumber(propertyDisplayName));
         }
 
-        public void AddNotBrokenNumberMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotBrokenNumberMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotBrokenNumberMessage(propertyKey, propertyDisplayName);
@@ -442,16 +435,16 @@ namespace JJ.Framework.Validation
         public void AddNotContainsMessage(string propertyKey, string propertyDisplayName, object valueOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotContains(propertyDisplayName, valueOrName));
+            Add(propertyKey, ValidationResourceFormatter.NotContains(propertyDisplayName, valueOrName));
         }
 
-        public void AddNotContainsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
+        public void AddNotContainsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotContainsMessage(propertyKey, propertyDisplayName, valueOrName);
         }
 
-        public void AddNotContainsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> valueExpression)
+        public void AddNotContainsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> valueExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string valueExpressionText = ExpressionHelper.GetText(valueExpression);
@@ -461,10 +454,10 @@ namespace JJ.Framework.Validation
         public void AddNotEmptyMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotEmpty(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotEmpty(propertyDisplayName));
         }
 
-        public void AddNotEmptyMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotEmptyMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotEmptyMessage(propertyKey, propertyDisplayName);
@@ -473,23 +466,23 @@ namespace JJ.Framework.Validation
         public void AddNotEqualMessage(string propertyKey, string propertyDisplayName, object valueOrName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotEqual(propertyDisplayName, valueOrName));
+            Add(propertyKey, ValidationResourceFormatter.NotEqual(propertyDisplayName, valueOrName));
         }
 
-        public void AddNotEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
+        public void AddNotEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object valueOrName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotEqualMessage(propertyKey, propertyDisplayName, valueOrName);
         }
 
-        public void AddNotEqualMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> valueExpression)
+        public void AddNotEqualMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, Expression<Func<object>> valueExpression)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string valueExpressionText = ExpressionHelper.GetText(valueExpression);
             AddNotEqualMessage(propertyKey, propertyDisplayName, valueExpressionText);
         }
 
-        public void AddNotExistsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotExistsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotExistsMessage(propertyKey, propertyDisplayName);
@@ -498,10 +491,10 @@ namespace JJ.Framework.Validation
         public void AddNotExistsMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotExists(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotExists(propertyDisplayName));
         }
 
-        public void AddNotExistsMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object value)
+        public void AddNotExistsMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object value)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotExistsMessage(propertyKey, propertyDisplayName, value);
@@ -510,28 +503,28 @@ namespace JJ.Framework.Validation
         public void AddNotExistsMessage(string propertyKey, string propertyDisplayName, object value)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotExists(propertyDisplayName, value));
+            Add(propertyKey, ValidationResourceFormatter.NotExists(propertyDisplayName, value));
         }
 
-        public void AddRequiredMessage(string propertyKey, string propertyDisplayName)
+        public void AddNotFilledInMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotFilledIn(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotFilledIn(propertyDisplayName));
         }
 
-        public void AddRequiredMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotFilledInMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
-            AddRequiredMessage(propertyKey, propertyDisplayName);
+            AddNotFilledInMessage(propertyKey, propertyDisplayName);
         }
 
         public void AddNotInListMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotInList(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotInList(propertyDisplayName));
         }
 
-        public void AddNotInListMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotInListMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotInListMessage(propertyKey, propertyDisplayName);
@@ -540,10 +533,10 @@ namespace JJ.Framework.Validation
         public void AddNotInListMessage(string propertyKey, string propertyDisplayName, object value)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotInList(propertyDisplayName, value));
+            Add(propertyKey, ValidationResourceFormatter.NotInList(propertyDisplayName, value));
         }
 
-        public void AddNotInListMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object value)
+        public void AddNotInListMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, object value)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotInListMessage(propertyKey, propertyDisplayName, value);
@@ -552,10 +545,10 @@ namespace JJ.Framework.Validation
         public void AddNotInListMessage<TItem>(string propertyKey, string propertyDisplayName, IEnumerable<TItem> possibleValues)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotInList(propertyDisplayName, possibleValues));
+            Add(propertyKey, ValidationResourceFormatter.NotInList(propertyDisplayName, possibleValues));
         }
 
-        public void AddNotInListMessage<TItem>(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, IEnumerable<TItem> possibleValues)
+        public void AddNotInListMessage<TItem>([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, IEnumerable<TItem> possibleValues)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotInListMessage(propertyKey, propertyDisplayName, possibleValues);
@@ -564,10 +557,10 @@ namespace JJ.Framework.Validation
         public void AddNotInListMessage<TItem>(string propertyKey, string propertyDisplayName, TItem value, IEnumerable<TItem> possibleValues)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotInList(propertyDisplayName, value, possibleValues));
+            Add(propertyKey, ValidationResourceFormatter.NotInList(propertyDisplayName, value, possibleValues));
         }
 
-        public void AddNotInListMessage<TItem>(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, TItem value, IEnumerable<TItem> possibleValues)
+        public void AddNotInListMessage<TItem>([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, TItem value, IEnumerable<TItem> possibleValues)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotInListMessage(propertyKey, propertyDisplayName, value, possibleValues);
@@ -576,10 +569,10 @@ namespace JJ.Framework.Validation
         public void AddNotIntegerMessage(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotInteger(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotInteger(propertyDisplayName));
         }
 
-        public void AddNotIntegerMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotIntegerMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotIntegerMessage(propertyKey, propertyDisplayName);
@@ -588,10 +581,10 @@ namespace JJ.Framework.Validation
         public void AddNotOfTypeMessage(string propertyKey, string propertyDisplayName, string typeName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotOfType(propertyDisplayName, typeName));
+            Add(propertyKey, ValidationResourceFormatter.NotOfType(propertyDisplayName, typeName));
         }
 
-        public void AddNotOfTypeMessage(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, string typeName)
+        public void AddNotOfTypeMessage([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName, string typeName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotOfTypeMessage(propertyKey, propertyDisplayName, typeName);
@@ -603,7 +596,7 @@ namespace JJ.Framework.Validation
             AddNotOfTypeMessage(propertyKey, propertyDisplayName, typeName);
         }
 
-        public void AddNotOfTypeMessage<T>(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotOfTypeMessage<T>([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             string typeName = typeof(T).Name;
@@ -613,10 +606,10 @@ namespace JJ.Framework.Validation
         public void AddNotUniqueMessageSingular(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotUniqueSingular(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotUniqueSingular(propertyDisplayName));
         }
 
-        public void AddNotUniqueMessageSingular(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotUniqueMessageSingular([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotUniqueMessageSingular(propertyKey, propertyDisplayName);
@@ -625,13 +618,19 @@ namespace JJ.Framework.Validation
         public void AddNotUniqueMessagePlural(string propertyKey, string propertyDisplayName)
         {
             if (string.IsNullOrEmpty(propertyDisplayName)) throw new NullOrEmptyException(() => propertyDisplayName);
-            Add(propertyKey, ValidationMessageFormatter.NotUniquePlural(propertyDisplayName));
+            Add(propertyKey, ValidationResourceFormatter.NotUniquePlural(propertyDisplayName));
         }
 
-        public void AddNotUniqueMessagePlural(Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
+        public void AddNotUniqueMessagePlural([NotNull] Expression<Func<object>> propertyKeyExpression, string propertyDisplayName)
         {
             string propertyKey = ExpressionHelper.GetText(propertyKeyExpression);
             AddNotUniqueMessagePlural(propertyKey, propertyDisplayName);
+        }
+
+        public void AddNotUniqueMessageSingular(string propertyKey, string propertyDisplayNameSingular, object value)
+        {
+            if (string.IsNullOrEmpty(propertyDisplayNameSingular)) throw new NullOrEmptyException(() => propertyDisplayNameSingular);
+            Add(propertyKey, ValidationResourceFormatter.NotUniqueSingular(propertyDisplayNameSingular, value));
         }
     }
 }

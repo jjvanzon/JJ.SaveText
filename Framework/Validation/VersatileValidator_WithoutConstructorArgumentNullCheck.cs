@@ -7,11 +7,12 @@ using JJ.Framework.Reflection;
 using System.Collections.Generic;
 using JJ.Framework.Common;
 using System.Globalization;
+using JetBrains.Annotations;
 using JJ.Framework.Collections;
 
 namespace JJ.Framework.Validation
 {
-    public abstract class VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> : ValidatorBase<TRootObject>
+    public abstract class VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> : ValidatorBase_WithoutConstructorArgumentNullCheck<TRootObject>
     {
         /// <param name="postponeExecute">
         /// When set to true, you can do initializations in your constructor
@@ -37,7 +38,8 @@ namespace JJ.Framework.Validation
         /// <param name="formatProvider">
         /// Use this parameter if e.g. the number format is different from the current culture.
         /// </param>
-        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> For(Expression<Func<object>> propertyExpression, string propertyDisplayName, IFormatProvider formatProvider = null)
+        [NotNull]
+        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> For([NotNull] Expression<Func<object>> propertyExpression, string propertyDisplayName, [CanBeNull] IFormatProvider formatProvider = null)
         {
             object value = ExpressionHelper.GetValue(propertyExpression);
 
@@ -59,7 +61,8 @@ namespace JJ.Framework.Validation
         /// <param name="formatProvider">
         /// Use this parameter if e.g. the number format is different from the current culture.
         /// </param>
-        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> For(object value, string propertyKey, string propertyDisplayName, IFormatProvider formatProvider = null)
+        [NotNull]
+        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> For(object value, string propertyKey, string propertyDisplayName, [CanBeNull] IFormatProvider formatProvider = null)
         {
             if (propertyKey == null) throw new NullException(() => propertyKey);
             if (propertyDisplayName == null) throw new NullException(() => propertyDisplayName);
@@ -75,40 +78,44 @@ namespace JJ.Framework.Validation
 
         // Nullability
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotNull()
         {
             if (_value == null)
             {
-                ValidationMessages.AddRequiredMessage(_propertyKey, _propertyDisplayName);
+                ValidationMessages.AddNotFilledInMessage(_propertyKey, _propertyDisplayName);
             }
 
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotNullOrWhiteSpace()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
 
             if (String_PlatformSupport.IsNullOrWhiteSpace(stringValue))
             {
-                ValidationMessages.AddRequiredMessage(_propertyKey, _propertyDisplayName);
+                ValidationMessages.AddNotFilledInMessage(_propertyKey, _propertyDisplayName);
             }
 
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotNullOrEmpty()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
 
             if (string.IsNullOrEmpty(stringValue))
             {
-                ValidationMessages.AddRequiredMessage(_propertyKey, _propertyDisplayName);
+                ValidationMessages.AddNotFilledInMessage(_propertyKey, _propertyDisplayName);
             }
 
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> IsNull()
         {
             if (_value != null)
@@ -119,6 +126,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> IsNullOrEmpty()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -133,6 +141,7 @@ namespace JJ.Framework.Validation
 
         // Strings
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> MaxLength(int maxLength)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -152,8 +161,11 @@ namespace JJ.Framework.Validation
 
         // Equation
 
-        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> In<TValue>(IEnumerable<TValue> possibleValues)
+        [NotNull]
+        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> In<TValue>([NotNull] IEnumerable<TValue> possibleValues)
         {
+            if (possibleValues == null) throw new NullException(() => possibleValues);
+
             string stringValue = Convert.ToString(_value, _formatProvider);
 
             if (string.IsNullOrEmpty(stringValue))
@@ -161,23 +173,27 @@ namespace JJ.Framework.Validation
                 return this;
             }
 
+            // ReSharper disable once PossibleMultipleEnumeration
             bool isAllowed = possibleValues.Where(x => Equals(x, _value)).Any();
 
             if (!isAllowed)
             {
+                // ReSharper disable once PossibleMultipleEnumeration
                 ValidationMessages.AddNotInListMessage(_propertyKey, _propertyDisplayName, possibleValues);
             }
 
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> In(params object[] possibleValues)
         {
             if (possibleValues == null) throw new NullException(() => possibleValues);
 
-            return In((IEnumerable<object>)(object[])possibleValues);
+            return In((IEnumerable<object>)possibleValues);
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> Is(object value)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -197,6 +213,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> IsNot(object value)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -218,6 +235,7 @@ namespace JJ.Framework.Validation
 
         // Comparison
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> GreaterThan<TValue>(TValue limit)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -245,6 +263,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> GreaterThanOrEqual<TValue>(TValue limit)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -272,6 +291,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> LessThanOrEqual<TValue>(TValue limit)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -299,6 +319,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> LessThan<TValue>(TValue limit)
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -346,6 +367,7 @@ namespace JJ.Framework.Validation
 
         // Type checks
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> IsInteger()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -364,6 +386,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotInteger()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -382,6 +405,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> IsDouble()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -400,6 +424,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> IsEnum<TEnum>()
             where TEnum : struct
         {
@@ -432,7 +457,7 @@ namespace JJ.Framework.Validation
         private bool IsEnum_WithNumericComparison<TEnum>(object value)
             where TEnum : struct
         {
-            TEnum[] enumValues = (TEnum[])Enum.GetValues(typeof(TEnum));
+            IList<TEnum> enumValues = EnumHelper.GetValues<TEnum>();
 
             // Convert to a canonical form.
             // "Every enumeration type has an underlying type, which can be any integral type except char."
@@ -458,6 +483,7 @@ namespace JJ.Framework.Validation
 
         // Other
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotNaN()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -468,6 +494,7 @@ namespace JJ.Framework.Validation
             }
 
             double convertedValue;
+            // ReSharper disable once InvertIf
             if (DoubleHelper.TryParse(stringValue, _formatProvider, out convertedValue))
             {
                 if (double.IsNaN(convertedValue))
@@ -479,6 +506,7 @@ namespace JJ.Framework.Validation
             return this;
         }
 
+        [NotNull]
         public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotInfinity()
         {
             string stringValue = Convert.ToString(_value, _formatProvider);
@@ -489,11 +517,36 @@ namespace JJ.Framework.Validation
             }
 
             double convertedValue;
+            // ReSharper disable once InvertIf
             if (DoubleHelper.TryParse(stringValue, _formatProvider, out convertedValue))
             {
                 if (double.IsInfinity(convertedValue))
                 {
                     ValidationMessages.AddIsInfinityMessage(_propertyKey, _propertyDisplayName);
+                }
+            }
+
+            return this;
+        }
+
+        [NotNull]
+        public VersatileValidator_WithoutConstructorArgumentNullCheck<TRootObject> NotZero()
+        {
+            string stringValue = Convert.ToString(_value, _formatProvider);
+
+            if (string.IsNullOrEmpty(stringValue))
+            {
+                return this;
+            }
+
+            double convertedValue;
+            // ReSharper disable once InvertIf
+            if (DoubleHelper.TryParse(stringValue, _formatProvider, out convertedValue))
+            {
+                // ReSharper disable once CompareOfFloatsByEqualityOperator
+                if (convertedValue == 0.0)
+                {
+                    ValidationMessages.AddIsZeroMessage(_propertyKey, _propertyDisplayName);
                 }
             }
 
