@@ -29,7 +29,7 @@ namespace JJ.Presentation.SaveText.Mvc.Controllers
 
             foreach (Message validationMessage in viewModel.ValidationMessages)
             {
-                ModelState.AddModelError(validationMessage.PropertyKey, validationMessage.Text);
+                ModelState.AddModelError(validationMessage.Key, validationMessage.Text);
             }
 
             return View(viewModel);
