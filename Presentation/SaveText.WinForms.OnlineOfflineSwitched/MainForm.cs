@@ -9,7 +9,7 @@ using JJ.Framework.Configuration;
 using JJ.Presentation.SaveText.AppService.Client.Wcf;
 using JJ.Presentation.SaveText.Resources;
 using System.Globalization;
-using Message = JJ.Data.Canonical.Message;
+using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 {
@@ -103,7 +103,7 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
                 sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
-            foreach (Message validationMessage in _viewModel.ValidationMessages)
+            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

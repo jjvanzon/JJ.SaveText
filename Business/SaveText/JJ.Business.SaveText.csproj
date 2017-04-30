@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Business\JJ.Framework.Business.csproj">
+      <Project>{f44d03e8-feec-40d4-b866-a87799185b4c}</Project>
+      <Name>JJ.Framework.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Reflection\JJ.Framework.Reflection.csproj">
       <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
       <Name>JJ.Framework.Reflection</Name>

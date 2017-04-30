@@ -12,7 +12,7 @@ using System.Net;
 using System.Threading;
 using System.Globalization;
 using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
-using Message = JJ.Data.Canonical.Message;
+using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 {
@@ -75,7 +75,7 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
                 sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
-            foreach (Message validationMessage in _viewModel.ValidationMessages)
+            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

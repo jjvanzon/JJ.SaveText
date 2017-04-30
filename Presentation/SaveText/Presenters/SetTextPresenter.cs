@@ -32,7 +32,7 @@ namespace JJ.Presentation.SaveText.Presenters
         {
             viewModel.NullCoallesce();
 
-            VoidResult result = _textSetter.SaveText(viewModel.Text);
+            VoidResultDto result = _textSetter.SaveText(viewModel.Text);
             if (result.Successful)
             {
                 _entityRepository.Commit();
@@ -56,7 +56,7 @@ namespace JJ.Presentation.SaveText.Presenters
             var viewModel = new SaveTextViewModel
             {
                 Text = text,
-                ValidationMessages = new List<Canonical.Message>()
+                ValidationMessages = new List<Canonical.MessageDto>()
             };
             return viewModel;
         }

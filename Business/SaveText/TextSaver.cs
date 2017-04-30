@@ -13,12 +13,11 @@ namespace JJ.Business.SaveText
     {
         private const int ENTITY_ID = 1;
 
-        private IEntityRepository _entityRepository;
+        private readonly IEntityRepository _entityRepository;
 
         public TextSaver(IEntityRepository entityRepository)
         {
-            if (entityRepository == null) throw new NullException(() => entityRepository);
-            _entityRepository = entityRepository;
+            _entityRepository = entityRepository ?? throw new NullException(() => entityRepository);
         }
 
         public string GetText()
@@ -27,9 +26,9 @@ namespace JJ.Business.SaveText
             return entity.Text;
         }
 
-        public VoidResult SaveText(string value)
+        public VoidResultDto SaveText(string value)
         {
-            var result = new VoidResult();
+            var result = new VoidResultDto();
 
             IValidator validator = new TextValidator(value);
             if (!validator.IsValid)
@@ -43,7 +42,7 @@ namespace JJ.Business.SaveText
             entity.Text = value;
             _entityRepository.Update(entity);
 
-            result.Messages = new List<JJ.Data.Canonical.Message>();
+            result.Messages = new List<MessageDto>();
             result.Successful = true;
             return result;
         }

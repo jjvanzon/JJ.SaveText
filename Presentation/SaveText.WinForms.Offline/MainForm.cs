@@ -7,7 +7,7 @@ using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Text;
 using System.Windows.Forms;
-using Message = JJ.Data.Canonical.Message;
+using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.Offline
 {
@@ -61,7 +61,7 @@ namespace JJ.Presentation.SaveText.WinForms.Offline
                 sb.AppendLine(Messages.Saved);
             }
 
-            foreach (Message validationMessage in _viewModel.ValidationMessages)
+            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

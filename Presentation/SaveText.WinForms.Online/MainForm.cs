@@ -5,7 +5,7 @@ using System;
 using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
-using Message = JJ.Data.Canonical.Message;
+using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.Online
 {
@@ -65,7 +65,7 @@ namespace JJ.Presentation.SaveText.WinForms.Online
                 sb.AppendLine(ResourceHelper.Messages.Saved);
             }
 
-            foreach (Message validationMessage in _viewModel.ValidationMessages)
+            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
             {
                 sb.AppendLine(validationMessage.Text);
             }

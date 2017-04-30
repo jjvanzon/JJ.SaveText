@@ -27,7 +27,7 @@ namespace JJ.Presentation.SaveText.Mvc.Controllers
                 }
             }
 
-            foreach (Message validationMessage in viewModel.ValidationMessages)
+            foreach (MessageDto validationMessage in viewModel.ValidationMessages)
             {
                 ModelState.AddModelError(validationMessage.Key, validationMessage.Text);
             }

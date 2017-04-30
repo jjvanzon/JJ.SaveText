@@ -10,7 +10,7 @@ namespace JJ.Presentation.SaveText.Helpers
         public static void NullCoallesce(this SaveTextViewModel viewModel)
         {
             if (viewModel == null) throw new NullException(() => viewModel);
-            viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<Canonical.Message>();
+            viewModel.ValidationMessages = viewModel.ValidationMessages ?? new List<Canonical.MessageDto>();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace JJ.Presentation.SaveText.Presenters
         {
             viewModel.NullCoallesce();
 
-            VoidResult saveResult = _textSetter.SaveText(viewModel.Text);
+            VoidResultDto saveResult = _textSetter.SaveText(viewModel.Text);
             if (saveResult.Successful)
             {
                 _entityRepository.Commit();
@@ -61,7 +61,7 @@ namespace JJ.Presentation.SaveText.Presenters
         {
             viewModel.NullCoallesce();
 
-            VoidResult syncResult = _textSetter.SaveText(viewModel.Text);
+            VoidResultDto syncResult = _textSetter.SaveText(viewModel.Text);
             if (syncResult.Successful)
             {
                 _entityRepository.Commit();
@@ -87,7 +87,7 @@ namespace JJ.Presentation.SaveText.Presenters
             var viewModel = new SaveTextViewModel
             {
                 Text = text,
-                ValidationMessages = new List<Canonical.Message>(),
+                ValidationMessages = new List<Canonical.MessageDto>(),
             };
             return viewModel;
         }
