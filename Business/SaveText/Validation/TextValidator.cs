@@ -5,17 +5,10 @@ namespace JJ.Business.SaveText.Validation
 {
     internal class TextValidator : VersatileValidator_WithoutConstructorArgumentNullCheck<string>
     {
-        public TextValidator(string value)
-            : base(value)
-        { }
-
-        protected override void Execute()
-        {
-            // Make sure you get the right property key.
-            string Text = Obj;
-
-            For(() => Text, PropertyDisplayNames.Text)
-                .NotNullOrWhiteSpace();
+        public TextValidator(string text)
+            : base(text)
+        { 
+            For(() => text, PropertyDisplayNames.Text).NotNullOrWhiteSpace();
         }
     }
 }
