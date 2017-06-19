@@ -3,10 +3,9 @@ using JJ.Business.SaveText.Resources;
 
 namespace JJ.Business.SaveText.Validation
 {
-    internal class TextValidator : VersatileValidator_WithoutConstructorArgumentNullCheck<string>
+    internal class TextValidator : VersatileValidator
     {
         public TextValidator(string text)
-            : base(text)
         { 
             For(() => text, PropertyDisplayNames.Text).NotNullOrWhiteSpace();
         }
