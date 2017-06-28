@@ -5,7 +5,6 @@ using JJ.Framework.Exceptions;
 
 namespace JJ.Framework.IO
 {
-    /// <summary> Fully unit tested. </summary>
     public class SafeFileOverwriter : IDisposable
     {
         private readonly string _tempFilePath;
@@ -13,6 +12,7 @@ namespace JJ.Framework.IO
         private readonly Stream _destFileStream;
 
         /// <summary>
+        /// Fully unit tested.
         /// This class enables a safe file overwrite,
         /// by first writing to a temporary file and only when all
         /// went well, the original file is overwritten.
@@ -65,6 +65,7 @@ namespace JJ.Framework.IO
                 using (_destFileStream)
                 {
                     _destFileStream.SetLength(0);
+                    _destFileStream.Flush();
                     _tempFileStream.CopyTo(_destFileStream);
                     _destFileStream.Flush();
                 }

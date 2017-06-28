@@ -61,6 +61,15 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} are empty..
+        /// </summary>
+        internal static string AreEmpty_WithName {
+            get {
+                return ResourceManager.GetString("AreEmpty_WithName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} contains {1}..
         /// </summary>
         internal static string Contains_WithName_AndValue {
@@ -313,11 +322,20 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} are not empty..
+        /// </summary>
+        internal static string NotEmpty_WithName_Plural {
+            get {
+                return ResourceManager.GetString("NotEmpty_WithName_Plural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} is not empty..
         /// </summary>
-        internal static string NotEmpty_WithName {
+        internal static string NotEmpty_WithName_Singular {
             get {
-                return ResourceManager.GetString("NotEmpty_WithName", resourceCulture);
+                return ResourceManager.GetString("NotEmpty_WithName_Singular", resourceCulture);
             }
         }
         
@@ -340,7 +358,7 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} &apos;{1}&apos; does not exist..
+        ///   Looks up a localized string similar to {0} {1} does not exist..
         /// </summary>
         internal static string NotExists_WithName_AndValue {
             get {
@@ -358,7 +376,7 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is not one of the allowed values..
+        ///   Looks up a localized string similar to {0} is not one of the allowed items..
         /// </summary>
         internal static string NotInList_WithName {
             get {
@@ -376,7 +394,7 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} &apos;{1}&apos; is not one of the allowed values..
+        ///   Looks up a localized string similar to {0} {1} is not one of the allowed items..
         /// </summary>
         internal static string NotInList_WithName_AndValue {
             get {
@@ -385,7 +403,7 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} &apos;{1}&apos; not allowed. Allowed values: {2}..
+        ///   Looks up a localized string similar to {0} {1} not allowed. Allowed items: {2}..
         /// </summary>
         internal static string NotInList_WithName_AndValue_AndAllowedValues {
             get {
@@ -430,7 +448,7 @@ namespace JJ.Framework.Validation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} &apos;{1}&apos; is not unique..
+        ///   Looks up a localized string similar to {0} {1} is not unique..
         /// </summary>
         internal static string NotUnique_WithName_AndValue_Singular {
             get {

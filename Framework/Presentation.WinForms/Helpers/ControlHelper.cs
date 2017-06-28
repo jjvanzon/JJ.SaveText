@@ -61,8 +61,7 @@ namespace JJ.Framework.Presentation.WinForms.Helpers
             Control ancestor = control.Parent;
             while (ancestor != null)
             {
-                var ancestorUserControl = ancestor as UserControl;
-                if (ancestorUserControl != null)
+                if (ancestor is UserControl ancestorUserControl)
                 {
                     return ancestorUserControl;
                 }
@@ -71,6 +70,13 @@ namespace JJ.Framework.Presentation.WinForms.Helpers
             }
 
             throw new Exception($"No ancestor UserControl found for Control '{control.Name}'.");
+        }
+
+        public static Control GetAncestorForm(Control control)
+        {
+            //if (control.Parent)
+            //control.Parent
+            throw new NotImplementedException();
         }
 
         public static IList<TControl> GetDescendantsOfType<TControl>(Control control)

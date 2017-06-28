@@ -17,10 +17,8 @@ namespace JJ.Framework.Data
         /// <param name="dialect">can be null or empty</param>
         public ContextBase(string location, Assembly modelAssembly, Assembly mappingAssembly, string dialect)
         {
-            if (modelAssembly == null) throw new NullException(() => modelAssembly);
-
             Location = location;
-            ModelAssembly = modelAssembly;
+            ModelAssembly = modelAssembly ?? throw new NullException(() => modelAssembly);
             MappingAssembly = mappingAssembly;
             Dialect = dialect;
         }
@@ -38,7 +36,6 @@ namespace JJ.Framework.Data
         }
 
         public abstract TEntity TryGet<TEntity>(object id) where TEntity : class, new();
-        public abstract IList<TEntity> GetAll<TEntity>() where TEntity : class, new();
         public abstract TEntity Create<TEntity>() where TEntity : class, new();
         public abstract void Insert(object entity);
         public abstract void Update(object entity);
