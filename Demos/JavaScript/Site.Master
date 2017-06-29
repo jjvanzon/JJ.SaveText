@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="JJ.Demos.JavaScript.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>JJ.Demos.JavaScript</title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+<form runat="server">
+    <asp:ScriptManager runat="server">
+        <Scripts>
+        </Scripts>
+    </asp:ScriptManager>
+    <header>
+    </header>
+    <div id="body">
+        <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+    </div>
+    <footer>
+    </footer>
+</form>
+</body>
+</html>
