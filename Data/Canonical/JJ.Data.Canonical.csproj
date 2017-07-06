@@ -46,7 +46,7 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\DebugHelper.cs" />
+    <Compile Include="Helpers\DebuggerDisplayFormatter.cs" />
     <Compile Include="IDAndName.cs" />
     <Compile Include="IDNameAndObjectType.cs" />
     <Compile Include="IResultDto.cs" />

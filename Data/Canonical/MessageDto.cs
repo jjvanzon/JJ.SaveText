@@ -14,6 +14,6 @@ namespace JJ.Data.Canonical
         [DataMember]
         public string Text { get; set; }
 
-        private string DebuggerDisplay => DebugHelper.GetDebuggerDisplay(this);
+        private string DebuggerDisplay => DebuggerDisplayFormatter.GetDebuggerDisplay(this);
     }
 }
