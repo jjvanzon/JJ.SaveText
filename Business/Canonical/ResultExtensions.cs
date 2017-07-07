@@ -32,6 +32,10 @@ namespace JJ.Business.Canonical
 
         // Business
 
+        /// <param name="sourceResult">
+        /// Initialize sourceResult.Successful = false to begin with,
+        /// this method will always keep it set to false.
+        /// </param>
         public static void Combine(this IResult destResult, IResult sourceResult, string messagePrefix = null)
         {
             if (destResult == null) throw new NullException(() => destResult);
