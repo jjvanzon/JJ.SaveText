@@ -11,7 +11,7 @@ namespace JJ.Presentation.SaveText.Interface.ViewModels
         public string Text { get; set; }
 
         [DataMember]
-        public IList<MessageDto> ValidationMessages { get; set; }
+        public IList<string> ValidationMessages { get; set; }
 
         [DataMember]
         public bool TextWasSavedMessageVisible { get; set; }

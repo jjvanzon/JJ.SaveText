@@ -33,16 +33,14 @@ namespace JJ.Business.SaveText
             IValidator validator = new TextValidator(value);
             if (!validator.IsValid)
             {
-                result.Successful = false;
-                result.Messages = validator.ValidationMessages.ToCanonical();
-                return result;
+                return validator.ToCanonical();
             }
 
             Entity entity = GetEntity();
             entity.Text = value;
             _entityRepository.Update(entity);
 
-            result.Messages = new List<MessageDto>();
+            result.Messages = new List<string>();
             result.Successful = true;
             return result;
         }

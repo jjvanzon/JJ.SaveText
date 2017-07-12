@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient;
 
 namespace JJ.Presentation.SaveText.WinForms.Online
 {

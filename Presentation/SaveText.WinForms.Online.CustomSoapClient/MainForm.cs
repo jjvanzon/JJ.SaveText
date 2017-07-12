@@ -1,13 +1,12 @@
-﻿using JJ.Presentation.SaveText.AppService.Client.Custom;
-using JJ.Presentation.SaveText.Interface.ViewModels;
-using JJ.Framework.Configuration;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
-using MessageDto = JJ.Data.Canonical.MessageDto;
+using JJ.Framework.Configuration;
+using JJ.Presentation.SaveText.AppService.Client.Custom;
+using JJ.Presentation.SaveText.Interface.ViewModels;
 
-namespace JJ.Presentation.SaveText.WinForms.Online
+namespace JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient
 {
     internal partial class MainForm : Form
     {
@@ -61,9 +60,9 @@ namespace JJ.Presentation.SaveText.WinForms.Online
                 sb.AppendLine(ResourceHelper.Messages.Saved);
             }
 
-            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
+            foreach (string message in _viewModel.ValidationMessages)
             {
-                sb.AppendLine(validationMessage.Text);
+                sb.AppendLine(message);
             }
 
             labelValidationMessages.Text = sb.ToString();

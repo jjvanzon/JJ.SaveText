@@ -9,7 +9,6 @@ using JJ.Framework.Configuration;
 using JJ.Presentation.SaveText.AppService.Client.Wcf;
 using JJ.Presentation.SaveText.Resources;
 using System.Globalization;
-using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 {
@@ -35,7 +34,7 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
         {
             if (_service != null)
             {
-                IDisposable disposable = _service as IDisposable;
+                IDisposable disposable = _service;
                 disposable.Dispose();
             }
         }
@@ -103,9 +102,9 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
                 sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
-            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
+            foreach (string message in _viewModel.ValidationMessages)
             {
-                sb.AppendLine(validationMessage.Text);
+                sb.AppendLine(message);
             }
 
             if (_viewModel.TextWasSavedButNotYetSynchronized)

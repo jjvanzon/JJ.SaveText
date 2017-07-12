@@ -12,16 +12,15 @@ using System.Net;
 using System.Threading;
 using System.Globalization;
 using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
-using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 {
     internal partial class MainForm : Form
     {
-        private IContext _context;
-        private ISaveTextWithSyncPresenter _presenter;
+        private readonly IContext _context;
+        private readonly ISaveTextWithSyncPresenter _presenter;
         private SaveTextViewModel _viewModel;
-        private ISaveTextWithSyncPresenter _appService;
+        private readonly ISaveTextWithSyncPresenter _appService;
 
         public MainForm()
         {
@@ -75,9 +74,9 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
                 sb.AppendLine(Messages.SynchronizedWithServer);
             }
 
-            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
+            foreach (string message in _viewModel.ValidationMessages)
             {
-                sb.AppendLine(validationMessage.Text);
+                sb.AppendLine(message);
             }
 
             if (_viewModel.TextWasSavedButNotYetSynchronized)
@@ -164,9 +163,6 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
             thread.Start();
         }
 
-        private void OnUiThread(Action action)
-        {
-            this.BeginInvoke(action);
-        }
+        private void OnUiThread(Action action) => BeginInvoke(action);
     }
 }
