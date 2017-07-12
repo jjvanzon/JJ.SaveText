@@ -12,21 +12,21 @@ namespace JJ.Business.Canonical
     {
         // DTO
 
-        public static string FormatMessages(IList<MessageDto> messages)
+        public static string FormatMessages(IList<string> messages)
         {
             if (messages == null) throw new NullException(() => messages);
 
-            string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages.Select(x => x.Text));
+            string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
             return formattedMessages;
         }
 
         // Business
         
-        public static string FormatMessages(IEnumerable<Message> messages)
+        public static string FormatMessages(IEnumerable<string> messages)
         {
             if (messages == null) throw new NullException(() => messages);
 
-            string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages.Select(x => x.Text));
+            string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
             return formattedMessages;
         }
     }

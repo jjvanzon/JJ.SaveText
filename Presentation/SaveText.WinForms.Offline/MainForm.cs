@@ -7,14 +7,13 @@ using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Text;
 using System.Windows.Forms;
-using MessageDto = JJ.Data.Canonical.MessageDto;
 
 namespace JJ.Presentation.SaveText.WinForms.Offline
 {
     internal partial class MainForm : Form
     {
-        private IContext _context;
-        private ISaveTextPresenter _presenter;
+        private readonly IContext _context;
+        private readonly ISaveTextPresenter _presenter;
         private SaveTextViewModel _viewModel;
 
         public MainForm()
@@ -61,9 +60,9 @@ namespace JJ.Presentation.SaveText.WinForms.Offline
                 sb.AppendLine(Messages.Saved);
             }
 
-            foreach (MessageDto validationMessage in _viewModel.ValidationMessages)
+            foreach (string message in _viewModel.ValidationMessages)
             {
-                sb.AppendLine(validationMessage.Text);
+                sb.AppendLine(message);
             }
 
             labelValidationMessages.Text = sb.ToString();

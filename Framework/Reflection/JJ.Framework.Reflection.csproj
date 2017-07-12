@@ -55,7 +55,7 @@
     <Compile Include="ReflectionCache.cs" />
     <Compile Include="StaticReflectionCache.cs" />
     <Compile Include="ReflectionHelper.cs" />
-    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="ReflectionExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\JJ.Framework.Common.csproj">
@@ -68,7 +68,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="README.TXT" />
+    <None Include="README.MD" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

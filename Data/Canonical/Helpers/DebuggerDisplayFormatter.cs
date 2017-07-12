@@ -11,13 +11,5 @@ namespace JJ.Data.Canonical.Helpers
             string debuggerDisplay = $"{{{nameof(IDAndName)}}} {idAndName.ID} {idAndName.Name}";
             return debuggerDisplay;
         }
-
-        internal static string GetDebuggerDisplay(MessageDto message)
-        {
-            if (message == null) throw new ArgumentNullException(nameof(message));
-
-            string debuggerDisplay = $"{{{nameof(MessageDto)}}} {message.Key} - '{message.Text}'";
-            return debuggerDisplay;
-        }
     }
 }

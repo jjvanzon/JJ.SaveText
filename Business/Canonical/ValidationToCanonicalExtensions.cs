@@ -18,7 +18,7 @@ namespace JJ.Business.Canonical
             var result = new VoidResultDto
             {
                 Successful = validator.IsValid,
-                Messages = validator.ValidationMessages.ToCanonical()
+                Messages = validator.Messages.ToArray()
             };
 
             return result;
@@ -39,39 +39,18 @@ namespace JJ.Business.Canonical
 
             destResultDto.Successful &= sourceValidators.All(x => x.IsValid);
 
-            destResultDto.Messages = destResultDto.Messages ?? new List<MessageDto>();
+            destResultDto.Messages = destResultDto.Messages ?? new List<string>();
 
-            destResultDto.Messages.AddRange(sourceValidators.SelectMany(x => x.ValidationMessages).ToCanonical());
+            destResultDto.Messages.AddRange(sourceValidators.SelectMany(x => x.Messages));
         }
 
         public static VoidResultDto ToCanonical([NotNull] this IEnumerable<IValidator> validators)
         {
-            var result = new VoidResultDto { Successful = true, Messages = new List<MessageDto>() };
+            var result = new VoidResultDto { Successful = true, Messages = new List<string>() };
 
             ToCanonical(validators, result);
 
             return result;
         }
-
-        public static MessageDto ToCanonical([NotNull] this ValidationMessage sourceEntity)
-        {
-            if (sourceEntity == null) throw new NullException(() => sourceEntity);
-
-            return new MessageDto
-            {
-                Key = sourceEntity.Key,
-                Text = sourceEntity.Text
-            };
-        }
-
-        public static IList<MessageDto> ToCanonical([NotNull] this IEnumerable<ValidationMessage> sourceList)
-        {
-            if (sourceList == null) throw new NullException(() => sourceList);
-
-            IList<MessageDto> destList = sourceList.Select(sourceItem => sourceItem.ToCanonical()).ToList();
-
-            return destList;
-        }
-
     }
 }

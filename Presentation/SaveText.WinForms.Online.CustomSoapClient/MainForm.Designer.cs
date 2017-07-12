@@ -1,4 +1,4 @@
-﻿namespace JJ.Presentation.SaveText.WinForms.Online
+﻿namespace JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient
 {
     partial class MainForm
     {

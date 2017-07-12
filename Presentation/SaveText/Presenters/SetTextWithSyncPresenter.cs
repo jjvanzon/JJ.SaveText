@@ -87,7 +87,7 @@ namespace JJ.Presentation.SaveText.Presenters
             var viewModel = new SaveTextViewModel
             {
                 Text = text,
-                ValidationMessages = new List<Canonical.MessageDto>(),
+                ValidationMessages = new List<string>()
             };
             return viewModel;
         }

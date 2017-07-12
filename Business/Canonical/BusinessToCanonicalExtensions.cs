@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using JJ.Framework.Exceptions;
 using JJ.Framework.Business;
 using JJ.Data.Canonical;
@@ -16,7 +14,7 @@ namespace JJ.Business.Canonical
             var dest = new VoidResultDto
             {
                 Successful = source.Successful,
-                Messages = source.Messages.ToCanonical()
+                Messages = source.Messages
             };
 
             return dest;
@@ -29,27 +27,8 @@ namespace JJ.Business.Canonical
             var dest = new ResultDto<T>
             {
                 Successful = source.Successful,
-                Messages = source.Messages.ToCanonical(),
+                Messages = source.Messages,
                 Data = source.Data,
-            };
-
-            return dest;
-        }
-
-        public static IList<MessageDto> ToCanonical(this Messages sourceCollection)
-        {
-            IList<MessageDto> destCollection = sourceCollection.Select(ToCanonical).ToList();
-            return destCollection;
-        }
-
-        public static MessageDto ToCanonical(this Message source)
-        {
-            if (source == null) throw new NullException(() => source);
-
-            var dest = new MessageDto
-            {
-                Key = source.Key,
-                Text = source.Text
             };
 
             return dest;

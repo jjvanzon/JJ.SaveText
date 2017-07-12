@@ -52,7 +52,6 @@
     <Compile Include="MessageHelper.cs" />
     <Compile Include="ResultHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CanonicalToKeyValuePairExtensions.cs" />
     <Compile Include="ValidationToCanonicalExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

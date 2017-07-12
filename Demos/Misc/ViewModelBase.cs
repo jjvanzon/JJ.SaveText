@@ -1,4 +1,4 @@
-﻿using JJ.Framework.Business;
+﻿using System.Collections.Generic;
 
 namespace JJ.Framework.Presentation
 {
@@ -8,7 +8,7 @@ namespace JJ.Framework.Presentation
     internal class ViewModelBase
     {
         public bool Successful { get; set; }
-        public Messages Messages { get; set; }
+        public IList<string> Messages { get; set; }
         public int RefreshCounter { get; set; }
     }
 }

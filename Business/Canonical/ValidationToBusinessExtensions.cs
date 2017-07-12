@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using JJ.Framework.Business;
-using JJ.Data.Canonical;
+using JJ.Framework.Collections;
 using JJ.Framework.Exceptions;
 using JJ.Framework.Validation;
 
@@ -27,12 +26,9 @@ namespace JJ.Business.Canonical
 
             destResult.Successful &= validators.All(x => x.IsValid);
 
-            Messages messages2 = validators.SelectMany(x => x.ValidationMessages).ToCanonical().ToBusiness();
-            destResult.Messages.AddRange(messages2);
+            destResult.Messages.AddRange(validators.SelectMany(x => x.Messages));
         }
 
         public static VoidResult ToResult([NotNull] this IEnumerable<IValidator> validators) => validators.ToCanonical().ToBusiness();
-
-        public static Messages ToBusiness(this ValidationMessages validationMessages) => validationMessages.ToCanonical().ToBusiness();
     }
 }

@@ -19,7 +19,7 @@ namespace JJ.Business.Canonical
             if (sourceResult == null) throw new NullException(() => sourceResult);
 
             destResult.Successful &= sourceResult.Successful;
-            destResult.Messages = destResult.Messages ?? new List<MessageDto>();
+            destResult.Messages = destResult.Messages ?? new List<string>();
             destResult.Messages.AddRange(sourceResult.Messages);
         }
 
@@ -45,7 +45,7 @@ namespace JJ.Business.Canonical
 
             if (!string.IsNullOrEmpty(messagePrefix))
             {
-                destResult.Messages.AddRange(sourceResult.Messages.Select(x => new Message(x.Key, messagePrefix + x.Text)));
+                destResult.Messages.AddRange(sourceResult.Messages.Select(x => messagePrefix + x));
             }
             else
             {
