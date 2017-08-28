@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace JJ.Data.Canonical
 {
@@ -7,8 +6,7 @@ namespace JJ.Data.Canonical
     {
         public bool Successful { get; set; }
         public IList<string> Messages { get; set; }
-
-        [CanBeNull]
+        
         public T Data { get; set; }
     }
 }

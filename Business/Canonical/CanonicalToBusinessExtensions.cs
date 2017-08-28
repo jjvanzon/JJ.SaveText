@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+﻿
 using JJ.Framework.Business;
 using JJ.Data.Canonical;
 using JJ.Framework.Exceptions;
@@ -7,7 +7,7 @@ namespace JJ.Business.Canonical
 {
     public static class CanonicalToBusinessExtensions
     {
-        public static VoidResult ToBusiness([NotNull] this VoidResultDto source)
+        public static VoidResult ToBusiness(this VoidResultDto source)
         {
             if (source == null) throw new NullException(() => source);
 

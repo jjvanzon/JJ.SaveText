@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
+
 using JJ.Framework.Business;
 using JJ.Framework.Collections;
 using JJ.Framework.Exceptions;
@@ -15,7 +15,7 @@ namespace JJ.Business.Canonical
         public static VoidResult ToResult(this IValidator validator) => validator.ToCanonical().ToBusiness();
 
         /// <summary> Mind that destResult.Successful should be set to true, if it is ever te be set to true. </summary>
-        public static void ToResult([NotNull] this IEnumerable<IValidator> validators, [NotNull] IResult destResult)
+        public static void ToResult(this IEnumerable<IValidator> validators, IResult destResult)
         {
             // ReSharper disable once JoinNullCheckWithUsage
             if (validators == null) throw new NullException(() => validators);
@@ -29,6 +29,6 @@ namespace JJ.Business.Canonical
             destResult.Messages.AddRange(validators.SelectMany(x => x.Messages));
         }
 
-        public static VoidResult ToResult([NotNull] this IEnumerable<IValidator> validators) => validators.ToCanonical().ToBusiness();
+        public static VoidResult ToResult(this IEnumerable<IValidator> validators) => validators.ToCanonical().ToBusiness();
     }
 }

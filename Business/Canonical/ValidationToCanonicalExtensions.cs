@@ -4,7 +4,7 @@ using System.Linq;
 using JJ.Framework.Validation;
 using JJ.Data.Canonical;
 using JJ.Framework.Exceptions;
-using JetBrains.Annotations;
+
 using JJ.Framework.Collections;
 
 namespace JJ.Business.Canonical
@@ -18,7 +18,7 @@ namespace JJ.Business.Canonical
             var result = new VoidResultDto
             {
                 Successful = validator.IsValid,
-                Messages = validator.Messages.ToArray()
+                Messages = validator.Messages.ToList()
             };
 
             return result;
@@ -28,7 +28,7 @@ namespace JJ.Business.Canonical
         /// Mind that destResult.Successful should be set to true,
         /// if it is ever te be set to true.
         /// </summary>
-        public static void ToCanonical([NotNull] this IEnumerable<IValidator> sourceValidators, [NotNull] IResultDto destResultDto)
+        public static void ToCanonical(this IEnumerable<IValidator> sourceValidators, IResultDto destResultDto)
         {
             // ReSharper disable once JoinNullCheckWithUsage
             if (sourceValidators == null) throw new NullException(() => sourceValidators);
@@ -44,7 +44,7 @@ namespace JJ.Business.Canonical
             destResultDto.Messages.AddRange(sourceValidators.SelectMany(x => x.Messages));
         }
 
-        public static VoidResultDto ToCanonical([NotNull] this IEnumerable<IValidator> validators)
+        public static VoidResultDto ToCanonical(this IEnumerable<IValidator> validators)
         {
             var result = new VoidResultDto { Successful = true, Messages = new List<string>() };
 
