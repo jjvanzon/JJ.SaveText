@@ -207,14 +207,14 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 
         private SaveTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextWithSyncAppServiceUrl);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextWithSyncAppServiceUrl);
             string cultureName = CultureInfo.CurrentUICulture.Name;
             return new SaveTextWithSyncAppServiceClient(url, cultureName);
         }
 
         private SaveTextAppServiceClient CreateAppServiceClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
             string cultureName = CultureInfo.CurrentUICulture.Name;
             return new SaveTextAppServiceClient(url, cultureName);
         }

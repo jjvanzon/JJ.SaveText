@@ -11,8 +11,8 @@ namespace JJ.Presentation.SaveText.AppService.Tests
         [TestMethod]
         public void Test_SaveTextAppService_CustomClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
-            string cultureName = AppSettings<IAppSettings>.Get(x => x.CultureName);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
+            string cultureName = AppSettingsReader<IAppSettings>.Get(x => x.CultureName);
 
             var client = new SaveTextAppServiceClient(url, cultureName);
 

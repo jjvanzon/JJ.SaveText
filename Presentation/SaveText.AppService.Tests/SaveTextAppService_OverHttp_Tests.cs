@@ -21,7 +21,7 @@ namespace JJ.Presentation.SaveText.AppService.Tests
         [TestMethod]
         public void Test_SaveTextAppService_OverHttp_Save()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
             string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
             byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
 

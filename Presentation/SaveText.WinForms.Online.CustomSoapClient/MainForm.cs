@@ -70,7 +70,7 @@ namespace JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient
 
         private SaveTextAppServiceClient CreateAppServiceClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.SaveTextAppService);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppService);
             string cultureName = CultureInfo.CurrentUICulture.Name;
             return new SaveTextAppServiceClient(url, cultureName);
         }

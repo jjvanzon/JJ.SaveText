@@ -11,7 +11,7 @@ namespace JJ.Presentation.SaveText.AppService.Tests
         [TestMethod]
         public void Test_ResourceAppService_CustomClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.ResourceAppServiceUrl);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.ResourceAppServiceUrl);
             string cultureName = "nl-NL";
             
             var client = new ResourceAppServiceClient(url);
