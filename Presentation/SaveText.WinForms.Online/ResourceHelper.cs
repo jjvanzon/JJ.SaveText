@@ -17,7 +17,7 @@ namespace JJ.Presentation.SaveText.WinForms.Online
 
         private static void LoadResources()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.ResourceAppService);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.ResourceAppService);
 
             using (var service = new ResourceAppServiceClient(url))
             {

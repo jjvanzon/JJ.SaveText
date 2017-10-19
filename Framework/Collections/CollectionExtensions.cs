@@ -259,6 +259,8 @@ namespace JJ.Framework.Collections
 
         public static T PeekOrDefault<T>(this Stack<T> stack)
         {
+            if (stack == null) throw new ArgumentNullException(nameof(stack));
+
             // ReSharper disable once ConvertIfStatementToReturnStatement
             if (stack.Count == 0)
             {
@@ -267,6 +269,43 @@ namespace JJ.Framework.Collections
 
             return stack.Peek();
         }
+
+        public static T PeekOrDefault<T>(this Queue<T> queue)
+        {
+            if (queue == null) throw new ArgumentNullException(nameof(queue));
+
+            // ReSharper disable once ConvertIfStatementToReturnStatement
+            if (queue.Count == 0)
+            {
+                return default(T);
+            }
+
+            return queue.Peek();
+        }
+
+        /// <summary>
+        /// For some polymorphism between Stacks and Queues, there are these Add and Remove extension methods,
+        /// in place of Push, Pop, Enqueue and Dequeue.
+        /// </summary>
+        public static void Add<T>(this Stack<T> stack, T item) => stack.Push(item);
+
+        /// <summary>
+        /// For some polymorphism between Stacks and Queues, there are these Add and Remove extension methods,
+        /// in place of Push, Pop, Enqueue and Dequeue.
+        /// </summary>
+        public static void Remove<T>(this Stack<T> stack) => stack.Pop();
+
+        /// <summary>
+        /// For some polymorphism between Stacks and Queues, there are these Add and Remove extension methods,
+        /// in place of Push, Pop, Enqueue and Dequeue.
+        /// </summary>
+        public static void Add<T>(this Queue<T> stack, T item) => stack.Enqueue(item);
+
+        /// <summary>
+        /// For some polymorphism between Stacks and Queues, there are these Add and Remove extension methods,
+        /// in place of Push, Pop, Enqueue and Dequeue.
+        /// </summary>
+        public static void Remove<T>(this Queue<T> stack) => stack.Dequeue();
 
         public static double Product<TSource>(this IEnumerable<TSource> collection, Func<TSource, double> selector)
         {

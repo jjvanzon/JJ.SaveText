@@ -106,7 +106,7 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 
         private ISaveTextWithSyncPresenter CreateAppServiceClient()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.AppServiceUrl);
             string cultureName = CultureInfo.CurrentUICulture.Name;
             return new SaveTextWithSyncAppServiceClient(url, cultureName);
         }
@@ -115,7 +115,7 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 
         private void InitializeTimerConditionalSynchronize()
         {
-            timerSynchronization.Interval = AppSettings<IAppSettings>.Get(x => x.SynchronizationTimerIntervalInMilliseconds);
+            timerSynchronization.Interval = AppSettingsReader<IAppSettings>.Get(x => x.SynchronizationTimerIntervalInMilliseconds);
         }
 
         private void timerSynchronization_Tick(object sender, EventArgs e)
@@ -139,8 +139,8 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 
         private bool CheckServiceIsAvailable()
         {
-            string url = AppSettings<IAppSettings>.Get(x => x.AppServiceUrl);
-            int timeout = AppSettings<IAppSettings>.Get(x => x.CheckServiceAvailabilityTimeoutInMilliseconds);
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.AppServiceUrl);
+            int timeout = AppSettingsReader<IAppSettings>.Get(x => x.CheckServiceAvailabilityTimeoutInMilliseconds);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
