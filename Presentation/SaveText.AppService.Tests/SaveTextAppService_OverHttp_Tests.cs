@@ -21,30 +21,39 @@ namespace JJ.Presentation.SaveText.AppService.Tests
         [TestMethod]
         public void Test_SaveTextAppService_OverHttp_Save()
         {
-            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
-            string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
-            byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
-
-            //byte[] dataToSend = GetBytesToSendFromViewModel();
-
-            HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
-
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            try
             {
-                using (Stream responseStream = response.GetResponseStream())
+                string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
+                string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
+                byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
+
+                //byte[] dataToSend = GetBytesToSendFromViewModel();
+
+                HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                 {
-                    using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                    using (Stream responseStream = response.GetResponseStream())
                     {
-                        string dataReceived = reader.ReadToEnd();
-                        SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
+                        using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
+                        {
+                            string dataReceived = reader.ReadToEnd();
+                            SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
+                        }
                     }
                 }
+            }
+            catch (WebException ex)
+            {
+                Assert.Inconclusive(ex.Message);
             }
         }
 
         [TestMethod]
         public void Test_SaveTextAppService_OverHttp_Save_WithValidationMessages()
         {
+            try
+            {
             string url = "http://localhost:6371/savetextappservice.svc";
             string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
             byte[] dataToSend = EmbeddedResourceHelper.GetEmbeddedResourceBytes(Assembly.GetExecutingAssembly(), "TestResources", "Save_WithValidationMessages.xml");
@@ -61,6 +70,11 @@ namespace JJ.Presentation.SaveText.AppService.Tests
                         SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
                     }
                 }
+            }
+            }
+            catch (WebException ex)
+            {
+                Assert.Inconclusive(ex.Message);
             }
         }
 
