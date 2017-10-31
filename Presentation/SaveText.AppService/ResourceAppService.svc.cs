@@ -48,7 +48,7 @@ namespace JJ.Presentation.SaveText.AppService
         {
             CultureInfo cultureInfo; ;
 
-            if (!String.IsNullOrEmpty(cultureName))
+            if (!string.IsNullOrEmpty(cultureName))
             {
                 cultureInfo = CultureInfo.GetCultureInfo(cultureName);
             }
