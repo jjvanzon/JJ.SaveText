@@ -1,33 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using JJ.Data.Canonical;
-using JJ.Framework.Business;
-using JJ.Framework.PlatformCompatibility;
 using JJ.Framework.Exceptions;
+using JJ.Framework.PlatformCompatibility;
 
 namespace JJ.Business.Canonical
 {
-    public static class MessageHelper
-    {
-        // DTO
+	public static class MessageHelper
+	{
+		// DTO
 
-        public static string FormatMessages(IList<string> messages)
-        {
-            if (messages == null) throw new NullException(() => messages);
+		public static string FormatMessages(IList<string> messages)
+		{
+			if (messages == null) throw new NullException(() => messages);
 
-            string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
-            return formattedMessages;
-        }
+			string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
+			return formattedMessages;
+		}
 
-        // Business
-        
-        public static string FormatMessages(IEnumerable<string> messages)
-        {
-            if (messages == null) throw new NullException(() => messages);
+		// Business
 
-            string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
-            return formattedMessages;
-        }
-    }
+		public static string FormatMessages(IEnumerable<string> messages)
+		{
+			if (messages == null) throw new NullException(() => messages);
+
+			string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
+			return formattedMessages;
+		}
+	}
 }

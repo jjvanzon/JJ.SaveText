@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
@@ -58,8 +60,6 @@
     <Compile Include="InfinityException.cs" />
     <Compile Include="InvalidIndexException.cs" />
     <Compile Include="InvalidReferenceException.cs" />
-    <Compile Include="InvalidTypeException.cs" />
-    <Compile Include="InvalidTypeExceptionOfT.cs" />
     <Compile Include="InvalidValueException.cs" />
     <Compile Include="IsDateTimeException.cs" />
     <Compile Include="IsDecimalException.cs" />

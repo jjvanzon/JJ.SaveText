@@ -9,49 +9,49 @@ using System.Web.Mvc;
 
 namespace JJ.Presentation.SaveText.Mvc.Controllers
 {
-    public class SaveTextController : Controller
-    {
-        public ActionResult Index()
-        {
-            SaveTextViewModel viewModel;
-            if (TempData.ContainsKey(TempDataKeys.ViewModel))
-            {
-                viewModel = (SaveTextViewModel)TempData[TempDataKeys.ViewModel];
-            }
-            else
-            {
-                using (IContext ormContext = PersistenceHelper.CreateContext())
-                {
-                    SaveTextPresenter presenter = CreatePresenter(ormContext);
-                    viewModel = presenter.Show();
-                }
-            }
+	public class SaveTextController : Controller
+	{
+		public ActionResult Index()
+		{
+			SaveTextViewModel viewModel;
+			if (TempData.ContainsKey(TempDataKeys.ViewModel))
+			{
+				viewModel = (SaveTextViewModel)TempData[TempDataKeys.ViewModel];
+			}
+			else
+			{
+				using (IContext ormContext = PersistenceHelper.CreateContext())
+				{
+					SaveTextPresenter presenter = CreatePresenter(ormContext);
+					viewModel = presenter.Show();
+				}
+			}
 
-            foreach (string message in viewModel.ValidationMessages)
-            {
-                ModelState.AddModelError(nameof(message), message);
-            }
+			foreach (string message in viewModel.ValidationMessages)
+			{
+				ModelState.AddModelError(nameof(message), message);
+			}
 
-            return View(viewModel);
-        }
+			return View(viewModel);
+		}
 
-        [HttpPost]
-        public ActionResult Index(SaveTextViewModel viewModel)
-        {
-            using (IContext ormContext = PersistenceHelper.CreateContext())
-            {
-                SaveTextPresenter presenter = CreatePresenter(ormContext);
-                SaveTextViewModel viewModel2 = presenter.Save(viewModel);
-                TempData[TempDataKeys.ViewModel] = viewModel2;
-                return RedirectToAction(ActionNames.Index);
-            }
-        }
+		[HttpPost]
+		public ActionResult Index(SaveTextViewModel viewModel)
+		{
+			using (IContext ormContext = PersistenceHelper.CreateContext())
+			{
+				SaveTextPresenter presenter = CreatePresenter(ormContext);
+				SaveTextViewModel viewModel2 = presenter.Save(viewModel);
+				TempData[TempDataKeys.ViewModel] = viewModel2;
+				return RedirectToAction(ActionNames.Index);
+			}
+		}
 
-        private SaveTextPresenter CreatePresenter(IContext context)
-        {
-            IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
-            SaveTextPresenter presenter = new SaveTextPresenter(entityRepository);
-            return presenter;
-        }
-    }
+		private SaveTextPresenter CreatePresenter(IContext context)
+		{
+			IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
+			SaveTextPresenter presenter = new SaveTextPresenter(entityRepository);
+			return presenter;
+		}
+	}
 }

@@ -4,28 +4,26 @@ using JJ.Framework.Reflection;
 
 namespace JJ.Framework.Exceptions
 {
-    public class UnexpectedTypeException : Exception
-    {
-        private const string MESSAGE = "{0} has an unexpected type: '{1}'";
+	public class UnexpectedTypeException : Exception
+	{
+		public UnexpectedTypeException(Expression<Func<object>> expression)
+		{
+			string expressionText = ExpressionHelper.GetText(expression);
 
-        public UnexpectedTypeException(Expression<Func<object>> expression)
-        {
-            string expressionText = ExpressionHelper.GetText(expression);
+			object value = ExpressionHelper.GetValue(expression);
+			string typeDescription;
+			if (value == null)
+			{
+				typeDescription = "<null>";
+			}
+			else
+			{
+				typeDescription = value.GetType().FullName;
+			}
 
-            object value = ExpressionHelper.GetValue(expression);
-            string typeDescription;
-            if (value == null)
-            {
-                typeDescription = "<null>";
-            }
-            else
-            {
-                typeDescription = value.GetType().FullName;
-            }
+			Message = $"{expressionText} has an unexpected type: '{typeDescription}'";
+		}
 
-            Message = string.Format(MESSAGE, expressionText, typeDescription);
-        }
-
-        public override string Message { get; }
-    }
+		public override string Message { get; }
+	}
 }

@@ -24,6 +24,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -310,9 +311,9 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\Presentation.JavaScript\JJ.Framework.Presentation.JavaScript.csproj">
+    <ProjectReference Include="..\..\Framework\JavaScript\JJ.Framework.JavaScript.csproj">
       <Project>{bd4cf454-be0b-490f-997d-665da7ebec96}</Project>
-      <Name>JJ.Framework.Presentation.JavaScript</Name>
+      <Name>JJ.Framework.JavaScript</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

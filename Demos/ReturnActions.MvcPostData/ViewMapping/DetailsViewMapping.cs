@@ -1,21 +1,21 @@
 ﻿using JJ.Demos.ReturnActions.MvcPostData.Names;
 using JJ.Demos.ReturnActions.Names;
 using JJ.Demos.ReturnActions.ViewModels;
-using JJ.Framework.Presentation.Mvc;
+using JJ.Framework.Mvc;
 
 namespace JJ.Demos.ReturnActions.MvcPostData.ViewMapping
 {
-    public class DetailsViewMapping : ViewMapping<DetailsViewModel>
-    {
-        public DetailsViewMapping()
-        {
-            MapController(ControllerNames.Demo, ActionNames.Details, ViewNames.Details);
-            MapPresenter(PresenterNames.DetailsPresenter, PresenterActionNames.Show);
-        }
+	public class DetailsViewMapping : ViewMapping<DetailsViewModel>
+	{
+		public DetailsViewMapping()
+		{
+			MapController(ControllerNames.Demo, ActionNames.Details, ViewNames.Details);
+			MapPresenter(PresenterNames.DetailsPresenter, PresenterActionNames.Show);
+		}
 
-        protected override object GetRouteValues(DetailsViewModel viewModel)
-        {
-            return new { id = viewModel.Entity.ID };
-        }
-    }
+		protected override object GetRouteValues(DetailsViewModel viewModel)
+		{
+			return new { id = viewModel.Entity.ID };
+		}
+	}
 }

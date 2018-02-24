@@ -27,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,8 +37,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JetBrains.Annotations.10.2.1\lib\net\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -54,10 +59,6 @@
     <Compile Include="UnexpectedViewModelTypeException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\JJ.Framework.Business.csproj">
-      <Project>{F44D03E8-FEEC-40D4-B866-A87799185B4C}</Project>
-      <Name>JJ.Framework.Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Collections\JJ.Framework.Collections.csproj">
       <Project>{5d06a212-5459-47f3-8109-e012c5fc9e3a}</Project>
       <Name>JJ.Framework.Collections</Name>
@@ -81,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.TXT" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

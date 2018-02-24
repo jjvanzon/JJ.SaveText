@@ -4,8 +4,8 @@
 
 //namespace JJ.Demos.Misc
 //{
-//    internal class PrimaryConstructors(int bla)
-//    {
-//        private int Bla { get; } = bla;
-//    }
+//	internal class PrimaryConstructors(int bla)
+//	{
+//		private int Bla { get; } = bla;
+//	}
 //}

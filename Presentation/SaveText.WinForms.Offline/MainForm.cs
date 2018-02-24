@@ -10,79 +10,79 @@ using System.Windows.Forms;
 
 namespace JJ.Presentation.SaveText.WinForms.Offline
 {
-    internal partial class MainForm : Form
-    {
-        private readonly IContext _context;
-        private readonly ISaveTextPresenter _presenter;
-        private SaveTextViewModel _viewModel;
+	internal partial class MainForm : Form
+	{
+		private readonly IContext _context;
+		private readonly ISaveTextPresenter _presenter;
+		private SaveTextViewModel _viewModel;
 
-        public MainForm()
-        {
-            InitializeComponent();
+		public MainForm()
+		{
+			InitializeComponent();
 
-            _context = CreateContext();
-            _presenter = CreatePresenter(_context);
+			_context = CreateContext();
+			_presenter = CreatePresenter(_context);
 
-            SetTitlesAndLabels();
+			SetTitlesAndLabels();
 
-            Show();
-        }
+			Show();
+		}
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            Save();
-        }
+		private void buttonSave_Click(object sender, EventArgs e)
+		{
+			Save();
+		}
 
-        private void textBoxText_TextChanged(object sender, EventArgs e)
-        {
-            _viewModel.Text = textBoxText.Text;
-        }
+		private void textBoxText_TextChanged(object sender, EventArgs e)
+		{
+			_viewModel.Text = textBoxText.Text;
+		}
 
-        private new void Show()
-        {
-            _viewModel = _presenter.Show();
-            ApplyViewModel();
-        }
+		private new void Show()
+		{
+			_viewModel = _presenter.Show();
+			ApplyViewModel();
+		}
 
-        private void Save()
-        {
-            _viewModel = _presenter.Save(_viewModel);
-            ApplyViewModel();
-        }
+		private void Save()
+		{
+			_viewModel = _presenter.Save(_viewModel);
+			ApplyViewModel();
+		}
 
-        private void ApplyViewModel()
-        {
-            textBoxText.Text = _viewModel.Text;
+		private void ApplyViewModel()
+		{
+			textBoxText.Text = _viewModel.Text;
 
-            var sb = new StringBuilder();
-            if (_viewModel.TextWasSavedMessageVisible)
-            {
-                sb.AppendLine(Messages.Saved);
-            }
+			var sb = new StringBuilder();
+			if (_viewModel.TextWasSavedMessageVisible)
+			{
+				sb.AppendLine(Messages.Saved);
+			}
 
-            foreach (string message in _viewModel.ValidationMessages)
-            {
-                sb.AppendLine(message);
-            }
+			foreach (string message in _viewModel.ValidationMessages)
+			{
+				sb.AppendLine(message);
+			}
 
-            labelValidationMessages.Text = sb.ToString();
-        }
+			labelValidationMessages.Text = sb.ToString();
+		}
 
-        private void SetTitlesAndLabels()
-        {
-            buttonSave.Text = Titles.SaveText;
-        }
+		private void SetTitlesAndLabels()
+		{
+			buttonSave.Text = Titles.SaveText;
+		}
 
-        private ISaveTextPresenter CreatePresenter(IContext context)
-        {
-            IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
-            return new SaveTextPresenter(repository);
-        }
+		private ISaveTextPresenter CreatePresenter(IContext context)
+		{
+			IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
+			return new SaveTextPresenter(repository);
+		}
 
-        private IContext CreateContext()
-        {
-            IContext context = ContextFactory.CreateContextFromConfiguration();
-            return context;
-        }
-    }
+		private IContext CreateContext()
+		{
+			IContext context = ContextFactory.CreateContextFromConfiguration();
+			return context;
+		}
+	}
 }

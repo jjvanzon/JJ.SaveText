@@ -1,35 +1,35 @@
-﻿using Sgml;
-using System.IO;
+﻿using System.IO;
 using System.Xml;
+using Sgml;
 
 namespace JJ.Framework.Xml
 {
-    public static class HtmlToXmlConverter
-    {
-        public static string Convert(string html)
-        {
-            using (StringReader stringReader = new StringReader(html))
-            {
-                using (SgmlReader sgmlReader = new SgmlReader { DocType = "HTML", InputStream = stringReader })
-                {
-                    using (StringWriter stringWriter = new StringWriter())
-                    {
-                        using (XmlTextWriter xmlTextWriter = new XmlTextWriter(stringWriter))
-                        {
-                            xmlTextWriter.WriteStartDocument(); // Write XML header
+	public static class HtmlToXmlConverter
+	{
+		public static string Convert(string html)
+		{
+			using (var stringReader = new StringReader(html))
+			{
+				using (var sgmlReader = new SgmlReader { DocType = "HTML", InputStream = stringReader })
+				{
+					using (var stringWriter = new StringWriter())
+					{
+						using (var xmlTextWriter = new XmlTextWriter(stringWriter))
+						{
+							xmlTextWriter.WriteStartDocument(); // Write XML header
 
-                            sgmlReader.Read();
+							sgmlReader.Read();
 
-                            while (!sgmlReader.EOF)
-                            {
-                                xmlTextWriter.WriteNode(sgmlReader, true);
-                            }
-                        }
+							while (!sgmlReader.EOF)
+							{
+								xmlTextWriter.WriteNode(sgmlReader, true);
+							}
+						}
 
-                        return stringWriter.ToString();
-                    }
-                }
-            }
-        }
-    }
+						return stringWriter.ToString();
+					}
+				}
+			}
+		}
+	}
 }

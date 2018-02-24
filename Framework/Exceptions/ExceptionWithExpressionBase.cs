@@ -4,21 +4,25 @@ using JJ.Framework.Reflection;
 
 namespace JJ.Framework.Exceptions
 {
-    /// <summary> TODO: Make other exceptions derive from this base type too. </summary>
-    public abstract class ExceptionWithExpressionBase : Exception
-    {
-        /// <summary> E.g. "{0} is null.". </summary>
-        protected abstract string MessageFormat { get; }
+	/// <summary> TODO: Make other exceptions derive from this base type too. </summary>
+	public abstract class ExceptionWithExpressionBase : Exception
+	{
+		private readonly string _message;
 
-        public override string Message { get; }
+		/// <summary> E.g. "{0} is null.". </summary>
+		protected abstract string MessageFormat { get; }
 
-        public ExceptionWithExpressionBase(Expression<Func<object>> expression)
-            : this(ExpressionHelper.GetText(expression))
-        { }
+		public override string Message => _message;
 
-        public ExceptionWithExpressionBase(string name)
-        {
-            Message = string.Format(MessageFormat, name);
-        }
-    }
+		public ExceptionWithExpressionBase(Expression<Func<object>> expression)
+			: this(ExpressionHelper.GetText(expression))
+		{ }
+
+		public ExceptionWithExpressionBase(string name)
+		{
+			// TODO: Maybe solve this warning once, but it is kind of high-impact (see TODO above).
+			// ReSharper disable once VirtualMemberCallInConstructor
+			_message = string.Format(MessageFormat, name);
+		}
+	}
 }
