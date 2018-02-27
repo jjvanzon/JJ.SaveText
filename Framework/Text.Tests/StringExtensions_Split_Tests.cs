@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace JJ.Framework.Common.Tests
+namespace JJ.Framework.Text.Tests
 {
 	[TestClass]
 	public class StringExtensions_Split_Tests
