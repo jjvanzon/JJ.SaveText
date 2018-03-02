@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using JJ.Framework.Exceptions;
-using JJ.Framework.PlatformCompatibility;
 
 namespace JJ.Business.Canonical
 {
@@ -13,7 +12,7 @@ namespace JJ.Business.Canonical
 		{
 			if (messages == null) throw new NullException(() => messages);
 
-			string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
+			string formattedMessages = string.Join(Environment.NewLine, messages);
 			return formattedMessages;
 		}
 
@@ -23,7 +22,7 @@ namespace JJ.Business.Canonical
 		{
 			if (messages == null) throw new NullException(() => messages);
 
-			string formattedMessages = String_PlatformSupport.Join(Environment.NewLine, messages);
+			string formattedMessages = string.Join(Environment.NewLine, messages);
 			return formattedMessages;
 		}
 	}

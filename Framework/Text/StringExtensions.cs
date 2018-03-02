@@ -41,20 +41,49 @@ namespace JJ.Framework.Text
 
 		public static string TrimEnd(this string input, char chr) => TrimEnd(input, chr.ToString());
 
-		public static string TrimEnd(this string input, string end) => input.EndsWith(end) ? input.TrimEnd(end.Length) : input;
+		public static string TrimEnd(this string input, string end)
+		{
+			if (string.IsNullOrEmpty(end)) throw new Exception($"{nameof(end)} is null or empty.");
+
+			string temp = input;
+
+			while (temp.EndsWith(end))
+			{
+				temp = temp.TrimEnd(end.Length);
+			}
+
+			return temp;
+		}
 
 		public static string TrimEnd(this string input, int length) => input.Left(input.Length - length);
 
 		public static string TrimStart(this string input, char chr) => TrimStart(input, chr.ToString());
 
-		public static string TrimStart(this string input, string start) => input.StartsWith(start) ? input.TrimStart(start.Length) : input;
+		public static string TrimStart(this string input, string start)
+		{
+			if (string.IsNullOrEmpty(start)) throw new Exception($"{nameof(start)} is null or empty.");
+
+			string temp = input;
+
+			while (temp.StartsWith(start))
+			{
+				temp = temp.TrimStart(start.Length);
+			}
+
+			return temp;
+		}
 
 		public static string TrimStart(this string input, int length) => input.Right(input.Length - length);
 
 		public static string FromTill(this string input, int startIndex, int endIndex) => input.Substring(startIndex, endIndex - startIndex + 1);
 
 		/// <summary>
-		/// Cuts off the right part of a string until the specified delimiter and returns what remains with a portion cut off still including the delimiter itself.
+		/// Cuts off the part of a string until the specified delimiter and returns what remains with a portion cut off still including the delimiter itself.
+		/// </summary>
+		public static string TrimEndUntil(this string input, char until) => TrimEndUntil(input, until.ToString());
+
+		/// <summary>
+		/// Cuts off the part of a string until the specified delimiter and returns what remains with a portion cut off still including the delimiter itself.
 		/// </summary>
 		public static string TrimEndUntil(this string input, string until)
 		{
@@ -66,7 +95,12 @@ namespace JJ.Framework.Text
 		}
 
 		/// <summary>
-		/// Cuts off the right part of a string until the specified delimiter and returns what remains with a portion cut off still including the delimiter itself.
+		/// Cuts off the part of a string until the specified delimiter and returns what remains with a portion cut off still including the delimiter itself.
+		/// </summary>
+		public static string TrimStartUntil(this string input, char until) => TrimStartUntil(input, until.ToString());
+
+		/// <summary>
+		/// Cuts off the part of a string until the specified delimiter and returns what remains with a portion cut off still including the delimiter itself.
 		/// </summary>
 		public static string TrimStartUntil(this string input, string until)
 		{

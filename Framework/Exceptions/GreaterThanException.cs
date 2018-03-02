@@ -1,22 +1,34 @@
 ﻿using System;
 using System.Linq.Expressions;
-using JJ.Framework.Reflection;
 
 namespace JJ.Framework.Exceptions
 {
-	public class GreaterThanException : Exception
+	/// <inheritdoc />
+	public class GreaterThanException : ComparativeExceptionWithExpressionBase
 	{
-		public GreaterThanException(Expression<Func<object>> expression, object limit)
-			: base($"{ExpressionHelper.GetText(expression)} is greater than {limit}.")
-		{ }
+		protected override string MessageTemplateWithAAndB => "{0} is greater than {1}.";
+		protected override string MessageTemplateWithAValueAndNoBValue => "{0} of {1} is greater than {2}.";
+		protected override string MessageTemplateWithNoAValueAndWithBValue => "{0} is greater than {1} of {2}.";
+		protected override string MessageTemplateWithTwoValuesAndTwoNames => "{0} of {1} is greater than {2} of {3}.";
 
-		/// <summary>
-		/// Only use this overload if you wish to show the text and value of the limitExpression in the exception message.
-		/// If you only want to show the limit's value, use the other overload.
-		/// </summary>
-		public GreaterThanException(Expression<Func<object>> expression, Expression<Func<object>> limitExpression)
-			// ReSharper disable once UseStringInterpolation
-			: base(string.Format("{0} is greater than {1} of {2}.", ExpressionHelper.GetText(expression), ExpressionHelper.GetText(limitExpression), ExpressionHelper.GetValue(limitExpression)))
-		{ }
+		/// <inheritdoc />
+		public GreaterThanException(Expression<Func<object>> expressionA, object b)
+			: base(expressionA, b) { }
+
+		/// <inheritdoc />
+		public GreaterThanException(object a, object b)
+			: base(a, b) { }
+
+		/// <inheritdoc />
+		public GreaterThanException(Expression<Func<object>> expressionA, Expression<Func<object>> expressionB, bool showValueA = false, bool showValueB = false)
+			: base(expressionA, expressionB, showValueA, showValueB) { }
+
+		/// <inheritdoc />
+		public GreaterThanException(Expression<Func<object>> expressionA, object b, bool showValueA = false)
+			: base(expressionA, b, showValueA) { }
+
+		/// <inheritdoc />	
+		public GreaterThanException(object a, Expression<Func<object>> expressionB, bool showValueB = false)
+			: base(a, expressionB, showValueB) { }
 	}
 }

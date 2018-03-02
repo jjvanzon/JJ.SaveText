@@ -1,16 +1,18 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace JJ.Framework.Exceptions
 {
-	public class NotFoundException : Exception
+	public class NotFoundException : ExceptionWithNameTypeAndKeyBase
 	{
-		public NotFoundException(Type type, object key)
-		{
-			if (type == null) throw new ArgumentNullException(nameof(type));
+		protected override string MessageWithName => "{0} not found.";
+		protected override string MessageWithNameAndKey => "{0} with key {1} not found.";
 
-			Message = $"{type.Name} with key '{key}' not found.";
-		}
-
-		public override string Message { get; }
+		public NotFoundException(Expression<Func<object>> expression) : base(expression) { }
+		public NotFoundException(Expression<Func<object>> expression, object key) : base(expression, key) { }
+		public NotFoundException(Type type) : base(type) { }
+		public NotFoundException(Type type, object key) : base(type, key) { }
+		public NotFoundException(string name) : base(name) { }
+		public NotFoundException(string name, object key) : base(name, key) { }
 	}
 }
