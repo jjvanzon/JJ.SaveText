@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
+using System.Text;
+using JJ.Framework.Common;
 using JJ.Framework.Conversion;
 using JJ.Framework.Exceptions;
+using JJ.Framework.IO;
 using JJ.Framework.PlatformCompatibility;
 using JJ.Framework.Reflection;
+using JJ.Framework.Testing;
 using JJ.Framework.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 // ReSharper disable UnusedAutoPropertyAccessor.Local
 // ReSharper disable HeuristicUnreachableCode
 // ReSharper disable UnusedVariable
@@ -33,6 +39,13 @@ namespace JJ.Demos.NuGetTest
 		public void Test_NuGetReference_JJ_Framework_PlatformCompatibility()
 		{
 			CultureInfo result = CultureInfo_PlatformSafe.GetCultureInfo("nl-NL");
+		}
+
+		[TestMethod]
+		public void Test_NuGetReference_JJ_Framework_Common()
+		{
+			string cultureName = CultureHelper.GetCurrentCultureName();
+			Assert.IsNotNull(cultureName);
 		}
 
 		[TestMethod]
@@ -68,6 +81,36 @@ namespace JJ.Demos.NuGetTest
 			string str = "1234";
 			int number = SimpleTypeConverter.ParseValue<int>(str);
 			Assert.AreEqual(1234, number);
+		}
+
+		[TestMethod]
+		public void Test_NuGetReference_JJ_Framework_Testing()
+		{
+			var obj = new object();
+
+			AssertHelper.ThrowsException(() => AssertHelper.IsNull(() => obj), "Assert.IsNull failed. Tested member: 'obj'.");
+		}
+
+		[TestMethod]
+		public void Test_NuGetReference_JJ_Framework_IO()
+		{
+			string csvText = "1234,2345,3456,4567,5678" + Environment.NewLine +
+			                 "6789,7890,1234,2345,3456";
+
+			using (Stream stream = StreamHelper.StringToStream(csvText, Encoding.UTF8))
+			{
+				using (var csvReader = new CsvReader(stream))
+				{
+					while (csvReader.Read())
+					{
+						string val1 = csvReader[0];
+						string val2 = csvReader[1];
+						string val3 = csvReader[2];
+						string val4 = csvReader[3];
+						string val5 = csvReader[4];
+					}
+				}
+			}
 		}
 	}
 }
