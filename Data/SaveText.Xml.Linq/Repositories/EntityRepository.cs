@@ -5,6 +5,7 @@ using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Data.SaveText.Xml.Linq.Repositories
 {

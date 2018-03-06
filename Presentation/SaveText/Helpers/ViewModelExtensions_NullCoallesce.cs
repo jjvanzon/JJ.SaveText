@@ -1,6 +1,7 @@
 ﻿using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Framework.Exceptions;
 using System.Collections.Generic;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Presentation.SaveText.Helpers
 {

@@ -1,6 +1,7 @@
 ﻿using JJ.Framework.Exceptions;
 using System.Globalization;
 using System.Threading;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Presentation.SaveText.AppService.Helpers
 {

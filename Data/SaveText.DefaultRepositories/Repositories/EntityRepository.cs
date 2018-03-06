@@ -1,6 +1,7 @@
 ﻿using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Data;
 using JJ.Framework.Exceptions;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Data.SaveText.DefaultRepositories.Repositories
 {

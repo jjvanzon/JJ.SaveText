@@ -7,6 +7,7 @@ using Canonical = JJ.Data.Canonical;
 using JJ.Data.Canonical;
 using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
 using JJ.Framework.Exceptions;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Presentation.SaveText.Presenters
 {

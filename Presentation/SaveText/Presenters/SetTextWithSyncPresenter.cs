@@ -7,6 +7,7 @@ using JJ.Presentation.SaveText.Interface.ViewModels;
 using JJ.Presentation.SaveText.Interface.PresenterInterfaces;
 using JJ.Presentation.SaveText.Helpers;
 using JJ.Framework.Exceptions;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Presentation.SaveText.Presenters
 {
