@@ -6,6 +6,7 @@ using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System.Collections.Generic;
 using JJ.Framework.Exceptions;
 using JJ.Business.Canonical;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.SaveText
 {

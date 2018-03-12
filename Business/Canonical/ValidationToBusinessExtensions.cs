@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JJ.Framework.Business;
 using JJ.Framework.Collections;
 using JJ.Framework.Exceptions;
+using JJ.Framework.Exceptions.Basic;
 using JJ.Framework.Validation;
 
 namespace JJ.Business.Canonical

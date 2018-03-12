@@ -4,6 +4,7 @@ using JJ.Framework.Exceptions;
 using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
+using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Data.SaveText.Memory.Repositories
 {

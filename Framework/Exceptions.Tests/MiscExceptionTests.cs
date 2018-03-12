@@ -1,4 +1,9 @@
 ﻿using System.Collections.Generic;
+using JJ.Framework.Exceptions.Aggregates;
+using JJ.Framework.Exceptions.Files;
+using JJ.Framework.Exceptions.InvalidValues;
+using JJ.Framework.Exceptions.Misc;
+using JJ.Framework.Exceptions.TypeChecking;
 using JJ.Framework.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // ReSharper disable LocalNameCapturedOnly
@@ -16,8 +21,8 @@ namespace JJ.Framework.Exceptions.Tests
 		{
 			const string filePath = "test.txt";
 
-			AssertHelper.ThrowsException<FileAlreadyExistException>(
-				() => throw new FileAlreadyExistException(filePath),
+			AssertHelper.ThrowsException<FileAlreadyExistsException>(
+				() => throw new FileAlreadyExistsException(filePath),
 				"File 'test.txt' already exists.");
 		}
 
@@ -62,7 +67,7 @@ namespace JJ.Framework.Exceptions.Tests
 
 					throw new InvalidIndexException(() => index, () => list.Count);
 				},
-				"index 1 is an invalid index for list with count 0.");
+				"index of 1 is an invalid index for list with count 0.");
 		}
 
 		[TestMethod]
@@ -71,11 +76,11 @@ namespace JJ.Framework.Exceptions.Tests
 			AssertHelper.ThrowsException<InvalidValueException>(
 				() =>
 				{
-					var testEnum = TestEnum.EnumMemberA;
+					var testEnum = TestEnum.Subscriber;
 
 					throw new InvalidValueException(testEnum);
 				},
-				"Invalid TestEnum value: 'EnumMemberA'.");
+				"Invalid TestEnum value: 'Subscriber'.");
 		}
 
 		[TestMethod]

@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Threading;
 using JJ.Framework.Exceptions;
+using JJ.Framework.Exceptions.Basic;
 using JJ.Framework.Reflection;
 
 namespace JJ.Framework.Testing
@@ -144,8 +145,8 @@ namespace JJ.Framework.Testing
 			}
 			catch (Exception ex)
 			{
-				AreEqual(exceptionType, () => ex.GetType());
 				AreEqual(expectedMessage, () => ex.Message);
+				AreEqual(exceptionType, () => ex.GetType());
 				return;
 			}
 

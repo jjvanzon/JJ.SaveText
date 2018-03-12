@@ -13,6 +13,7 @@ There are several advantages over using these exception types.
 * Error messages are clear.
 * Concise syntax, without sacrificing performance.
 * You can pass an expression, whose text becomes part of the message.
+* Invalid value is automatically mentioned in the exception message.
 * Lose no time typing and trying to come up with a good message.
 
 For example:
@@ -27,11 +28,11 @@ This is where it surpasses the possibilities of the C#6 nameof operator, which c
 
 Another example:
 
-	throw new NotFoundException<Customer>(new { customerNumber });
+	throw new NotFoundException<Customer>(new { customerNumber, customerType });
 
 will produce an exception message:
 
-	"Customer with key { customerNumber = 1234 } not found."
+	"Customer with key { customerNumber = 1234, customerType = Subscriber } not found."
 
 As such it is fit for use with any composite key you might have.
 			
@@ -44,7 +45,6 @@ Some more examples:
 
 Those produce the exception messages:
 			
-	height is less than 0.
 	Product with key A123 not unique.
 	Country value 'Undefined' is not supported.
 	File 'test.txt' already exists.
@@ -52,8 +52,8 @@ Those produce the exception messages:
 
 Here is an example with the value check in it:
 
-	if (height < 0) throw new LessThanException(nameof(height), 0);
+	if (height < 10) throw new LessThanException(nameof(height), 10);
 
 This produces the exception message:
 				
-	height is less than 0.
+	height of 2 is less than 10.
