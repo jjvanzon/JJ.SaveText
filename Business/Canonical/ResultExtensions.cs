@@ -4,7 +4,6 @@ using System.Linq;
 using JJ.Data.Canonical;
 using JJ.Framework.Business;
 using JJ.Framework.Collections;
-using JJ.Framework.Exceptions;
 using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.Canonical
