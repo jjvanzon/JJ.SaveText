@@ -22,8 +22,15 @@ Basic helpers for working with text. For instance:
 * `StringBuilderWithIndentation`
 		</summary>
 		<releaseNotes>
-			2018-02-27 010: Make TrimEnd and TrimStart cut off repetitions of the passed string, not just a single occurrence.
-			2018-04-17 020: Include TrimFirst and TrimLast to still have the option to cut off only a single occurrence.
+			2018-02-27:
+			* Make TrimEnd and TrimStart cut off repetitions of the passed string, not just a single occurrence.
+			2018-04-17:
+			* Include TrimFirst and TrimLast to still have the option to cut off only a single occurrence.
+			* TakeStartUntil * TakeEndUntil
+			* Rename TakeLeft to TakeStart
+			* Rename TakeRight to TakeEnd
+			2018-04-19:
+			* Make obsolete TakeLeft and TakeRight cause compiler error, instead of just throwing an exception at run time.
 		</releaseNotes>
 
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>

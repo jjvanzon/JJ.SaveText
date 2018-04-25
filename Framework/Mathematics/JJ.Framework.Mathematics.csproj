@@ -38,16 +38,20 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>latest</LangVersion>
+    <DocumentationFile>bin\Release\JJ.Framework.Mathematics.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Geometry.cs" />
     <Compile Include="Interpolator.cs" />
     <Compile Include="MathHelper.cs" />
-    <Compile Include="NumberingSystems.cs" />
+    <Compile Include="NumberBases.cs" />
     <Compile Include="Randomizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,7 +66,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="README.TXT" />
+    <None Include="JJ.Framework.Mathematics.nuspec" />
+    <None Include="README.MD" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
