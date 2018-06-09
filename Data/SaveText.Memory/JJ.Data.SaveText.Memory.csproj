@@ -37,8 +37,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JJ.Framework.Exceptions">
-      <HintPath>..\..\Framework\Exceptions\bin\Release\JJ.Framework.Exceptions.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,6 +57,10 @@
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
       <Name>JJ.Framework.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
+      <Project>{fa44aba2-8e13-402c-a5a0-8d73c74b5181}</Project>
+      <Name>JJ.Framework.Exceptions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Reflection\JJ.Framework.Reflection.csproj">
       <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
       <Name>JJ.Framework.Reflection</Name>
@@ -69,6 +73,9 @@
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
       <Name>JJ.Data.SaveText</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
