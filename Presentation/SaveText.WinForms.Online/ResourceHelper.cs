@@ -6,12 +6,9 @@ namespace JJ.Presentation.SaveText.WinForms.Online
 {
 	internal static class ResourceHelper
 	{
-		static ResourceHelper()
-		{
-			LoadResources();
-		}
+		static ResourceHelper() => LoadResources();
 
-		public static Labels Labels { get; private set; }
+	    public static Labels Labels { get; private set; }
 		public static Titles Titles { get; private set; }
 		public static Messages Messages { get; private set; }
 
@@ -28,9 +25,6 @@ namespace JJ.Presentation.SaveText.WinForms.Online
 			}
 		}
 
-		private static string GetCultureName()
-		{
-			return System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
-		}
+		private static string GetCultureName() => System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
 	}
 }

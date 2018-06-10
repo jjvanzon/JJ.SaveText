@@ -16,9 +16,7 @@ namespace JJ.Business.SaveText
         private readonly IEntityRepository _entityRepository;
 
         public TextSaver(IEntityRepository entityRepository)
-        {
-            _entityRepository = entityRepository ?? throw new NullException(() => entityRepository);
-        }
+            => _entityRepository = entityRepository ?? throw new NullException(() => entityRepository);
 
         public string GetText()
         {
@@ -31,6 +29,7 @@ namespace JJ.Business.SaveText
             var result = new VoidResultDto();
 
             IValidator validator = new TextValidator(value);
+
             if (!validator.IsValid)
             {
                 return validator.ToCanonical();
@@ -48,6 +47,7 @@ namespace JJ.Business.SaveText
         private Entity GetEntity()
         {
             Entity entity = _entityRepository.TryGet(ENTITY_ID);
+
             if (entity == null)
             {
                 entity = _entityRepository.Create();

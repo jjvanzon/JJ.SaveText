@@ -21,17 +21,11 @@ namespace JJ.Presentation.SaveText.WinForms.Online
 			Show();
 		}
 
-		private void buttonSave_Click(object sender, EventArgs e)
-		{
-			Save();
-		}
+		private void buttonSave_Click(object sender, EventArgs e) => Save();
 
-		private void textBoxText_TextChanged(object sender, EventArgs e)
-		{
-			_viewModel.Text = textBoxText.Text;
-		}
+	    private void textBoxText_TextChanged(object sender, EventArgs e) => _viewModel.Text = textBoxText.Text;
 
-		private new void Show()
+	    private new void Show()
 		{
 			using (SaveTextAppServiceClient service = CreateAppServiceClient())
 			{
@@ -49,12 +43,9 @@ namespace JJ.Presentation.SaveText.WinForms.Online
 			}
 		}
 
-		private void SetTitlesAndLabels()
-		{
-			buttonSave.Text = ResourceHelper.Titles.SaveText;
-		}
+		private void SetTitlesAndLabels() => buttonSave.Text = ResourceHelper.Titles.SaveText;
 
-		private void ApplyViewModel()
+	    private void ApplyViewModel()
 		{
 			textBoxText.Text = _viewModel.Text;
 

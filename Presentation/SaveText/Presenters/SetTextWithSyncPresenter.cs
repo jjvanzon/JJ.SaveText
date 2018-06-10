@@ -20,10 +20,7 @@ namespace JJ.Presentation.SaveText.Presenters
             _textSetter = new TextSaver(entityRepository);
         }
 
-        public SaveTextViewModel Show()
-        {
-            return CreateViewModel();
-        }
+        public SaveTextViewModel Show() => CreateViewModel();
 
         public SaveTextViewModel Save(SaveTextViewModel viewModel)
         {

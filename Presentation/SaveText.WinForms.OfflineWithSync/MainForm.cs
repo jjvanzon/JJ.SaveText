@@ -35,15 +35,9 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
             Show();
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            Save();
-        }
+        private void buttonSave_Click(object sender, EventArgs e) => Save();
 
-        private void textBoxText_TextChanged(object sender, EventArgs e)
-        {
-            _viewModel.Text = textBoxText.Text;
-        }
+        private void textBoxText_TextChanged(object sender, EventArgs e) => _viewModel.Text = textBoxText.Text;
 
         private new void Show()
         {
@@ -86,10 +80,7 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
             labelValidationMessages.Text = sb.ToString();
         }
 
-        private void SetTitlesAndLabels()
-        {
-            buttonSave.Text = Titles.SaveText;
-        }
+        private void SetTitlesAndLabels() => buttonSave.Text = Titles.SaveText;
 
         private ISaveTextWithSyncPresenter CreatePresenter(IContext context)
         {
@@ -112,11 +103,8 @@ namespace JJ.Presentation.SaveText.WinForms.OfflineWithSync
 
         // Synchronization
 
-        private void InitializeTimerConditionalSynchronize()
-        {
-            timerSynchronization.Interval =
-                AppSettingsReader<IAppSettings>.Get(x => x.SynchronizationTimerIntervalInMilliseconds);
-        }
+        private void InitializeTimerConditionalSynchronize() => timerSynchronization.Interval =
+                                                                    AppSettingsReader<IAppSettings>.Get(x => x.SynchronizationTimerIntervalInMilliseconds);
 
         private void timerSynchronization_Tick(object sender, EventArgs e) => Async(ConditionalSynchronize);
 

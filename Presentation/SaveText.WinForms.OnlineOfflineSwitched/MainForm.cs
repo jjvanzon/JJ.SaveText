@@ -41,22 +41,13 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 
 		// Events
 
-		private void buttonSave_Click(object sender, EventArgs e)
-		{
-			Save();
-		}
+		private void buttonSave_Click(object sender, EventArgs e) => Save();
 
-		private void textBoxText_TextChanged(object sender, EventArgs e)
-		{
-			_viewModel.Text = textBoxText.Text;
-		}
+	    private void textBoxText_TextChanged(object sender, EventArgs e) => _viewModel.Text = textBoxText.Text;
 
-		private void buttonSwitchBetweenOnlineAndOffline_Click(object sender, EventArgs e)
-		{
-			SwitchBetweenOnlineAndOffline();
-		}
+	    private void buttonSwitchBetweenOnlineAndOffline_Click(object sender, EventArgs e) => SwitchBetweenOnlineAndOffline();
 
-		// Actions
+	    // Actions
 
 		private new void Show()
 		{
@@ -115,12 +106,9 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 			labelValidationMessages.Text = sb.ToString();
 		}
 
-		private void SetTitlesAndLabels()
-		{
-			buttonSave.Text = Titles.SaveText;
-		}
+		private void SetTitlesAndLabels() => buttonSave.Text = Titles.SaveText;
 
-		// Online / Offline
+	    // Online / Offline
 
 		private bool IsOnline
 		{

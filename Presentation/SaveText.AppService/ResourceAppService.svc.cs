@@ -8,22 +8,13 @@ namespace JJ.Presentation.SaveText.AppService
 {
 	public class ResourceAppService : IResourceAppService
 	{
-		public Messages GetMessages(string cultureName)
-		{
-			return ConvertResources<Resources.Messages, Messages>(cultureName);
-		}
+		public Messages GetMessages(string cultureName) => ConvertResources<Resources.Messages, Messages>(cultureName);
 
-		public Labels GetLabels(string cultureName)
-		{
-			return ConvertResources<Resources.Labels, Labels>(cultureName);
-		}
+	    public Labels GetLabels(string cultureName) => ConvertResources<Resources.Labels, Labels>(cultureName);
 
-		public Titles GetTitles(string cultureName)
-		{
-			return ConvertResources<Resources.Titles, Titles>(cultureName);
-		}
+	    public Titles GetTitles(string cultureName) => ConvertResources<Resources.Titles, Titles>(cultureName);
 
-		private TDest ConvertResources<TSource, TDest>(string cultureName)
+	    private TDest ConvertResources<TSource, TDest>(string cultureName)
 			where TDest : new()
 		{
 			SetCulture(cultureName);

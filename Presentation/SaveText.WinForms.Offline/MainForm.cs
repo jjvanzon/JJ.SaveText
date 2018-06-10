@@ -27,15 +27,9 @@ namespace JJ.Presentation.SaveText.WinForms.Offline
             Show();
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            Save();
-        }
+        private void buttonSave_Click(object sender, EventArgs e) => Save();
 
-        private void textBoxText_TextChanged(object sender, EventArgs e)
-        {
-            _viewModel.Text = textBoxText.Text;
-        }
+        private void textBoxText_TextChanged(object sender, EventArgs e) => _viewModel.Text = textBoxText.Text;
 
         private new void Show()
         {
@@ -67,10 +61,7 @@ namespace JJ.Presentation.SaveText.WinForms.Offline
             labelValidationMessages.Text = sb.ToString();
         }
 
-        private void SetTitlesAndLabels()
-        {
-            buttonSave.Text = Titles.SaveText;
-        }
+        private void SetTitlesAndLabels() => buttonSave.Text = Titles.SaveText;
 
         private ISaveTextPresenter CreatePresenter(IContext context)
         {
