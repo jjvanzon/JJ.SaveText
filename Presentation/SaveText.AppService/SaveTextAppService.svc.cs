@@ -15,9 +15,9 @@ namespace JJ.Presentation.SaveText.AppService
 
 			using (IContext context = PersistenceHelper.CreateContext())
 			{
-				IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
+				var entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
 				var presenter = new SaveTextPresenter(entityRepository);
-				var viewModel = presenter.Show();
+				SaveTextViewModel viewModel = presenter.Show();
 				return viewModel;
 			}
 		}
@@ -28,9 +28,9 @@ namespace JJ.Presentation.SaveText.AppService
 
 			using (IContext context = PersistenceHelper.CreateContext())
 			{
-				IEntityRepository entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
+				var entityRepository = PersistenceHelper.CreateRepository<IEntityRepository>(context);
 				var presenter = new SaveTextPresenter(entityRepository);
-				var viewModel2 = presenter.Save(viewModel);
+				SaveTextViewModel viewModel2 = presenter.Save(viewModel);
 				return viewModel2;
 			}
 		}

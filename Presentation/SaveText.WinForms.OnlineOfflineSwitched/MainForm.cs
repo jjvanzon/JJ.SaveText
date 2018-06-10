@@ -221,7 +221,7 @@ namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 
 		private SaveTextWithSyncPresenter CreatePresenter(IContext context)
 		{
-			IEntityRepository repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
+			var repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
 			return new SaveTextWithSyncPresenter(repository);
 		}
 

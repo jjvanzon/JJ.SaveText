@@ -1,132 +1,126 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Net;
-using System.IO;
-using JJ.Presentation.SaveText.Interface.ViewModels;
-using System.Text;
-using JJ.Framework.Xml.Linq;
+﻿using System.IO;
 using System.Linq;
+using System.Net;
+using System.Reflection;
+using System.Text;
 using System.Xml.Linq;
 using JJ.Framework.Common;
-using System.Reflection;
 using JJ.Framework.Configuration;
+using JJ.Framework.Exceptions.Basic;
+using JJ.Framework.Xml.Linq;
+using JJ.Presentation.SaveText.Interface.ViewModels;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+// ReSharper disable UnusedVariable
 
 namespace JJ.Presentation.SaveText.AppService.Tests
 {
-	[TestClass]
-	public class SaveTextAppService_OverHttp_Tests
-	{
-		private const string HTTP_METHOD_POST = "POST";
+    [TestClass]
+    public class SaveTextAppService_OverHttp_Tests
+    {
+        private const string HTTP_METHOD_POST = "POST";
 
-		[TestMethod]
-		public void Test_SaveTextAppService_OverHttp_Save()
-		{
-			try
-			{
-				string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
-				string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
-				byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
+        [TestMethod]
+        public void Test_SaveTextAppService_OverHttp_Save()
+        {
+            try
+            {
+                string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
+                string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
+                byte[] dataToSend = GetBytesToSendFromEmbeddedResource();
 
-				//byte[] dataToSend = GetBytesToSendFromViewModel();
+                //byte[] dataToSend = GetBytesToSendFromViewModel();
 
-				HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
+                HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
 
-				using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-				{
-					using (Stream responseStream = response.GetResponseStream())
-					{
-						using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-						{
-							string dataReceived = reader.ReadToEnd();
-							SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
-						}
-					}
-				}
-			}
-			catch (WebException ex)
-			{
-				Assert.Inconclusive(ex.Message);
-			}
-		}
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        if (responseStream == null)
+                        {
+                            throw new NullException(nameof(responseStream));
+                        }
 
-		[TestMethod]
-		public void Test_SaveTextAppService_OverHttp_Save_WithValidationMessages()
-		{
-			try
-			{
-			string url = "http://localhost:6371/savetextappservice.svc";
-			string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
-			byte[] dataToSend = EmbeddedResourceHelper.GetEmbeddedResourceBytes(Assembly.GetExecutingAssembly(), "TestResources", "Save_WithValidationMessages.xml");
+                        using (var reader = new StreamReader(responseStream, Encoding.UTF8))
+                        {
+                            string dataReceived = reader.ReadToEnd();
+                            SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
+                        }
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                Assert.Inconclusive(ex.Message);
+            }
+        }
 
-			HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
+        [TestMethod]
+        public void Test_SaveTextAppService_OverHttp_Save_WithValidationMessages()
+        {
+            try
+            {
+                string url = "http://localhost:6371/savetextappservice.svc";
+                string soapAction = "http://tempuri.org/ISaveTextAppService/Save";
+                byte[] dataToSend = EmbeddedResourceHelper.GetEmbeddedResourceBytes(
+                    Assembly.GetExecutingAssembly(),
+                    "TestResources",
+                    "Save_WithValidationMessages.xml");
 
-			using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-			{
-				using (Stream responseStream = response.GetResponseStream())
-				{
-					using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
-					{
-						string dataReceived = reader.ReadToEnd();
-						SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
-					}
-				}
-			}
-			}
-			catch (WebException ex)
-			{
-				Assert.Inconclusive(ex.Message);
-			}
-		}
+                HttpWebRequest request = CreateSoapRequest(url, soapAction, dataToSend);
 
-		private HttpWebRequest CreateSoapRequest(string url, string soapAction, byte[] content)
-		{
-			HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-			request.Method = HTTP_METHOD_POST;
-			request.ContentLength = content.Length;
-			request.ContentType = @"text/xml;charset=""utf-8""";
-			request.Accept = "text/xml";
-			request.Headers.Add("SOAPAction", soapAction);
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        if (responseStream == null) throw new NullException(nameof(responseStream));
 
-			Stream requestStream = request.GetRequestStream();
-			requestStream.Write(content, 0, content.Length);
+                        using (var reader = new StreamReader(responseStream, Encoding.UTF8))
+                        {
+                            string dataReceived = reader.ReadToEnd();
+                            SaveTextViewModel viewModel = ParseReceivedData(dataReceived);
+                        }
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                Assert.Inconclusive(ex.Message);
+            }
+        }
 
-			return request;
-		}
+        private HttpWebRequest CreateSoapRequest(string url, string soapAction, byte[] content)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = HTTP_METHOD_POST;
+            request.ContentLength = content.Length;
+            request.ContentType = @"text/xml;charset=""utf-8""";
+            request.Accept = "text/xml";
+            request.Headers.Add("SOAPAction", soapAction);
 
-		private byte[] GetBytesToSendFromEmbeddedResource()
-		{
-			return EmbeddedResourceHelper.GetEmbeddedResourceBytes(Assembly.GetExecutingAssembly(), "TestResources", "Save.xml");
-		}
+            Stream requestStream = request.GetRequestStream();
+            requestStream.Write(content, 0, content.Length);
 
-		private byte[] GetBytesToSendFromViewModel()
-		{
-			var converter = new ObjectToXmlConverter(XmlCasingEnum.UnmodifiedCase, mustGenerateNamespaces: true, rootElementName: "Save");
+            return request;
+        }
 
-			SaveTextViewModel viewModel = CreateViewModel();
-			string text = converter.ConvertToString(viewModel);
+        private byte[] GetBytesToSendFromEmbeddedResource() => EmbeddedResourceHelper.GetEmbeddedResourceBytes(
+            Assembly.GetExecutingAssembly(),
+            "TestResources",
+            "Save.xml");
 
-			throw new NotImplementedException();
-		}
+        private SaveTextViewModel ParseReceivedData(string data)
+        {
+            XNamespace def = "http://tempuri.org/";
+            //XNamespace vm = "http://schemas.datacontract.org/2004/07/JJ.Presentation.SaveText.ViewModels";
 
-		private SaveTextViewModel CreateViewModel()
-		{
-			return new SaveTextViewModel
-			{
-				Text = "Hi!",
-			};
-		}
+            XElement root = XElement.Parse(data);
+            XElement saveResult = root.Descendants(def + "SaveResult").Single();
 
-		private SaveTextViewModel ParseReceivedData(string data)
-		{
-			XNamespace def = "http://tempuri.org/";
-			//XNamespace vm = "http://schemas.datacontract.org/2004/07/JJ.Presentation.SaveText.ViewModels";
-
-			XElement root = XElement.Parse(data);
-			XElement saveResult = root.Descendants(def + "SaveResult").Single();
-
-			var converter = new XmlToObjectConverter<SaveTextViewModel>(XmlCasingEnum.UnmodifiedCase);
-			SaveTextViewModel viewModel = converter.Convert(saveResult);
-			return viewModel;
-		}
-	}
+            var converter = new XmlToObjectConverter<SaveTextViewModel>(XmlCasingEnum.UnmodifiedCase);
+            SaveTextViewModel viewModel = converter.Convert(saveResult);
+            return viewModel;
+        }
+    }
 }

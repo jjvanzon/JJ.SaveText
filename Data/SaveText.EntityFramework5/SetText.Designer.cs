@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\JJ\Dev\1. Products\2. Code\1. Software System\X\9. JJ\Data\SaveText.EntityFramework5\SaveText.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Source\JJs Software\JJ TFS\Data\SaveText.EntityFramework5\SetText.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

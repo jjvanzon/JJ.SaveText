@@ -10,7 +10,7 @@ namespace JJ.Presentation.SaveText.AppService.Helpers
         {
             if (cultureName == null) throw new NullException(() => cultureName);
 
-            CultureInfo cultureInfo = new CultureInfo(cultureName);
+            var cultureInfo = new CultureInfo(cultureName);
             Thread.CurrentThread.CurrentCulture = cultureInfo;
             Thread.CurrentThread.CurrentUICulture = cultureInfo;
         }

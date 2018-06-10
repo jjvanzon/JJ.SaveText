@@ -1,6 +1,5 @@
 ﻿using JJ.Presentation.SaveText.AppService.Interface;
 using JJ.Presentation.SaveText.AppService.Interface.Models;
-using System;
 using System.Globalization;
 using System.Reflection;
 using System.Threading;
@@ -46,7 +45,7 @@ namespace JJ.Presentation.SaveText.AppService
 
 		private void SetCulture(string cultureName)
 		{
-			CultureInfo cultureInfo; ;
+			CultureInfo cultureInfo;
 
 			if (!string.IsNullOrEmpty(cultureName))
 			{

@@ -1,7 +1,9 @@
-﻿namespace JJ.Presentation.SaveText.Mvc.Names
+﻿using JJ.Framework.Exceptions;
+
+namespace JJ.Presentation.SaveText.Mvc.Names
 {
-	internal class TempDataKeys
+	internal abstract class TempDataKeys
 	{
-		public const string ViewModel = "ViewModel";
+	    public void ViewModel() => throw new NameOfOnlyException();
 	}
 }
