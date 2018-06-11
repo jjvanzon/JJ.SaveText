@@ -107,9 +107,9 @@
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data.EntityFramework5\JJ.Framework.Data.EntityFramework5.csproj">
+    <ProjectReference Include="..\..\Framework\Data.EntityFramework\JJ.Framework.Data.EntityFramework.csproj">
       <Project>{9676e4c3-1a1f-45b8-8ffd-c398f14002e7}</Project>
-      <Name>JJ.Framework.Data.EntityFramework5</Name>
+      <Name>JJ.Framework.Data.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\Data.NHibernate\JJ.Framework.Data.NHibernate.csproj">
       <Project>{db783ed9-fde6-458f-a094-457b7f4283a0}</Project>
@@ -131,9 +131,9 @@
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Data.Canonical</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Data\SaveText.EntityFramework5\JJ.Data.SaveText.EntityFramework5.csproj">
+    <ProjectReference Include="..\..\Data\SaveText.EntityFramework\JJ.Data.SaveText.EntityFramework.csproj">
       <Project>{77ab85ce-6402-4aa3-a9a9-83121d5d9c6d}</Project>
-      <Name>JJ.Data.SaveText.EntityFramework5</Name>
+      <Name>JJ.Data.SaveText.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Data\SaveText.NHibernate\JJ.Data.SaveText.NHibernate.csproj">
       <Project>{48145ed7-5bb1-4ecb-9fb0-0dbd35b80ea9}</Project>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JJ.Data.SaveText.EntityFramework5
+namespace JJ.Data.SaveText.EntityFramework
 {
 
 	public partial class Entity

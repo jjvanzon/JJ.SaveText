@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Common", "Fram
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{E3DC759D-B004-4E6C-8381-D5D5C74A5B92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.EntityFramework5", "Framework\Data.EntityFramework5\JJ.Framework.Data.EntityFramework5.csproj", "{9676E4C3-1A1F-45B8-8FFD-C398F14002E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.EntityFramework", "Framework\Data.EntityFramework\JJ.Framework.Data.EntityFramework.csproj", "{9676E4C3-1A1F-45B8-8FFD-C398F14002E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzle.NCore.Framework NET 3.5", "Third Party\NPersist\Source Code\NCore\Framework\Puzzle.NCore.Framework NET 3.5.csproj", "{5FB1569E-253E-42A7-A4E8-B4651FC6DCA2}"
 EndProject
@@ -47,7 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText.DefaultRep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText.NHibernate", "Data\SaveText.NHibernate\JJ.Data.SaveText.NHibernate.csproj", "{48145ED7-5BB1-4ECB-9FB0-0DBD35B80EA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText.EntityFramework5", "Data\SaveText.EntityFramework5\JJ.Data.SaveText.EntityFramework5.csproj", "{77AB85CE-6402-4AA3-A9A9-83121D5D9C6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText.EntityFramework", "Data\SaveText.EntityFramework\JJ.Data.SaveText.EntityFramework.csproj", "{77AB85CE-6402-4AA3-A9A9-83121D5D9C6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText.Xml", "Data\SaveText.Xml\JJ.Data.SaveText.Xml.csproj", "{292046BB-5667-4231-B8AA-BAD57CD1B481}"
 EndProject
@@ -636,10 +636,10 @@ Global
 		SccProjectTopLevelParentUniqueName5 = JJ.SaveText.sln
 		SccProjectName5 = Framework/Data
 		SccLocalPath5 = Framework\\Data
-		SccProjectUniqueName6 = Framework\\Data.EntityFramework5\\JJ.Framework.Data.EntityFramework5.csproj
+		SccProjectUniqueName6 = Framework\\Data.EntityFramework\\JJ.Framework.Data.EntityFramework.csproj
 		SccProjectTopLevelParentUniqueName6 = JJ.SaveText.sln
-		SccProjectName6 = Framework/Data.EntityFramework5
-		SccLocalPath6 = Framework\\Data.EntityFramework5
+		SccProjectName6 = Framework/Data.EntityFramework
+		SccLocalPath6 = Framework\\Data.EntityFramework
 		SccProjectUniqueName7 = Third\u0020Party\\NPersist\\Source\u0020Code\\NCore\\Framework\\Puzzle.NCore.Framework\u0020NET\u00203.5.csproj
 		SccProjectTopLevelParentUniqueName7 = JJ.SaveText.sln
 		SccProjectName7 = Third\u0020Party/NPersist/Source\u0020Code/NCore/Framework
@@ -697,9 +697,9 @@ Global
 		SccProjectUniqueName21 = Data\\SaveText.NHibernate\\JJ.Data.SaveText.NHibernate.csproj
 		SccProjectName21 = Data/SaveText.NHibernate
 		SccLocalPath21 = Data\\SaveText.NHibernate
-		SccProjectUniqueName22 = Data\\SaveText.EntityFramework5\\JJ.Data.SaveText.EntityFramework5.csproj
-		SccProjectName22 = Data/SaveText.EntityFramework5
-		SccLocalPath22 = Data\\SaveText.EntityFramework5
+		SccProjectUniqueName22 = Data\\SaveText.EntityFramework\\JJ.Data.SaveText.EntityFramework.csproj
+		SccProjectName22 = Data/SaveText.EntityFramework
+		SccLocalPath22 = Data\\SaveText.EntityFramework
 		SccProjectUniqueName23 = Data\\SaveText.Xml\\JJ.Data.SaveText.Xml.csproj
 		SccProjectName23 = Data/SaveText.Xml
 		SccLocalPath23 = Data\\SaveText.Xml
