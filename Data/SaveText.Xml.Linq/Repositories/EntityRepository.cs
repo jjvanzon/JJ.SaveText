@@ -6,6 +6,7 @@ using JJ.Data.SaveText.DefaultRepositories.RepositoryInterfaces;
 using JJ.Framework.Data;
 using JJ.Framework.Data.Xml.Linq;
 using JJ.Framework.Exceptions.Basic;
+// ReSharper disable NotAccessedField.Local
 
 namespace JJ.Data.SaveText.Xml.Linq.Repositories
 {

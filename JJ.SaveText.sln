@@ -124,10 +124,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Soap.Tests.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject", "Presentation\SaveText.Unity.DotNet.Online.WwwObject\JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject.csproj", "{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentNHibernate", "Third Party\FluentNHibernate\Source Code\1.3\src\FluentNHibernate\FluentNHibernate.csproj", "{529145D5-6CC3-4016-89B5-826563024AF1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernate", "Third Party\NHibernate\Source Code\3.3.1.GA\src\NHibernate\NHibernate.csproj", "{5909BFE7-93CF-4E5F-BE22-6293368AF01D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.Canonical", "Business\Canonical\JJ.Business.Canonical.csproj", "{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Framework.Data.SqlClient", "Framework\Data.SqlClient\JJ.Framework.Data.SqlClient.csproj", "{CEB85F8E-D429-4510-95A5-47CC3069D412}"
@@ -499,18 +495,6 @@ Global
 		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
 		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{529145D5-6CC3-4016-89B5-826563024AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{529145D5-6CC3-4016-89B5-826563024AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{529145D5-6CC3-4016-89B5-826563024AF1}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{529145D5-6CC3-4016-89B5-826563024AF1}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
-		{529145D5-6CC3-4016-89B5-826563024AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{529145D5-6CC3-4016-89B5-826563024AF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -597,8 +581,6 @@ Global
 		{CEEB755D-DE12-4E70-816E-546C429B44B7} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{D3440F56-DBD9-4B17-84E5-532E1D6FFE24} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{9F0128B1-B662-474D-9B73-3FD8E9783B40} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
-		{529145D5-6CC3-4016-89B5-826563024AF1} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
-		{5909BFE7-93CF-4E5F-BE22-6293368AF01D} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{CEB85F8E-D429-4510-95A5-47CC3069D412} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 		{164520AA-2DB7-4405-9AE5-EB515527A33B} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
@@ -612,7 +594,7 @@ Global
 		SolutionGuid = {61121AD0-E62B-4E2A-8AF5-6956E15AE91E}
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 69
+		SccNumberOfProjects = 67
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://jjs-server:8080/tfs/defaultcollection
 		SccLocalPath0 = .
@@ -823,45 +805,37 @@ Global
 		SccProjectUniqueName58 = Presentation\\SaveText.Unity.DotNet.Online.WwwObject\\JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject.csproj
 		SccProjectName58 = Presentation/SaveText.Unity.DotNet.Online.WwwObject
 		SccLocalPath58 = Presentation\\SaveText.Unity.DotNet.Online.WwwObject
-		SccProjectUniqueName59 = Third\u0020Party\\FluentNHibernate\\Source\u0020Code\\1.3\\src\\FluentNHibernate\\FluentNHibernate.csproj
+		SccProjectUniqueName59 = Business\\Canonical\\JJ.Business.Canonical.csproj
 		SccProjectTopLevelParentUniqueName59 = JJ.SaveText.sln
-		SccProjectName59 = Third\u0020Party/FluentNHibernate/Source\u0020Code/1.3/src/FluentNHibernate
-		SccLocalPath59 = Third\u0020Party\\FluentNHibernate\\Source\u0020Code\\1.3\\src\\FluentNHibernate
-		SccProjectUniqueName60 = Third\u0020Party\\NHibernate\\Source\u0020Code\\3.3.1.GA\\src\\NHibernate\\NHibernate.csproj
+		SccProjectName59 = Business/Canonical
+		SccLocalPath59 = Business\\Canonical
+		SccProjectUniqueName60 = Framework\\Data.SqlClient\\JJ.Framework.Data.SqlClient.csproj
 		SccProjectTopLevelParentUniqueName60 = JJ.SaveText.sln
-		SccProjectName60 = Third\u0020Party/NHibernate/Source\u0020Code/3.3.1.GA/src/NHibernate
-		SccLocalPath60 = Third\u0020Party\\NHibernate\\Source\u0020Code\\3.3.1.GA\\src\\NHibernate
-		SccProjectUniqueName61 = Business\\Canonical\\JJ.Business.Canonical.csproj
+		SccProjectName60 = Framework/Data.SqlClient
+		SccLocalPath60 = Framework\\Data.SqlClient
+		SccProjectUniqueName61 = Framework\\Web\\JJ.Framework.Web.csproj
 		SccProjectTopLevelParentUniqueName61 = JJ.SaveText.sln
-		SccProjectName61 = Business/Canonical
-		SccLocalPath61 = Business\\Canonical
-		SccProjectUniqueName62 = Framework\\Data.SqlClient\\JJ.Framework.Data.SqlClient.csproj
+		SccProjectName61 = Framework/Web
+		SccLocalPath61 = Framework\\Web
+		SccProjectUniqueName62 = Framework\\Drawing\\JJ.Framework.Drawing.csproj
 		SccProjectTopLevelParentUniqueName62 = JJ.SaveText.sln
-		SccProjectName62 = Framework/Data.SqlClient
-		SccLocalPath62 = Framework\\Data.SqlClient
-		SccProjectUniqueName63 = Framework\\Web\\JJ.Framework.Web.csproj
+		SccProjectName62 = Framework/Drawing
+		SccLocalPath62 = Framework\\Drawing
+		SccProjectUniqueName63 = Framework\\VectorGraphics\\JJ.Framework.VectorGraphics.csproj
 		SccProjectTopLevelParentUniqueName63 = JJ.SaveText.sln
-		SccProjectName63 = Framework/Web
-		SccLocalPath63 = Framework\\Web
-		SccProjectUniqueName64 = Framework\\Drawing\\JJ.Framework.Drawing.csproj
+		SccProjectName63 = Framework/VectorGraphics
+		SccLocalPath63 = Framework\\VectorGraphics
+		SccProjectUniqueName64 = Framework\\Business\\JJ.Framework.Business.csproj
 		SccProjectTopLevelParentUniqueName64 = JJ.SaveText.sln
-		SccProjectName64 = Framework/Drawing
-		SccLocalPath64 = Framework\\Drawing
-		SccProjectUniqueName65 = Framework\\VectorGraphics\\JJ.Framework.VectorGraphics.csproj
+		SccProjectName64 = Framework/Business
+		SccLocalPath64 = Framework\\Business
+		SccProjectUniqueName65 = Framework\\Exceptions\\JJ.Framework.Exceptions.csproj
 		SccProjectTopLevelParentUniqueName65 = JJ.SaveText.sln
-		SccProjectName65 = Framework/VectorGraphics
-		SccLocalPath65 = Framework\\VectorGraphics
-		SccProjectUniqueName66 = Framework\\Business\\JJ.Framework.Business.csproj
+		SccProjectName65 = Framework/Exceptions
+		SccLocalPath65 = Framework\\Exceptions
+		SccProjectUniqueName66 = Framework\\Text\\JJ.Framework.Text.csproj
 		SccProjectTopLevelParentUniqueName66 = JJ.SaveText.sln
-		SccProjectName66 = Framework/Business
-		SccLocalPath66 = Framework\\Business
-		SccProjectUniqueName67 = Framework\\Exceptions\\JJ.Framework.Exceptions.csproj
-		SccProjectTopLevelParentUniqueName67 = JJ.SaveText.sln
-		SccProjectName67 = Framework/Exceptions
-		SccLocalPath67 = Framework\\Exceptions
-		SccProjectUniqueName68 = Framework\\Text\\JJ.Framework.Text.csproj
-		SccProjectTopLevelParentUniqueName68 = JJ.SaveText.sln
-		SccProjectName68 = Framework/Text
-		SccLocalPath68 = Framework\\Text
+		SccProjectName66 = Framework/Text
+		SccLocalPath66 = Framework\\Text
 	EndGlobalSection
 EndGlobal
