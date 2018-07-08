@@ -1,5 +1,4 @@
-﻿using JJ.Demos.ReturnActions.ViewModels.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace JJ.Demos.ReturnActions.ViewModels
 {

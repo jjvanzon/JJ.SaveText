@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JJ.Presentation.SaveText.AppService.Tests</RootNamespace>
     <AssemblyName>JJ.Presentation.SaveText.AppService.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -72,6 +72,10 @@
     <ProjectReference Include="..\..\Framework\Configuration\JJ.Framework.Configuration.csproj">
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
+      <Project>{FA44ABA2-8E13-402C-A5A0-8D73C74B5181}</Project>
+      <Name>JJ.Framework.Exceptions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\Soap\JJ.Framework.Soap.csproj">
       <Project>{2b86213c-a758-4db9-bd37-5e7d2f4d7c4d}</Project>

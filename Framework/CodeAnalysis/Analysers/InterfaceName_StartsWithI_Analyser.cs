@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using JetBrains.Annotations;
 using JJ.Framework.CodeAnalysis.Names;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -6,6 +7,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace JJ.Framework.CodeAnalysis.Analysers
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
+	[UsedImplicitly]
 	public class InterfaceName_StartsWithI_Analyser : DiagnosticAnalyzer
 	{
 		private static readonly DiagnosticDescriptor _rule = new DiagnosticDescriptor(
@@ -20,12 +22,9 @@ namespace JJ.Framework.CodeAnalysis.Analysers
 
 		public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => _supportedDiagnostics;
 
-		public override void Initialize(AnalysisContext context)
-		{
-			context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
-		}
+		public override void Initialize(AnalysisContext context) => context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
 
-		private static void AnalyzeSymbol(SymbolAnalysisContext context)
+	    private static void AnalyzeSymbol(SymbolAnalysisContext context)
 		{
 			var castedSymbol = (INamedTypeSymbol)context.Symbol;
 

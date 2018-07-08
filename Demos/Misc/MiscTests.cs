@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using JJ.Framework.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 // ReSharper disable UnusedVariable
 // ReSharper disable HeuristicUnreachableCode
 // ReSharper disable ExpressionIsAlwaysNull
@@ -14,152 +16,155 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JJ.Demos.Misc
 {
-	[TestClass]
-	public class MiscTests
-	{
-		[TestMethod]
-		public void Test_Linq_Take_MoreThanCollectionSize()
-		{
-			IList<int> source = new[] { 1, 2, 3 };
-			IList<int> dest = source.Take(5).ToArray();
-			AssertHelper.AreEqual(3, () => dest.Count);
-		}
+    [TestClass]
+    public class MiscTests
+    {
+        [TestMethod]
+        public void Test_TimeSpan_Parse()
+        {
+            TimeSpan timeSpan = TimeSpan.Parse("1:00:00:00", new CultureInfo("en-US"));
+        }
 
-		[TestMethod]
-		public void Test_CultureInfo_TextInfo_ListSeparator_Chinese_Etc()
-		{
-			var chineseCulture = new CultureInfo("zh-CN");
-			var russianCulture = new CultureInfo("ru-RU");
-			var dutchCulture = new CultureInfo("nl-NL");
-			var enUSCulture = new CultureInfo("en-US");
+        [TestMethod]
+        public void Test_Linq_Take_MoreThanCollectionSize()
+        {
+            IList<int> source = new[] { 1, 2, 3 };
+            IList<int> dest = source.Take(5).ToArray();
+            AssertHelper.AreEqual(3, () => dest.Count);
+        }
 
-			// These are not exactly what you would expect in terms of punctuation, so in most cases there is no point using it.
-			string chineseListSeparator = chineseCulture.TextInfo.ListSeparator;
-			string russianListSeparator = russianCulture.TextInfo.ListSeparator;
-			string dutchListSeparator = dutchCulture.TextInfo.ListSeparator;
-			string enUSListSeparator = enUSCulture.TextInfo.ListSeparator;
-		}
+        [TestMethod]
+        public void Test_CultureInfo_TextInfo_ListSeparator_Chinese_Etc()
+        {
+            var chineseCulture = new CultureInfo("zh-CN");
+            var russianCulture = new CultureInfo("ru-RU");
+            var dutchCulture = new CultureInfo("nl-NL");
+            var enUSCulture = new CultureInfo("en-US");
 
-		[TestMethod]
-		public void Test_Max_Simple()
-		{
-			int[] values = { 10, 13, -10, 0, 1, -1, 40, 20 };
+            // These are not exactly what you would expect in terms of punctuation, so in most cases there is no point using it.
+            string chineseListSeparator = chineseCulture.TextInfo.ListSeparator;
+            string russianListSeparator = russianCulture.TextInfo.ListSeparator;
+            string dutchListSeparator = dutchCulture.TextInfo.ListSeparator;
+            string enUSListSeparator = enUSCulture.TextInfo.ListSeparator;
+        }
 
-			int count = values.Length;
+        [TestMethod]
+        public void Test_Max_Simple()
+        {
+            int[] values = { 10, 13, -10, 0, 1, -1, 40, 20 };
 
-			int max = int.MinValue;
-			for (int i = 0; i < count; i++)
-			{
-				int value = values[i];
+            int count = values.Length;
 
-				if (max < value)
-				{
-					max = value;
-				}
-			}
-		}
+            int max = int.MinValue;
+            for (int i = 0; i < count; i++)
+            {
+                int value = values[i];
 
-		[TestMethod]
-		public void Test_Max_With_Disappearing_Beginning()
-		{
-			int[] values = { 10, 13, -10, 0, 1, -1, 40, 20 };
+                if (max < value)
+                {
+                    max = value;
+                }
+            }
+        }
 
-			int count = values.Length;
+        [TestMethod]
+        public void Test_Max_With_Disappearing_Beginning()
+        {
+            int[] values = { 10, 13, -10, 0, 1, -1, 40, 20 };
 
-			// Array index is the value index at which we start counting
-			var maxArray = new int[count];
+            int count = values.Length;
 
-			for (int i = 0; i < count; i++)
-			{
-				int max = int.MinValue;
+            // Array index is the value index at which we start counting
+            var maxArray = new int[count];
 
-				for (int j = i; j < count; j++)
-				{
-					int value = values[j];
+            for (int i = 0; i < count; i++)
+            {
+                int max = int.MinValue;
 
-					if (max < value)
-					{
-						max = value;
-					}
-				}
+                for (int j = i; j < count; j++)
+                {
+                    int value = values[j];
 
-				maxArray[i] = max;
-			}
+                    if (max < value)
+                    {
+                        max = value;
+                    }
+                }
 
-			// If a value is added, you have to compare the max value in the arrays
-			// with the new value.
-		}
+                maxArray[i] = max;
+            }
 
-		[TestMethod]
-		public void Test_Misc_NaNCheck_AfterNumberCheck()
-		{
-			const double value = double.NaN;
+            // If a value is added, you have to compare the max value in the arrays
+            // with the new value.
+        }
 
-			// ReSharper disable once ConditionIsAlwaysTrueOrFalse
-			if (value < 0.0)
-			{
-				// ReSharper disable once HeuristicUnreachableCode
-				int bla = 0;
-			}
+        [TestMethod]
+        public void Test_Misc_NaNCheck_AfterNumberCheck()
+        {
+            const double value = double.NaN;
 
-			if (double.IsNaN(value))
-			{
-				int bla = 0;
-			}
-		}
+            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
+            if (value < 0.0)
+            {
+                // ReSharper disable once HeuristicUnreachableCode
+                int bla = 0;
+            }
 
-		[TestMethod]
-		public void Test_Misc_PlusOperatorOnStringsWithNull_NoException()
-		{
-			string str1 = null;
-			string str2 = "bla";
-			string str3 = "bla2";
-			string str4 = str1 + str2 + str3;
-		}
+            if (double.IsNaN(value))
+            {
+                int bla = 0;
+            }
+        }
 
-		[TestMethod]
-		public void Test_Misc_CollectionInitializers()
-		{
-			var myCollection = new MyCollectionType
-			{
-				{ 10, 10 }
-			};
+        [TestMethod]
+        public void Test_Misc_PlusOperatorOnStringsWithNull_NoException()
+        {
+            string str1 = null;
+            string str2 = "bla";
+            string str3 = "bla2";
+            string str4 = str1 + str2 + str3;
+        }
 
-			foreach (int x in myCollection)
-			{ }
-		}
+        [TestMethod]
+        public void Test_Misc_CollectionInitializers()
+        {
+            var myCollection = new MyCollectionType
+            {
+                { 10, 10 }
+            };
 
-		private class MyCollectionType : IEnumerable
-		{
-			private readonly int[] _underlyingArray = new int[2];
+            foreach (int x in myCollection) { }
+        }
 
-			//public IEnumerator<int> GetEnumerator()
-			//{
-			//	return ((IEnumerable<int>)_underlyingArray).GetEnumerator();
-			//}
+        private class MyCollectionType : IEnumerable
+        {
+            private readonly int[] _underlyingArray = new int[2];
 
-			IEnumerator IEnumerable.GetEnumerator() => _underlyingArray.GetEnumerator();
+            //public IEnumerator<int> GetEnumerator()
+            //{
+            //	return ((IEnumerable<int>)_underlyingArray).GetEnumerator();
+            //}
 
-			//public void Add(int bla)
-			//{ }
+            IEnumerator IEnumerable.GetEnumerator() => _underlyingArray.GetEnumerator();
 
-			public void Add(int bla, int bla2)
-			{ }
-		}
+            //public void Add(int bla)
+            //{ }
 
-		[TestMethod]
-		public void Test_Misc_ForEach()
-		{
-			var myCollection = new MyCollectionType2();
-			foreach (int x in myCollection)
-			{ }
-		}
+            public void Add(int bla, int bla2) { }
+        }
 
-		private class MyCollectionType2
-		{
-			public bool MoveNext() => false;
-			public int Current { get; set; }
-			public IEnumerator GetEnumerator() => new int[0].GetEnumerator();
-		}
-	}
+        [TestMethod]
+        public void Test_Misc_ForEach()
+        {
+            var myCollection = new MyCollectionType2();
+            foreach (int x in myCollection) { }
+        }
+
+        private class MyCollectionType2
+        {
+            public bool MoveNext() => false;
+            public int Current { get; set; }
+            public IEnumerator GetEnumerator() => new int[0].GetEnumerator();
+        }
+    }
 }

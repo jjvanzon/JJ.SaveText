@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using JetBrains.Annotations;
 using JJ.Framework.Text;
 
 // ReSharper disable ForCanBeConvertedToForeach
 
 namespace JJ.Framework.Web
 {
+    [PublicAPI]
 	public class UrlParser
 	{
 		/// <summary>
@@ -37,7 +39,7 @@ namespace JJ.Framework.Web
 				}
 
 				default:
-					throw new Exception(string.Format("url cannot contain more than one ':'. url = '{0}'.", url));
+					throw new Exception($"url cannot contain more than one ':'. url = '{url}'.");
 			}
 		}
 

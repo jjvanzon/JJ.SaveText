@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using JJ.Data.Canonical;
 using JJ.Framework.Business;
 using JJ.Framework.Collections;
@@ -8,7 +9,7 @@ using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.Canonical
 {
-	// ReSharper disable once InconsistentNaming
+	[PublicAPI]
 	public static class ResultExtensions
 	{
 		// DTO

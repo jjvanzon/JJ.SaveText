@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Immutable;
+using JetBrains.Annotations;
 using JJ.Framework.CodeAnalysis.Names;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -7,6 +8,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace JJ.Framework.CodeAnalysis.Analysers
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
+	[UsedImplicitly]
 	public class Fields_MustBePrivateOrProtected_Analyser : DiagnosticAnalyzer
 	{
 		private static readonly DiagnosticDescriptor _rule = new DiagnosticDescriptor(
@@ -21,12 +23,9 @@ namespace JJ.Framework.CodeAnalysis.Analysers
 
 		public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => _supportedDiagnostics;
 
-		public override void Initialize(AnalysisContext context)
-		{
-			context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.Field);
-		}
+		public override void Initialize(AnalysisContext context) => context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.Field);
 
-		private static void AnalyzeSymbol(SymbolAnalysisContext context)
+	    private static void AnalyzeSymbol(SymbolAnalysisContext context)
 		{
 			var castedSymbol = (IFieldSymbol)context.Symbol;
 
@@ -58,7 +57,7 @@ namespace JJ.Framework.CodeAnalysis.Analysers
 					return false;
 
 				default:
-					throw new Exception(string.Format("{0} {1} is not supported.", nameof(Accessibility), accessibility));
+					throw new Exception($"{new { accessibility }} is not supported.");
 			}
 		}
 	}

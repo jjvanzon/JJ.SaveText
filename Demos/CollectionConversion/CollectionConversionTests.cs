@@ -1,6 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using JJ.Demos.CollectionConversion.Helpers;
+// ReSharper disable HeuristicUnreachableCode
+// ReSharper disable UnusedVariable
+#pragma warning disable 162
 
 namespace JJ.Demos.CollectionConversion
 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using JetBrains.Annotations;
 using JJ.Data.Canonical;
 using JJ.Framework.Business;
 using JJ.Framework.Collections;
@@ -6,6 +7,7 @@ using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.Canonical
 {
+	[PublicAPI]
 	public static class ResultHelper
 	{
 		// Canonical

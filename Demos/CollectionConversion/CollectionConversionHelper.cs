@@ -112,20 +112,22 @@ namespace JJ.Demos.CollectionConversion
 			foreach (ViewModel viewModel in viewModels)
 			{
 				Entity entity = repository.TryGet(viewModel.ID);
-				if (entity == null)
-				{
-					insertedEntities.Add(entity);
-				}
-				else
-				{
-					updatedEntities.Add(entity);
-				}
+			    bool isNew = entity == null;
 
 				entity = viewModel.ToEntity(repository);
-			}
 
-			// Delete
-			IEnumerable<Entity> entitiesToDelete = existingEntities.Except(insertedEntities)
+			    if (isNew)
+			    {
+			        insertedEntities.Add(entity);
+			    }
+			    else
+			    {
+			        updatedEntities.Add(entity);
+			    }
+		    }
+
+            // Delete
+            IEnumerable<Entity> entitiesToDelete = existingEntities.Except(insertedEntities)
 																   .Except(updatedEntities);
 
 			foreach (Entity entityToDelete in entitiesToDelete)

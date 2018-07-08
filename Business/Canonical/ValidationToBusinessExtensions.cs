@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using JetBrains.Annotations;
 using JJ.Framework.Business;
 using JJ.Framework.Collections;
 using JJ.Framework.Exceptions.Basic;
@@ -8,7 +8,7 @@ using JJ.Framework.Validation;
 
 namespace JJ.Business.Canonical
 {
-	// ReSharper disable once InconsistentNaming
+	[PublicAPI]
 	public static class ValidationToBusinessExtensions
 	{
 		public static VoidResult ToResult(this IValidator validator) => validator.ToCanonical().ToBusiness();

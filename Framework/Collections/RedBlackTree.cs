@@ -17,27 +17,25 @@ Retrieved from: http://en.literateprograms.org/Red-black_tree_(Java)?oldid=19200
 */
 
 using System;
+using JetBrains.Annotations;
 
 namespace JJ.Framework.Collections
 {
-
 	/// <summary>
 	/// Provides insert, delete and lookup operators that all have complexity O(log n).
 	/// It can also at any time return the maximum and minimum with the same performance.
 	/// It will prevent duplicates from being added (duplicates are ignored).
 	/// You can use key-value pairs, instead of just single values.
 	/// </summary>
+	[PublicAPI]
 	public class RedBlackTree<TKey, TValue>
 		where TKey : IComparable
 	{
 		private RedBlackTreeNode<TKey, TValue> _root;
 
-		private static RedBlackTreeColorEnum NullCoalescedNodeColor(RedBlackTreeNode<TKey, TValue> node)
-		{
-			return node?.Color ?? RedBlackTreeColorEnum.Black;
-		}
+		private static RedBlackTreeColorEnum NullCoalescedNodeColor(RedBlackTreeNode<TKey, TValue> node) => node?.Color ?? RedBlackTreeColorEnum.Black;
 
-		public TValue Lookup(TKey key)
+	    public TValue Lookup(TKey key)
 		{
 			RedBlackTreeNode<TKey, TValue> node = LookupNode(key);
 

@@ -12,6 +12,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 // ReSharper disable UnusedTupleComponentInReturnValue
 // ReSharper disable UnusedMember.Local
 // ReSharper disable ArrangeAccessorOwnerBody
+// ReSharper disable ArrangeMethodOrOperatorBody
 #pragma warning disable 219
 #pragma warning disable IDE0020 // Use pattern matching
 #pragma warning disable IDE0018 // Inline variable declaration
@@ -50,10 +51,7 @@ namespace JJ.Demos.Misc
 		{
 			int result = localFunction(12);
 
-			int localFunction(int input)
-			{
-				return input + 10;
-			}
+			int localFunction(int input) => input + 10;
 		}
 
 		[TestMethod]

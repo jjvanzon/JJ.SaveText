@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using JetBrains.Annotations;
 using JJ.Framework.Exceptions.Aggregates;
 using JJ.Framework.Reflection;
+
 #pragma warning disable 1584, 1711, 1572, 1581, 1580
 
 namespace JJ.Framework.Collections
 {
+	[PublicAPI]
 	public static class CollectionExtensions
 	{
 		public static void Add<T>(this IList<T> collection, params T[] items)
@@ -51,14 +54,11 @@ namespace JJ.Framework.Collections
 
 		public static List<TItem> AsList<TItem>(this TItem item) => new List<TItem> { item };
 
-		public static IEnumerable<T> Concat<T>(this IEnumerable<T> enumerable, T x)
-		{
-			if (enumerable == null) throw new ArgumentNullException(nameof(enumerable));
+		public static IEnumerable<T> Concat<T>(this IEnumerable<T> first, T second) => first.Concat(new[] { second });
 
-			return enumerable.Concat(new[] { x });
-		}
+		public static IEnumerable<T> Concat<T>(this IEnumerable<T> first, params T[] second) => first.Concat((IEnumerable<T>)second);
 
-		public static IEnumerable<T> Concat<T>(this T x, IEnumerable<T> enumerable) => new[] { x }.Concat(enumerable);
+		public static IEnumerable<T> Concat<T>(this T first, IEnumerable<T> second) => new[] { first }.Concat(second);
 
 		public static IEnumerable<TItem> Distinct<TItem, TKey>(this IEnumerable<TItem> enumerable, Func<TItem, TKey> keySelector)
 		{
@@ -328,9 +328,7 @@ namespace JJ.Framework.Collections
 		public static void Remove<T>(this Queue<T> stack) => stack.Dequeue();
 
 		public static double Product<TSource>(this IEnumerable<TSource> collection, Func<TSource, double> selector)
-		{
-			return collection.Select(selector).Product();
-		}
+			=> collection.Select(selector).Product();
 
 		public static double Product(this IEnumerable<double> collection)
 		{
@@ -473,11 +471,17 @@ namespace JJ.Framework.Collections
 
 		public static HashSet<T> ToHashSet<T>(this IEnumerable<T> source)
 		{
-			if (source == null) throw new ArgumentNullException(nameof(source));
+			switch (source)
+			{
+				case null:
+					throw new ArgumentNullException(nameof(source));
 
-			if (source is HashSet<T> hashSet) return hashSet;
+				case HashSet<T> hashSet:
+					return hashSet;
 
-			return new HashSet<T>(source);
+				default:
+					return new HashSet<T>(source);
+			}
 		}
 
 		public static Dictionary<TKey, IList<TItem>> ToNonUniqueDictionary<TKey, TItem>(
@@ -633,14 +637,11 @@ namespace JJ.Framework.Collections
 			return true;
 		}
 
-		public static IEnumerable<T> Union<T>(this IEnumerable<T> enumerable, T x)
-		{
-			if (enumerable == null) throw new ArgumentNullException(nameof(enumerable));
+		public static IEnumerable<T> Union<T>(this IEnumerable<T> first, T second) => first.Union(new[] { second });
 
-			return enumerable.Union(new[] { x });
-		}
+		public static IEnumerable<T> Union<T>(this IEnumerable<T> first, params T[] second) => first.Union((IEnumerable<T>)second);
 
-		public static IEnumerable<T> Union<T>(this T x, IEnumerable<T> enumerable) => new[] { x }.Union(enumerable);
+		public static IEnumerable<T> Union<T>(this T first, IEnumerable<T> second) => new[] { first }.Union(second);
 
 		/// <summary>
 		/// Overload of Zip when you do not want to produce a result,

@@ -1,377 +1,347 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using JJ.Framework.Configuration;
-using JJ.Framework.Data.Tests.Model;
-using JJ.Framework.Testing;
-using JJ.Framework.Logging;
-using JJ.Framework.Data.Tests.Helpers;
 using System.Data.SqlClient;
+using JJ.Framework.Configuration;
+using JJ.Framework.Data.Tests.Helpers;
+using JJ.Framework.Data.Tests.Model;
+using JJ.Framework.Logging;
+using JJ.Framework.Testing;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+// ReSharper disable UnusedVariable
+// ReSharper disable AccessToDisposedClosure
+// ReSharper disable JoinDeclarationAndInitializer
 
 namespace JJ.Framework.Data.Tests
 {
-	[TestClass]
-	public class PersistenceTests
-	{
-		private const int EXISTING_THING_ID = 1;
-		private const int NON_EXISTENT_THING_ID = 0;
+    [TestClass]
+    public class PersistenceTests
+    {
+        private const int EXISTING_THING_ID = 1;
+        private const int NON_EXISTENT_THING_ID = 0;
 
-		// CreateContext
+        // CreateContext
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_CreateContext()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_CreateContext(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_CreateContext()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_CreateContext(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_CreateContext()
-		{
-			string contextType = GetNPersistContextType();
-			Test_Persistence_CreateContext(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NPersist_CreateContext()
+        {
+            string contextType = GetNPersistContextType();
+            Test_Persistence_CreateContext(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_CreateContext()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_CreateContext(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_CreateContext()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_CreateContext(contextType);
+        }
 
-		private void Test_Persistence_CreateContext(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{ }
-		}
+        private void Test_Persistence_CreateContext(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType)) { }
+        }
 
-		// Get
+        // Get
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_Get()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_Get(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_Get()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_Get(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_Get()
-		{
-			string contextType = GetNPersistContextType();
+        [TestMethod]
+        public void Test_Persistence_NPersist_Get()
+        {
+            string contextType = GetNPersistContextType();
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_Get(contextType);
-			});
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_Get(contextType));
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_Get()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_Get(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_Get()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_Get(contextType);
+        }
 
-		private void Test_Persistence_Get(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity;
+        private void Test_Persistence_Get(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                Thing entity;
 
-				// Get existing
-				entity = context.Get<Thing>(EXISTING_THING_ID);
-				int id = entity.ID;
-				string name = entity.Name;
+                // Get existing
+                entity = context.Get<Thing>(EXISTING_THING_ID);
+                int id = entity.ID;
+                string name = entity.Name;
 
-				// Get non-existent
-				AssertHelper.ThrowsException(() => entity = context.Get<Thing>(NON_EXISTENT_THING_ID));
-			}
-		}
+                // Get non-existent
+                AssertHelper.ThrowsException(() => entity = context.Get<Thing>(NON_EXISTENT_THING_ID));
+            }
+        }
 
-		// TryGet
+        // TryGet
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_TryGet()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_TryGet(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_TryGet()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_TryGet(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_TryGet()
-		{
-			string contextType = GetNPersistContextType();
+        [TestMethod]
+        public void Test_Persistence_NPersist_TryGet()
+        {
+            string contextType = GetNPersistContextType();
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_TryGet(contextType);
-			});
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_TryGet(contextType));
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_TryGet()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_TryGet(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_TryGet()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_TryGet(contextType);
+        }
 
-		private void Test_Persistence_TryGet(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity;
+        private void Test_Persistence_TryGet(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                Thing entity;
 
-				// Try get existing
-				entity = context.TryGet<Thing>(EXISTING_THING_ID);
-				int id = entity.ID;
-				string name = entity.Name;
+                // Try get existing
+                entity = context.TryGet<Thing>(EXISTING_THING_ID);
+                int id = entity.ID;
+                string name = entity.Name;
 
-				// Try get non-existent
-				entity = context.TryGet<Thing>(NON_EXISTENT_THING_ID);
-				Assert.IsNull(entity);				
-			}
-		}
+                // Try get non-existent
+                entity = context.TryGet<Thing>(NON_EXISTENT_THING_ID);
+                Assert.IsNull(entity);
+            }
+        }
 
-		// Create
+        // Create
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_Create()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_Create(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_Create()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_Create(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_Create()
-		{
-			string contextType = GetNPersistContextType();
+        [TestMethod]
+        public void Test_Persistence_NPersist_Create()
+        {
+            string contextType = GetNPersistContextType();
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_Create(contextType);
-			});
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_Create(contextType));
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_Create()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_Create(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_Create()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_Create(contextType);
+        }
 
-		private void Test_Persistence_Create(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity = context.Create<Thing>();
-				entity.Name = "Thing was created";
-				context.Commit();
-			}
-		}
+        private void Test_Persistence_Create(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                var entity = context.Create<Thing>();
+                entity.Name = "Thing was created";
+                context.Commit();
+            }
+        }
 
-		// Insert
+        // Insert
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_Insert()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_Insert(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_Insert()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_Insert(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_Insert()
-		{
-			string contextType = GetNPersistContextType();
+        [TestMethod]
+        public void Test_Persistence_NPersist_Insert()
+        {
+            string contextType = GetNPersistContextType();
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_Insert(contextType);
-			});
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_Insert(contextType));
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_Insert()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_Insert(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_Insert()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_Insert(contextType);
+        }
 
-		private void Test_Persistence_Insert(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity = new Thing { Name = "Thing was inserted" };
-				context.Insert(entity);
-				context.Commit();
-			}
-		}
+        private void Test_Persistence_Insert(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                var entity = new Thing { Name = "Thing was inserted" };
+                context.Insert(entity);
+                context.Commit();
+            }
+        }
 
-		// Update
+        // Update
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_Update()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_Update(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_Update()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_Update(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_Update()
-		{
-			string contextType = GetNPersistContextType();
+        [TestMethod]
+        public void Test_Persistence_NPersist_Update()
+        {
+            string contextType = GetNPersistContextType();
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_Update(contextType);
-			});
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_Update(contextType));
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_Update()
-		{
-			Assert.Inconclusive("I think my EntityFramework5 stuff stopped working since some Visual Studio update?");
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_Update()
+        {
+            Assert.Inconclusive("I think my EntityFramework stuff stopped working since some Visual Studio update?");
 
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_Update(contextType);
-		}
+            // ReSharper disable once HeuristicUnreachableCode
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_Update(contextType);
+        }
 
-		private void Test_Persistence_Update(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity = context.Get<Thing>(1);
-				entity.Name += "Thing was updated";
-				context.Update(entity);
-			}
-		}
+        private void Test_Persistence_Update(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                var entity = context.Get<Thing>(1);
+                entity.Name += "Thing was updated";
+                context.Update(entity);
+            }
+        }
 
-		// Delete
+        // Delete
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_Delete()
-		{
-			string contextType = GetNHibernateContextType();
-			Test_Persistence_Delete(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_Delete()
+        {
+            string contextType = GetNHibernateContextType();
+            Test_Persistence_Delete(contextType);
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_Delete()
-		{
-			string contextType = GetNPersistContextType();
+        [TestMethod]
+        public void Test_Persistence_NPersist_Delete()
+        {
+            string contextType = GetNPersistContextType();
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_Delete(contextType);
-			});
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_Delete(contextType));
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_Delete()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_Delete(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_Delete()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_Delete(contextType);
+        }
 
-		private void Test_Persistence_Delete(string contextType)
-		{
-			int id;
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity = context.Create<Thing>();
-				entity.Name = "Thing was created";
-				context.Commit();
-				id = entity.ID;
-			}
+        private void Test_Persistence_Delete(string contextType)
+        {
+            int id;
 
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				Thing entity = context.Get<Thing>(id);
-				context.Delete(entity);
-				context.Commit();
-			}
-		}
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                var entity = context.Create<Thing>();
+                entity.Name = "Thing was created";
+                context.Commit();
+                id = entity.ID;
+            }
 
-		// Query
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                var entity = context.Get<Thing>(id);
+                context.Delete(entity);
+                context.Commit();
+            }
+        }
 
-		[TestMethod]
-		public void Test_Persistence_NHibernate_Query()
-		{
-			string contextType = GetNHibernateContextType();
+        // Query
 
-			try
-			{
-				Test_Persistence_Query(contextType);
-			}
-			catch (Exception ex)
-			{
-				// This is the expected exception message.
-				if (string.Equals(ex.Message, "Use ISession.QueryOver<TEntity> instead."))
-				{
-					return;
-				}
+        [TestMethod]
+        public void Test_Persistence_NHibernate_Query()
+        {
+            string contextType = GetNHibernateContextType();
 
-				// This handles the case where the database is not available.
-				Exception innerMostException = ExceptionHelper.GetInnermostException(ex);
-				if (innerMostException is SqlException)
-				{
-					string message = ExceptionHelper.FormatExceptionWithInnerExceptions(ex, includeStackTrace: false);
-					Assert.Inconclusive(message);
-				}
+            try
+            {
+                Test_Persistence_Query(contextType);
+            }
+            catch (Exception ex)
+            {
+                // This is the expected exception message.
+                if (string.Equals(ex.Message, "Use ISession.QueryOver<TEntity> instead."))
+                {
+                    return;
+                }
 
-				// Any other exception is a genuine error.
-				throw;
-			}
-		}
+                // This handles the case where the database is not available.
+                Exception innerMostException = ExceptionHelper.GetInnermostException(ex);
 
-		[TestMethod]
-		public void Test_Persistence_NPersist_Query()
-		{
-			string contextType = GetNPersistContextType();
+                if (innerMostException is SqlException)
+                {
+                    string message = ExceptionHelper.FormatExceptionWithInnerExceptions(ex, false);
+                    Assert.Inconclusive(message);
+                }
 
-			TestHelper.WithNPersistInconclusiveAssertion(() =>
-			{
-				Test_Persistence_Query(contextType);
-			});
-		}
+                // Any other exception is a genuine error.
+                throw;
+            }
+        }
 
-		[TestMethod]
-		public void Test_Persistence_EntityFramework5_Query()
-		{
-			string contextType = GetEntityFramework5ContextType();
-			Test_Persistence_Query(contextType);
-		}
+        [TestMethod]
+        public void Test_Persistence_NPersist_Query()
+        {
+            string contextType = GetNPersistContextType();
 
-		private void Test_Persistence_Query(string contextType)
-		{
-			using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
-			{
-				foreach (Thing entity in context.Query<Thing>())
-				{
-					int id = entity.ID;
-					string name = entity.Name;
-				}
-			}
-		}
+            TestHelper.WithNPersistInconclusiveAssertion(() => Test_Persistence_Query(contextType));
+        }
 
-		// Helpers
+        [TestMethod]
+        public void Test_Persistence_EntityFramework_Query()
+        {
+            string contextType = GetEntityFrameworkContextType();
+            Test_Persistence_Query(contextType);
+        }
 
-		private string GetNHibernateContextType()
-		{
-			return GetConfiguration().NHibernateContextType;
-		}
+        private void Test_Persistence_Query(string contextType)
+        {
+            using (IContext context = PersistenceHelper.CreatePersistenceContext(contextType))
+            {
+                foreach (Thing entity in context.Query<Thing>())
+                {
+                    int id = entity.ID;
+                    string name = entity.Name;
+                }
+            }
+        }
 
-		private string GetNPersistContextType()
-		{
-			return GetConfiguration().NPersistContextType;
-		}
+        // Helpers
 
-		private string GetEntityFramework5ContextType()
-		{
-			return GetConfiguration().EntityFramework5ContextType;
-		}
-
-		private ConfigurationSection GetConfiguration()
-		{
-			return CustomConfigurationManager.GetSection<ConfigurationSection>();
-		}
-	}
+        private string GetNHibernateContextType() => GetConfiguration().NHibernateContextType;
+        private string GetNPersistContextType() => GetConfiguration().NPersistContextType;
+        private string GetEntityFrameworkContextType() => GetConfiguration().EntityFrameworkContextType;
+        private ConfigurationSection GetConfiguration() => CustomConfigurationManager.GetSection<ConfigurationSection>();
+    }
 }

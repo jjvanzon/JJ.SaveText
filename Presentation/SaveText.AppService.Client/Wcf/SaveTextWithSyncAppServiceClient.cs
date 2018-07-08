@@ -11,23 +11,12 @@ namespace JJ.Presentation.SaveText.AppService.Client.Wcf
 
 		public SaveTextWithSyncAppServiceClient(string url, string cultureName)
 			: base(new BasicHttpBinding(), new EndpointAddress(url))
-		{
-			_cultureName = cultureName;
-		}
+		    => _cultureName = cultureName;
 
-		public SaveTextViewModel Show()
-		{
-			return Channel.Show(_cultureName);
-		}
+	    public SaveTextViewModel Show() => Channel.Show(_cultureName);
 
-		public SaveTextViewModel Save(SaveTextViewModel viewModel)
-		{
-			return Channel.Save(viewModel, _cultureName);
-		}
+	    public SaveTextViewModel Save(SaveTextViewModel viewModel) => Channel.Save(viewModel, _cultureName);
 
-		public SaveTextViewModel Synchronize(SaveTextViewModel viewModel)
-		{
-			return Channel.Synchronize(viewModel, _cultureName);
-		}
+	    public SaveTextViewModel Synchronize(SaveTextViewModel viewModel) => Channel.Synchronize(viewModel, _cultureName);
 	}
 }

@@ -60,7 +60,7 @@ Misc math helpers.
 
 * `Pow` with integers
 * `Log` with integers
-	* It will only return integers, but will prevent rounding erros such as 1000 log 10 = 2.99999999996.
+	* It will only return integers, but will prevent rounding errors such as 1000 log 10 = 2.99999999996.
 * `IsPowerOf2`
 	* With help of: http://www.lomont.org/Software/Misc/FFT/LomontFFT.html
 * `LogRatio`
@@ -74,9 +74,9 @@ Misc math helpers.
 * `ScaleLinearly`
 	* Converts one range of numbers to another, both making a number bigger or smaller and shifting it over.
 * `SpeadItems`
-	* Equally spreads out items over another set of items. For instance the numbers {1,2,3} could be spread over 10 items, the first ones getting 1, the middle ones getter 2 and the last ones getting 3.
+	* Equally spreads out items over another set of items. For instance the numbers {1,2,3} could be spread over 10 items, the first ones getting 1, the middle ones getting 2 and the last ones being assigned 3.
 * `SpreadIntegers`
-	* Equally spreads out a number of indices over a different number of indices. For instance the numbers {1,2,3} could be spread over 10 items, the first ones getting 1, the middle ones getter 2 and the last ones getting 3.
+	* Equally spreads out a number of indices over a different number of indices. For instance the numbers {1,2,3} could be spread over 10 items, the first ones getting 1, the middle ones getting 2 and the last ones being assigned 3.
 * `SpreadDoubles`
 	* Equally spreads out a number of points over a span.
 	* It takes a `valueSpan` and `pointCount` and returns a `double[]`.

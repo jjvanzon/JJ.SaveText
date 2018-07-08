@@ -1,6 +1,6 @@
 ﻿
-using JJ.Framework.Business;
 using JJ.Data.Canonical;
+using JJ.Framework.Business;
 using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.Canonical
@@ -13,7 +13,7 @@ namespace JJ.Business.Canonical
 
 			var dest = new VoidResult
 			{
-				Successful = source.Successful,
+				Successful = source.Successful
 			};
 
 			if (source.Messages != null)

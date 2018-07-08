@@ -34,7 +34,7 @@ namespace JJ.Framework.Mathematics
 		/// <summary>
 		/// Integer variation of the Math.Log function.
 		/// It will only return integers,
-		/// but will prevent rounding erros such as
+		/// but will prevent rounding errors such as
 		/// 1000 log 10 = 2.99999999996.
 		/// </summary>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -257,13 +257,13 @@ namespace JJ.Framework.Mathematics
 		/// <summary>
 		/// Equally spreads out a number indices over a different number of indices.
 		/// For instance the numbers {1,2,3} could be spread over 10 items,
-		/// the first ones getting 1, the middle ones getter 2 and the last ones getting 3.
+		/// the first ones getting 1, the middle ones getting 2 and the last ones being assigned 3.
 		/// </summary>
 		public static Dictionary<int, int> SpreadIntegers(int sourceIndex1, int sourceIndex2, int destIndex1, int destIndex2)
 		{
 			// TODO: There seem to be a lot of repeated principles here, compared to the overload that takes 2 int's.
-			if (sourceIndex2 < sourceIndex1) throw new LessThanOrEqualException(() => sourceIndex2, () => sourceIndex1);
-			if (destIndex2 < destIndex1) throw new LessThanOrEqualException(() => destIndex2, () => destIndex1);
+			if (sourceIndex2 < sourceIndex1) throw new LessThanException(() => sourceIndex2, () => sourceIndex1);
+			if (destIndex2 < destIndex1) throw new LessThanException(() => destIndex2, () => destIndex1);
 
 			IList<int> sourceRange = Enumerable.Range(sourceIndex1, sourceIndex2).ToArray();
 			IList<int> destRange = Enumerable.Range(destIndex1, destIndex2).ToArray();
@@ -276,7 +276,7 @@ namespace JJ.Framework.Mathematics
 		/// <summary>
 		/// Equally spreads out a number indices over a different number of indices.
 		/// For instance the numbers {1,2,3} could be spread over 10 items,
-		/// the first ones getting 1, the middle ones getter 2 and the last ones getting 3.
+		/// the first ones getting 1, the middle ones getting 2 and the last ones being assigned 3.
 		/// </summary>
 		[SuppressMessage("ReSharper", "RedundantCast")]
 		public static Dictionary<int, int> SpreadIntegers(int sourceCount, int destCount)
@@ -314,7 +314,7 @@ namespace JJ.Framework.Mathematics
 		/// <summary>
 		/// Equally spreads out items over another set of items.
 		/// For instance the numbers {1,2,3} could be spread over 10 items,
-		/// the first ones getting 1, the middle ones getter 2 and the last ones getting 3.
+		/// the first ones getting 1, the middle ones getting 2 and the last ones being assigned 3.
 		/// </summary>
 		public static Dictionary<TSource, TDest> SpreadItems<TSource, TDest>(IList<TSource> sourceList, IList<TDest> destList)
 		{

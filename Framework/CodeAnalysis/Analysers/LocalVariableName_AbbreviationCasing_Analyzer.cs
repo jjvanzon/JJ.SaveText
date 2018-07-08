@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Linq;
+using JetBrains.Annotations;
 using JJ.Framework.CodeAnalysis.Helpers;
 using JJ.Framework.CodeAnalysis.Names;
 using Microsoft.CodeAnalysis;
@@ -10,6 +11,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace JJ.Framework.CodeAnalysis.Analysers
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
+	[UsedImplicitly]
 	public class LocalVariableName_AbbreviationCasing_Analyzer : DiagnosticAnalyzer
 	{
 		private static readonly DiagnosticDescriptor _rule = new DiagnosticDescriptor(
@@ -24,12 +26,9 @@ namespace JJ.Framework.CodeAnalysis.Analysers
 
 		public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => _supportedDiagnostics;
 
-		public override void Initialize(AnalysisContext context)
-		{
-			context.RegisterSyntaxNodeAction(AnalyzeSyntaxNode, SyntaxKind.LocalDeclarationStatement);
-		}
+		public override void Initialize(AnalysisContext context) => context.RegisterSyntaxNodeAction(AnalyzeSyntaxNode, SyntaxKind.LocalDeclarationStatement);
 
-		private static void AnalyzeSyntaxNode(SyntaxNodeAnalysisContext context)
+	    private static void AnalyzeSyntaxNode(SyntaxNodeAnalysisContext context)
 		{
 			var castedSyntaxNode = (LocalDeclarationStatementSyntax)context.Node;
 

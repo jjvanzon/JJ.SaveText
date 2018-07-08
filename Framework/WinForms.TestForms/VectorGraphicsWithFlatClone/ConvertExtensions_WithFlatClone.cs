@@ -56,12 +56,9 @@ namespace JJ.Framework.WinForms.TestForms.VectorGraphicsWithFlatClone
 
 		// Style Values
 
-		public static Color ToSystemDrawing(this int color)
-		{
-			return Color.FromArgb(color);
-		}
+		public static Color ToSystemDrawing(this int color) => Color.FromArgb(color);
 
-		public static StringAlignment ToSystemDrawing(this HorizontalAlignmentEnum horizontalAlignmentEnum)
+	    public static StringAlignment ToSystemDrawing(this HorizontalAlignmentEnum horizontalAlignmentEnum)
 		{
 			switch (horizontalAlignmentEnum)
 			{
@@ -151,10 +148,11 @@ namespace JJ.Framework.WinForms.TestForms.VectorGraphicsWithFlatClone
 		{
 			if (sourceTextStyle == null) throw new NullException(() => sourceTextStyle);
 
-			var destStringFormat = new StringFormat();
-
-			destStringFormat.Alignment = sourceTextStyle.HorizontalAlignmentEnum.ToSystemDrawing();
-			destStringFormat.LineAlignment = sourceTextStyle.VerticalAlignmentEnum.ToSystemDrawing();
+			var destStringFormat = new StringFormat
+			{
+				Alignment = sourceTextStyle.HorizontalAlignmentEnum.ToSystemDrawing(),
+				LineAlignment = sourceTextStyle.VerticalAlignmentEnum.ToSystemDrawing()
+			};
 
 			if (sourceTextStyle.Wrap == false)
 			{

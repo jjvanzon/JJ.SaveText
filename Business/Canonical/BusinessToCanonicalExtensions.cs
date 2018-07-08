@@ -1,10 +1,12 @@
 ﻿
+using JetBrains.Annotations;
 using JJ.Data.Canonical;
 using JJ.Framework.Business;
 using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.Canonical
 {
+	[PublicAPI]
 	public static class BusinessToCanonicalExtensions
 	{
 		public static VoidResultDto ToCanonical(this VoidResult source)
@@ -28,7 +30,7 @@ namespace JJ.Business.Canonical
 			{
 				Successful = source.Successful,
 				Messages = source.Messages,
-				Data = source.Data,
+				Data = source.Data
 			};
 
 			return dest;

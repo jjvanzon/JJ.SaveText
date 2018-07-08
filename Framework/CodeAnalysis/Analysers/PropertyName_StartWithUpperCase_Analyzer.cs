@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using JetBrains.Annotations;
 using JJ.Framework.CodeAnalysis.Helpers;
 using JJ.Framework.CodeAnalysis.Names;
 using Microsoft.CodeAnalysis;
@@ -7,6 +8,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace JJ.Framework.CodeAnalysis.Analysers
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
+	[UsedImplicitly]
 	public class PropertyName_StartWithUpperCase_Analyzer : DiagnosticAnalyzer
 	{
 		private static readonly DiagnosticDescriptor _rule = new DiagnosticDescriptor(
@@ -21,12 +23,9 @@ namespace JJ.Framework.CodeAnalysis.Analysers
 
 		public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => _supportedDiagnostics;
 
-		public override void Initialize(AnalysisContext context)
-		{
-			context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.Property);
-		}
+		public override void Initialize(AnalysisContext context) => context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.Property);
 
-		private static void AnalyzeSymbol(SymbolAnalysisContext context)
+	    private static void AnalyzeSymbol(SymbolAnalysisContext context)
 		{
 			string name = context.Symbol.Name;
 

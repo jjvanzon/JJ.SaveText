@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using JJ.Framework.Exceptions.Basic;
 
 namespace JJ.Business.Canonical
 {
+	[PublicAPI]
 	public static class MessageHelper
 	{
 		// DTO

@@ -1,4 +1,6 @@
-﻿// Depends on JJ.Framework.Assert
+﻿// WARNING: File is always overwritten. Edit it in JJ.Framework.JavaScript.
+
+// Depends on JJ.Framework.Assert
 // Depends on JJ.Framework.Check
 
 // TODO: Add functionality to work with the path and domain attributes of a cookie.
@@ -16,9 +18,9 @@ JJ.Framework.Cookie.tryGet = function (name) {
         for (var i = 0; i < splitCookiesString.length; i++) {
             var cookieString = splitCookiesString[i];
             var splitCookieString = cookieString.split("=");
-            var name = splitCookieString[0];
+            var name2 = splitCookieString[0];
             var value = splitCookieString[1];
-            if (name == name) {
+            if (name2 === name) {
                 return value;
             }
         }

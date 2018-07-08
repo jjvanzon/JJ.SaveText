@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+// ReSharper disable InconsistentNaming
 
 namespace JJ.Demos.JavaScript
 {

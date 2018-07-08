@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using JJ.Framework.Validation;
+using JetBrains.Annotations;
 using JJ.Data.Canonical;
 using JJ.Framework.Collections;
 using JJ.Framework.Exceptions.Basic;
+using JJ.Framework.Validation;
 
 namespace JJ.Business.Canonical
 {
+	[PublicAPI]
 	public static class ValidationToCanonicalExtensions
 	{
 		public static VoidResultDto ToCanonical(this IValidator validator)

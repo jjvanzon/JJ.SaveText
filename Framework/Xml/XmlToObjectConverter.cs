@@ -331,20 +331,21 @@ namespace JJ.Framework.Xml
 			Type destPropertyType = destProperty.PropertyType;
 			object destPropertyValue = ConvertAttribute(sourceXmlAttribute, destProperty.PropertyType);
 
-			// Check nullability
-			if (destPropertyValue == null)
+			if (destPropertyValue != null)
 			{
-				if (IsNullable(destPropertyType))
-				{
-					// If nullable and attribute is null or empty, leave property's default value in tact.
-					return;
-				}
-
-				// If not nullable and attribute is null or empty, throw an exception.
-				throw new Exception($"XML node '{sourceParentElement.Name}' does not specify the required attribute '{sourceXmlAttributeName}'.");
+				destProperty.SetValue(destParentObject, destPropertyValue);
+				return;
 			}
 
-			destProperty.SetValue(destParentObject, destPropertyValue);
+			// Check nullability
+			if (IsNullable(destPropertyType))
+			{
+				// If nullable and attribute is null or empty, leave property's default value in tact.
+				return;
+			}
+
+			// If not nullable and attribute is null or empty, throw an exception.
+			throw new Exception($"XML node '{sourceParentElement.Name}' does not specify the required attribute '{sourceXmlAttributeName}'.");
 		}
 
 		/// <summary>
@@ -633,12 +634,9 @@ namespace JJ.Framework.Xml
 		/// Returns whether the type is considered nullable in general.
 		/// Concretely this means any reference type and any Nullable&lt;T&gt;.
 		/// </summary>
-		private bool IsNullable(Type type)
-		{
-			return type.IsReferenceType() || type.IsNullableType();
-		}
+		private bool IsNullable(Type type) => type.IsReferenceType() || type.IsNullableType();
 
-		/// <summary>
+	    /// <summary>
 		/// Returns wheter a generic collection type is supported.
 		/// The supported types are List&lt;T&gt;, IList&lt;T&gt;, ICollection&lt;T&gt; and IEnumerable&lt;T&gt;.
 		/// </summary>

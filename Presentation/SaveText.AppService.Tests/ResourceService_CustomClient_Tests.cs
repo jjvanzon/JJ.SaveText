@@ -3,6 +3,7 @@ using JJ.Presentation.SaveText.AppService.Client.Custom;
 using JJ.Presentation.SaveText.AppService.Interface.Models;
 using JJ.Framework.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+// ReSharper disable UnusedVariable
 
 namespace JJ.Presentation.SaveText.AppService.Tests
 {

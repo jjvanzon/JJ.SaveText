@@ -5,12 +5,9 @@ namespace JJ.Presentation.SaveText.Mvc.Helpers
 {
 	internal static class PersistenceHelper
 	{
-		public static TRepositoryInterface CreateRepository<TRepositoryInterface>(IContext context)
-		{
-			return RepositoryFactory.CreateRepositoryFromConfiguration<TRepositoryInterface>(context);
-		}
+		public static TRepositoryInterface CreateRepository<TRepositoryInterface>(IContext context) => RepositoryFactory.CreateRepositoryFromConfiguration<TRepositoryInterface>(context);
 
-		public static IContext CreateContext()
+	    public static IContext CreateContext()
 		{
 			// The only reason for all this code is to relate the XML persistence location
 			// to the web root, which is not the same as the current directory.
