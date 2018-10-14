@@ -47,7 +47,7 @@ namespace JJ.Demos.Misc
 		}
 
 		[TestMethod]
-		public void Test_ConfigurationManager_OpenFromFile_GetConfigurationSetion()
+		public void Test_ConfigurationManager_OpenFromFile_GetConfigurationSection()
 		{
 			Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(
 				new ExeConfigurationFileMap { ExeConfigFilename = "Custom.config" },
