@@ -24,7 +24,7 @@ namespace JJ.Presentation.SaveText.Presenters
 
         public SaveTextViewModel Save(SaveTextViewModel viewModel)
         {
-            viewModel.NullCoallesce();
+            viewModel.NullCoalesce();
 
             VoidResultDto result = _textSetter.SaveText(viewModel.Text);
             if (result.Successful)

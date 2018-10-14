@@ -43,7 +43,7 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\ViewModelExtensions_NullCoallesce.cs" />
+    <Compile Include="Helpers\ViewModelExtensions_NullCoalesce.cs" />
     <Compile Include="Presenters\SetTextPresenter.cs" />
     <Compile Include="Presenters\SetTextWithSyncPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

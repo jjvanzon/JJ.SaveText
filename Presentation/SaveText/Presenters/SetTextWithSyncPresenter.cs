@@ -24,7 +24,7 @@ namespace JJ.Presentation.SaveText.Presenters
 
         public SaveTextViewModel Save(SaveTextViewModel viewModel)
         {
-            viewModel.NullCoallesce();
+            viewModel.NullCoalesce();
 
             VoidResultDto saveResult = _textSetter.SaveText(viewModel.Text);
             if (saveResult.Successful)
@@ -53,7 +53,7 @@ namespace JJ.Presentation.SaveText.Presenters
         /// </summary>
         public SaveTextViewModel Synchronize(SaveTextViewModel viewModel)
         {
-            viewModel.NullCoallesce();
+            viewModel.NullCoalesce();
 
             VoidResultDto syncResult = _textSetter.SaveText(viewModel.Text);
             if (syncResult.Successful)
