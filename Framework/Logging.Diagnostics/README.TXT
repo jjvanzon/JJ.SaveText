@@ -1,1 +1,0 @@
-﻿JJ.Framework.Logging.Diagnostics should contain any code that extends System.Diagnostics. For now it contains only one class: TraceLogger: helpers for working with System.Diagnostics.Trace.

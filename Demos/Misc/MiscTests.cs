@@ -166,5 +166,16 @@ namespace JJ.Demos.Misc
             public int Current { get; set; }
             public IEnumerator GetEnumerator() => new int[0].GetEnumerator();
         }
+
+        [TestMethod]
+        public void Test_String_Split()
+        {
+            string myString = "Bla, bla, bla";
+
+            // Not there...
+            //string[] strings = myString.Split(',', StringSplitOptions.RemoveEmptyEntries);
+            //string[] strings2 = myString.Split("].");
+            //string[] strings2 = myString.Split("].", StringSplitOptions.None);
+        }
     }
 }
