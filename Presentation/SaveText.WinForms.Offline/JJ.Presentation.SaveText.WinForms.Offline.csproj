@@ -84,15 +84,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\Configuration\JJ.Framework.Configuration.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Configuration\JJ.Framework.Configuration.csproj">
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
       <Project>{ba423767-a57e-4278-bba8-5c01f3e8d555}</Project>
       <Name>JJ.Framework.Data.Xml.Linq</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data\JJ.Framework.Data.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data\JJ.Framework.Data.csproj">
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
       <Name>JJ.Framework.Data</Name>
     </ProjectReference>
