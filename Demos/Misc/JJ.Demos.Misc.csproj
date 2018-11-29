@@ -72,11 +72,11 @@
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\Business\JJ.Framework.Business.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Business\JJ.Framework.Business.csproj">
       <Project>{F44D03E8-FEEC-40D4-B866-A87799185B4C}</Project>
       <Name>JJ.Framework.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Testing\JJ.Framework.Testing.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Testing\JJ.Framework.Testing.csproj">
       <Project>{369d4e9e-4eff-4699-83b3-c4951ee0a3c3}</Project>
       <Name>JJ.Framework.Testing</Name>
     </ProjectReference>
