@@ -51,7 +51,7 @@
     <Compile Include="Wcf\SaveTextWithSyncAppServiceClient.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\Soap\JJ.Framework.Soap.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Soap\JJ.Framework.Soap.csproj">
       <Project>{2b86213c-a758-4db9-bd37-5e7d2f4d7c4d}</Project>
       <Name>JJ.Framework.Soap</Name>
     </ProjectReference>

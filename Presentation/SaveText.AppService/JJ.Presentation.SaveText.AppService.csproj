@@ -95,35 +95,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.EntityFramework\JJ.Framework.Data.EntityFramework.csproj">
+      <Project>{9676e4c3-1a1f-45b8-8ffd-c398f14002e7}</Project>
+      <Name>JJ.Framework.Data.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.NHibernate\JJ.Framework.Data.NHibernate.csproj">
+      <Project>{db783ed9-fde6-458f-a094-457b7f4283a0}</Project>
+      <Name>JJ.Framework.Data.NHibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Business\SaveText\JJ.Business.SaveText.csproj">
       <Project>{ae912326-cda3-4cba-b8db-e59b36e403b3}</Project>
       <Name>JJ.Business.SaveText</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
       <Project>{fa44aba2-8e13-402c-a5a0-8d73c74b5181}</Project>
       <Name>JJ.Framework.Exceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Configuration\JJ.Framework.Configuration.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Configuration\JJ.Framework.Configuration.csproj">
       <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
       <Name>JJ.Framework.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data.EntityFramework\JJ.Framework.Data.EntityFramework.csproj">
-      <Project>{9676e4c3-1a1f-45b8-8ffd-c398f14002e7}</Project>
-      <Name>JJ.Framework.Data.EntityFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data.NHibernate\JJ.Framework.Data.NHibernate.csproj">
-      <Project>{db783ed9-fde6-458f-a094-457b7f4283a0}</Project>
-      <Name>JJ.Framework.Data.NHibernate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data.Xml\JJ.Framework.Data.Xml.csproj">
-      <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
-      <Name>JJ.Framework.Data.Xml</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data\JJ.Framework.Data.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data\JJ.Framework.Data.csproj">
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
       <Name>JJ.Framework.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Reflection\JJ.Framework.Reflection.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Reflection\JJ.Framework.Reflection.csproj">
       <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
       <Name>JJ.Framework.Reflection</Name>
     </ProjectReference>

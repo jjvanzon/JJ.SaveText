@@ -51,19 +51,19 @@
     <Compile Include="Mapping\EntityMapping.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
       <Project>{ba423767-a57e-4278-bba8-5c01f3e8d555}</Project>
       <Name>JJ.Framework.Data.Xml.Linq</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Data\JJ.Framework.Data.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data\JJ.Framework.Data.csproj">
       <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
       <Name>JJ.Framework.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
       <Project>{fa44aba2-8e13-402c-a5a0-8d73c74b5181}</Project>
       <Name>JJ.Framework.Exceptions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Reflection\JJ.Framework.Reflection.csproj">
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Reflection\JJ.Framework.Reflection.csproj">
       <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
       <Name>JJ.Framework.Reflection</Name>
     </ProjectReference>
