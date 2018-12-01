@@ -49,12 +49,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\Data\JJ.Framework.Data.csproj">
-      <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data\JJ.Framework.Data.csproj">
+      <Project>{7ADEDDCE-6903-4A58-94F5-D0B39B21330F}</Project>
       <Name>JJ.Framework.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
-      <Project>{fa44aba2-8e13-402c-a5a0-8d73c74b5181}</Project>
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
+      <Project>{FA44ABA2-8E13-402C-A5A0-8D73C74B5181}</Project>
       <Name>JJ.Framework.Exceptions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Framework\Reflection\JJ.Framework.Reflection.csproj">
