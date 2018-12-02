@@ -139,6 +139,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.NHibernate\JJ.Framework.Data.NHibernate.csproj">
+      <Project>{db783ed9-fde6-458f-a094-457b7f4283a0}</Project>
+      <Name>JJ.Framework.Data.NHibernate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Business\SaveText\JJ.Business.SaveText.csproj">
       <Project>{ae912326-cda3-4cba-b8db-e59b36e403b3}</Project>
       <Name>JJ.Business.SaveText</Name>
@@ -154,10 +158,6 @@
     <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.Memory\JJ.Framework.Data.Memory.csproj">
       <Project>{86348b50-eca9-4849-a221-73f0ed31713b}</Project>
       <Name>JJ.Framework.Data.Memory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.NHibernate\JJ.Framework.Data.NHibernate.csproj">
-      <Project>{db783ed9-fde6-458f-a094-457b7f4283a0}</Project>
-      <Name>JJ.Framework.Data.NHibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
       <Project>{ba423767-a57e-4278-bba8-5c01f3e8d555}</Project>
