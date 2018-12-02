@@ -1,6 +1,6 @@
 # JJ.SaveText
 
-*Jan-Joost van Zon, 2018-12-02*
+*Jan-Joost van Zon, 2015*
 
 The *SaveText prototype app* is an experiment in which I proved and refined my favorite software design patterns.
 The goal was to make things compatible with many different platforms. It can run on:
