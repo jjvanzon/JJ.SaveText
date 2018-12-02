@@ -8,12 +8,17 @@ The goal was to make things compatible with many different platforms. It can run
 * Databases
 * XML files
 * Mobile
+* Web
 * iOS
 * Android
 * Windows Phone
 * MVC
 * WCF
 * Unity Game Engine
+* Entity Framework
+* NHibernate
+* WinForms
+* Online/offline sync
 
 The folder structure is representative of the main layering:
 
