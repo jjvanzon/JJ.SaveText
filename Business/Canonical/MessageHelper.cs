@@ -12,7 +12,7 @@ namespace JJ.Business.Canonical
 
 		public static string FormatMessages(IList<string> messages)
 		{
-			if (messages == null) throw new NullException(() => messages);
+			if (messages == null) throw new ArgumentNullException(nameof(messages));
 
 			string formattedMessages = string.Join(Environment.NewLine, messages);
 			return formattedMessages;
@@ -22,9 +22,9 @@ namespace JJ.Business.Canonical
 
 		public static string FormatMessages(IEnumerable<string> messages)
 		{
-			if (messages == null) throw new NullException(() => messages);
+            if (messages == null) throw new ArgumentNullException(nameof(messages));
 
-			string formattedMessages = string.Join(Environment.NewLine, messages);
+            string formattedMessages = string.Join(Environment.NewLine, messages);
 			return formattedMessages;
 		}
 	}

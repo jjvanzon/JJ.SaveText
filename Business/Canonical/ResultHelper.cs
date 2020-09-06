@@ -58,7 +58,7 @@ namespace JJ.Business.Canonical
 
 		public static string FormatMessages(IResult result)
 		{
-			if (result == null) throw new NullException(() => result);
+			if (result == null) throw new ArgumentNullException(nameof(result));
 
 			string formattedMessages = MessageHelper.FormatMessages(result.Messages);
 			return formattedMessages;

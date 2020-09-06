@@ -39,8 +39,8 @@ namespace JJ.Business.Canonical
 		/// </param>
 		public static void Combine(this IResult destResult, IResult sourceResult, string messagePrefix = null)
 		{
-			if (destResult == null) throw new NullException(() => destResult);
-			if (sourceResult == null) throw new NullException(() => sourceResult);
+			if (destResult == null) throw new ArgumentNullException(nameof(destResult));
+			if (sourceResult == null) throw new ArgumentNullException(nameof(sourceResult));
 
 			destResult.Successful &= sourceResult.Successful;
 
@@ -56,9 +56,7 @@ namespace JJ.Business.Canonical
 
 		public static void Assert(this IResult result)
 		{
-			if (result == null) throw new NullException(() => result);
-
-			if (result == null) throw new NullException(() => result);
+			if (result == null) throw new ArgumentNullException(nameof(result));
 
 			// ReSharper disable once InvertIf
 			if (!result.Successful)
