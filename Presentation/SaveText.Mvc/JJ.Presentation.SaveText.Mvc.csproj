@@ -126,12 +126,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup />
@@ -233,23 +227,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Config\Dev\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <Content Include="Config\Prod\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Config\Prod\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Config\Prod\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Config\Dev\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
