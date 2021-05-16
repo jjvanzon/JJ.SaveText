@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("JJ.Presentation.SaveText.Unity.DotNet.OfflineWithSync")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JJ.Presentation.SaveText.Unity.DotNet.OfflineWithSync")]
-[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Jan Joost van Zon")]
+[assembly: AssemblyProduct("JJ.SaveText")]
+[assembly: AssemblyCopyright("Copyright © 2014 - 2021 Jan Joost van Zon")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
