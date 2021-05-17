@@ -37,10 +37,10 @@ The following platforms, frameworks or techniques might have been considered:
 - WinForms
 - Online/offline sync
 
-Maximal Architecture, Minimal Functionality
+Minimal Functionality, Maximal Architecture
 -------------------------------------------
 
-With *SaveText*, a code architecture was tested with an idea of 'maximal architecture, minimal functionality'. The idea might have been, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, may be techniques that might apply to more complex and perhaps more useful applications.
+With *SaveText*, a code architecture was tested with an idea of 'minimal functionality, maximal architecture'. The idea might have been, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, may be techniques that might apply to more complex and perhaps more useful applications.
 
 Saving a Text
 -------------
