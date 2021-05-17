@@ -66,12 +66,60 @@ Newer Tech
 This project may be from around 2015. Newer tech may have emerged or become (freely) available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition). This project might not have been updated since then.
 
 
-Mobile Deployments
-------------------
+Web Site (MVC)
+--------------
 
-The mobile deployments were tested once, but a while back, and may not be up to date with technology. So it may be an idea, not to expect too much from them.
+- This may be a 'web site' variation on SaveText.
+- It may use ASP.NET MVC technology for the user interface.
+- It may connect to a database, using NHibernate as the underlying store technology.
 
-The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked using Unity Game Engine on Android, so it may not have gotten as far as being tested on other platforms, like iOS and Windows Phone 8.
+
+App Service
+-----------
+
+- This is like a 'cloud' web service, to which some of the apps might connect.
+- It may expose a SOAP web service using WCF.
+- It may connect to a database, using NHibernate as the underlying store technology.
+
+
+Windows Applications
+--------------------
+
+Several Windows applications might be found.  
+They may test online/offline situations.  
+And different types of storing the data too.
+
+- *JJ.Presentation.SaveText.Unity.DotNet.Offline*
+    - May works offline.
+    - May store data in a local XML file, using System.Xml.Linq, as the underlying data storage technology.
+- *JJ.Presentation.SaveText.Unity.DotNet.OfflineWithSync*
+    - May store data in a local XML file, using System.Xml, as the underlying data storage technology.
+    - May sync with SaveText's cloud service at certain intervals.
+- *JJ.Presentation.SaveText.WinForms.Online*
+    - Does not store locally.
+    - May contact a SaveText's cloud service for each action a user may perform.
+    - It may use WCF for that.
+- *JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient*
+    - Does not store locally.
+    - May contact a SaveText's cloud service for each action a user may perform.
+    - It may use a custom-programmed SOAP client for this.
+- *JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched*
+    - Can be in online mode but switch to offline mode and back.
+    - When online it may contact a SaveText's cloud service for each action a user may perform.
+    - When offline it may store data locally in an XML file, using System.Xml, as the underlying data storage technology.
+
+
+Mobile Apps
+-----------
+
+- The mobile deployments were tested once, but a while back, and may not be up to date with technology. 
+- So it may be an idea, not to expect too much from them.
+- They may not be compatible anymore with newer mobile devices.
+- The precise way these deployment files are to be used might not be described here. Here is an impression of it.
+- The Android variations might have been installed once by copying it to the right location on an Android phone.
+- The iOS variation may have required an Apple Mac running XCode and a paid developer subscription with Apple.
+- The WindowsPhone variation might have been deployed using a version of Visual Studio (2012?) specifically tailored for Windows Phone.
+- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked using Unity Game Engine on Android, so it may not have gotten as far as being tested on other platforms, like iOS and Windows Phone 8.
 
 
 Folders
