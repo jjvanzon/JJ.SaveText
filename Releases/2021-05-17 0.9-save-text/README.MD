@@ -28,10 +28,8 @@ Database
 
 - "SaveTextDB.0.9.zip" might contain a database backup.
 - The file might be unzipped and restored in SQL Server with name PROD_SaveTextDB.
-- The database user name "prod" may be expected with password "prod".
-- If needed, different database name / user name / password might be configured.
-- In that case the configs in some of the programs may need to be changed.
-- 
+- The database user name "dev" may be expected with password "dev".
+ 
 
 Windows Applications
 --------------------
