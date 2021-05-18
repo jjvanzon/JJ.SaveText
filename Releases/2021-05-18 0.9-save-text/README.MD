@@ -73,7 +73,7 @@ Mobile Apps
     - "JJ.Presentation.SaveText.Unity.Online.Android.0.9.zip"
 - (Note the Windows Phone one is a 7z (7-zip) file not zip. The zip file appeared to be a bit too big.)
 - They may not be compatible anymore with newer mobile devices.
-- The precise way these deployment files are to be used might not be described here. Here is an impression of it. But perhaps do not expect much from this.
-- The Android variations might have been installed once by copying it to the right location on an Android phone.
-- The iOS variation may have required an Apple Mac running XCode and a paid developer subscription with Apple.
-- The WindowsPhone variation might have been deployed using a version of Visual Studio (2012?) specifically tailored for Windows Phone.
+- The precise way these deployment files are to be used, might not be described here. Here is an impression of it. But perhaps do not expect too much from this.
+- The Android variations might have been installed once by copying it to the right location on an Android device.
+- The iOS variation may have required an Apple Mac running Xcode and a (paid) subscription to the Apple Developer Program to deploy to an iPhone for instance.
+- The WindowsPhone variation might have been deployed to a Microsoft Lumia phone for instance, using a version of Visual Studio (2012?) specifically tailored for Windows Phone.
