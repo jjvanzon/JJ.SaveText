@@ -13,6 +13,9 @@ Multi-Platform
 
 One goal might have been, to try and deploy .NET code on multiple platforms, like web or mobile, running on a database or perhaps on file system.
 
+<img src="images\save-text-1.jpg" width="750" />
+<img src="images\save-text-2.jpg" width="750" />
+
 
 Design Patterns
 ---------------
