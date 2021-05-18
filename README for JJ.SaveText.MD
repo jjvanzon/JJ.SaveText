@@ -5,7 +5,7 @@ JJ.SaveText
 Prototype App
 -------------
 
-The *SaveText prototype app* was an experiment, to test certain software programming techniques.
+The *SaveText prototype app* was an experiment from around 2015, to test certain software programming techniques.
 
 
 Multi-Platform
@@ -45,7 +45,7 @@ The following platforms, frameworks or techniques might have been considered:
 Minimal Functionality, Maximal Architecture
 -------------------------------------------
 
-With *SaveText*, a code architecture was tested with an idea of 'minimal functionality, maximal architecture'. The idea might have been, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, may be techniques that might apply to more complex and perhaps more useful applications.
+With *SaveText*, a code architecture was tested with an idea of *minimal functionality, maximal architecture*. The idea might have been, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, may be techniques that might apply to more complex and perhaps more useful applications.
 
 
 Saving a Text
