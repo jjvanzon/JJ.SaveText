@@ -38,15 +38,15 @@ Web Site
 
 - "JJ.Presentation.SaveText.Mvc.0.9.zip" may contain web site files.
 - This may be a 'web site' variation on SaveText.
-- It is suggested to create an IIS web site that uses (a copy of) that folder.
-
+- It is suggested to unzip it to a folder.
+- And to create an IIS web site that uses that folder as its *physical path*.
 
 App Service
 -----------
 
-- "JJ.Presentation.SaveText.AppService.0.9.zip"
-- This is like a 'cloud' web service, to which some of the apps might connect.
-- It is suggested to create an IIS web site that uses (a copy of) that folder.
+- "JJ.Presentation.SaveText.AppService.0.9.zip" may contain files for something that is like a 'cloud' web service, to which some of the apps might connect.
+- It is suggested to unzip it to a folder.
+- And to create an IIS web site that uses that folder as its *physical path*.
  
 
 Windows Applications
