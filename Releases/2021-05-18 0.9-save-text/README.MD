@@ -31,19 +31,6 @@ Database
 - "SaveTextDB.0.9.zip" might contain a database backup.
 - The file might be unzipped and restored in SQL Server with name PROD_SaveTextDB.
 - The database user name "prod" may be expected with password "prod".
- 
-
-Windows Applications
---------------------
-
-- The following files might contain Windows applications:
-    - "JJ.Presentation.SaveText.WinForms.Offline.0.9.zip"
-    - "JJ.Presentation.SaveText.WinForms.OfflineWithSync.0.9.zip"
-    - "JJ.Presentation.SaveText.WinForms.Online.0.9.zip"
-    - "JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient.0.9.zip"
-    - "JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched.0.9.zip"
-- They may have no installers.
-- They might be unzipped and put somewhere on a computer and then perhaps shortcuts made to them.
 
 
 Web Site
@@ -60,6 +47,19 @@ App Service
 - "JJ.Presentation.SaveText.AppService.0.9.zip"
 - This is like a 'cloud' web service, to which some of the apps might connect.
 - It is suggested to create an IIS web site that uses (a copy of) that folder.
+ 
+
+Windows Applications
+--------------------
+
+- The following files might contain Windows applications:
+    - "JJ.Presentation.SaveText.WinForms.Offline.0.9.zip"
+    - "JJ.Presentation.SaveText.WinForms.OfflineWithSync.0.9.zip"
+    - "JJ.Presentation.SaveText.WinForms.Online.0.9.zip"
+    - "JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient.0.9.zip"
+    - "JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched.0.9.zip"
+- They may have no installers.
+- They might be unzipped and put somewhere on a computer and then perhaps shortcuts made to them.
 
 
 Mobile Apps
