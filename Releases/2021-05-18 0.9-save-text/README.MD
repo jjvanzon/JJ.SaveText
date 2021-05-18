@@ -14,7 +14,7 @@ The intent of the project might be described [here](https://github.com/jjvanzon/
 Installation Files
 ------------------
 
-These might be the setup & deployment files of what was produced. They may include:
+These might be the setup & deployment files that were produced. They may include:
 
 - Database
 - Windows applications
