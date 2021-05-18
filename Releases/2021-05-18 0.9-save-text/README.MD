@@ -22,6 +22,8 @@ These are the setup & deployment files of what was produced. They may include:
 - App service ('cloud' web service)
 - Mobile apps
 
+Suggestions about how to install might be found in the README.
+
 
 Database
 --------
