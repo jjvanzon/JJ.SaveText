@@ -17,9 +17,9 @@ Installation Files
 These might be the setup & deployment files that were produced. They may include:
 
 - Database
-- Windows applications
 - Web site (MVC)
 - App service ('cloud' web service)
+- Windows applications
 - Mobile apps
 
 Suggestions about how to install might be found in the README.
