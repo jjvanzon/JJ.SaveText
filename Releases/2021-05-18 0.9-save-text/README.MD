@@ -43,7 +43,7 @@ Windows Applications
     - "JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient.0.9.zip"
     - "JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched.0.9.zip"
 - They may have no installers.
-- They might be unzipped and put somewhere on a computer and then perhaps a shortcuts made to them.
+- They might be unzipped and put somewhere on a computer and then perhaps shortcuts made to them.
 
 
 Web Site
