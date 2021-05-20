@@ -48,7 +48,7 @@ The following platforms, frameworks or techniques might have been considered:
 Minimal Functionality, Maximal Architecture
 -------------------------------------------
 
-With *SaveText*, a code architecture was tested with an idea of *minimal functionality, maximal architecture*. The idea might have been, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, may be techniques that might apply to more complex and perhaps more useful applications.
+*SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea might have been, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, may be techniques that might apply to more complex and perhaps more useful applications.
 
 
 Saving a Text
@@ -98,11 +98,11 @@ And different types of storing the data too.
 - *JJ.Presentation.SaveText.WinForms.OfflineWithSync*
     - May store data in a local XML file, using System.Xml, as the underlying data storage technology.
     - May sync with SaveText's cloud service at certain intervals.
-    - It may use WCF for that as the communication technology
+    - It may use WCF for that as the communication technology.
 - *JJ.Presentation.SaveText.WinForms.Online*
     - Does not store locally.
     - May contact a SaveText's cloud service for each action a user may perform.
-    - It may use WCF for that as the communication technology
+    - It may use WCF for that as the communication technology.
 - *JJ.Presentation.SaveText.WinForms.Online.CustomSoapClient*
     - Does not store locally.
     - May contact a SaveText's cloud service for each action a user may perform.
@@ -119,11 +119,11 @@ Mobile Apps
 - The mobile deployments were tested once, but a while back, and may not be up to date with technology. 
 - So it may be an idea, not to expect too much from them.
 - They may not be compatible anymore with newer mobile devices.
-- The precise way these deployment files are to be used might not be described here. Here is an impression of it.
+- The precise way these deployment files are to be used might not be described here. Here is just an impression of it.
 - The *Android* variations might have been installed once by copying it to the right location on an Android phone.
 - The *iOS* variation may have required an Apple Mac running XCode and a paid developer subscription with Apple.
-- The *Windows Phone* variation might have been deployed using a version of Visual Studio (2012?) specifically tailored for Windows Phone.
-- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked using Unity Game Engine on Android, so it may not have gotten as further than that.
+- The *Windows Phone* variation might have been deployed using a version of Visual Studio specifically tailored for Windows Phone.
+- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked that well yet using Unity Game Engine on Android, so it may not have gotten as further than that.
 
 
 Folders
