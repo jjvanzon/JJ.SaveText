@@ -74,7 +74,7 @@ Web Site (MVC)
 
 - This may be a 'web site' variation on SaveText.
 - It may use ASP.NET MVC technology for the user interface.
-- It may connect to a database, using NHibernate as the underlying store technology.
+- It may connect to a database, using NHibernate as the underlying storage technology.
 
 
 App Service
@@ -82,7 +82,7 @@ App Service
 
 - This is like a 'cloud' web service, to which some of the apps might connect.
 - It may expose a SOAP web service using WCF communication technology.
-- It may connect to a database, using NHibernate as the underlying store technology.
+- It may connect to a database, using NHibernate as the underlying storage technology.
 
 
 Windows Applications
