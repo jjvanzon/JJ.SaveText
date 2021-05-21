@@ -37,12 +37,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Common, Version=1.7.7810.38980, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Common.1.7.7810.38980\lib\net461\JJ.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Configuration, Version=1.7.7810.38986, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Configuration.1.7.7810.38986\lib\net461\JJ.Framework.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Conversion, Version=1.7.7810.38981, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Conversion.1.7.7810.38981\lib\net461\JJ.Framework.Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Data, Version=1.7.7810.38982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Data.1.7.7810.38982\lib\net461\JJ.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Data.Xml, Version=1.7.7810.38986, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Data.Xml.1.7.7810.38986\lib\net461\JJ.Framework.Data.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Exceptions, Version=1.7.7810.38982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Exceptions.1.7.7810.38982\lib\net461\JJ.Framework.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.PlatformCompatibility, Version=1.7.7810.38981, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.PlatformCompatibility.1.7.7810.38981\lib\net461\JJ.Framework.PlatformCompatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Reflection, Version=1.7.7810.38981, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Reflection.1.7.7810.38981\lib\net461\JJ.Framework.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Text, Version=1.7.7810.38980, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Text.1.7.7810.38980\lib\net461\JJ.Framework.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Xml, Version=1.7.7810.38985, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Xml.1.7.7810.38985\lib\net461\JJ.Framework.Xml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -75,6 +111,7 @@
     <Content Include="Config\Prod\App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,22 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Common\JJ.Framework.Common.csproj">
-      <Project>{44fd9133-5fe7-4824-bd35-27273706d127}</Project>
-      <Name>JJ.Framework.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Configuration\JJ.Framework.Configuration.csproj">
-      <Project>{805a8237-05ed-40ae-8d1a-9288373ea5e0}</Project>
-      <Name>JJ.Framework.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.Xml\JJ.Framework.Data.Xml.csproj">
-      <Project>{3edf4c94-f84a-43b2-95a5-f47dc30f1a5c}</Project>
-      <Name>JJ.Framework.Data.Xml</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data\JJ.Framework.Data.csproj">
-      <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
-      <Name>JJ.Framework.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Data\Canonical\JJ.Data.Canonical.csproj">
       <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
       <Name>JJ.Data.Canonical</Name>

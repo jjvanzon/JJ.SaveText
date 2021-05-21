@@ -37,11 +37,50 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JetBrains.Annotations, Version=11.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\JetBrains.Annotations.11.1.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Collections, Version=1.7.7810.38982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Collections.1.7.7810.38982\lib\net461\JJ.Framework.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Common, Version=1.7.7810.38980, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Common.1.7.7810.38980\lib\net461\JJ.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Conversion, Version=1.7.7810.38981, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Conversion.1.7.7810.38981\lib\net461\JJ.Framework.Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Data, Version=1.7.7810.38982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Data.1.7.7810.38982\lib\net461\JJ.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Data.Xml.Linq, Version=1.7.7810.38987, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Data.Xml.Linq.1.7.7810.38987\lib\net461\JJ.Framework.Data.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Exceptions, Version=1.7.7810.38982, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Exceptions.1.7.7810.38982\lib\net461\JJ.Framework.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.IO, Version=1.7.7810.38986, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.IO.1.7.7810.38986\lib\net461\JJ.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Mathematics, Version=1.7.7810.38985, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Mathematics.1.7.7810.38985\lib\net461\JJ.Framework.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.PlatformCompatibility, Version=1.7.7810.38981, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.PlatformCompatibility.1.7.7810.38981\lib\net461\JJ.Framework.PlatformCompatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Reflection, Version=1.7.7810.38981, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Reflection.1.7.7810.38981\lib\net461\JJ.Framework.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Text, Version=1.7.7810.38980, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Text.1.7.7810.38980\lib\net461\JJ.Framework.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Xml.Linq, Version=1.7.7810.38987, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Xml.Linq.1.7.7810.38987\lib\net461\JJ.Framework.Xml.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
@@ -51,22 +90,6 @@
     <Compile Include="Mapping\EntityMapping.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data.Xml.Linq\JJ.Framework.Data.Xml.Linq.csproj">
-      <Project>{ba423767-a57e-4278-bba8-5c01f3e8d555}</Project>
-      <Name>JJ.Framework.Data.Xml.Linq</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Data\JJ.Framework.Data.csproj">
-      <Project>{7adeddce-6903-4a58-94f5-d0b39b21330f}</Project>
-      <Name>JJ.Framework.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Exceptions\JJ.Framework.Exceptions.csproj">
-      <Project>{fa44aba2-8e13-402c-a5a0-8d73c74b5181}</Project>
-      <Name>JJ.Framework.Exceptions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\JJ.Framework\Framework\Reflection\JJ.Framework.Reflection.csproj">
-      <Project>{1a8e047c-7893-4918-b415-ce3928e815d8}</Project>
-      <Name>JJ.Framework.Reflection</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SaveText.DefaultRepositories\JJ.Data.SaveText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
       <Name>JJ.Data.SaveText.DefaultRepositories</Name>
