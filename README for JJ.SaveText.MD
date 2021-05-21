@@ -144,12 +144,22 @@ Other folders:
 Setting Up Dev Environment
 --------------------------
 
+### Visual Studio
+
+- Visual Studio Community 2019 may be needed to open the projects.
+
+### Unity Game Engine
+
+- Some projects were made using Unity Game Engine, version unknown.
+
 ### JJ.Framework
 
-- The solutions may only build if you clone another repository too: JJ.Framework. ([https://github.com/jjvanzon/JJ.Framework](https://github.com/jjvanzon/JJ.Framework))
-- It might be cloned  to a folder "JJ.Framework" that is right next to the "JJ.SaveText" repository clone.
-- First building JJ.Framework.sln or at least NuGet-restoring it might be desired.
-- Then might be build, one of the solutions in this repository.
+- Pre-release versions of *JJ.Framework* components may be used.
+- They might be hosted in *Azure DevOps*: https://dev.azure.com/jjvanzon/JJs%20Software/_packaging?_a=feed&feed=JJs-Pre-Release-Package-Feed
+- They may require configuring *NuGet* to connect to an additional package source.
+- The following info might be useful for that:
+- *Name:* JJs-Pre-Release-Package-Feed
+- *Source:* https://pkgs.dev.azure.com/jjvanzon/1de16010-421a-41a5-90f1-86e9513f2c5b/_packaging/JJs-Pre-Release-Package-Feed/nuget/v3/index.json
 
 ### Database
 
