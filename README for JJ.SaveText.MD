@@ -123,7 +123,7 @@ Mobile Apps
 - The *Android* variations might have been installed once, by copying it to the right location on an Android phone.
 - The *iOS* variation may have required an Apple Mac running XCode and a paid Apple Developer Program subscription.
 - The *Windows Phone* variation might have been deployed, using a version of Visual Studio specifically tailored for Windows Phone.
-- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further, than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked that well yet using Unity Game Engine on Android, so it may not have gotten as further than that.
+- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further, than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked that well yet using Unity Game Engine on Android, so it may not have gotten further than that.
 
 
 Folders
