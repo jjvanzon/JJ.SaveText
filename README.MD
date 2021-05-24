@@ -123,7 +123,7 @@ Mobile Apps
 - The *Android* variations might have been installed once, by copying it to the right location on an Android phone.
 - The *iOS* variation may have required an Apple Mac running XCode and a paid Apple Developer Program subscription.
 - The *Windows Phone* variation might have been deployed, using a version of Visual Studio specifically tailored for Windows Phone.
-- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further, than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked that well yet using Unity Game Engine on Android, so it may not have gotten as further than that.
+- The mobile deployments may not have all the variations (Online, Offline,OfflineWithSync, etc.) The possible cause might be, that testing did not get further, than trying to connect to a web service from Unity Game Engine technology. Web service connections might not have worked that well yet using Unity Game Engine on Android, so it may not have gotten further than that.
 
 
 Folders
@@ -144,12 +144,22 @@ Other folders:
 Setting Up Dev Environment
 --------------------------
 
+### Visual Studio
+
+- Visual Studio Community 2019 may be needed to open the projects.
+
+### Unity Game Engine
+
+- Some projects were made using Unity Game Engine, version unknown.
+
 ### JJ.Framework
 
-- The solutions may only build if you clone another repository too: JJ.Framework. ([https://github.com/jjvanzon/JJ.Framework](https://github.com/jjvanzon/JJ.Framework))
-- It might be cloned  to a folder "JJ.Framework" that is right next to the "JJ.SaveText" repository clone.
-- First building JJ.Framework.sln or at least NuGet-restoring it might be desired.
-- Then might be build, one of the solutions in this repository.
+- Pre-release versions of *JJ.Framework* components may be used.
+- They might be hosted in *Azure DevOps*: https://dev.azure.com/jjvanzon/JJs%20Software/_packaging?_a=feed&feed=JJs-Pre-Release-Package-Feed
+- They may require configuring *NuGet* to connect to an additional package source.
+- The following info might be useful for that:
+- *Name:* JJs-Pre-Release-Package-Feed
+- *Source:* https://pkgs.dev.azure.com/jjvanzon/1de16010-421a-41a5-90f1-86e9513f2c5b/_packaging/JJs-Pre-Release-Package-Feed/nuget/v3/index.json
 
 ### Database
 
