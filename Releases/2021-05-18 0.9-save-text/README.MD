@@ -57,7 +57,14 @@ App Service
 - "JJ.Presentation.SaveText.AppService.0.9.zip" may contain files for something that is like a 'cloud' web service, to which some of the apps might connect.
 - It is suggested to unzip it to a folder.
 - And to create an IIS web site that uses that folder as its *physical path*.
- 
+- IIS binding host name might become: `savetextappservice.jjvanzon.io`
+- Also the Windows hosts file might be changed (`C:\Windows\System32\drivers\etc\hosts`). These lines might be added to it:
+    - `127.0.0.1  savetextappservice.jjvanzon.io`
+    - `::1        savetextappservice.jjvanzon.io`
+- Unfortunately, some mobile apps may try to reach the the dev environment hosts with port numbers instead:
+    - `localhost:6371`
+    - `83.82.26.17:6371`
+
 
 Windows Applications
 --------------------
