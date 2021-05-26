@@ -196,7 +196,7 @@ Setting Up Dev Environment
     - hosts file entries:
         - `127.0.0.1  dev.savetextappservice.jjvanzon.io`
         - `::1        dev.savetextappservice.jjvanzon.io`
-            - Unfortunately, some mobile apps may try to reach host `83.82.26.17:6371` instead.
+    - Unfortunately, some mobile apps may try to reach host `83.82.26.17:6371` instead.
 
 ### JJ.Framework
 
