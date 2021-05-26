@@ -150,7 +150,54 @@ Setting Up Dev Environment
 
 ### Unity Game Engine
 
-- Some projects were made using Unity Game Engine, version unknown.
+- Some projects were made using Unity Game Engine, version unknown, sorry.
+
+### Internet Information Services (IIS)
+
+- Some web projects might like to run under Internet Information Services (IIS).
+- They may not load otherwise.
+- Trying to *reload* a web project:
+- The Output window in Visual Studio might show an expected web address and host name, that might be useful for setting things up.
+-----
+- It is suggested to install IIS.
+- Creating a web site for each of the relevant projects.
+- Also the Windows hosts file might be changed. Each site added to IIS might need entries in the file `C:\Windows\System32\drivers\etc\hosts`.
+- Here follow suggestions for each of the sites to create and their settings.
+- (Physical path root folder `C:\Repositories\JJ.Framework` may vary.)
+
+-----
+
+- __Web Site__
+
+    - C# project:
+        - `JJ.Presentation.SaveText.Mvc.csproj`
+    - IIS site name:
+        - `DEV_JJ.Presentation.SaveText.Mvc`
+    - IIS site physical path:
+        - `C:\Repositories\JJ\Presentation\SaveText.Mvc`
+    - IIS site binding host name:
+        - `dev.savetext.jjvanzon.io`
+    - hosts file entries:
+        ``` 
+        127.0.0.1  dev.savetext.jjvanzon.io
+        ::1        dev.savetext.jjvanzon.io
+        ```
+
+- __App Service__
+
+    - C# project:
+        - `JJ.Presentation.SaveText.AppService`
+    - IIS site name:
+        - `DEV_JJ.Presentation.SaveText.AppService`
+    - IIS site physical path:
+        - `C:\Repositories\JJ\Presentation\SaveText.AppService`
+    - IIS site binding host name:
+        - `dev.savetextappservice.jjvanzon.io`
+    - hosts file entries:
+        ``` 
+        127.0.0.1  dev.savetextappservice.jjvanzon.io
+        ::1        dev.savetextappservice.jjvanzon.io
+    - Unfortunately, some mobile apps may try to reach host `83.82.26.17:6371` instead.
 
 ### JJ.Framework
 
