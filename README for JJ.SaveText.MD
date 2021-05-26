@@ -178,10 +178,8 @@ Setting Up Dev Environment
     - IIS site binding host name:
         - `dev.savetext.jjvanzon.io`
     - hosts file entries:
-        ``` 
-        127.0.0.1  dev.savetext.jjvanzon.io
-        ::1        dev.savetext.jjvanzon.io
-        ```
+        - `127.0.0.1  dev.savetext.jjvanzon.io`
+        - `::1        dev.savetext.jjvanzon.io`
 
 - __App Service__
 
@@ -193,11 +191,12 @@ Setting Up Dev Environment
         - `C:\Repositories\JJ\Presentation\SaveText.AppService`
     - IIS site binding host name:
         - `dev.savetextappservice.jjvanzon.io`
+    - Additional IIS binding with port:
+        - `6371`
     - hosts file entries:
-        ``` 
-        127.0.0.1  dev.savetextappservice.jjvanzon.io
-        ::1        dev.savetextappservice.jjvanzon.io
-    - Unfortunately, some mobile apps may try to reach host `83.82.26.17:6371` instead.
+        - `127.0.0.1  dev.savetextappservice.jjvanzon.io`
+        - `::1        dev.savetextappservice.jjvanzon.io`
+            - Unfortunately, some mobile apps may try to reach host `83.82.26.17:6371` instead.
 
 ### JJ.Framework
 
