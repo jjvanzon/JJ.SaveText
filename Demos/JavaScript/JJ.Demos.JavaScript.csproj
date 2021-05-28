@@ -49,8 +49,8 @@
     <Reference Include="AspNet.ScriptManager.jQuery, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AspNet.ScriptManager.jQuery.2.0.3\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
-    <Reference Include="JJ.Framework.JavaScript, Version=1.7.7813.33639, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\JJ.Framework.JavaScript.1.7.7813.33639\lib\net461\JJ.Framework.JavaScript.dll</HintPath>
+    <Reference Include="JJ.Framework.JavaScript, Version=1.7.7817.43032, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.JavaScript.1.7.7817.43032\lib\net461\JJ.Framework.JavaScript.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
@@ -119,12 +119,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\JJ.Framework.Assert.js" />
     <Content Include="Scripts\JJ.Framework.Check.js" />
     <Content Include="Scripts\JJ.Framework.Cookie.js" />
     <Content Include="Scripts\JJ.Framework.RememberScrollPosition.js" />
     <Content Include="Scripts\JJ.Framework.Url.js" />
-    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
