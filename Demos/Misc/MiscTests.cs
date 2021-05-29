@@ -142,7 +142,7 @@ namespace JJ.Demos.Misc
 
             //public IEnumerator<int> GetEnumerator()
             //{
-            //	return ((IEnumerable<int>)_underlyingArray).GetEnumerator();
+            //    return ((IEnumerable<int>)_underlyingArray).GetEnumerator();
             //}
 
             IEnumerator IEnumerable.GetEnumerator() => _underlyingArray.GetEnumerator();

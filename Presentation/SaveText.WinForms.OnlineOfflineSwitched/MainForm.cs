@@ -12,211 +12,211 @@ using System.Globalization;
 
 namespace JJ.Presentation.SaveText.WinForms.OnlineOfflineSwitched
 {
-	internal partial class MainForm : Form
-	{
-		private IContext _context;
-		private SaveTextWithSyncPresenter _presenter;
-		private SaveTextAppServiceClient _service;
-		private SaveTextViewModel _viewModel;
+    internal partial class MainForm : Form
+    {
+        private IContext _context;
+        private SaveTextWithSyncPresenter _presenter;
+        private SaveTextAppServiceClient _service;
+        private SaveTextViewModel _viewModel;
 
-		public MainForm()
-		{
-			InitializeComponent();
+        public MainForm()
+        {
+            InitializeComponent();
 
-			SetTitlesAndLabels();
+            SetTitlesAndLabels();
 
-			GoOffline();
+            GoOffline();
 
-			Show();
-		}
+            Show();
+        }
 
-		~MainForm()
-		{
-			if (_service != null)
-			{
-				IDisposable disposable = _service;
-				disposable.Dispose();
-			}
-		}
+        ~MainForm()
+        {
+            if (_service != null)
+            {
+                IDisposable disposable = _service;
+                disposable.Dispose();
+            }
+        }
 
-		// Events
+        // Events
 
-		private void buttonSave_Click(object sender, EventArgs e) => Save();
+        private void buttonSave_Click(object sender, EventArgs e) => Save();
 
-	    private void textBoxText_TextChanged(object sender, EventArgs e) => _viewModel.Text = textBoxText.Text;
+        private void textBoxText_TextChanged(object sender, EventArgs e) => _viewModel.Text = textBoxText.Text;
 
-	    private void buttonSwitchBetweenOnlineAndOffline_Click(object sender, EventArgs e) => SwitchBetweenOnlineAndOffline();
+        private void buttonSwitchBetweenOnlineAndOffline_Click(object sender, EventArgs e) => SwitchBetweenOnlineAndOffline();
 
-	    // Actions
+        // Actions
 
-		private new void Show()
-		{
-			if (IsOnline)
-			{
-				_viewModel = _service.Show();
-			}
-			else
-			{
-				_viewModel = _presenter.Show();
-			}
-			ApplyViewModel();
-		}
+        private new void Show()
+        {
+            if (IsOnline)
+            {
+                _viewModel = _service.Show();
+            }
+            else
+            {
+                _viewModel = _presenter.Show();
+            }
+            ApplyViewModel();
+        }
 
-		private void Save()
-		{
-			if (IsOnline)
-			{
-				_viewModel = _service.Save(_viewModel);
-			}
-			else
-			{
-				_viewModel = _presenter.Save(_viewModel);
-			}
-			ApplyViewModel();
-		}
+        private void Save()
+        {
+            if (IsOnline)
+            {
+                _viewModel = _service.Save(_viewModel);
+            }
+            else
+            {
+                _viewModel = _presenter.Save(_viewModel);
+            }
+            ApplyViewModel();
+        }
 
-		// Apply to GUI
+        // Apply to GUI
 
-		private void ApplyViewModel()
-		{
-			textBoxText.Text = _viewModel.Text;
+        private void ApplyViewModel()
+        {
+            textBoxText.Text = _viewModel.Text;
 
-			var sb = new StringBuilder();
+            var sb = new StringBuilder();
 
-			if (_viewModel.TextWasSavedMessageVisible)
-			{
-				sb.AppendLine(Messages.Saved);
-			}
+            if (_viewModel.TextWasSavedMessageVisible)
+            {
+                sb.AppendLine(Messages.Saved);
+            }
 
-			if (_viewModel.SyncSuccessfulMessageVisible)
-			{
-				sb.AppendLine(Messages.SynchronizedWithServer);
-			}
+            if (_viewModel.SyncSuccessfulMessageVisible)
+            {
+                sb.AppendLine(Messages.SynchronizedWithServer);
+            }
 
-			foreach (string message in _viewModel.ValidationMessages)
-			{
-				sb.AppendLine(message);
-			}
+            foreach (string message in _viewModel.ValidationMessages)
+            {
+                sb.AppendLine(message);
+            }
 
-			if (_viewModel.TextWasSavedButNotYetSynchronized)
-			{
-				sb.AppendLine(Messages.SynchronizationPending);
-			}
+            if (_viewModel.TextWasSavedButNotYetSynchronized)
+            {
+                sb.AppendLine(Messages.SynchronizationPending);
+            }
 
-			labelValidationMessages.Text = sb.ToString();
-		}
+            labelValidationMessages.Text = sb.ToString();
+        }
 
-		private void SetTitlesAndLabels() => buttonSave.Text = Titles.SaveText;
+        private void SetTitlesAndLabels() => buttonSave.Text = Titles.SaveText;
 
-	    // Online / Offline
+        // Online / Offline
 
-		private bool IsOnline
-		{
-			get 
-			{
-				if (_service != null)
-				{
-					return true;
-				}
+        private bool IsOnline
+        {
+            get 
+            {
+                if (_service != null)
+                {
+                    return true;
+                }
 
-				if (_presenter != null)
-				{
-					return false;
-				}
+                if (_presenter != null)
+                {
+                    return false;
+                }
 
-				throw new Exception("Both _service and _presenter are null.");
-			}
-		}
+                throw new Exception("Both _service and _presenter are null.");
+            }
+        }
 
-		private void SwitchBetweenOnlineAndOffline()
-		{
-			if (IsOnline)
-			{
-				GoOffline();
-			}
-			else
-			{
-				GoOnline();
-			}
-		}
+        private void SwitchBetweenOnlineAndOffline()
+        {
+            if (IsOnline)
+            {
+                GoOffline();
+            }
+            else
+            {
+                GoOnline();
+            }
+        }
 
-		private void ApplyIsOnline()
-		{
-			if (IsOnline)
-			{
-				buttonSwitchBetweenOnlineAndOffline.Text = Titles.GoOffline;
-			}
-			else
-			{
-				buttonSwitchBetweenOnlineAndOffline.Text = Titles.GoOnline;
-			}
-		}
+        private void ApplyIsOnline()
+        {
+            if (IsOnline)
+            {
+                buttonSwitchBetweenOnlineAndOffline.Text = Titles.GoOffline;
+            }
+            else
+            {
+                buttonSwitchBetweenOnlineAndOffline.Text = Titles.GoOnline;
+            }
+        }
 
-		private void GoOnline()
-		{
-			// Synchronize
-			using (SaveTextWithSyncAppServiceClient appServiceWithSync = CreateAppServiceClientWithSync())
-			{
-				_viewModel = appServiceWithSync.Synchronize(_viewModel);
-				ApplyViewModel();
-			}
+        private void GoOnline()
+        {
+            // Synchronize
+            using (SaveTextWithSyncAppServiceClient appServiceWithSync = CreateAppServiceClientWithSync())
+            {
+                _viewModel = appServiceWithSync.Synchronize(_viewModel);
+                ApplyViewModel();
+            }
 
-			// Clean up presenter
-			if (_context != null)
-			{
-				_context.Dispose();
-				_context = null;
-			}
-			_presenter = null;
+            // Clean up presenter
+            if (_context != null)
+            {
+                _context.Dispose();
+                _context = null;
+            }
+            _presenter = null;
 
-			// Create app service client
-			_service = CreateAppServiceClient();
+            // Create app service client
+            _service = CreateAppServiceClient();
 
-			// Apply to GUI
-			ApplyIsOnline();
-		}
+            // Apply to GUI
+            ApplyIsOnline();
+        }
 
-		private void GoOffline()
-		{
-			// Clean up app service client
-			if (_service != null)
-			{
-				_service.Close();
-				_service = null;
-			}
+        private void GoOffline()
+        {
+            // Clean up app service client
+            if (_service != null)
+            {
+                _service.Close();
+                _service = null;
+            }
 
-			// Create presenter
-			_context = CreateContext();
-			_presenter = CreatePresenter(_context);
+            // Create presenter
+            _context = CreateContext();
+            _presenter = CreatePresenter(_context);
 
-			// Apply to GUI
-			ApplyIsOnline();
-		}
+            // Apply to GUI
+            ApplyIsOnline();
+        }
 
-		private SaveTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
-		{
-			string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextWithSyncAppServiceUrl);
-			string cultureName = CultureInfo.CurrentUICulture.Name;
-			return new SaveTextWithSyncAppServiceClient(url, cultureName);
-		}
+        private SaveTextWithSyncAppServiceClient CreateAppServiceClientWithSync()
+        {
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextWithSyncAppServiceUrl);
+            string cultureName = CultureInfo.CurrentUICulture.Name;
+            return new SaveTextWithSyncAppServiceClient(url, cultureName);
+        }
 
-		private SaveTextAppServiceClient CreateAppServiceClient()
-		{
-			string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
-			string cultureName = CultureInfo.CurrentUICulture.Name;
-			return new SaveTextAppServiceClient(url, cultureName);
-		}
+        private SaveTextAppServiceClient CreateAppServiceClient()
+        {
+            string url = AppSettingsReader<IAppSettings>.Get(x => x.SaveTextAppServiceUrl);
+            string cultureName = CultureInfo.CurrentUICulture.Name;
+            return new SaveTextAppServiceClient(url, cultureName);
+        }
 
-		private SaveTextWithSyncPresenter CreatePresenter(IContext context)
-		{
-			var repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
-			return new SaveTextWithSyncPresenter(repository);
-		}
+        private SaveTextWithSyncPresenter CreatePresenter(IContext context)
+        {
+            var repository = RepositoryFactory.CreateRepositoryFromConfiguration<IEntityRepository>(context);
+            return new SaveTextWithSyncPresenter(repository);
+        }
 
-		private IContext CreateContext()
-		{
-			IContext context = ContextFactory.CreateContextFromConfiguration();
-			return context;
-		}
-	}
+        private IContext CreateContext()
+        {
+            IContext context = ContextFactory.CreateContextFromConfiguration();
+            return context;
+        }
+    }
 }
