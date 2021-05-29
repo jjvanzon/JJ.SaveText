@@ -2,8 +2,8 @@
 
 namespace JJ.Presentation.SaveText.Mvc.Names
 {
-	public abstract class ActionNames
-	{
-	    public static void Index() => throw new NameOfOnlyException();
-	}
+    public abstract class ActionNames
+    {
+        public static void Index() => throw new NameOfOnlyException();
+    }
 }
