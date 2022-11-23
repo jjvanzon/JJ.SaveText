@@ -49,14 +49,14 @@ Setting Up Dev Environment
 - The file C:\Windows\System32\drivers\etc\hosts may need editing.
 - Entries like the following might be added:
 
-    ```
-    127.0.0.1  dev.questionandanswer.jjvanzon.io
-    ::1        dev.questionandanswer.jjvanzon.io
-    127.0.0.1  dev.savetextappservice.jjvanzon.io
-    ::1        dev.savetextappservice.jjvanzon.io
-    127.0.0.1  dev.savetext.jjvanzon.io
-    ::1        dev.savetext.jjvanzon.io
-    ```
+```
+127.0.0.1  dev.questionandanswer.jjvanzon.io
+::1        dev.questionandanswer.jjvanzon.io
+127.0.0.1  dev.savetextappservice.jjvanzon.io
+::1        dev.savetextappservice.jjvanzon.io
+127.0.0.1  dev.savetext.jjvanzon.io
+::1        dev.savetext.jjvanzon.io
+```
 
 ### Databases
 
