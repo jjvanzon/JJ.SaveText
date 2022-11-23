@@ -30,8 +30,7 @@ Setting Up Dev Environment
 
 ### JJ.Framework
 
-- Pre-release versions of *JJ.Framework* components may be used.
-- They might be hosted in *Azure DevOps*: https://dev.azure.com/jjvanzon/JJs-Software/_packaging?_a=feed&feed=JJs-Pre-Release-Package-Feed
+- Pre-release versions of *JJ.Framework* components could be used.
 - They may require configuring *NuGet* to connect to an additional package source.
 - The following info might be useful for that:
 - Name: JJs-Pre-Release-Package-Feed
@@ -40,14 +39,14 @@ Setting Up Dev Environment
 ### Internet Information Services (IIS)
 
 - Some web projects might like to run on IIS (Internet Information Services).
-- They may not load otherwise.
+- Otherwise they may not load.
 - Trying to *reload* a web project:
-- The Output window in Visual Studio might show an expected web address.
+- The Output window in Visual Studio could show an expected web address.
 - It is suggested to install IIS.
 - Creating a web site.
-- That might point its *physical path* to the folder of the csproj that might not load.
-- Having a *binding* that might use the  the web address previously found in the Visual Studio output as a *host name*.
-- The file C:\Windows\System32\drivers\etc\hosts might need editing.
+- Point its *physical path* to the folder of the csproj that might not load.
+- Having a *binding* that uses the web address previously found in the Visual Studio output as a *host name*.
+- The file C:\Windows\System32\drivers\etc\hosts may need editing.
 - Entries like the following might be added:
 
     ```
@@ -63,13 +62,13 @@ Setting Up Dev Environment
 
 #### QuestionAndAnswerDB
 
-- The database backup may be found under "Database\QuestionAndAnswer"
-- The file might be unzipped and restored in SQL Server with name DEV_QuestionAndAnswerDB.
+- The database backup can be found under "Database\QuestionAndAnswer"
+- The file can be unzipped and restored in SQL Server with name DEV_QuestionAndAnswerDB
 - And again with name DEV_QuestionAndAnswerDB_UnitTests
-- The database user name "dev" may be expected with password "dev".
+- The database user name "dev" could be expected with password "dev".
 
 #### SaveTextDB
 
-- The folder Database\SaveTextDB may contain a database backup.
-- The file might be restored in SQL Server with name "DEV_SaveTextDB".
-- The database user name "dev" may be expected with password "dev".
+- The folder Database\SaveTextDB should contain a database backup.
+- The file can be restored in SQL Server with name "DEV_SaveTextDB".
+- The database user name "dev" could be expected with password "dev".
