@@ -94,7 +94,7 @@ Explored were several online / offline variations: for instance one where the ap
 🔮 Newer Tech
 --------------
 
-This project was from around 2015. Newer tech may have emerged or become (freely) available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then.
+This project was from around 2015. Newer tech may have emerged or become available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then and was subjected to different constraints than now.
 
 
 🃏 Unity Game Engine
