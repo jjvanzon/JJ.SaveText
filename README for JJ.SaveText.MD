@@ -5,36 +5,35 @@
 
 <h2>📔 Contents</h2>
 
-- [Prototype App](#prototype-app)
-- [Multi-Platform](#multi-platform)
-- [🧰 Design Patterns](#-design-patterns)
+- [🧰 Prototype App](#-prototype-app)
+- [🗂️ Multi-Platform](#️-multi-platform)
+- [🪡 Design Patterns](#-design-patterns)
 - [🛠 Techniques](#-techniques)
 - [🏛 Minimal Functionality / Max Architecture](#-minimal-functionality--max-architecture)
 - [💾 Saving a Text](#-saving-a-text)
 - [☁ Online / Offline Variations](#-online--offline-variations)
 - [🔮 Newer Tech](#-newer-tech)
-- [🕹 Unity Game Engine](#-unity-game-engine)
-- [🌐 web Web Site (MVC)](#-web-web-site-mvc)
-- [👨‍💻 App Service](#-app-service)
-- [💻 Windows Applications](#-windows-applications)
+- [🃏 Unity Game Engine](#-unity-game-engine)
+- [💻 Web Site (MVC)](#-web-site-mvc)
+- [🌐 App Service](#-app-service)
+- [🖥 Windows Applications](#-windows-applications)
 - [📱 Mobile Apps](#-mobile-apps)
 - [📂 Folders](#-folders)
 - [⚙ Dev Env](#-dev-env)
-    - [Visual Studio](#visual-studio)
-    - [Unity Game Engine](#unity-game-engine)
-    - [Database](#database)
-    - [JJ.Framework](#jjframework)
-    - [Internet Information Services (IIS)](#internet-information-services-iis)
+    - [👨‍💻 Visual Studio](#-visual-studio)
+    - [🕹 Unity Game Engine](#-unity-game-engine-1)
+    - [💽 Database](#-database)
+    - [📦 JJ.Framework](#-jjframework)
+    - [📡 Internet Information Services (IIS)](#-internet-information-services-iis)
 - [🕘 Checking Out Old Commits](#-checking-out-old-commits)
 
-Prototype App
+🧰 Prototype App
 -----------------
 
 The *SaveText prototype app* was an experiment from around 2015, to test certain software programming techniques.
 
-
-Multi-Platform
---------------
+🗂️ Multi-Platform
+------------------
 
 One goal was to try and deploy .NET code on multiple platforms, like web or mobile, running on a database or saving a file on the file system instead.
 
@@ -42,8 +41,8 @@ One goal was to try and deploy .NET code on multiple platforms, like web or mobi
 <img src="images\save-text-2.jpg" width="750" />
 
 
-🧰 Design Patterns
--------------------
+🪡 Design Patterns
+-----------------
 
 Another goal was to test if certain design patterns might work practically, or at all under these circumstances. Design patterns are tested ways to structure your code, to make it better organized, to support a certain technical value like maintainability.
 
@@ -96,13 +95,13 @@ Explored were several online / offline variations: for instance one where the ap
 This project was from around 2015. Newer tech may have emerged or become (freely) available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then.
 
 
-🕹 Unity Game Engine
+🃏 Unity Game Engine
 ---------------------
 
 The choice of Unity Game Engine may seem random. But it was the first technology at that time, that would work for deploying my code on multiple mobile platforms and using the Mono compiler. Other tech wouldn't work, crashed on me, or simply did not exist at that time.
 
 
-🌐 web Web Site (MVC)
+💻 Web Site (MVC)
 ---------------------
 
 - This is a 'web site' variation on SaveText.
@@ -110,7 +109,7 @@ The choice of Unity Game Engine may seem random. But it was the first technology
 - It tries to connect to a database, using NHibernate as the underlying data access technology.
 
 
-👨‍💻 App Service
+🌐 App Service
 ---------------
 
 - This is like a 'cloud' web service, to which some of the apps might connect.
@@ -118,7 +117,7 @@ The choice of Unity Game Engine may seem random. But it was the first technology
 - It can connect to a database, using NHibernate as the underlying data access technology.
 
 
-💻 Windows Applications
+🖥 Windows Applications
 ------------------------
 
 Several Windows applications were made.  
@@ -180,21 +179,21 @@ Another folder:
 
 Here you may find some pointers how to set up a developent environment to build and run `JJ.SaveText` projects.
 
-### Visual Studio
+### 👨‍💻 Visual Studio
 
 - Visual Studio Community 2019 or 2022 may be needed to open the projects and solution file.
 
-### Unity Game Engine
+### 🕹 Unity Game Engine
 
 - Some projects were made using Unity Game Engine, version unknown, sorry.
 
-### Database
+### 💽 Database
 
 - The folder Database\SaveTextDB may contain a database backup.
 - The file might be restored in SQL Server with name "DEV_SaveTextDB".
 - The database user name "dev" may be expected with password "dev".
 
-### JJ.Framework
+### 📦 JJ.Framework
 
 - Pre-release versions of `JJ.Framework` components may be used.
 - Those are currently hosted in *Azure DevOps*:
@@ -202,7 +201,7 @@ Here you may find some pointers how to set up a developent environment to build 
 - Name: JJs-Pre-Release-Package-Feed
 - It might require configuring *NuGet* in your dev environment to connect to this additional package source.
 
-### Internet Information Services (IIS)
+### 📡 Internet Information Services (IIS)
 
 - Some web projects might like to run under Internet Information Services (IIS).
 - They may not load otherwise.
