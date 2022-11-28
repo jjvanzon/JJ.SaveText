@@ -116,7 +116,7 @@ The choice of Unity Game Engine may seem random. But it was the first technology
 
 - This is like a 'cloud' web service, to which some of the apps might connect.
 - It exposes a SOAP web service using WCF communication technology.
-- It can connect to a database, using NHibernate as the underlying data access technology.
+- It connects to a database, using NHibernate as the underlying data access technology.
 
 
 🖥 Windows Applications
