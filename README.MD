@@ -45,7 +45,7 @@ One goal was to try and deploy .NET code on multiple platforms, like web or mobi
 🍱 Design Patterns
 -------------------
 
-Another goal was to test if certain design patterns might work practically, or at all under these circumstances. Design patterns are tested ways to structure your code, to make it better organized, to support a certain technical value like maintainability.
+Another goal was to test if certain design patterns might work practically, or at all under these circumstances. Design patterns are tested ways to structure your code, to make it better organized, to support a certain technical values like maintainability.
 
 
 🛠 Technologies
