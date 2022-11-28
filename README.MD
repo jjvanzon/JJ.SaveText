@@ -6,7 +6,7 @@
 <h2>📔 Contents</h2>
 
 - [🧰 Prototype App](#-prototype-app)
-- [🗂️ Multi-Platform](#️-multi-platform)
+- [🤖 Multi-Platform](#-multi-platform)
 - [🍱 Design Patterns](#-design-patterns)
 - [🛠 Technologies](#-technologies)
 - [🏛 Max Architecture / Minimal Functionality](#-max-architecture--minimal-functionality)
@@ -32,7 +32,7 @@
 
 The *SaveText prototype app* was an experiment from around 2015, to test certain software programming techniques.
 
-🗂️ Multi-Platform
+🤖 Multi-Platform
 ------------------
 
 One goal was to try and deploy .NET code on multiple platforms, like web or mobile, running on a database or saving a file on the file system instead.
