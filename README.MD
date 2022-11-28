@@ -12,7 +12,7 @@
 - [🏛 Architecture](#-architecture)
 - [💾 Saving a Text](#-saving-a-text)
 - [☁ Online / Offline Variations](#-online--offline-variations)
-- [🔮 Newer Tech](#-newer-tech)
+- [🔮 Older & Newer Tech](#-older--newer-tech)
 - [🃏 Unity Game Engine](#-unity-game-engine)
 - [💻 Web Site (MVC)](#-web-site-mvc)
 - [🌐 App Service](#-app-service)
@@ -32,6 +32,8 @@
 -----------------
 
 The *SaveText prototype app* was an experiment from around 2015, to test certain software programming techniques.
+
+[Latest Release](https://github.com/jjvanzon/JJ.SaveText/releases)
 
 🤖 Multi-Platform
 ------------------
@@ -91,10 +93,10 @@ As such, the only functionality *SaveText* possesses, would be to simply save a 
 Explored were several online / offline variations: for instance one where the application talks to an online web service upon all user actions. Another variation is one, where user actions would cause local code to go off and things to be locally stored, until a synchronization might go off in the background, to send things to an online service in the cloud.
 
 
-🔮 Newer Tech
---------------
+🔮 Older & Newer Tech
+----------------------
 
-This project was from around 2015. Newer tech may have emerged or become available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then. It was subjected to different constraints than now.
+This project was from around 2015. Newer tech may have emerged or become available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then. It was subjected to different constraints then.
 
 
 🃏 Unity Game Engine
