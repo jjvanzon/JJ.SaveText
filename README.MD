@@ -212,7 +212,7 @@ Here you may find some pointers how to set up a developent environment to build 
 - Trying to *reload* a web project:
 - The Output window in Visual Studio might show an expected web address and host name, that might be useful for setting things up.
 
-`-----`
+<hr />
 
 - It is suggested to install IIS.
 - Create web site for each of the relevant projects.
@@ -220,7 +220,7 @@ Here you may find some pointers how to set up a developent environment to build 
 - Here follow suggestions for each of the sites to create and their settings.
 - (Physical path root folder `C:\Repositories\JJ.SaveText` may vary.)
 
-`-----`
+<hr />
 
 - __Web Site__
 
