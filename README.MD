@@ -211,7 +211,9 @@ Here you may find some pointers how to set up a developent environment to build 
 - They may not load otherwise.
 - Trying to *reload* a web project:
 - The Output window in Visual Studio might show an expected web address and host name, that might be useful for setting things up.
+
 `-----`
+
 - It is suggested to install IIS.
 - Create web site for each of the relevant projects.
 - Also the Windows hosts file might be changed. Each site added to IIS might need entries in the file `C:\Windows\System32\drivers\etc\hosts`.
