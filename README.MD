@@ -31,7 +31,7 @@
 🧰 Prototype App
 -----------------
 
-The *SaveText prototype app* was an experiment from around 2015, to test certain software programming techniques.
+The *SaveText prototype app* was an experiment from around 2014, to test certain software programming techniques.
 
 [Latest Release](https://github.com/jjvanzon/JJ.SaveText/releases)
 
@@ -96,7 +96,7 @@ Explored were several online / offline variations: for instance one where the ap
 🔮 Older & Newer Tech
 ----------------------
 
-This project was from around 2015. Newer tech may have emerged or become available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then. It was subjected to different constraints then.
+This project was from around 2014. Newer tech may have emerged or become available (e.g. .NET Standard, Xamarin, Angular, Unity Game Engine free in Visual Studio Community edition and .NET 5.0 and above). This project might not have been updated since then. It was subjected to different constraints then.
 
 
 🃏 Unity Game Engine
@@ -214,7 +214,7 @@ Here you may find some pointers how to set up a developent environment to build 
 
 <hr />
 
-- It is suggested to install IIS.
+- You might want to install IIS.
 - Create web site for each of the relevant projects.
 - Also the Windows hosts file might be changed. Each site added to IIS might need entries in the file `C:\Windows\System32\drivers\etc\hosts`.
 - Here follow suggestions for each of the sites to create and their settings.
