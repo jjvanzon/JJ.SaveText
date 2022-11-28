@@ -75,7 +75,8 @@ The following platforms, frameworks and techniques were tried out:
 
 *SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea was, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, is a proof of concept of techniques that might apply to more complex applications.
 
-The patterns and practices closely match the following guidelines for structuring software: [JJ's Reference Architecture](https://github.com/jjvanzon/JJs-Reference-Architecture)
+The patterns and practices closely match the following guidelines for structuring software:  
+[JJ's Reference Architecture](https://github.com/jjvanzon/JJs-Reference-Architecture)
 
 
 💾 Saving a Text
