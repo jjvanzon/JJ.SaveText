@@ -9,7 +9,7 @@
 - [🤖 Multi-Platform](#-multi-platform)
 - [🍱 Design Patterns](#-design-patterns)
 - [🛠 Technologies](#-technologies)
-- [🏛 Max Architecture / Minimal Functionality](#-max-architecture--minimal-functionality)
+- [🏛 Architecture](#-architecture)
 - [💾 Saving a Text](#-saving-a-text)
 - [☁ Online / Offline Variations](#-online--offline-variations)
 - [🔮 Newer Tech](#-newer-tech)
@@ -70,13 +70,13 @@ The following platforms, frameworks and techniques were tried out:
 - Online/offline sync
 
 
-🏛 Max Architecture / Minimal Functionality
---------------------------------------------
-
-*SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea was, that when certain patterns ork for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, is a proof of concept of techniques that might apply to more complex applications.
+🏛 Architecture
+---------------
 
 The patterns and practices closely match the following guidelines for structuring software:  
 [JJ's Reference Architecture](https://github.com/jjvanzon/JJs-Reference-Architecture)
+
+*SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea was, that when certain patterns ork for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, is a proof of concept of techniques that might apply to more complex applications.
 
 
 💾 Saving a Text
