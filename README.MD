@@ -7,9 +7,9 @@
 
 - [🧰 Prototype App](#-prototype-app)
 - [🗂️ Multi-Platform](#️-multi-platform)
-- [🪡 Design Patterns](#-design-patterns)
-- [🛠 Techniques](#-techniques)
-- [🏛 Minimal Functionality / Max Architecture](#-minimal-functionality--max-architecture)
+- [🍱 Design Patterns](#-design-patterns)
+- [🛠 Technologies](#-technologies)
+- [🏛 Max Architecture / Minimal Functionality](#-max-architecture--minimal-functionality)
 - [💾 Saving a Text](#-saving-a-text)
 - [☁ Online / Offline Variations](#-online--offline-variations)
 - [🔮 Newer Tech](#-newer-tech)
@@ -41,14 +41,14 @@ One goal was to try and deploy .NET code on multiple platforms, like web or mobi
 <img src="images\save-text-2.jpg" width="750" />
 
 
-🪡 Design Patterns
------------------
+🍱 Design Patterns
+-------------------
 
 Another goal was to test if certain design patterns might work practically, or at all under these circumstances. Design patterns are tested ways to structure your code, to make it better organized, to support a certain technical value like maintainability.
 
 
-🛠 Techniques
---------------
+🛠 Technologies
+----------------
 
 The following platforms, frameworks and techniques were tried out:
 
@@ -69,12 +69,12 @@ The following platforms, frameworks and techniques were tried out:
 - Online/offline sync
 
 
-🏛 Minimal Functionality / Max Architecture
+🏛 Max Architecture / Minimal Functionality
 --------------------------------------------
 
-*SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea was, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, are a proof of concept of techniques that might apply to more complex and perhaps more useful applications.
+*SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea was, that when certain patterns might work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The results of that effort, are a proof of concept of techniques that might apply to more complex applications.
 
-The patterns and practices in this project closely match the following guidelines for structuring software: [JJ's Reference Architecture](https://github.com/jjvanzon/JJs-Reference-Architecture)
+The patterns and practices closely match the following guidelines for structuring software: [JJ's Reference Architecture](https://github.com/jjvanzon/JJs-Reference-Architecture)
 
 
 💾 Saving a Text
