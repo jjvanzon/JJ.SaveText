@@ -100,7 +100,7 @@ This project was from around 2015. Newer tech may have emerged or become availab
 🃏 Unity Game Engine
 ---------------------
 
-The choice of Unity Game Engine may seem random. But it was the first technology at that time, that would work for deploying my code on multiple mobile platforms and using the Mono compiler. Other tech wouldn't work, crashed on me, or simply did not exist at that time.
+The choice of Unity Game Engine may seem random. But it was the first technology at that time, that would work for deploying my code on multiple mobile platforms and using the Mono compiler. Other tech wouldn't work, crashed on me, or simply did not exist yet.
 
 
 💻 Web Site (MVC)
