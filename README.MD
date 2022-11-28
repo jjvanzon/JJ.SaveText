@@ -26,6 +26,7 @@
     - [📦 JJ.Framework](#-jjframework)
     - [📡 Internet Information Services (IIS)](#-internet-information-services-iis)
 - [🕘 Checking Out Old Commits](#-checking-out-old-commits)
+- [🍂 Archived Demos](#-archived-demos)
 
 🧰 Prototype App
 -----------------
@@ -261,3 +262,8 @@ Here you may find some pointers how to set up a developent environment to build 
     - Another option may be to clone the [JJ.Framework repository](https://github.com/jjvanzon/JJ.Framework) and fix the paths pointing to the `JJ.Framework` projects.
 - References to other non-existent projects:
     - To fix this, try referencing the NuGet version of these depedencies.
+
+🍂 Archived Demos
+------------------
+
+There used to be demos in this repository, not really related to the SaveText project, sort of accidentally put in there. They can be found in [JJ.SaveText.Archived](https://github.com/jjvanzon/JJ.SaveText.Archived/tree/master/Demos) under the same license, if they meant anything to you.
