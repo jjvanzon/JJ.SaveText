@@ -38,7 +38,7 @@ The *SaveText prototype app* was an experiment from around 2014, to test certain
 🤖 Multi-Platform
 ------------------
 
-One goal was to try and deploy .NET code on multiple platforms, like web or mobile, running on a database or saving a file on the file system.
+One goal was to try and deploy the same .NET code on multiple platforms, like web or mobile, running on a database or saving a file on the file system.
 
 <img src="images\save-text-1.jpg" width="750" />
 <img src="images\save-text-2.jpg" width="750" />
