@@ -38,7 +38,7 @@ The *SaveText prototype app* was an experiment from around 2014, to test certain
 🤖 Multi-Platform
 ------------------
 
-One goal was to try and deploy .NET code on multiple platforms, like web or mobile, running on a database or saving a file on the file system instead.
+One goal was to try and deploy .NET code on multiple platforms, like web or mobile, running on a database or saving a file on the file system.
 
 <img src="images\save-text-1.jpg" width="750" />
 <img src="images\save-text-2.jpg" width="750" />
@@ -75,7 +75,8 @@ The following platforms, frameworks and techniques were tried out:
 🏛 Architecture
 ---------------
 
-The patterns and practices closely match the following guidelines for structuring software:  
+The patterns and practices closely match the following guidelines for structuring software:
+
 [JJ's Reference Architecture](https://github.com/jjvanzon/JJs-Reference-Architecture)
 
 *SaveText* was an attempt to test a code architecture with an idea of *minimal functionality, maximal architecture*. The idea was, that when certain patterns work for simple situations, that might extend to more complex functionality. To see if the components can work together to accomplish technical desires. The result of that effort, is a proof of concept of techniques that might apply to more complex applications.
@@ -125,10 +126,8 @@ The choice of Unity Game Engine may seem random. But it was the first technology
 ------------------------
 
 Several Windows applications were made.  
-They may test different online/offline situations.  
+They test different online/offline situations.  
 And different types of storing the data too.
-
-...
 
 - *JJ.Presentation.SaveText.WinForms.Offline*
     - Works offline.
