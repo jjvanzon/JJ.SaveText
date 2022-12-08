@@ -256,16 +256,16 @@ Here you may find some pointers how to set up a developent environment to build 
 🕘 Checking Out Old Commits
 ----------------------------
 
-`JJ.SaveText` was once part of a larger code base. It was extracted to become a new Git repository with history in tact. Some quirks when checking out older history items, may have to do with that. The following may only be relevant when getting older commits from history (before November 2022).
+`JJ.SaveText` was once part of a larger code base. It was extracted to become a new git repository with history in tact. Some quirks when checking out older history items, may have to do with that. The following may only be relevant when getting older commits from history (before November 2022).
 
 - Commit messages:
     - May mention projects not part of the `JJ.SaveText` repo.
 - Broken references to `JJ.Framework`:
     - `JJ.Framework` projects are no longer in the same code base.
-    - It may help to try referencing the NuGet version of these depedencies.
+    - It may help to try referencing the NuGet version of these dependencies.
     - Another option may be to clone the [JJ.Framework repository](https://github.com/jjvanzon/JJ.Framework) and fix the paths pointing to the `JJ.Framework` projects.
 - References to other non-existent projects:
-    - To fix this, try referencing the NuGet version of these depedencies.
+    - To fix this, try referencing the NuGet version of these dependencies.
 
 🍂 Archived Demos
 ------------------
