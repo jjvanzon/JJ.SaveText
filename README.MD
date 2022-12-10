@@ -24,6 +24,7 @@
     - [🕹 Unity Game Engine](#-unity-game-engine-1)
     - [💽 Database](#-database)
     - [📦 JJ.Framework](#-jjframework)
+    - [🧱 JJ.Canonical](#-jjcanonical)
     - [📡 Internet Information Services (IIS)](#-internet-information-services-iis)
 - [🕘 Checking Out Old Commits](#-checking-out-old-commits)
 - [🍂 Archived Demos](#-archived-demos)
@@ -204,6 +205,10 @@ Here you may find some pointers how to set up a developent environment to build 
 - Name: JJs-Pre-Release-Package-Feed
 - It might require configuring *NuGet* in your dev environment to connect to this additional package source.
 
+### 🧱 JJ.Canonical
+
+- `JJ.Data.Canonical` and `JJ.Business.Canonical` can also be found right next to the `JJ.Framework` packages in `JJs-Pre-Release-Package-Feed`.
+
 ### 📡 Internet Information Services (IIS)
 
 - Some web projects might like to run under Internet Information Services (IIS).
@@ -260,12 +265,15 @@ Here you may find some pointers how to set up a developent environment to build 
 
 - Commit messages:
     - May mention projects not part of the `JJ.SaveText` repo.
-- Broken references to `JJ.Framework`:
-    - `JJ.Framework` projects are no longer in the same code base.
-    - It may help to try referencing the NuGet version of these dependencies.
-    - Another option may be to clone the [JJ.Framework repository](https://github.com/jjvanzon/JJ.Framework) and fix the paths pointing to the `JJ.Framework` projects.
 - References to other non-existent projects:
     - To fix this, try referencing the NuGet version of these dependencies.
+- Broken project references to `JJ.Framework` / `JJ.Canonical`:
+    - `JJ.Framework` / `JJ.Canonical` projects are no longer in the same code base.
+    - You could try referencing the NuGet version of these dependencies.
+    - But another solution may be to clone the [JJ.Framework](https://github.com/jjvanzon/JJ.Framework) repository and put the `JJ.Framework` folder right next to the `JJ.Synthesizer` folder. This may fix the broken links.
+    - Same for the [JJ.Canonical](https://github.com/jjvanzon/JJ.Canonical) repository.
+    - But sometimes the paths are still incorrect and may need to be modified (with Notepad)?
+    - But then you could use a specific commit from `JJ.Framework` or `JJ.Canonical`'s history.
 
 🍂 Archived Demos
 ------------------
