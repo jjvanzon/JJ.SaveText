@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{E3DC759D-B004-4E6C-8381-D5D5C74A5B92}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.Canonical", "Data\Canonical\JJ.Data.Canonical.csproj", "{08EA4A4E-D815-47AE-9277-DA6672D36214}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText", "Data\SaveText\JJ.Data.SaveText.csproj", "{95449A62-9F9B-42DA-812E-92BC0C2783AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Data.SaveText.DefaultRepositories", "Data\SaveText.DefaultRepositories\JJ.Data.SaveText.DefaultRepositories.csproj", "{06443309-668F-42FE-8996-D2C3FFA637F5}"
@@ -60,8 +56,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SaveText.Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject", "Presentation\SaveText.Unity.DotNet.Online.WwwObject\JJ.Presentation.SaveText.Unity.DotNet.Online.WwwObject.csproj", "{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJ.Business.Canonical", "Business\Canonical\JJ.Business.Canonical.csproj", "{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,12 +63,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08EA4A4E-D815-47AE-9277-DA6672D36214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08EA4A4E-D815-47AE-9277-DA6672D36214}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08EA4A4E-D815-47AE-9277-DA6672D36214}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08EA4A4E-D815-47AE-9277-DA6672D36214}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
-		{08EA4A4E-D815-47AE-9277-DA6672D36214}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08EA4A4E-D815-47AE-9277-DA6672D36214}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95449A62-9F9B-42DA-812E-92BC0C2783AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95449A62-9F9B-42DA-812E-92BC0C2783AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95449A62-9F9B-42DA-812E-92BC0C2783AA}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -225,19 +213,9 @@ Global
 		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
 		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A233A8F1-5BD3-4BFA-BB4B-8A5E727C353A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.NPDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.NPDebug|Any CPU.Build.0 = Debug|Any CPU
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{08EA4A4E-D815-47AE-9277-DA6672D36214} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
-		{4DBE5E36-4B54-4E5F-9B4F-5BBF33A3CEF1} = {E3DC759D-B004-4E6C-8381-D5D5C74A5B92}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61121AD0-E62B-4E2A-8AF5-6956E15AE91E}
