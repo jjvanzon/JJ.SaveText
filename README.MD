@@ -278,4 +278,4 @@ Here you may find some pointers how to set up a developent environment to build 
 🍂 Archived Demos
 ------------------
 
-There used to be demos in this repository, not really related to the SaveText project. They can still be found in [JJ.SaveText.Archived](https://github.com/jjvanzon/JJ.SaveText.Archived/tree/master/Demos) under the same license.
+There used to be demos in this repository, not really related to the SaveText project. They can still be found in the [JJ](https://github.com/jjvanzon/JJ) repo under the same license.
