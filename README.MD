@@ -270,7 +270,7 @@ Here you may find some pointers how to set up a developent environment to build 
 - Broken project references to `JJ.Framework` / `JJ.Canonical`:
     - `JJ.Framework` / `JJ.Canonical` projects are no longer in the same code base.
     - You could try referencing the NuGet version of these dependencies.
-    - But another solution may be to clone the [JJ.Framework](https://github.com/jjvanzon/JJ.Framework) repository and put the `JJ.Framework` folder right next to the `JJ.Synthesizer` folder. This may fix the broken links.
+    - But another solution may be to clone the [JJ.Framework](https://github.com/jjvanzon/JJ.Framework) repository and put the `JJ.Framework` folder right next to the `JJ.SaveText` folder. This may fix the broken links.
     - Same for the [JJ.Canonical](https://github.com/jjvanzon/JJ.Canonical) repository.
     - But sometimes the paths are still incorrect and may need to be modified (with Notepad)?
     - But then you could use a specific commit from `JJ.Framework` or `JJ.Canonical`'s history.
