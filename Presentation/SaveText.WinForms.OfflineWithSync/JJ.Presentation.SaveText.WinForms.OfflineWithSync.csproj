@@ -40,6 +40,18 @@
     <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
+    <Reference Include="JJ.Business.Canonical, Version=1.2.8377.38727, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Business.Canonical.1.2.8377.38727\lib\net461\JJ.Business.Canonical.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Data.Canonical, Version=1.2.8377.34780, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Data.Canonical.1.2.8377.34780\lib\net461\JJ.Data.Canonical.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Business, Version=1.7.7817.43032, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Business.1.7.7817.43032\lib\net461\JJ.Framework.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Framework.Collections, Version=1.7.7817.43032, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Collections.1.7.7817.43032\lib\net461\JJ.Framework.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="JJ.Framework.Common, Version=1.7.7817.43031, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JJ.Framework.Common.1.7.7817.43031\lib\net461\JJ.Framework.Common.dll</HintPath>
     </Reference>
@@ -67,6 +79,9 @@
     <Reference Include="JJ.Framework.Text, Version=1.7.7817.43031, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JJ.Framework.Text.1.7.7817.43031\lib\net461\JJ.Framework.Text.dll</HintPath>
     </Reference>
+    <Reference Include="JJ.Framework.Validation, Version=1.7.7817.43035, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Framework.Validation.1.7.7817.43035\lib\net461\JJ.Framework.Validation.dll</HintPath>
+    </Reference>
     <Reference Include="JJ.Framework.Xml, Version=1.7.7817.43035, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JJ.Framework.Xml.1.7.7817.43035\lib\net461\JJ.Framework.Xml.dll</HintPath>
     </Reference>
@@ -76,8 +91,8 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
@@ -127,10 +142,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\Canonical\JJ.Data.Canonical.csproj">
-      <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
-      <Name>JJ.Data.Canonical</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Data\SaveText.Xml\JJ.Data.SaveText.Xml.csproj">
       <Project>{292046bb-5667-4231-b8aa-bad57cd1b481}</Project>
       <Name>JJ.Data.SaveText.Xml</Name>

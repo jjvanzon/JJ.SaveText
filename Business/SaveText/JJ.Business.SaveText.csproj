@@ -40,6 +40,12 @@
     <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
+    <Reference Include="JJ.Business.Canonical, Version=1.2.8377.38727, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Business.Canonical.1.2.8377.38727\lib\net461\JJ.Business.Canonical.dll</HintPath>
+    </Reference>
+    <Reference Include="JJ.Data.Canonical, Version=1.2.8377.34780, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JJ.Data.Canonical.1.2.8377.34780\lib\net461\JJ.Data.Canonical.dll</HintPath>
+    </Reference>
     <Reference Include="JJ.Framework.Business, Version=1.7.7817.43032, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\JJ.Framework.Business.1.7.7817.43032\lib\net461\JJ.Framework.Business.dll</HintPath>
     </Reference>
@@ -99,10 +105,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\Canonical\JJ.Data.Canonical.csproj">
-      <Project>{08ea4a4e-d815-47ae-9277-da6672d36214}</Project>
-      <Name>JJ.Data.Canonical</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Data\SaveText.DefaultRepositories\JJ.Data.SaveText.DefaultRepositories.csproj">
       <Project>{06443309-668f-42fe-8996-d2c3ffa637f5}</Project>
       <Name>JJ.Data.SaveText.DefaultRepositories</Name>
@@ -110,10 +112,6 @@
     <ProjectReference Include="..\..\Data\SaveText\JJ.Data.SaveText.csproj">
       <Project>{95449a62-9f9b-42da-812e-92bc0c2783aa}</Project>
       <Name>JJ.Data.SaveText</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Canonical\JJ.Business.Canonical.csproj">
-      <Project>{4dbe5e36-4b54-4e5f-9b4f-5bbf33a3cef1}</Project>
-      <Name>JJ.Business.Canonical</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
