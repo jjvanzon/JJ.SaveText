@@ -189,7 +189,7 @@ Here you may find some pointers how to set up a developent environment to build 
 
 ### 🕹 Unity Game Engine
 
-- Some projects were made using Unity Game Engine, version unknown, sorry.
+- Some projects were made using Unity Game Engine 4.3.4 (the free variation).
 
 ### 💽 Database
 
